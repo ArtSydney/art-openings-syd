@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-15T12:17:40.371899+00:00",
-  "count": 148,
+  "generated": "2026-08-15T12:42:17.356821+00:00",
+  "count": 149,
   "exhibitions": [
     {
       "id": "00c89e50d6ae",
@@ -2504,6 +2504,23 @@
     {
       "id": "fb037da8b9b1",
       "title": "Woollahra Gallery at Redleaf | Double Bay NSW",
+      "artist": "",
+      "venue": "Woollahra Gallery at Redleaf will be",
+      "address": "",
+      "suburb": "Woollahra",
+      "start_date": "2026-10-02",
+      "end_date": "2026-11-29",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://www.facebook.com/woollahragallery/",
+      "instagram": "@anita_johnson_artist",
+      "description": "The exhibition of finalists works at Woollahra Gallery at Redleaf will be on view from 2 October to 29 November 2026. Anita Johnson @anita_johnson_artist ...",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "3a54bb034e73",
+      "title": "Woollahra Gallery at Redleaf | Double Bay NSW - Facebook",
       "artist": "",
       "venue": "Woollahra Gallery at Redleaf will be",
       "address": "",
