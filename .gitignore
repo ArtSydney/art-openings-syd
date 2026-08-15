@@ -1,0 +1,6 @@
+.env
+seen.json
+__pycache__/
+*.pyc
+session-*
+*.egg-info/

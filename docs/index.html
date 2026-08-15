@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Openings Sydney</title>
+  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <h1 class="site-title">Art Openings<span class="accent">SYD</span></h1>
+        <p class="site-tagline">Exhibitions &amp; openings across Sydney</p>
+      </div>
+      <div class="header-actions">
+        <button id="btn-view-list" class="view-btn active" title="List view">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="13" width="16" height="3" rx="1" fill="currentColor"/></svg>
+        </button>
+        <button id="btn-view-cal" class="view-btn" title="Calendar view">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="1" y1="7" x2="17" y2="7" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="filters-bar">
+    <div class="filters-inner">
+      <div class="filter-group">
+        <input type="text" id="search" class="filter-input" placeholder="Search exhibitions...">
+      </div>
+      <div class="filter-group filter-toggles">
+        <label class="toggle-label">
+          <input type="checkbox" id="filter-opening-today">
+          <span>Opening today</span>
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="filter-closed">
+          <span>Show closed</span>
+        </label>
+      </div>
+      <div class="filter-group">
+        <select id="filter-suburb" class="filter-select">
+          <option value="">All suburbs</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <button id="btn-to-cal" class="btn-calendar" title="View calendar">Calendar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main class="content">
+    <!-- List view -->
+    <div id="view-list" class="view active">
+      <div id="exhibition-list" class="exhibition-grid"></div>
+      <p id="no-results" class="no-results" hidden>No exhibitions match your filters.</p>
+    </div>
+
+    <!-- Calendar view -->
+    <div id="view-cal" class="view">
+      <div class="cal-header">
+        <button id="cal-prev" class="cal-nav">&larr;</button>
+        <h2 id="cal-title" class="cal-title"></h2>
+        <button id="cal-next" class="cal-nav">&rarr;</button>
+        <button id="btn-export-ics" class="btn-export-cal" title="Download all as ICS">Export ICS</button>
+      </div>
+      <div id="cal-grid" class="cal-grid"></div>
+      <div id="cal-agenda" class="cal-agenda"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <!-- Event detail popup -->
+  <div id="event-popup" class="event-popup" hidden>
+    <div class="popup-backdrop"></div>
+    <div class="popup-content">
+      <button class="popup-close">&times;</button>
+      <h3 id="popup-title"></h3>
+      <div id="popup-meta" class="popup-meta"></div>
+      <div id="popup-dates" class="popup-dates"></div>
+      <p id="popup-desc" class="popup-desc"></p>
+      <div id="popup-actions" class="popup-actions"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p><a href="https://surlykm.github.io/art-grants-dashboard/" target="_blank">Open Calls</a></p>
+  </footer>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
