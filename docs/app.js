@@ -215,17 +215,16 @@
     const today = new Date();
     const todayStr = today.toISOString().slice(0, 10);
 
-    // Events index by date
+    // Events index by date - each exhibition appears once
+    // Use opening_date if available, otherwise start_date
     const evByDate = {};
     const filtered = getFiltered();
     filtered.forEach(ex => {
-      const dates = [];
-      if (ex.opening_date) dates.push({ date: ex.opening_date, type: 'opening' });
-      if (ex.start_date) dates.push({ date: ex.start_date, type: 'exhibition' });
-      dates.forEach(({ date, type }) => {
-        if (!evByDate[date]) evByDate[date] = [];
-        evByDate[date].push({ ex, type });
-      });
+      const date = ex.opening_date || ex.start_date;
+      if (!date) return;
+      const type = ex.opening_date ? 'opening' : 'exhibition';
+      if (!evByDate[date]) evByDate[date] = [];
+      evByDate[date].push({ ex, type });
     });
 
     // Prev month fill
@@ -278,18 +277,14 @@
     const monthEvents = {};
 
     filtered.forEach(ex => {
-      const dates = [];
-      if (ex.opening_date) dates.push({ date: ex.opening_date, type: 'opening', ex });
-      if (ex.start_date && ex.start_date !== ex.opening_date) {
-        dates.push({ date: ex.start_date, type: 'exhibition', ex });
+      const date = ex.opening_date || ex.start_date;
+      if (!date) return;
+      const type = ex.opening_date ? 'opening' : 'exhibition';
+      const d = new Date(date + 'T00:00:00');
+      if (d.getFullYear() === calYear && d.getMonth() === calMonth) {
+        if (!monthEvents[date]) monthEvents[date] = [];
+        monthEvents[date].push({ type, ex });
       }
-      dates.forEach(({ date, type, ex }) => {
-        const d = new Date(date + 'T00:00:00');
-        if (d.getFullYear() === calYear && d.getMonth() === calMonth) {
-          if (!monthEvents[date]) monthEvents[date] = [];
-          monthEvents[date].push({ type, ex });
-        }
-      });
     });
 
     const sortedDates = Object.keys(monthEvents).sort();
