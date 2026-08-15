@@ -350,8 +350,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .cal-title {
@@ -398,12 +399,13 @@ body {
 
 .cal-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 1px;
   background: var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: 1.5rem;
+  table-layout: fixed;
 }
 
 .cal-day-header {
@@ -413,16 +415,19 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.5rem;
+  padding: 0.5rem 0.25rem;
   text-align: center;
   color: rgba(255,255,255,0.5);
+  min-width: 0;
 }
 
 .cal-cell {
   background: white;
-  padding: 0.4rem;
-  min-height: 80px;
+  padding: 0.3rem;
+  min-height: 70px;
   position: relative;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .cal-cell.other-month {
@@ -448,9 +453,9 @@ body {
 
 .cal-dot {
   display: block;
-  font-size: 0.6rem;
-  padding: 0.1rem 0.25rem;
-  margin-bottom: 2px;
+  font-size: 0.55rem;
+  padding: 0.1rem 0.2rem;
+  margin-bottom: 1px;
   border-radius: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -458,6 +463,7 @@ body {
   cursor: pointer;
   color: var(--text);
   transition: background 0.1s;
+  max-width: 100%;
 }
 
 .cal-dot.type-opening {
