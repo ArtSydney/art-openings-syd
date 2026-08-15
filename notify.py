@@ -5,7 +5,8 @@ import os
 import requests
 from datetime import datetime, timedelta, timezone
 
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+
 
 # Embed colors
 COLOR_NEW = 0x6C5B7B       # Purple - new exhibition
@@ -20,9 +21,9 @@ _webhook_warned = False
 def send_embed(embed):
     """Send a single embed to Discord."""
     global _webhook_warned
-    if not DISCORD_WEBHOOK_URL:
+    if not DISCORD_WEBHOOK_URL or not DISCORD_WEBHOOK_URL.startswith("https://"):
         if not _webhook_warned:
-            print("[notify] No webhook URL, notifications disabled")
+            print("[notify] No valid webhook URL, notifications disabled")
             _webhook_warned = True
         return
     try:
