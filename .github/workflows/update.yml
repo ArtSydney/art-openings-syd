@@ -2,7 +2,8 @@ name: Update Exhibitions
 
 on:
   schedule:
-    - cron: '0 6 * * *'  
+    - cron: '0 6 * * *'
+      timezone: "Australia/Sydney"  
     - cron: '0 20 * * 0'
       timezone: "Australia/Sydney"
   workflow_dispatch:
