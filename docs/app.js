@@ -6,7 +6,6 @@
   let DATA = [];
   let calYear, calMonth;
 
-  // ---- Init ----
   async function init() {
     try {
       const resp = await fetch('data.json?v=' + Date.now());
@@ -16,18 +15,15 @@
       console.error('Failed to load data:', e);
       DATA = [];
     }
-
     populateSuburbs();
     render();
     setupListeners();
-
     const now = new Date();
     calYear = now.getFullYear();
     calMonth = now.getMonth();
     renderCalendar();
   }
 
-  // ---- Populate suburb filter ----
   function populateSuburbs() {
     const suburbs = new Set();
     DATA.forEach(ex => { if (ex.suburb) suburbs.add(ex.suburb); });
@@ -40,29 +36,55 @@
     });
   }
 
-  // ---- Filtering ----
+  // ---- Helpers ----
+  const TODAY = new Date();
+  TODAY.setHours(0, 0, 0, 0);
+  const TODAY_STR = TODAY.toISOString().slice(0, 10);
+
+  function isOnNow(ex) {
+    const start = ex.start_date || ex.opening_date;
+    const end = ex.end_date;
+    if (!start) return false;
+    if (start > TODAY_STR && !end) return false; // future, no end
+    if (start <= TODAY_STR && (!end || end >= TODAY_STR)) return true;
+    return false;
+  }
+
+  function isOpeningThisWeek(ex) {
+    const d = ex.opening_date || ex.start_date;
+    if (!d) return false;
+    const dt = new Date(d + 'T00:00:00');
+    const diff = (dt - TODAY) / 86400000;
+    return diff >= 0 && diff <= 7;
+  }
+
+  // ---- Filtering & Sorting ----
   function getFiltered() {
     const q = document.getElementById('search').value.toLowerCase().trim();
-    const openingToday = document.getElementById('filter-opening-today').checked;
+    const onNow = document.getElementById('filter-on-now').checked;
+    const openingWeek = document.getElementById('filter-opening-week').checked;
     const showClosed = document.getElementById('filter-closed').checked;
     const suburb = document.getElementById('filter-suburb').value;
 
-    const todayStr = new Date().toISOString().slice(0, 10);
-
-    return DATA.filter(ex => {
-      // Status filter
+    let results = DATA.filter(ex => {
+      // Closed toggle
       if (showClosed) {
         if (ex.status !== 'closed') return false;
       } else {
         if (ex.status === 'closed') return false;
       }
 
-      // Opening today filter
-      if (openingToday) {
-        if (ex.opening_date !== todayStr && ex.start_date !== todayStr) return false;
+      // On now filter
+      if (onNow && !showClosed) {
+        if (!isOnNow(ex) && !isOpeningThisWeek(ex)) return false;
       }
 
-      // Suburb filter
+      // Opening this week filter (additive narrowing)
+      if (openingWeek && !showClosed) {
+        if (!isOpeningThisWeek(ex)) return false;
+      }
+
+      // Suburb
       if (suburb && ex.suburb !== suburb) return false;
 
       // Search
@@ -71,9 +93,30 @@
           .join(' ').toLowerCase();
         if (!hay.includes(q)) return false;
       }
-
       return true;
     });
+
+    // Sort: on now first, then upcoming by start date, then past
+    results.sort((a, b) => {
+      const aNow = isOnNow(a) ? 0 : 1;
+      const bNow = isOnNow(b) ? 0 : 1;
+      if (aNow !== bNow) return aNow - bNow;
+
+      // Within same group, sort by opening/start date ascending
+      const aDate = a.opening_date || a.start_date || '9999';
+      const bDate = b.opening_date || b.start_date || '9999';
+
+      // For "on now", show soonest-ending first
+      if (aNow === 0 && bNow === 0) {
+        const aEnd = a.end_date || '9999';
+        const bEnd = b.end_date || '9999';
+        return aEnd.localeCompare(bEnd);
+      }
+
+      return aDate.localeCompare(bDate);
+    });
+
+    return results;
   }
 
   // ---- Render list ----
@@ -83,37 +126,28 @@
     const filtered = getFiltered();
 
     list.innerHTML = '';
-
     if (filtered.length === 0) {
       noResults.hidden = false;
       return;
     }
     noResults.hidden = true;
-
-    filtered.forEach(ex => {
-      list.appendChild(createCard(ex));
-    });
+    filtered.forEach(ex => list.appendChild(createCard(ex)));
   }
 
   function createCard(ex) {
     const card = document.createElement('div');
     card.className = 'ex-card' + (ex.status === 'closed' ? ' status-closed' : '');
 
-    // Badge
     const badge = getBadge(ex);
-
-    // Title
     const titleLink = ex.website
       ? `<a href="${esc(ex.website)}" target="_blank" rel="noopener">${esc(ex.title)}</a>`
       : esc(ex.title);
 
-    // Meta line
     let meta = '';
     if (ex.venue) meta += `<span class="venue">${esc(ex.venue)}</span>`;
     if (ex.suburb) meta += (meta ? ', ' : '') + esc(ex.suburb);
-    if (ex.artist) meta += (meta ? ' · ' : '') + esc(ex.artist);
+    if (ex.artist) meta += (meta ? ' &middot; ' : '') + esc(ex.artist);
 
-    // Dates
     let dates = '';
     if (ex.start_date || ex.end_date) {
       let range = formatDate(ex.start_date);
@@ -126,7 +160,6 @@
       dates += `<span class="date-opening">Opening: ${opStr}</span>`;
     }
 
-    // Actions
     let actions = '';
     if (ex.website) {
       actions += `<a href="${esc(ex.website)}" target="_blank" rel="noopener">Website</a>`;
@@ -138,44 +171,41 @@
     if (ex.opening_date || ex.start_date) {
       actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
       const gcUrl = buildGoogleCalUrl(ex);
-      actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Add to Google Calendar">GCal</a>`;
+      actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Google Calendar">GCal</a>`;
     }
 
     card.innerHTML = `
-      ${badge}
       <h3>${titleLink}</h3>
+      ${badge}
       ${meta ? `<div class="ex-meta">${meta}</div>` : ''}
       ${dates ? `<div class="ex-dates">${dates}</div>` : ''}
       ${ex.description ? `<p class="ex-desc">${esc(ex.description)}</p>` : ''}
       ${actions ? `<div class="ex-actions">${actions}</div>` : ''}
     `;
-
     return card;
   }
 
   function getBadge(ex) {
-    if (ex.status === 'closed') {
-      return '<span class="badge badge-closed">Closed</span>';
-    }
+    if (ex.status === 'closed') return '';
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     if (ex.opening_date) {
       const opDate = new Date(ex.opening_date + 'T00:00:00');
       const diff = Math.ceil((opDate - today) / 86400000);
-      if (diff === 0) return '<span class="badge badge-opening">Opening tonight</span>';
-      if (diff > 0 && diff <= 3) return `<span class="badge badge-opening">Opening in ${diff}d</span>`;
+      if (diff === 0) return '<div class="badge badge-opening">Opening tonight</div>';
+      if (diff > 0 && diff <= 3) return `<div class="badge badge-opening">Opens in ${diff}d</div>`;
     }
 
     if (ex.end_date) {
       const endDate = new Date(ex.end_date + 'T00:00:00');
       const diff = Math.ceil((endDate - today) / 86400000);
-      if (diff >= 0 && diff <= 3) {
-        if (diff === 0) return '<span class="badge badge-closing">Last day</span>';
-        return `<span class="badge badge-closing">Closing in ${diff}d</span>`;
-      }
+      if (diff === 0) return '<div class="badge badge-closing">Last day</div>';
+      if (diff > 0 && diff <= 3) return `<div class="badge badge-closing">Closes in ${diff}d</div>`;
     }
 
+    if (isOnNow(ex)) return '<div class="badge badge-on-now">On now</div>';
     return '';
   }
 
@@ -185,9 +215,7 @@
   const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   function renderCalendar() {
-    document.getElementById('cal-title').textContent =
-      `${MONTH_NAMES[calMonth]} ${calYear}`;
-
+    document.getElementById('cal-title').textContent = `${MONTH_NAMES[calMonth]} ${calYear}`;
     renderCalGrid();
     renderAgenda();
   }
@@ -196,7 +224,6 @@
     const grid = document.getElementById('cal-grid');
     grid.innerHTML = '';
 
-    // Day headers
     DAY_NAMES.forEach(d => {
       const h = document.createElement('div');
       h.className = 'cal-day-header';
@@ -205,21 +232,16 @@
     });
 
     const firstDay = new Date(calYear, calMonth, 1);
-    // Monday = 0
     let startDow = firstDay.getDay() - 1;
     if (startDow < 0) startDow = 6;
 
     const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
     const prevMonthDays = new Date(calYear, calMonth, 0).getDate();
 
-    const today = new Date();
-    const todayStr = today.toISOString().slice(0, 10);
-
-    // Events index by date - each exhibition appears once
-    // Use opening_date if available, otherwise start_date
+    // Events index by date - each exhibition once
     const evByDate = {};
-    const filtered = getFiltered();
-    filtered.forEach(ex => {
+    const allData = DATA.filter(ex => ex.status !== 'closed');
+    allData.forEach(ex => {
       const date = ex.opening_date || ex.start_date;
       if (!date) return;
       const type = ex.opening_date ? 'opening' : 'exhibition';
@@ -239,19 +261,18 @@
     for (let d = 1; d <= daysInMonth; d++) {
       const dateStr = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
       const cell = document.createElement('div');
-      cell.className = 'cal-cell' + (dateStr === todayStr ? ' today' : '');
+      cell.className = 'cal-cell' + (dateStr === TODAY_STR ? ' today' : '');
       let inner = `<div class="day-num">${d}</div>`;
 
       const events = evByDate[dateStr] || [];
       events.slice(0, 3).forEach(({ ex, type }) => {
-        inner += `<span class="cal-dot type-${type}" title="${esc(ex.title)}" data-id="${esc(ex.id)}">${esc(ex.title)}</span>`;
+        inner += `<span class="cal-dot type-${type}" data-id="${esc(ex.id)}">${esc(ex.title)}</span>`;
       });
       if (events.length > 3) {
-        inner += `<span class="cal-dot">+${events.length - 3} more</span>`;
+        inner += `<span class="cal-dot cal-more">+${events.length - 3} more</span>`;
       }
 
       cell.innerHTML = inner;
-      // Add click handlers to cal-dots
       cell.querySelectorAll('.cal-dot[data-id]').forEach(dot => {
         dot.addEventListener('click', () => showPopup(dot.dataset.id));
       });
@@ -273,10 +294,9 @@
     const agenda = document.getElementById('cal-agenda');
     agenda.innerHTML = '';
 
-    const filtered = getFiltered();
     const monthEvents = {};
-
-    filtered.forEach(ex => {
+    const allData = DATA.filter(ex => ex.status !== 'closed');
+    allData.forEach(ex => {
       const date = ex.opening_date || ex.start_date;
       if (!date) return;
       const type = ex.opening_date ? 'opening' : 'exhibition';
@@ -304,12 +324,11 @@
         let detail = '';
         if (ex.venue) detail = ` at ${esc(ex.venue)}`;
         if (type === 'opening' && ex.opening_time) detail += ` ${esc(ex.opening_time)}`;
-        item.innerHTML = `<span class="agenda-link">${esc(ex.title)}</span>${detail}`;
+        item.innerHTML = `<span>${esc(ex.title)}</span>${detail}`;
         item.style.cursor = 'pointer';
         item.addEventListener('click', () => showPopup(ex.id));
         dayDiv.appendChild(item);
       });
-
       agenda.appendChild(dayDiv);
     });
   }
@@ -331,19 +350,12 @@
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
 
     return [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Art Openings Sydney//EN',
-      'BEGIN:VEVENT',
-      'UID:' + uid,
-      'DTSTART:' + dtStart,
-      'DTEND:' + dtEnd,
-      'SUMMARY:' + icsEscape(summary),
-      'DESCRIPTION:' + icsEscape(ex.description || ''),
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Art Openings Sydney//EN',
+      'BEGIN:VEVENT', 'UID:' + uid, 'DTSTART:' + dtStart, 'DTEND:' + dtEnd,
+      'SUMMARY:' + icsEscape(summary), 'DESCRIPTION:' + icsEscape(ex.description || ''),
       location ? 'LOCATION:' + icsEscape(location) : '',
       ex.website ? 'URL:' + ex.website : '',
-      'END:VEVENT',
-      'END:VCALENDAR',
+      'END:VEVENT', 'END:VCALENDAR',
     ].filter(Boolean).join('\r\n');
   }
 
@@ -352,7 +364,6 @@
     if (!ex) return;
     const content = makeICSContent(ex);
     if (!content) return;
-
     const blob = new Blob([content], { type: 'text/calendar' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -366,31 +377,22 @@
     if (!date) return '#';
     const dt = date.replace(/-/g, '');
     const dates = dt + 'T180000/' + dt + 'T210000';
-
     let title = ex.title;
     if (ex.venue) title += ' at ' + ex.venue;
-
     let location = '';
     if (ex.address) location = ex.address;
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
-
-    // Manual URL construction to avoid URLSearchParams encoding slashes in dates
-    const base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
-    const params = '&text=' + encodeURIComponent(title)
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(title)
       + '&dates=' + dates
       + '&details=' + encodeURIComponent(ex.description || '')
       + (location ? '&location=' + encodeURIComponent(location) : '');
-
-    return base + params;
   }
 
-  // Bulk ICS export
   function exportAllICS() {
     const filtered = getFiltered().filter(ex => ex.opening_date || ex.start_date);
     if (filtered.length === 0) return;
-
     if (typeof JSZip === 'undefined') {
-      // Fallback: single combined file
       const events = filtered.map(makeICSContent).filter(Boolean);
       const blob = new Blob([events.join('\r\n')], { type: 'text/calendar' });
       const a = document.createElement('a');
@@ -399,7 +401,6 @@
       a.click();
       return;
     }
-
     const zip = new JSZip();
     filtered.forEach(ex => {
       const content = makeICSContent(ex);
@@ -408,7 +409,6 @@
         zip.file(name, content);
       }
     });
-
     zip.generateAsync({ type: 'blob' }).then(blob => {
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -417,41 +417,16 @@
     });
   }
 
-  // ---- Helpers ----
-  function esc(str) {
-    if (!str) return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
-  function icsEscape(str) {
-    return (str || '').replace(/[\\;,\n]/g, c => {
-      if (c === '\n') return '\\n';
-      return '\\' + c;
-    });
-  }
-
-  function formatDate(dateStr) {
-    if (!dateStr) return '';
-    try {
-      const d = new Date(dateStr + 'T00:00:00');
-      return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
-    } catch {
-      return dateStr;
-    }
-  }
-
-  // ---- Event popup ----
+  // ---- Popup ----
   function showPopup(id) {
     const ex = DATA.find(e => e.id === id);
     if (!ex) return;
-
     document.getElementById('popup-title').textContent = ex.title;
 
     let meta = '';
     if (ex.venue) meta += `<span class="venue">${esc(ex.venue)}</span>`;
     if (ex.suburb) meta += (meta ? ', ' : '') + esc(ex.suburb);
-    if (ex.artist) meta += (meta ? ' · ' : '') + esc(ex.artist);
+    if (ex.artist) meta += (meta ? ' &middot; ' : '') + esc(ex.artist);
     document.getElementById('popup-meta').innerHTML = meta;
 
     let dates = '';
@@ -465,14 +440,12 @@
       if (ex.opening_time) dates += ' ' + esc(ex.opening_time);
     }
     document.getElementById('popup-dates').innerHTML = dates;
-
     document.getElementById('popup-desc').textContent = ex.description || '';
 
     let actions = '';
     if (ex.opening_date || ex.start_date) {
       actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
-      const gcUrl = buildGoogleCalUrl(ex);
-      actions += `<a class="btn-gcal" href="${gcUrl}" target="_blank" rel="noopener">Google Calendar</a>`;
+      actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}" target="_blank" rel="noopener">Google Calendar</a>`;
     }
     if (ex.website) {
       actions += `<a class="btn-web" href="${esc(ex.website)}" target="_blank" rel="noopener">Website</a>`;
@@ -481,25 +454,38 @@
 
     const popup = document.getElementById('event-popup');
     popup.hidden = false;
-
-    // Close handlers
     popup.querySelector('.popup-backdrop').onclick = () => { popup.hidden = true; };
     popup.querySelector('.popup-close').onclick = () => { popup.hidden = true; };
   }
 
-  // Close popup on Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.getElementById('event-popup').hidden = true;
-    }
+    if (e.key === 'Escape') document.getElementById('event-popup').hidden = true;
   });
+
+  // ---- Helpers ----
+  function esc(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function icsEscape(str) {
+    return (str || '').replace(/[\\;,\n]/g, c => c === '\n' ? '\\n' : '\\' + c);
+  }
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    try {
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+    } catch { return dateStr; }
+  }
 
   // ---- Event listeners ----
   function setupListeners() {
-    document.getElementById('search').addEventListener('input', () => { render(); renderCalendar(); });
-    document.getElementById('filter-opening-today').addEventListener('change', () => { render(); renderCalendar(); });
-    document.getElementById('filter-closed').addEventListener('change', () => { render(); renderCalendar(); });
-    document.getElementById('filter-suburb').addEventListener('change', () => { render(); renderCalendar(); });
+    const rerender = () => { render(); renderCalendar(); };
+    document.getElementById('search').addEventListener('input', rerender);
+    document.getElementById('filter-on-now').addEventListener('change', rerender);
+    document.getElementById('filter-opening-week').addEventListener('change', rerender);
+    document.getElementById('filter-closed').addEventListener('change', rerender);
+    document.getElementById('filter-suburb').addEventListener('change', rerender);
 
     document.getElementById('btn-view-list').addEventListener('click', () => switchView('list'));
     document.getElementById('btn-view-cal').addEventListener('click', () => switchView('cal'));
@@ -527,6 +513,5 @@
     if (view === 'cal') renderCalendar();
   }
 
-  // ---- Boot ----
   document.addEventListener('DOMContentLoaded', init);
 })();
