@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-14T09:19:56.642184+00:00",
-  "count": 147,
+  "generated": "2026-08-15T12:17:40.371899+00:00",
+  "count": 148,
   "exhibitions": [
     {
       "id": "00c89e50d6ae",
@@ -69,6 +69,23 @@
       "description": "The major international contemporary art festival will be open free to the public from 14 March to 14 June 2026, presented in various locations across Sydney.",
       "source": "serper",
       "status": "closed"
+    },
+    {
+      "id": "cb7495d40208",
+      "title": "Reimagined Newcastle Art Gallery opens and announces ...",
+      "artist": "",
+      "venue": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-05-23",
+      "end_date": "2026-08-30",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://newcastleartgallery.nsw.gov.au/news/reimagined-newcastle-art-gallery-opens-and-announces-2026-exhibition-program",
+      "instagram": "",
+      "description": "From 23 May to 30 August 2026, the Gallery will present Brian Robinson: Multiverse, the first major solo exhibition in NSW by the multi-skilled ...",
+      "source": "serper",
+      "status": "active"
     },
     {
       "id": "3ce60b177cf5",
@@ -629,7 +646,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "b8011ed100a2",
