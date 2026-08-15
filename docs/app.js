@@ -39,7 +39,7 @@
   // ---- Helpers ----
   const TODAY = new Date();
   TODAY.setHours(0, 0, 0, 0);
-  const TODAY_STR = TODAY.toISOString().slice(0, 10);
+  const TODAY_STR = `${TODAY.getFullYear()}-${String(TODAY.getMonth()+1).padStart(2,'0')}-${String(TODAY.getDate()).padStart(2,'0')}`;
 
   function isOnNow(ex) {
     const start = ex.start_date || ex.opening_date;
