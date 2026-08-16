@@ -280,6 +280,11 @@ body {
 .ex-meta .venue {
   color: var(--mauve);
   font-weight: 500;
+  text-decoration: none;
+}
+
+.ex-meta .venue:hover {
+  text-decoration: underline;
 }
 
 .ex-dates {

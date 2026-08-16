@@ -144,7 +144,7 @@
       : esc(ex.title);
 
     let meta = '';
-    if (ex.venue) meta += `<span class="venue">${esc(ex.venue)}</span>`;
+    if (ex.venue) meta += `<a href="galleries.html?q=${encodeURIComponent(ex.venue)}" class="venue">${esc(ex.venue)}</a>`;
     if (ex.suburb) meta += (meta ? ', ' : '') + esc(ex.suburb);
     if (ex.artist) meta += (meta ? ' &middot; ' : '') + esc(ex.artist);
 

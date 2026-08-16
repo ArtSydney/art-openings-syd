@@ -30,6 +30,14 @@
       DATA = [];
     }
     populateSuburbs();
+    
+    // Pre-fill search from URL param (linked from exhibitions page)
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get('q');
+    if (q) {
+      document.getElementById('search').value = q;
+    }
+    
     render();
     setupListeners();
   }
