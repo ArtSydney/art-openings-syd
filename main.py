@@ -110,6 +110,10 @@ def run():
     # 7. Build frontend data
     build()
 
+    # 8. Update gallery database
+    from galleries import update_galleries
+    update_galleries(state)
+
     print(f"\n[done] Pipeline complete")
 
 

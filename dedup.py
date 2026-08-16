@@ -19,7 +19,14 @@ def canonical_key(title, venue=""):
     """Generate canonical dedup key from title + venue."""
     if not title:
         return ""
-    text = f"{title} @ {venue}" if venue else title
+    # Normalize venue: slashes, +/&, strip "Gallery"
+    v = venue.lower().strip() if venue else ""
+    v = v.replace("\\", "/").replace("|", "/")
+    v = re.sub(r"\s*[+&]\s*", " and ", v)
+    v = re.sub(r"co\.\s*$", "co", v)
+    v = re.sub(r"\s+(gallery|galleries)\s*$", "", v)
+    
+    text = f"{title} @ {v}" if v else title
     text = text.lower()
     text = re.sub(r"20\d{2}", "", text)  # strip years
     text = re.sub(r"[^\w\s]", "", text)  # strip punctuation
