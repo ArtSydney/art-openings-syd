@@ -290,20 +290,34 @@ def ocr_image(url):
 
 
 def fetch_instagram():
-    """Fetch posts via Business Discovery API, OCR carousel slides."""
+    """Fetch posts via Business Discovery API, OCR carousel slides.
+    
+    Only processes posts newer than the last processed timestamp,
+    stored in seen.json under __meta__.instagram_latest.
+    On first run (no marker), processes all posts.
+    """
     results = []
 
     if not IG_USER_ID or not IG_ACCESS_TOKEN:
         print("[instagram] No IG_USER_ID or IG_ACCESS_TOKEN set, skipping")
         return results
 
+    # Load last processed timestamp from state
+    from state import load_state, save_state
+    state = load_state()
+    last_processed = state.get("__meta__", {}).get("instagram_latest", "")
+    is_first_run = not last_processed
+
     try:
-        # Fetch all posts with pagination
+        # Fetch posts with pagination
         all_posts = []
         fields = f"business_discovery.username({TARGET_USERNAME}){{media.limit(10){{caption,permalink,timestamp,media_type,children{{media_url,media_type}}}}}}"
         url = f"{GRAPH_BASE}/{IG_USER_ID}?fields={fields}&access_token={IG_ACCESS_TOKEN}"
 
-        MAX_PAGES = 8
+        # First run: get everything (8 pages). Subsequent: just 2 pages (20 posts)
+        MAX_PAGES = 8 if is_first_run else 2
+        stop_early = False
+
         for page in range(MAX_PAGES):
             resp = requests.get(url, timeout=30)
 
@@ -318,7 +332,17 @@ def fetch_instagram():
             data = resp.json()
             media = data.get("business_discovery", {}).get("media", {})
             posts = media.get("data", [])
-            all_posts.extend(posts)
+
+            for post in posts:
+                ts = post.get("timestamp", "")
+                # Skip posts we've already processed
+                if last_processed and ts <= last_processed:
+                    stop_early = True
+                    break
+                all_posts.append(post)
+
+            if stop_early:
+                break
 
             # Check for next page
             paging = media.get("paging", {})
@@ -326,24 +350,33 @@ def fetch_instagram():
             if not next_cursor:
                 break
 
-            # Build next page URL
             fields_paged = f"business_discovery.username({TARGET_USERNAME}){{media.limit(10).after({next_cursor}){{caption,permalink,timestamp,media_type,children{{media_url,media_type}}}}}}"
             url = f"{GRAPH_BASE}/{IG_USER_ID}?fields={fields_paged}&access_token={IG_ACCESS_TOKEN}"
 
             if page > 0:
                 time.sleep(1)
 
-        print(f"[instagram] Fetched {len(all_posts)} posts via Graph API, running OCR...")
+        if not all_posts:
+            print("[instagram] No new posts since last run")
+            return results
+
+        print(f"[instagram] {len(all_posts)} new posts to process, running OCR...")
 
         # Process each post
         total_slides = 0
         caption_results = 0
+        newest_timestamp = last_processed
 
         for post in all_posts:
             permalink = post.get("permalink", "")
             caption = post.get("caption", "")
             media_type = post.get("media_type", "")
             children = post.get("children", {}).get("data", [])
+            ts = post.get("timestamp", "")
+
+            # Track newest timestamp
+            if ts > newest_timestamp:
+                newest_timestamp = ts
 
             # Parse caption for the featured exhibition
             if caption:
@@ -368,6 +401,11 @@ def fetch_instagram():
                     total_slides += 1
                     exhibitions = parse_ocr_text(text, permalink)
                     results.extend(exhibitions)
+
+        # Save newest timestamp for next run
+        if newest_timestamp and newest_timestamp > last_processed:
+            state["__meta__"]["instagram_latest"] = newest_timestamp
+            save_state(state)
 
         print(f"[instagram] Parsed {caption_results} captions, OCR'd {total_slides} slides, extracted {len(results)} total exhibitions")
 
