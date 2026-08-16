@@ -4,6 +4,7 @@
   'use strict';
 
   let DATA = [];
+  let GALLERIES = [];
   let calYear, calMonth;
 
   async function init() {
@@ -14,6 +15,13 @@
     } catch (e) {
       console.error('Failed to load data:', e);
       DATA = [];
+    }
+    try {
+      const resp = await fetch('galleries.json?v=' + Date.now());
+      const json = await resp.json();
+      GALLERIES = json.galleries || [];
+    } catch (e) {
+      GALLERIES = [];
     }
     populateSuburbs();
     render();
@@ -144,7 +152,7 @@
       : esc(ex.title);
 
     let meta = '';
-    if (ex.venue) meta += `<a href="galleries.html?q=${encodeURIComponent(ex.venue)}" class="venue">${esc(ex.venue)}</a>`;
+    if (ex.venue) meta += `<a href="#" class="venue" onclick="showGallery('${esc(ex.venue).replace(/'/g, "\\'")}');return false;">${esc(ex.venue)}</a>`;
     if (ex.suburb) meta += (meta ? ', ' : '') + esc(ex.suburb);
     if (ex.artist) meta += (meta ? ' &middot; ' : '') + esc(ex.artist);
 
@@ -416,6 +424,75 @@
       a.click();
     });
   }
+
+  // ---- Gallery popup ----
+  window.showGallery = function (name) {
+    const nameLower = name.toLowerCase().trim();
+    const gallery = GALLERIES.find(g =>
+      g.name.toLowerCase().trim() === nameLower ||
+      g.name.toLowerCase().includes(nameLower) ||
+      nameLower.includes(g.name.toLowerCase())
+    );
+
+    const popup = document.getElementById('event-popup');
+    document.getElementById('popup-title').textContent = name;
+
+    if (!gallery) {
+      document.getElementById('popup-meta').innerHTML = '<span class="venue">Gallery not yet in directory</span>';
+      document.getElementById('popup-dates').innerHTML = '';
+      document.getElementById('popup-desc').textContent = '';
+      document.getElementById('popup-actions').innerHTML =
+        `<a class="btn-web" href="galleries.html" target="_blank">Browse Gallery Directory</a>`;
+      popup.hidden = false;
+      popup.querySelector('.popup-backdrop').onclick = () => { popup.hidden = true; };
+      popup.querySelector('.popup-close').onclick = () => { popup.hidden = true; };
+      return;
+    }
+
+    let meta = '';
+    if (gallery.type) {
+      const typeLabels = { commercial: 'Commercial', ari: 'Artist-run', museum: 'Museum', university: 'University', project_space: 'Project space' };
+      meta += `<span class="venue">${typeLabels[gallery.type] || gallery.type}</span>`;
+    }
+    if (gallery.entry && gallery.entry !== 'unknown') {
+      const entryLabels = { free: 'Free entry', paid: 'Paid entry', donation: 'Donation' };
+      meta += (meta ? ' · ' : '') + (entryLabels[gallery.entry] || '');
+    }
+    document.getElementById('popup-meta').innerHTML = meta;
+
+    let location = '';
+    if (gallery.address) location += esc(gallery.address);
+    if (gallery.suburb) location += (location ? ', ' : '') + esc(gallery.suburb);
+    if (gallery.postcode) location += ' ' + esc(gallery.postcode);
+    let info = location ? `<div style="margin-bottom:0.4rem">${location}</div>` : '';
+    if (gallery.hours) info += `<div style="margin-bottom:0.4rem;color:var(--purple)">${esc(gallery.hours)}</div>`;
+    document.getElementById('popup-dates').innerHTML = info;
+
+    document.getElementById('popup-desc').textContent = gallery.accessibility || '';
+
+    let actions = '';
+    if (gallery.website) {
+      actions += `<a class="btn-web" href="${esc(gallery.website)}" target="_blank" rel="noopener">Website</a>`;
+    }
+    if (gallery.instagram) {
+      const handle = gallery.instagram.replace('@', '');
+      actions += `<a class="btn-gcal" href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">${esc(gallery.instagram)}</a>`;
+    }
+    let mapUrl = '';
+    if (gallery.latitude && gallery.longitude) {
+      mapUrl = `https://www.google.com/maps/search/?api=1&query=${gallery.latitude},${gallery.longitude}`;
+    } else if (location) {
+      mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + location)}`;
+    }
+    if (mapUrl) {
+      actions += `<a class="btn-ics" href="${mapUrl}" target="_blank" rel="noopener">Map</a>`;
+    }
+    document.getElementById('popup-actions').innerHTML = actions;
+
+    popup.hidden = false;
+    popup.querySelector('.popup-backdrop').onclick = () => { popup.hidden = true; };
+    popup.querySelector('.popup-close').onclick = () => { popup.hidden = true; };
+  };
 
   // ---- Popup ----
   function showPopup(id) {
