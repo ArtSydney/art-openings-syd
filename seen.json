@@ -876,10 +876,15 @@
     "25b larisa liu matter matters tao": "387e556d7809",
     "ames becoming drinan else sarah somewhere yavuz": "b133a4840a83",
     "australian galleries invites salon": "e9f85d8ccee0",
-    "artspace artspace community creators exhibitions run": "28021f0c752a"
+    "artspace artspace community creators exhibitions run": "28021f0c752a",
+    "about firstdraft firstdraft us": "489a741b8086",
+    "hills side surry tap view": "da35403048be",
+    "bay double redleaf woollahra": "2a8f08600cd4",
+    "25th anniversary celebration is it strokes this": "cde12d0f776a",
+    "curiosity shop": "180637d7d55d"
   },
   "__meta__": {
-    "last_run": "2026-08-16T10:36:24.931070+00:00"
+    "last_run": "2026-08-17T10:25:32.515422+00:00"
   },
   "747cbd06e895": {
     "title": "Art openings Events and Things to do in Sydney, Australia",
@@ -5290,7 +5295,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DY1T4kBEqCA/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-14T09:19:56.639806+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -6288,7 +6293,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DYBHmJSkhUT/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-16T06:38:39.506566+00:00",
     "closing_soon_sent": true
   },
@@ -11898,7 +11903,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DMb6pG1Skht/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-16T06:38:39.527227+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -12009,7 +12014,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DMb6pG1Skht/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-16T06:38:39.527626+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -12268,7 +12273,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DMJ-JPZy9K2/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-16T06:38:39.528513+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -12288,7 +12293,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DMJ-JPZy9K2/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-16T06:38:39.528579+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -12327,7 +12332,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DL4CjVFS29e/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-16T06:38:39.528704+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -16883,5 +16888,95 @@
     "source_url": "https://creatorsartspace.com.au/exhibitions/",
     "status": "needs_review",
     "first_seen": "2026-08-16T10:36:24.854173+00:00"
+  },
+  "489a741b8086": {
+    "title": "about us \u2014 firstdraft",
+    "artist": "",
+    "venue": "Firstdraft",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://firstdraft.org.au/about-us",
+    "instagram": "",
+    "description": "Firstdraft is where the future of contemporary art emerges, through a program that champions experimentation, risk and inclusion.",
+    "source": "serper",
+    "source_url": "https://firstdraft.org.au/about-us",
+    "status": "needs_review",
+    "first_seen": "2026-08-17T10:25:32.461075+00:00"
+  },
+  "da35403048be": {
+    "title": "A view from the side, art exhibition TAP Gallery Surry Hills",
+    "artist": "",
+    "venue": "",
+    "address": "",
+    "suburb": "Surry Hills",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/a-view-from-the-side-art-exhibition-tap-gallery-surry-hills",
+    "instagram": "",
+    "description": "This event has now closed. City Of Sydney. TAP gallery Surry Hills. A view from the side, art exhibition TAP Gallery Surry Hills. Share on ...",
+    "source": "serper",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/a-view-from-the-side-art-exhibition-tap-gallery-surry-hills",
+    "status": "needs_review",
+    "first_seen": "2026-08-17T10:25:32.461491+00:00"
+  },
+  "2a8f08600cd4": {
+    "title": "Woollahra Gallery at Redleaf | Double Bay NSW",
+    "artist": "",
+    "venue": "",
+    "address": "",
+    "suburb": "Woollahra",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.facebook.com/woollahragallery/",
+    "instagram": "",
+    "description": "When | Saturday 22 August, 3\u20135pm Where | Woollahra Gallery at Redleaf Other details | Free, reserve your spot via the link in bio + light refreshments provided ...",
+    "source": "serper",
+    "source_url": "https://www.facebook.com/woollahragallery/",
+    "status": "needs_review",
+    "first_seen": "2026-08-17T10:25:32.463345+00:00"
+  },
+  "cde12d0f776a": {
+    "title": "The Strokes: \u2018Is This It\u2019: 25th Anniversary Celebration",
+    "artist": "",
+    "venue": "",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/the-strokes-is-this-it-25th-anniversary-celebration",
+    "instagram": "",
+    "description": "The Strokes: \u2018Is This It\u2019: 25th Anniversary Celebration m2 Gallery Music The Strokes: \u2018Is This It\u2019: 25th Anniversary Celebration A gallery celebration of one of the most important debut albums in rock history. Tomorrow",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/the-strokes-is-this-it-25th-anniversary-celebration",
+    "status": "needs_review",
+    "first_seen": "2026-08-17T10:25:32.500314+00:00"
+  },
+  "180637d7d55d": {
+    "title": "Curiosity Shop",
+    "artist": "Claire Engkaninan Low",
+    "venue": "",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-08-26",
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/curiosity-shop",
+    "instagram": "",
+    "description": "Curiosity Shop The Corner Gallery Shopping, markets & fairs Curiosity Shop An exhibition of new and archival works by Claire Engkaninan Low 26 Aug 2026",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/curiosity-shop",
+    "status": "active",
+    "first_seen": "2026-08-17T10:25:32.507426+00:00"
   }
 }

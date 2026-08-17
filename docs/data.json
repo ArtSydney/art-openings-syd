@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-16T10:36:24.945685+00:00",
-  "count": 762,
+  "generated": "2026-08-17T10:25:32.531029+00:00",
+  "count": 763,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -3757,7 +3757,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "348ddbe95c0d",
@@ -4675,7 +4675,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "b205e0b6faf4",
@@ -7259,7 +7259,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "81e83f470fc4",
@@ -7650,7 +7650,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "f2afa9233440",
@@ -7667,7 +7667,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "c0da2c9854c2",
@@ -7871,7 +7871,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "170cc7f6f218",
@@ -8058,7 +8058,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "262c551f5c2a",
@@ -9400,6 +9400,23 @@
       "website": "https://whatson.cityofsydney.nsw.gov.au/events/migrating-modernism-migrating-ideas",
       "instagram": "",
       "description": "Migrating Modernism, Migrating Ideas Chau Chak Wing Museum Exhibitions Migrating Modernism, Migrating Ideas A symposium on transnational exchanges in architecture and art 26 Aug 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
+      "id": "180637d7d55d",
+      "title": "Curiosity Shop",
+      "artist": "Claire Engkaninan Low",
+      "venue": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-08-26",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/curiosity-shop",
+      "instagram": "",
+      "description": "Curiosity Shop The Corner Gallery Shopping, markets & fairs Curiosity Shop An exhibition of new and archival works by Claire Engkaninan Low 26 Aug 2026",
       "source": "city_of_sydney",
       "status": "active"
     },
