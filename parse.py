@@ -225,15 +225,34 @@ def extract_website(text, url=""):
 
 
 def extract_instagram(text):
-    """Extract Instagram handle from text."""
+    """Extract Instagram handle from text.
+
+    Rejects handles that look like email domains (contain a dot followed by
+    a known TLD suffix), which arise when scraped page text contains email
+    addresses formatted as name@domain.com.
+    """
+    DOMAIN_TLDS = re.compile(
+        r"\.(com|com\.au|net|net\.au|org|org\.au|gov|gov\.au|edu|edu\.au|au|id|io|co)$",
+        re.IGNORECASE,
+    )
+
+    def _is_domain(handle):
+        return bool(DOMAIN_TLDS.search(handle))
+
+    # Prefer an explicit instagram.com URL — most reliable
+    m = re.search(r"instagram\.com/([A-Za-z0-9_.]+)", text)
+    if m:
+        handle = m.group(1)
+        if handle.lower() not in ("", "p", "explore", "accounts", "reel", "reels"):
+            return f"@{handle}"
+
+    # Fall back to @mention, but reject anything that looks like a domain
     m = re.search(r"@([A-Za-z0-9_.]+)", text)
     if m:
         handle = m.group(1)
-        if len(handle) > 2 and handle.lower() != "gmail":
+        if len(handle) > 2 and not _is_domain(handle) and handle.lower() != "gmail":
             return f"@{handle}"
-    m = re.search(r"instagram\.com/([A-Za-z0-9_.]+)", text)
-    if m:
-        return f"@{m.group(1)}"
+
     return ""
 
 
