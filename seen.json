@@ -900,10 +900,11 @@
     "carriageworks sydneycontemporary": "b268ac5bd660",
     "now then": "3dea439d1818",
     "apy centre collective first nations open": "171f82ac90f6",
-    "13 best brett galleries redfern studio whiteley": "60e797c1649f"
+    "13 best brett galleries redfern studio whiteley": "60e797c1649f",
+    "do events openings things": "80c24418f8f7"
   },
   "__meta__": {
-    "last_run": "2026-08-18T05:45:06.320369+00:00",
+    "last_run": "2026-08-18T06:41:49.458906+00:00",
     "instagram_latest": "2026-08-12T03:48:24+0000"
   },
   "747cbd06e895": {
@@ -17342,5 +17343,41 @@
     "source_url": "https://www.singulart.com/en/art-galleries/australia/redfern-14755?srsltid=AfmBOoqdy8G47ObM5eOGdEiJ3HsFGsKqHRMrK2-oYVrEgCN1sDJSikFm",
     "status": "needs_review",
     "first_seen": "2026-08-18T05:45:06.291735+00:00"
+  },
+  "80c24418f8f7": {
+    "title": "Art openings Events and Things to do in Sydney, Australia",
+    "artist": "",
+    "venue": "",
+    "address": "",
+    "suburb": "Darlinghurst",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.eventbrite.com.au/d/australia--sydney/art-openings/",
+    "instagram": "",
+    "description": "Opening: Heather B. Swann, Jordan Gower & Remy Faint Sat, 5 Sept, 4:00 pm Darlinghurst. Fri, 11 Sept, 6:00 pm Hurstville",
+    "source": "serper",
+    "source_url": "https://www.eventbrite.com.au/d/australia--sydney/art-openings/",
+    "status": "needs_review",
+    "first_seen": "2026-08-18T06:41:49.399458+00:00"
+  },
+  "2152efe157d3": {
+    "title": "Sydney",
+    "artist": "Ian Howard",
+    "venue": "",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.art-almanac.com.au/whats-on/sydney/",
+    "instagram": "",
+    "description": "Wed\u2013Sat 11.00 to 6.00, Sun 11.00 to 5.00. Closed Mon\u2013Tues. Aug 5 to 30 (opening Sat Aug 8) When everything melts by Ian Howard. Sabbia Gallery",
+    "source": "serper",
+    "source_url": "https://www.art-almanac.com.au/whats-on/sydney/",
+    "status": "needs_review",
+    "first_seen": "2026-08-18T06:41:49.400003+00:00"
   }
 }
