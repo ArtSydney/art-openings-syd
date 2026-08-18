@@ -1187,24 +1187,6 @@
     "source": "exhibition:instagram",
     "last_verified": "2026-08-17"
   },
-  "cato": {
-    "name": "Cato Gallery",
-    "type": "commercial",
-    "address": "",
-    "suburb": "Surry Hills",
-    "postcode": "2010",
-    "latitude": -33.8845123,
-    "longitude": 151.2100301,
-    "website": "",
-    "instagram": "",
-    "email": "",
-    "phone": "",
-    "hours": "",
-    "entry": "unknown",
-    "accessibility": "",
-    "source": "exhibition:instagram",
-    "last_verified": "2026-08-16"
-  },
   "cassandra_bird": {
     "name": "Cassandra Bird",
     "type": "commercial",

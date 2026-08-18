@@ -610,7 +610,7 @@ def fuzzy_match_gallery(galleries, name, threshold=0.85):
         "annandale":                                "annandale_galleries",
         "sca":                                      "sca_gallery",
         "passage":                                  "passage_gallery",
-        "cato gallery":                             "eloise_cato_gallery",
+        "cato gallery":                             "eloise_cato",
         "laila gallery":                            "laila",
         "velvet lobster":                           "velvet_lobster",
         "arthouse":                                 "arthouse_gallery",
