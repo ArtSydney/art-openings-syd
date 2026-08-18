@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-17T10:52:31.747372+00:00",
-  "count": 764,
+  "generated": "2026-08-18T00:53:55.979920+00:00",
+  "count": 766,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -1547,6 +1547,23 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "closed"
+    },
+    {
+      "id": "34c2dde2525b",
+      "title": "OPENING TUESDAY 17 FEBRUARY Australian Galleries Sydney ...",
+      "artist": "",
+      "venue": "",
+      "address": "",
+      "suburb": "Paddington",
+      "start_date": "2026-02-17",
+      "end_date": "2026-03-07",
+      "opening_date": "2026-03-07",
+      "opening_time": "6pm",
+      "website": "https://www.facebook.com/australiangalleries/posts/bruce-latimer-opening-tuesday-17-februaryaustralian-galleries-sydney-invites-you/1604717224491151/",
+      "instagram": "",
+      "description": "Bruce Latimer 'Paintings' 17 February - 7 March 2026. Paddington OPENING NIGHT: Tuesday 17 February, 6pm - 8pm. Open 7 days 10am - 6pm \u30fb ...",
+      "source": "serper",
       "status": "closed"
     },
     {
@@ -6273,7 +6290,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "a991e6d40cf7",
@@ -9962,6 +9979,23 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "d966aff554d9",
+      "title": "Meet some of the talented artists behind 'ARTEXPRESS 2026 ...",
+      "artist": "",
+      "venue": "Carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "Art Gallery of New South Wales. These works will be on display at Sydney Contemporary, held 3-6 September 2026 at Carriageworks. Open until 31 ...",
+      "source": "serper",
       "status": "active"
     },
     {
