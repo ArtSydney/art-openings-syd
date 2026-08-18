@@ -394,6 +394,9 @@ SEED_GALLERIES = [
     {"name": "The Corner Gallery Stanmore", "type": "commercial", "suburb": "Stanmore",
      "address": "1/88 Percival Rd", "website": "https://thecornergallerystanmore.com.au/",
      "instagram": "", "entry": "free"},
+    {"name": "The Corner Gallery", "type": "commercial", "suburb": "Paddington",
+     "address": "", "website": "https://www.thecornergallery.com.au/",
+     "instagram": "@the_corner_gallery", "entry": "free"},
     {"name": "Delmar Gallery", "type": "university", "suburb": "Ashfield",
      "address": "144 Victoria St", "website": "https://www.trinity.nsw.edu.au/community/delmar-gallery/",
      "instagram": "", "entry": "free"},
@@ -623,6 +626,7 @@ def fuzzy_match_gallery(galleries, name, threshold=0.85):
         "olsen annexe":                             "olsen_gallery",
         "day0o1":                                    "day01",
         "tom bass clara street gallery":             "clara_street",
+        "the corner gallery":                        "the_corner",
         "tom bass gallery":                          "clara_street",
         "day01 gallery":                             "day01",
     }
@@ -918,34 +922,10 @@ def enrich_from_exhibitions(galleries, state):
             # instagram intentionally not written here
             continue
 
-        # New gallery discovered from exhibition data
-        record = {
-            "name": venue,
-            "type": "commercial",
-            "address": rec.get("address", ""),
-            "suburb": rec.get("suburb", ""),
-            "postcode": "",
-            "latitude": None,
-            "longitude": None,
-            "website": "",
-            "instagram": "",  # will be filled by enrich_gallery_instagram
-            "email": "",
-            "phone": "",
-            "hours": "",
-            "entry": "unknown",
-            "accessibility": "",
-            "source": f"exhibition:{rec.get('source', 'unknown')}",
-            "last_verified": datetime.now(tz=timezone.utc).strftime("%Y-%m-%d"),
-        }
-        web = rec.get("website", "")
-        if web and not any(d in web for d in ["timeout", "broadsheet", "artalmanac",
-                                               "cityofsydney", "instagram", "facebook",
-                                               "google", "artguide"]):
-            record["website"] = web
-
-        gkey = normalize_name(venue)
-        galleries[gkey] = record
-        added += 1
+        # Do not auto-create gallery entries from exhibition scrape data.
+        # Unknown venues should be added manually via the seed or enrich_galleries.py.
+        # This prevents junk venue names from polluting the gallery directory.
+        pass
 
     print(f"[galleries] Enriched {added} new galleries from exhibitions")
     return added
