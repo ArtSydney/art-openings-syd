@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-18T07:28:09.219303+00:00",
-  "count": 850,
+  "generated": "2026-08-18T10:37:31.515928+00:00",
+  "count": 852,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -9591,6 +9591,23 @@
       "status": "active"
     },
     {
+      "id": "158b9f0e0bf9",
+      "title": "Judy Trick | FULL CIRCLE | Exhibition",
+      "artist": "",
+      "venue": "Artsite Contemporary",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-08-22",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/judy-trick-or-full-circle-or-exhibition",
+      "instagram": "",
+      "description": "Judy Trick | FULL CIRCLE | Exhibition Artsite Contemporary Shopping, markets & fairs Judy Trick | FULL CIRCLE | Exhibition An artist who\u2019s been everywhere and landed somewhere beautiful. 22 Aug 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
       "id": "942bafac4001",
       "title": "Migrating Modernism, Migrating Ideas",
       "artist": "",
@@ -9655,6 +9672,23 @@
       "website": "https://whatson.cityofsydney.nsw.gov.au/events/migrating-modernism-migrating-ideas",
       "instagram": "",
       "description": "Migrating Modernism, Migrating Ideas Chau Chak Wing Museum Exhibitions Migrating Modernism, Migrating Ideas A symposium on transnational exchanges in architecture and art 26 Aug 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
+      "id": "19580cbcf0a7",
+      "title": "Curiosity Shop",
+      "artist": "Claire Engkaninan Low",
+      "venue": "The Corner Gallery",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-08-26",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/curiosity-shop",
+      "instagram": "",
+      "description": "Curiosity Shop The Corner Gallery Shopping, markets & fairs Curiosity Shop An exhibition of new and archival works by Claire Engkaninan Low 26 Aug 2026",
       "source": "city_of_sydney",
       "status": "active"
     },
