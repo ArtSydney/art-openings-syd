@@ -675,6 +675,8 @@ body {
   }
 
   .filter-input { min-width: 0; width: 100%; }
+  .filter-select { width: 100%; }
+  .filter-group { width: 100%; }
 
   .exhibition-grid {
     grid-template-columns: 1fr;

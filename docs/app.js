@@ -24,12 +24,25 @@
       GALLERIES = [];
     }
     populateSuburbs();
+    populateVenues();
     render();
     setupListeners();
     const now = new Date();
     calYear = now.getFullYear();
     calMonth = now.getMonth();
     renderCalendar();
+  }
+
+  function populateVenues() {
+    const venues = new Set();
+    DATA.forEach(ex => { if (ex.venue) venues.add(ex.venue); });
+    const sel = document.getElementById('filter-venue');
+    Array.from(venues).sort((a, b) => a.localeCompare(b)).forEach(v => {
+      const opt = document.createElement('option');
+      opt.value = v;
+      opt.textContent = v;
+      sel.appendChild(opt);
+    });
   }
 
   function populateSuburbs() {
@@ -73,6 +86,7 @@
     const openingWeek = document.getElementById('filter-opening-week').checked;
     const showClosed = document.getElementById('filter-closed').checked;
     const suburb = document.getElementById('filter-suburb').value;
+    const venue = document.getElementById('filter-venue').value;
 
     let results = DATA.filter(ex => {
       // Closed toggle
@@ -94,6 +108,7 @@
 
       // Suburb
       if (suburb && ex.suburb !== suburb) return false;
+      if (venue && ex.venue !== venue) return false;
 
       // Search
       if (q) {
@@ -582,6 +597,7 @@
     document.getElementById('filter-opening-week').addEventListener('change', rerender);
     document.getElementById('filter-closed').addEventListener('change', rerender);
     document.getElementById('filter-suburb').addEventListener('change', rerender);
+    document.getElementById('filter-venue').addEventListener('change', rerender);
 
     document.getElementById('btn-view-list').addEventListener('click', () => switchView('list'));
     document.getElementById('btn-view-cal').addEventListener('click', () => switchView('cal'));

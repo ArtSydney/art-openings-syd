@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Art Openings Sydney</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -23,6 +23,9 @@
         <button id="btn-view-cal" class="view-btn" title="Calendar view">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="1" y1="7" x2="17" y2="7" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
+        <a href="galleries.html" class="view-btn" title="Gallery directory">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="7" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M4 7V5a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="7" y="10" width="4" height="4" rx="0.5" fill="currentColor"/></svg>
+        </a>
       </div>
     </div>
   </header>
@@ -52,11 +55,14 @@
         </select>
       </div>
       <div class="filter-group">
-        <button id="btn-to-cal" class="btn-calendar" title="View calendar">Calendar</button>
+        <select id="filter-venue" class="filter-select">
+          <option value="">All galleries</option>
+        </select>
       </div>
       <div class="filter-group">
-        <a href="galleries.html" class="btn-directory" title="Gallery directory">Galleries</a>
+        <button id="btn-to-cal" class="btn-calendar" title="View calendar">Calendar</button>
       </div>
+
     </div>
   </section>
 
@@ -94,6 +100,6 @@
     <p><a href="https://surlykm.github.io/art-grants-dashboard/" target="_blank">Open Calls</a></p>
   </footer>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
