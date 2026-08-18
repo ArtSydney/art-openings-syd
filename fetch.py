@@ -205,7 +205,7 @@ def fetch_city_of_sydney():
             # The venue appears between the title and a category keyword
             venue_hint = ""
             CATEGORIES = ["exhibitions", "community", "arts", "events",
-                          "causes", "festivals", "markets", "sport"]
+                          "causes", "festivals", "markets", "sport", "shopping"]
             stripped = text
             if title and stripped.startswith(title):
                 stripped = stripped[len(title):].strip()
@@ -216,10 +216,16 @@ def fetch_city_of_sydney():
             if m:
                 candidate = m.group(1).strip()
                 # Reject if it's just a suburb or very short
-                if len(candidate) > 5 and not candidate.lower() in [
+                SUBURB_ONLY = {
                     "sydney", "darlinghurst", "surry hills", "newtown",
-                    "paddington", "waterloo", "redfern", "woollahra"
-                ]:
+                    "paddington", "waterloo", "redfern", "woollahra",
+                    "chippendale", "haymarket", "ultimo", "glebe",
+                    "balmain", "kensington", "rushcutters bay",
+                    "potts point", "kings cross", "mosman", "manly",
+                    "parramatta", "liverpool", "bankstown", "leichhardt",
+                    "marrickville", "newtown", "erskineville", "alexandria",
+                }
+                if len(candidate) > 5 and candidate.lower() not in SUBURB_ONLY:
                     venue_hint = candidate
 
             results.append({

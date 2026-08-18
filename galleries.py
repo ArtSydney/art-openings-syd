@@ -862,6 +862,12 @@ def enrich_from_exhibitions(galleries, state):
         "melbourne art fair 2026", "melbourne art fair", "art fair",
         "sydney contemporary", "biennale of sydney",
         "25th biennale of sydney",
+        # Public spaces and non-gallery venues from city_of_sydney
+        "anzac memorial", "chippendale green", "sydney olympic park",
+        "the royal botanic garden", "royal botanic garden",
+        "australian national maritime museum",
+        "the japan foundation", "japan foundation",
+        "community &", "shopping,", "balmain", "kensington", "rushcutters bay",
         # Generic scraped page text
         "opening hours", "free admission", "what's on", "whats on",
         "exhibition listing", "related posts", "acknowledgement of country",
