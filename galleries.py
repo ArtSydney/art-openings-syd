@@ -84,7 +84,7 @@ SEED_GALLERIES = [
      "instagram": "@shervingallery", "entry": "paid"},
     {"name": "Brett Whiteley Studio", "type": "museum", "suburb": "Surry Hills",
      "address": "2 Raper St", "website": "https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/",
-     "instagram": "@artgalleryofnsw", "entry": "free"},
+     "instagram": "@brettwhiteleystudio", "entry": "free"},
     {"name": "Museum of Sydney", "type": "museum", "suburb": "Sydney",
      "address": "Cnr Phillip and Bridge streets", "website": "https://mhnsw.au/visit-us/museum-of-sydney/",
      "instagram": "", "entry": "free"},
@@ -144,9 +144,6 @@ SEED_GALLERIES = [
     {"name": "STATION Sydney", "type": "commercial", "suburb": "Surry Hills",
      "address": "91 Campbell St", "website": "https://stationgallery.com",
      "instagram": "@stationgalleryaustralia", "entry": "free"},
-    {"name": "Yavuz Gallery", "type": "commercial", "suburb": "Surry Hills",
-     "address": "56-64 Foster St", "website": "https://www.yavuzgallery.com",
-     "instagram": "@amesyavuz", "entry": "free"},
     {"name": "Schmick Contemporary", "type": "commercial", "suburb": "Haymarket",
      "address": "Level 1/2-16 Quay St", "website": "",
      "instagram": "@schmickcontemporary", "entry": "free"},
@@ -187,7 +184,7 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
     {"name": ".M Contemporary", "type": "commercial", "suburb": "Darlinghurst",
      "address": "8/15-19 Boundary St", "website": "https://mcontemp.com/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@.mcontemporary", "entry": "free"},
     {"name": "Chalk Horse", "type": "commercial", "suburb": "Darlinghurst",
      "address": "167 William St", "website": "https://www.chalkhorse.com.au/",
      "instagram": "", "entry": "free"},
@@ -269,6 +266,12 @@ SEED_GALLERIES = [
     {"name": "Tom Bass Clara Street Gallery", "type": "commercial", "suburb": "Erskineville",
      "address": "1A Clara St", "website": "https://www.clarastreetgallery.com/current-upcoming",
      "instagram": "", "entry": "free"},
+    {"name": "Gallery 144", "type": "commercial", "suburb": "Surry Hills",
+     "address": "144 Redfern St", "website": "https://www.gallery144.com.au/",
+     "instagram": "", "entry": "free"},
+    {"name": "Redfern Art Gallery", "type": "commercial", "suburb": "Redfern",
+     "address": "80 Redfern St", "website": "https://www.redfernartgallery.com.au/",
+     "instagram": "@redfern_art_gallery", "entry": "free"},
     {"name": "APY Gallery Sydney", "type": "commercial", "suburb": "Redfern",
      "address": "143 Redfern St", "website": "https://www.apygallery.com/pages/apy-gallery-sydney",
      "instagram": "", "entry": "free"},
@@ -295,7 +298,7 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
     {"name": "CBD Gallery", "type": "commercial", "suburb": "Sydney",
      "address": "72 Erskine St", "website": "https://cbdgallery.com.au/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@cbdgallerysyd", "entry": "free"},
     {"name": "China Cultural Centre in Sydney", "type": "museum", "suburb": "Sydney",
      "address": "Level 1, 151 Castlereagh St", "website": "https://cccsydney.org/",
      "instagram": "", "entry": "free"},
@@ -405,7 +408,7 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
     {"name": "LAILA", "type": "ari", "suburb": "Marrickville",
      "address": "Level 1, 158 Edinburgh Rd", "website": "https://www.laila.sydney/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@laila__sydney", "entry": "free"},
     {"name": "McGlade Gallery, Australian Catholic University", "type": "university", "suburb": "Strathfield",
      "address": "25a Barker Rd", "website": "https://www.acu.edu.au/about-acu/faculties-directorates-and-staff/faculty-of-education-and-arts/acu-galleries/acu-mcglade-gallery-at-strathfield",
      "instagram": "", "entry": "free"},
@@ -549,7 +552,29 @@ def normalize_name(name):
     key = re.sub(r"\s*[+&]\s*", "_and_", key)
     key = re.sub(r"co\.\s*$", "co", key)
     key = re.sub(r"co\.,", "co", key)
+    key = re.sub(r"[^\w\s/]", "", key)
+    key = re.sub(r"\s+", "_", key.strip())
+    key = key.strip("_")
+    return key
+
+
+def normalize_venue(name):
+    """Normalize a scraped venue name for matching against gallery keys.
+
+    More aggressive than normalize_name — strips trailing city/state
+    qualifiers, gallery suffix, and parentheticals that scrapers add
+    but which don't appear in the canonical gallery name.
+    """
+    key = name.lower().strip()
+    key = key.replace("\\", "/").replace("|", "/")
+    key = re.sub(r"\s*[+&]\s*", "_and_", key)
+    # Strip trailing scraped qualifiers
+    key = re.sub(r"\s+(in\s+)?sydney\s*$", "", key)
+    key = re.sub(r"\s+australia\s*$", "", key)
     key = re.sub(r"\s+(gallery|galleries|art\s+gallery)\s*$", "", key)
+    # Strip parentheticals like "(formerly outsider)"
+    key = re.sub(r"\s*\(.*?\)\s*$", "", key)
+    key = re.sub(r"co\.\s*$", "co", key)
     key = re.sub(r"[^\w\s/]", "", key)
     key = re.sub(r"\s+", "_", key.strip())
     key = key.strip("_")
@@ -559,15 +584,66 @@ def normalize_name(name):
 def fuzzy_match_gallery(galleries, name, threshold=0.85):
     """Find an existing gallery key that fuzzy-matches the given name."""
     from difflib import SequenceMatcher
-    norm = normalize_name(name)
 
+    # Explicit aliases — known scraped variants that should map to canonical keys
+    ALIASES = {
+        # AGNSW variants
+        "art gallery of nsw":                       "art_gallery_of_new_south_wales",
+        "agnsw":                                    "art_gallery_of_new_south_wales",
+        # MCA variants
+        "mca":                                      "museum_of_contemporary_art_australia",
+        "mca australia":                            "museum_of_contemporary_art_australia",
+        "museum of contemporary art":               "museum_of_contemporary_art_australia",
+        "museum of contemporary art australia":     "museum_of_contemporary_art_australia",
+        # Other common truncations
+        "redfern art gallery in sydney":            "redfern_art_gallery",
+        "woollahra gallery":                        "woollahra_gallery_at_redleaf",
+        "gallery 144 (formerly outsider)":          "gallery_144",
+        "gallery 144 formerly outsider":            "gallery_144",
+        "outsider gallery":                         "gallery_144",
+        "michael reid":                             "michael_reid_sydney",
+        "sally dan cuthbert":                       "gallery_sally_dancuthbert",
+        "king street gallery":                      "king_street_gallery_on_william",
+        "nas gallery":                              "national_art_school_gallery",
+        "national art school":                      "national_art_school_gallery",
+        "artbank":                                  "artbank_sydney",
+        "annandale":                                "annandale_galleries",
+        "sca":                                      "sca_gallery",
+        "passage":                                  "passage_gallery",
+        "cato gallery":                             "eloise_cato_gallery",
+        "laila gallery":                            "laila",
+        "velvet lobster":                           "velvet_lobster",
+        "arthouse":                                 "arthouse_gallery",
+        "olsen annexe":                             "olsen_gallery",
+    }
+
+    # Use normalize_venue (strips city/gallery suffixes) for matching
+    # but normalize_name for key lookup (stable, no stripping)
+    norm = normalize_name(name)
+    venue_norm = normalize_venue(name)
+    alias_key = name.lower().strip()
+
+    # Check explicit alias first
+    if alias_key in ALIASES:
+        canonical = ALIASES[alias_key]
+        if canonical in galleries:
+            return canonical
+
+    # Exact key match
     if norm in galleries:
         return norm
+
+    # Venue-normalized key match (strips city/gallery suffix)
+    if venue_norm in galleries:
+        return venue_norm
 
     best_key = None
     best_ratio = 0
     for existing_key in galleries:
-        ratio = SequenceMatcher(None, norm, existing_key).ratio()
+        ratio = max(
+            SequenceMatcher(None, norm, existing_key).ratio(),
+            SequenceMatcher(None, venue_norm, existing_key).ratio(),
+        )
         if ratio > best_ratio and ratio >= threshold:
             best_ratio = ratio
             best_key = existing_key
@@ -755,6 +831,31 @@ def enrich_from_exhibitions(galleries, state):
     gallery's own website). This prevents scraped exhibition text from
     polluting instagram fields with email domains and wrong handles.
     """
+    # Venue names that are scraped garbage and must never become gallery entries
+    VENUE_BLOCKLIST = {
+        # Redleaf junk
+        "redleaf opening hours free admission wednesday",
+        "redleaf's", "redleafs",
+        "redleaf exhibition call out is open until",
+        # Short/ambiguous names that are aliases, not real entries
+        "woollahra gallery", "mca", "agnsw", "gallery",
+        # Art fairs and events (not permanent galleries)
+        "melbourne art fair 2026", "melbourne art fair", "art fair",
+        "sydney contemporary", "biennale of sydney",
+        "25th biennale of sydney",
+        # Generic scraped page text
+        "opening hours", "free admission", "what's on", "whats on",
+        "exhibition listing", "related posts", "acknowledgement of country",
+        "terms and conditions", "privacy policy",
+    }
+
+    # Also block any venue name containing these substrings
+    VENUE_BLOCK_SUBSTRINGS = [
+        "opening hours", "free admission", "call out is open",
+        "acknowledgement", "terms and conditions", "privacy policy",
+        "newsletter", "subscribe", "follow us", "click here",
+    ]
+
     added = 0
     for key, rec in state.items():
         if key.startswith("__"):
@@ -762,6 +863,16 @@ def enrich_from_exhibitions(galleries, state):
 
         venue = rec.get("venue", "").strip()
         if not venue or len(venue) < 3:
+            continue
+
+        # Block junk venue names
+        vl = venue.lower()
+        if vl in VENUE_BLOCKLIST:
+            continue
+        if any(s in vl for s in VENUE_BLOCK_SUBSTRINGS):
+            continue
+        # Block suspiciously long venue names (likely scraped paragraph text)
+        if len(venue) > 80:
             continue
 
         matched_key = fuzzy_match_gallery(galleries, venue)
