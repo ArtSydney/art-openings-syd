@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-18T03:34:21.125281+00:00",
-  "count": 767,
+  "generated": "2026-08-18T03:48:23.149635+00:00",
+  "count": 769,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -1887,6 +1887,23 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "closed"
+    },
+    {
+      "id": "28fa067a5aa3",
+      "title": "NOW OPEN \u2728 The 25th Biennale of Sydney ...",
+      "artist": "",
+      "venue": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-03-14",
+      "end_date": "2026-06-14",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://www.facebook.com/ArtGalleryofNSW/posts/now-open-the-25th-biennale-of-sydney-titled-rememory-and-curated-by-artistic-dir/1357741653063932/",
+      "instagram": "@biennalesydney",
+      "description": "Open 14 March \u2013 14 June 2026 Free entry Art Gallery of New South Wales @biennalesydney - Installation views of the 25th Biennale of Sydney ...",
+      "source": "serper",
       "status": "closed"
     },
     {
@@ -7243,6 +7260,23 @@
       "description": "",
       "source": "instagram",
       "status": "active"
+    },
+    {
+      "id": "3e33db7bd143",
+      "title": "Video \u00a9 Art Gallery of New South Wale",
+      "artist": "",
+      "venue": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-07-09",
+      "end_date": "2026-08-02",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "\u2728 \ud83d\uddbc\ufe0f EXHIBITION DATES: 9th July - 2nd August 2026 \ud83d\uddbc\ufe0f EVENT NIGHT Saturday, 11th July | 5pm to 7pm. Including live entertainment ...",
+      "source": "serper",
+      "status": "closed"
     },
     {
       "id": "be5b6c99599e",

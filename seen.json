@@ -894,10 +894,12 @@
     "17 australian february galleries tuesday": "34c2dde2525b",
     "instagram meet some talented": "c7e78f98f19d",
     "12 entry found free galleries generally rabbit white": "c1965b9261b7",
-    "bay call double is open out redleaf redleaf until woollahra": "cb807cf9f2fd"
+    "bay call double is open out redleaf redleaf until woollahra": "cb807cf9f2fd",
+    "south video wale": "3e33db7bd143",
+    "25th biennale now open": "28fa067a5aa3"
   },
   "__meta__": {
-    "last_run": "2026-08-18T03:34:21.108867+00:00",
+    "last_run": "2026-08-18T03:48:23.133794+00:00",
     "instagram_latest": "2026-08-12T03:48:24+0000"
   },
   "747cbd06e895": {
@@ -17228,5 +17230,41 @@
     "source_url": "https://www.facebook.com/woollahragallery/",
     "status": "needs_review",
     "first_seen": "2026-08-18T03:34:21.057480+00:00"
+  },
+  "3e33db7bd143": {
+    "title": "Video \u00a9 Art Gallery of New South Wale",
+    "artist": "",
+    "venue": "",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-07-09",
+    "end_date": "2026-08-02",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "",
+    "instagram": "",
+    "description": "\u2728 \ud83d\uddbc\ufe0f EXHIBITION DATES: 9th July - 2nd August 2026 \ud83d\uddbc\ufe0f EVENT NIGHT Saturday, 11th July | 5pm to 7pm. Including live entertainment ...",
+    "source": "serper",
+    "source_url": "https://www.instagram.com/reel/DXfVD-vk7q3/",
+    "status": "closed",
+    "first_seen": "2026-08-18T03:48:23.077101+00:00"
+  },
+  "28fa067a5aa3": {
+    "title": "NOW OPEN \u2728 The 25th Biennale of Sydney ...",
+    "artist": "",
+    "venue": "",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-03-14",
+    "end_date": "2026-06-14",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.facebook.com/ArtGalleryofNSW/posts/now-open-the-25th-biennale-of-sydney-titled-rememory-and-curated-by-artistic-dir/1357741653063932/",
+    "instagram": "@biennalesydney",
+    "description": "Open 14 March \u2013 14 June 2026 Free entry Art Gallery of New South Wales @biennalesydney - Installation views of the 25th Biennale of Sydney ...",
+    "source": "serper",
+    "source_url": "https://www.facebook.com/ArtGalleryofNSW/posts/now-open-the-25th-biennale-of-sydney-titled-rememory-and-curated-by-artistic-dir/1357741653063932/",
+    "status": "closed",
+    "first_seen": "2026-08-18T03:48:23.079046+00:00"
   }
 }
