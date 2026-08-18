@@ -426,13 +426,36 @@
   }
 
   // ---- Gallery popup ----
+  const GALLERY_ALIASES = {
+    'art gallery of nsw':                   'art gallery of new south wales',
+    'agnsw':                                'art gallery of new south wales',
+    'mca':                                  'museum of contemporary art australia',
+    'mca australia':                        'museum of contemporary art australia',
+    'museum of contemporary art':           'museum of contemporary art australia',
+    'redfern art gallery in sydney':        'redfern art gallery',
+    'woollahra gallery':                    'woollahra gallery at redleaf',
+    'station':                              'station sydney',
+    'gallery 144 (formerly outsider)':      'gallery 144',
+    'michael reid':                         'michael reid sydney',
+    'piermarq':                             'piermarq',
+    'piermarq*':                            'piermarq',
+    'station | sydney':                     'station sydney',
+  };
+
+  function findGallery(name) {
+    const nl = name.toLowerCase().trim();
+    const canonical = GALLERY_ALIASES[nl] || nl;
+    return GALLERIES.find(g => {
+      const gl = g.name.toLowerCase().trim();
+      return gl === canonical ||
+             gl === nl ||
+             gl.includes(nl) ||
+             nl.includes(gl);
+    });
+  }
+
   window.showGallery = function (name) {
-    const nameLower = name.toLowerCase().trim();
-    const gallery = GALLERIES.find(g =>
-      g.name.toLowerCase().trim() === nameLower ||
-      g.name.toLowerCase().includes(nameLower) ||
-      nameLower.includes(g.name.toLowerCase())
-    );
+    const gallery = findGallery(name);
 
     const popup = document.getElementById('event-popup');
     document.getElementById('popup-title').textContent = name;
