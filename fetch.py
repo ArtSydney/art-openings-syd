@@ -199,12 +199,36 @@ def fetch_city_of_sydney():
                 link = "https://whatson.cityofsydney.nsw.gov.au" + link
 
             text = card.get_text(" ", strip=True)
+
+            # Extract venue: City of Sydney cards follow the pattern
+            # "Title VenueName Category Title Description..."
+            # The venue appears between the title and a category keyword
+            venue_hint = ""
+            CATEGORIES = ["exhibitions", "community", "arts", "events",
+                          "causes", "festivals", "markets", "sport"]
+            stripped = text
+            if title and stripped.startswith(title):
+                stripped = stripped[len(title):].strip()
+            # What's left starts with the venue name, ends at a category word
+            import re as _re
+            cat_pattern = "|".join(CATEGORIES)
+            m = _re.match(rf"^(.+?)\s+(?:{cat_pattern})\b", stripped, _re.IGNORECASE)
+            if m:
+                candidate = m.group(1).strip()
+                # Reject if it's just a suburb or very short
+                if len(candidate) > 5 and not candidate.lower() in [
+                    "sydney", "darlinghurst", "surry hills", "newtown",
+                    "paddington", "waterloo", "redfern", "woollahra"
+                ]:
+                    venue_hint = candidate
+
             results.append({
                 "source": "city_of_sydney",
                 "url": link,
                 "title": title,
                 "snippet": text[:500],
                 "domain": "whatson.cityofsydney.nsw.gov.au",
+                "venue_hint": venue_hint,
             })
     except Exception as e:
         print(f"[city_of_sydney] Error: {e}")
