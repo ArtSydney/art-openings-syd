@@ -11,7 +11,11 @@ def load_state():
     """Load state from seen.json, return dict."""
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
-            return json.load(f)
+            state = json.load(f)
+        # Ensure __meta__ always exists (may be missing from older state files)
+        state.setdefault("__meta__", {})
+        state.setdefault("__dedup_index__", {})
+        return state
     return {"__dedup_index__": {}, "__meta__": {"last_run": None}}
 
 

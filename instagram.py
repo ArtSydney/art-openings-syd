@@ -453,8 +453,9 @@ def fetch_instagram():
 
         # Save newest timestamp for next run
         if newest_timestamp and newest_timestamp > last_processed:
-            state["__meta__"]["instagram_latest"] = newest_timestamp
+            state.setdefault("__meta__", {})["instagram_latest"] = newest_timestamp
             save_state(state)
+            print(f"[instagram] Saved checkpoint: {newest_timestamp}")
 
         print(f"[instagram] Parsed {caption_results} captions, OCR'd {total_slides} slides, extracted {len(results)} total exhibitions")
 
