@@ -501,12 +501,8 @@
       const handle = gallery.instagram.replace('@', '');
       actions += `<a class="btn-gcal" href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">${esc(gallery.instagram)}</a>`;
     }
-    let mapUrl = '';
-    if (gallery.latitude && gallery.longitude) {
-      mapUrl = `https://www.google.com/maps/search/?api=1&query=${gallery.latitude},${gallery.longitude}`;
-    } else if (location) {
-      mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + location)}`;
-    }
+    const mapQuery = [name, location].filter(Boolean).join(' ');
+    const mapUrl = mapQuery ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}` : '';
     if (mapUrl) {
       actions += `<a class="btn-ics" href="${mapUrl}" target="_blank" rel="noopener">Map</a>`;
     }
