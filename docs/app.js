@@ -34,13 +34,19 @@
   }
 
   function populateVenues() {
-    const venues = new Set();
-    DATA.forEach(ex => { if (ex.venue) venues.add(ex.venue); });
+    if (!GALLERIES || !GALLERIES.length) return;
     const sel = document.getElementById('filter-venue');
-    Array.from(venues).sort((a, b) => a.localeCompare(b)).forEach(v => {
+    // Only show galleries that have at least one exhibition in current data
+    const venuesInData = new Set(DATA.map(ex => (ex.venue || '').toLowerCase().trim()));
+    const active = GALLERIES.filter(g => {
+      const name = (g.name || '').toLowerCase().trim();
+      return venuesInData.has(name) ||
+             Array.from(venuesInData).some(v => v.includes(name) || name.includes(v));
+    });
+    active.sort((a, b) => a.name.localeCompare(b.name)).forEach(g => {
       const opt = document.createElement('option');
-      opt.value = v;
-      opt.textContent = v;
+      opt.value = g.name;
+      opt.textContent = g.name;
       sel.appendChild(opt);
     });
   }
@@ -108,7 +114,11 @@
 
       // Suburb
       if (suburb && ex.suburb !== suburb) return false;
-      if (venue && ex.venue !== venue) return false;
+      if (venue) {
+        const ev = (ex.venue || '').toLowerCase().trim();
+        const vv = venue.toLowerCase().trim();
+        if (ev !== vv && !ev.includes(vv) && !vv.includes(ev)) return false;
+      }
 
       // Search
       if (q) {
