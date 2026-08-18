@@ -1907,24 +1907,6 @@
     "source": "exhibition:instagram",
     "last_verified": "2026-08-16"
   },
-  "olsen_annexe": {
-    "name": "Olsen Annexe",
-    "type": "commercial",
-    "address": "",
-    "suburb": "Woollahra",
-    "postcode": "",
-    "latitude": -33.8618335,
-    "longitude": 151.2733318,
-    "website": "",
-    "instagram": "",
-    "email": "",
-    "phone": "",
-    "hours": "",
-    "entry": "unknown",
-    "accessibility": "",
-    "source": "exhibition:instagram",
-    "last_verified": "2026-08-16"
-  },
   "central_space": {
     "name": "Central Space",
     "type": "commercial",

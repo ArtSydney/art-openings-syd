@@ -838,7 +838,7 @@ def enrich_from_exhibitions(galleries, state):
         "redleaf's", "redleafs",
         "redleaf exhibition call out is open until",
         # Short/ambiguous names that are aliases, not real entries
-        "woollahra gallery", "mca", "agnsw", "gallery",
+        "woollahra gallery", "mca", "agnsw", "gallery", "olsen annexe",
         # Art fairs and events (not permanent galleries)
         "melbourne art fair 2026", "melbourne art fair", "art fair",
         "sydney contemporary", "biennale of sydney",
