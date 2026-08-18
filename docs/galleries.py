@@ -190,7 +190,7 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
     {"name": ".M Contemporary", "type": "commercial", "suburb": "Darlinghurst",
      "address": "8/15-19 Boundary St", "website": "https://mcontemp.com/",
-     "instagram": "@.mcontemporary", "entry": "free"},
+     "instagram": "@mcontemporary", "entry": "free"},
     {"name": "Chalk Horse", "type": "commercial", "suburb": "Darlinghurst",
      "address": "167 William St", "website": "https://www.chalkhorse.com.au/",
      "instagram": "", "entry": "free"},
