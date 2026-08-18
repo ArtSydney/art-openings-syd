@@ -63,7 +63,18 @@ def run():
         if not title or title == "Untitled":
             continue
 
-        # Skip old dates (pre-2026)
+        # Skip records with no venue from non-curated sources -- these are
+        # listicle pages, SEO articles, and social posts, not exhibition listings
+        if not venue and raw.get("source") not in PREFILTERED_SOURCES:
+            continue
+
+        # Skip records with no dates at all from serper -- real exhibition
+        # listings always have a date; dateless serper results are noise
+        if raw.get("source") == "serper":
+            if not record.get("start_date") and not record.get("end_date") and not record.get("opening_date"):
+                continue
+
+        # Skip old dates (pre-current-year)
         if not is_current(record):
             continue
 
