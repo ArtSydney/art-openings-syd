@@ -301,7 +301,7 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
     {"name": "CBD Gallery", "type": "commercial", "suburb": "Sydney",
      "address": "72 Erskine St", "website": "https://cbdgallery.com.au/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@cbdgallerysyd", "entry": "free"},
     {"name": "China Cultural Centre in Sydney", "type": "museum", "suburb": "Sydney",
      "address": "Level 1, 151 Castlereagh St", "website": "https://cccsydney.org/",
      "instagram": "", "entry": "free"},
@@ -565,7 +565,30 @@ def normalize_name(name):
 def fuzzy_match_gallery(galleries, name, threshold=0.85):
     """Find an existing gallery key that fuzzy-matches the given name."""
     from difflib import SequenceMatcher
+
+    # Explicit aliases — known scraped variants that should map to canonical keys
+    ALIASES = {
+        "art gallery of nsw":                       "art_gallery_of_new_south_wales",
+        "agnsw":                                    "art_gallery_of_new_south_wales",
+        "mca":                                      "museum_of_contemporary_art_australia",
+        "mca australia":                            "museum_of_contemporary_art_australia",
+        "museum of contemporary art":               "museum_of_contemporary_art_australia",
+        "museum of contemporary art australia":     "museum_of_contemporary_art_australia",
+        "redfern art gallery in sydney":            "redfern_art_gallery",
+        "woollahra gallery":                        "woollahra_gallery_at_redleaf",
+        "station":                                  "station_sydney",
+        "gallery 144 (formerly outsider)":          "gallery_144",
+        "gallery 144 formerly outsider":            "gallery_144",
+    }
+
     norm = normalize_name(name)
+    alias_key = name.lower().strip()
+
+    # Check explicit alias first
+    if alias_key in ALIASES:
+        canonical = ALIASES[alias_key]
+        if canonical in galleries:
+            return canonical
 
     if norm in galleries:
         return norm
@@ -761,6 +784,37 @@ def enrich_from_exhibitions(galleries, state):
     gallery's own website). This prevents scraped exhibition text from
     polluting instagram fields with email domains and wrong handles.
     """
+    # Venue names that are scraped garbage and must never become gallery entries
+    VENUE_BLOCKLIST = {
+        "redleaf opening hours free admission wednesday",
+        "redleaf's",
+        "redleafs",
+        "redleaf exhibition call out is open until",
+        "woollahra gallery",
+        "station",
+        "opening hours",
+        "free admission",
+        "what's on",
+        "whats on",
+        "exhibition listing",
+        "related posts",
+        "acknowledgement of country",
+        "terms and conditions",
+        "privacy policy",
+        "melbourne art fair 2026",
+        "melbourne art fair",
+        "art fair",
+        "mca",
+        "agnsw",
+    }
+
+    # Also block any venue name containing these substrings
+    VENUE_BLOCK_SUBSTRINGS = [
+        "opening hours", "free admission", "call out is open",
+        "acknowledgement", "terms and conditions", "privacy policy",
+        "newsletter", "subscribe", "follow us", "click here",
+    ]
+
     added = 0
     for key, rec in state.items():
         if key.startswith("__"):
@@ -768,6 +822,16 @@ def enrich_from_exhibitions(galleries, state):
 
         venue = rec.get("venue", "").strip()
         if not venue or len(venue) < 3:
+            continue
+
+        # Block junk venue names
+        vl = venue.lower()
+        if vl in VENUE_BLOCKLIST:
+            continue
+        if any(s in vl for s in VENUE_BLOCK_SUBSTRINGS):
+            continue
+        # Block suspiciously long venue names (likely scraped paragraph text)
+        if len(venue) > 80:
             continue
 
         matched_key = fuzzy_match_gallery(galleries, venue)
