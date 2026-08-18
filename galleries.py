@@ -88,6 +88,9 @@ SEED_GALLERIES = [
     {"name": "Museum of Sydney", "type": "museum", "suburb": "Sydney",
      "address": "Cnr Phillip and Bridge streets", "website": "https://mhnsw.au/visit-us/museum-of-sydney/",
      "instagram": "", "entry": "free"},
+    {"name": "State Library of NSW", "type": "museum", "suburb": "Sydney",
+     "address": "Cnr Shakespeare Place and Macquarie Street", "website": "https://www.sl.nsw.gov.au/",
+     "instagram": "@statelibrarynsw", "entry": "free"},
     {"name": "Sydney Observatory", "type": "museum", "suburb": "Millers Point",
      "address": "1003 Upper Fort Street", "website": "https://powerhouse.com.au/visit/sydney-observatory",
      "instagram": "", "entry": "paid"},
@@ -181,7 +184,7 @@ SEED_GALLERIES = [
      "instagram": "@stanley_street_gallery", "entry": "free"},
     {"name": "Annette Larkin Fine Art", "type": "commercial", "suburb": "Paddington",
      "address": "Suite 4, 8 Soudan Lane", "website": "https://annettelarkin.com/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@annettelarkinfineart", "entry": "free"},
     {"name": ".M Contemporary", "type": "commercial", "suburb": "Darlinghurst",
      "address": "8/15-19 Boundary St", "website": "https://mcontemp.com/",
      "instagram": "@.mcontemporary", "entry": "free"},
@@ -283,10 +286,10 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
     {"name": "Artbank Sydney", "type": "museum", "suburb": "Waterloo",
      "address": "222 Young St", "website": "https://www.artbank.gov.au/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@artbankau", "entry": "free"},
     {"name": "Art Atrium", "type": "commercial", "suburb": "Botany",
      "address": "12 Daniel St", "website": "https://artatrium.com.au/",
-     "instagram": "", "entry": "free"},
+     "instagram": "@art_atrium", "entry": "free"},
     {"name": "Art Leven", "type": "commercial", "suburb": "Woolloomooloo",
      "address": "104 Cathedral St", "website": "https://artleven.com/",
      "instagram": "", "entry": "free"},
@@ -516,6 +519,9 @@ SEED_GALLERIES = [
      "address": "1300 Anzac Parade", "website": "https://www.nsw.gov.au/arts-and-culture/boom-gate-gallery",
      "instagram": "", "entry": "free"},
 
+        {"name": "Tramsheds Harold Park", "type": "project_space", "suburb": "Forest Lodge",
+     "address": "1 Dalgal Way", "website": "https://tramshedsharoldpark.com.au/",
+     "instagram": "@tramsheds", "entry": "free"},
     # Greater North Shore
     {"name": "Ku-ring-gai Art Centre", "type": "museum", "suburb": "Roseville",
      "address": "3 Recreation Ave", "website": "https://www.krg.nsw.gov.au/Things-to-do/Ku-ring-gai-Art-Centre/Exhibitions",
@@ -749,12 +755,20 @@ def enrich_gallery_instagram(galleries, max_fetches=10):
     Runs daily but only fetches galleries missing a handle — won't re-fetch
     ones already set. Capped at max_fetches per run to stay within cron time.
     """
+    # Keys confirmed to have no instagram or whose websites don't expose it
+    SKIP_KEYS = {
+        "chrissie_cotter",           # no instagram confirmed
+        "boom_gate_gallery",         # prison program, no social
+    }
+
     fetched = 0
     updated = 0
 
     for key, g in galleries.items():
         if fetched >= max_fetches:
             break
+        if key in SKIP_KEYS:
+            continue
         if g.get("instagram"):
             continue
         website = g.get("website", "")
@@ -843,6 +857,7 @@ def enrich_from_exhibitions(galleries, state):
         "redleaf exhibition call out is open until",
         # Short/ambiguous names that are aliases, not real entries
         "woollahra gallery", "mca", "agnsw", "gallery", "olsen annexe",
+        "station", "outsider gallery", "outsider",
         # Art fairs and events (not permanent galleries)
         "melbourne art fair 2026", "melbourne art fair", "art fair",
         "sydney contemporary", "biennale of sydney",
