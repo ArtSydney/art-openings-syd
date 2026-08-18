@@ -3346,5 +3346,23 @@
     "accessibility": "",
     "source": "seed",
     "last_verified": "2026-08-18"
+  },
+  "the_corner_gallery": {
+    "name": "The Corner Gallery",
+    "type": "commercial",
+    "address": "",
+    "suburb": "Paddington",
+    "postcode": "2021",
+    "latitude": -33.8841572,
+    "longitude": 151.2272766,
+    "website": "https://www.thecornergallery.com.au/",
+    "instagram": "@the_corner_gallery",
+    "email": "",
+    "phone": "",
+    "hours": "",
+    "entry": "free",
+    "accessibility": "",
+    "source": "seed",
+    "last_verified": "2026-08-18"
   }
 }
