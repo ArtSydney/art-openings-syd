@@ -1160,7 +1160,7 @@
     "latitude": -33.8783381,
     "longitude": 151.219225,
     "website": "https://mcontemp.com/",
-    "instagram": "@mcontemporary",
+    "instagram": "@.mcontemporary",
     "email": "",
     "phone": "",
     "hours": "",
@@ -1664,14 +1664,14 @@
     "latitude": -33.8749569,
     "longitude": 151.2188788,
     "website": "https://www.chalkhorse.com.au/",
-    "instagram": "",
+    "instagram": "@chalkhorsegallery",
     "email": "",
     "phone": "",
     "hours": "",
     "entry": "unknown",
     "accessibility": "",
     "source": "exhibition:instagram",
-    "last_verified": "2026-08-16"
+    "last_verified": "2026-08-18"
   },
   "mega": {
     "name": "Mega",
@@ -1808,14 +1808,14 @@
     "latitude": -33.8821423,
     "longitude": 151.2300654,
     "website": "https://barometer.net.au/",
-    "instagram": "",
+    "instagram": "@barometergallery",
     "email": "",
     "phone": "",
     "hours": "",
     "entry": "unknown",
     "accessibility": "",
     "source": "exhibition:instagram",
-    "last_verified": "2026-08-16"
+    "last_verified": "2026-08-18"
   },
   "syrup": {
     "name": "Syrup",
