@@ -762,6 +762,7 @@ def enrich_gallery_instagram(galleries, max_fetches=10):
     # Keys confirmed to have no instagram or whose websites don't expose it
     SKIP_KEYS = {
         "chrissie_cotter",           # no instagram confirmed
+        "the_corner_gallery_stanmore", # facebook only
         "boom_gate_gallery",         # prison program, no social
     }
 
