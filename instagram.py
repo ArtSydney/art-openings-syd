@@ -289,13 +289,62 @@ def ocr_image(url):
         return ""
 
 
+def check_token_expiry():
+    """Check how many days remain on the Instagram access token and warn if under 14.
+
+    Uses the Graph API token debug endpoint. Sends a Discord webhook warning
+    if the token expires within 14 days so there's time to refresh it before
+    the pipeline breaks.
+    """
+    if not IG_ACCESS_TOKEN:
+        return
+
+    try:
+        resp = requests.get(
+            f"https://graph.facebook.com/debug_token",
+            params={"input_token": IG_ACCESS_TOKEN, "access_token": IG_ACCESS_TOKEN},
+            timeout=15,
+        )
+        if resp.status_code != 200:
+            return
+
+        data = resp.json().get("data", {})
+        expires_at = data.get("data_access_expires_at") or data.get("expires_at")
+        if not expires_at:
+            return
+
+        expiry = datetime.fromtimestamp(expires_at, tz=timezone.utc)
+        days_left = (expiry - datetime.now(tz=timezone.utc)).days
+
+        if days_left <= 14:
+            msg = (
+                f":warning: **Instagram token expires in {days_left} day{'s' if days_left != 1 else ''}** "
+                f"({expiry.strftime('%d %b %Y')}). "
+                f"Refresh at https://developers.facebook.com/tools/explorer/"
+            )
+            print(f"[instagram] TOKEN WARNING: {days_left} days remaining")
+
+            webhook = os.environ.get("DISCORD_WEBHOOK_URL", "")
+            if webhook:
+                try:
+                    requests.post(webhook, json={"content": msg}, timeout=10)
+                except Exception:
+                    pass
+        else:
+            print(f"[instagram] Token valid for {days_left} days")
+
+    except Exception as e:
+        print(f"[instagram] Token expiry check failed: {e}")
+
+
 def fetch_instagram():
     """Fetch posts via Business Discovery API, OCR carousel slides.
-    
+
     Only processes posts newer than the last processed timestamp,
     stored in seen.json under __meta__.instagram_latest.
     On first run (no marker), processes all posts.
     """
+    check_token_expiry()
     results = []
 
     if not IG_USER_ID or not IG_ACCESS_TOKEN:

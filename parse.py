@@ -394,12 +394,13 @@ def is_exhibition(raw):
     return has_positive and not has_negative
 
 
-# Date floor: reject anything with dates before this year
-DATE_FLOOR = "2026"
+# Date floor: reject anything with dates before the current year.
+# Recomputed at import time so it rolls over automatically each January.
+DATE_FLOOR = str(datetime.now().year)
 
 
 def is_current(record):
-    """Check that extracted dates aren't ancient (pre-2026)."""
+    """Check that extracted dates aren't stale (pre-current-year)."""
     for field in ["start_date", "end_date", "opening_date"]:
         d = record.get(field, "")
         if d and d < DATE_FLOOR:
