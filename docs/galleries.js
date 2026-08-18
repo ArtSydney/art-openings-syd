@@ -101,12 +101,11 @@
     if (g.suburb) location += (location ? ', ' : '') + esc(g.suburb);
     if (g.postcode) location += ' ' + esc(g.postcode);
 
-    // Map link
+    // Map link — always search by name + address so Google shows the business card
     let mapLink = '';
-    if (g.latitude && g.longitude) {
-      mapLink = `https://www.google.com/maps/search/?api=1&query=${g.latitude},${g.longitude}`;
-    } else if (location) {
-      mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(g.name + ' ' + location)}`;
+    const mapQuery = [g.name, location].filter(Boolean).join(' ');
+    if (mapQuery) {
+      mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
     }
 
     // Links
