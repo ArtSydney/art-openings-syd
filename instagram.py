@@ -181,6 +181,20 @@ def parse_ocr_text(text, post_url=""):
                     if not title:
                         title = gallery
 
+                    # Reject records where end_date is more than 60 days in the past
+                    # -- these are old shows where the year was wrongly assumed
+                    if end_date:
+                        from datetime import date as _date
+                        today = _date.today().isoformat()
+                        try:
+                            end_dt = _date.fromisoformat(end_date)
+                            days_past = (_date.today() - end_dt).days
+                            if days_past > 60:
+                                i_inner = i
+                                continue
+                        except Exception:
+                            pass
+
                     results.append({
                         "source": "instagram",
                         "url": post_url,
