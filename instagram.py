@@ -52,7 +52,27 @@ DAY_HEADER_RE = re.compile(
     rf"(?:MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY)\s*[–\-—]+\s*\d{{1,2}}\s+(?:{MONTH_PAT})",
     re.IGNORECASE,
 )
+KNOWN_SUBURBS = {
+    "SYDNEY", "THE ROCKS", "MILLERS POINT", "WALSH BAY", "HAYMARKET",
+    "CHIPPENDALE", "DARLINGTON", "WOOLLOOMOOLOO", "POTTS POINT", "KINGS CROSS",
+    "DARLINGHURST", "SURRY HILLS", "REDFERN", "WATERLOO", "ZETLAND", "ALEXANDRIA",
+    "NEWTOWN", "ENMORE", "MARRICKVILLE", "STANMORE", "ANNANDALE", "LEICHHARDT",
+    "GLEBE", "PYRMONT", "ULTIMO", "CAMPERDOWN", "ROZELLE", "BALMAIN",
+    "PADDINGTON", "WOOLLAHRA", "RUSHCUTTERS BAY", "MOSMAN", "NEUTRAL BAY",
+    "CREMORNE", "NORTH SYDNEY", "MILSONS POINT", "CHATSWOOD", "LANE COVE",
+    "MANLY", "SEAFORTH", "BROOKVALE", "NEWPORT", "LINDFIELD", "ROSEVILLE",
+    "WAHROONGA", "HORNSBY", "PARRAMATTA", "STRATHFIELD", "ASHFIELD", "CROYDON",
+    "BANKSTOWN", "LIVERPOOL", "CAMPBELLTOWN", "CASULA", "GYMEA", "HURSTVILLE",
+    "BOTANY", "LA PEROUSE", "MALABAR", "BONDI BEACH", "DOUBLE BAY", "EMU PLAINS",
+    "CASTLE HILL", "WINDSOR", "GRANVILLE", "SMITHFIELD", "ERSKINEVILLE",
+    "FOREST LODGE", "LEWISHAM", "NORTH RYDE", "MACQUARIE PARK",
+}
+
 SUBURB_RE = re.compile(r"^[A-Z][A-Z\s]{2,}$")
+
+def is_suburb(line):
+    """Check if a line is a suburb rather than a gallery name."""
+    return line.strip().upper() in KNOWN_SUBURBS
 
 
 def make_date(day, month_str, year=None):
@@ -86,14 +106,14 @@ def parse_ocr_text(text, post_url=""):
             continue
 
         if (i + 1 < len(lines)
-            and not SUBURB_RE.match(line)
+            and (not SUBURB_RE.match(line) or not is_suburb(line))
             and not RANGE_DIFF_RE.search(line)
             and not RANGE_SAME_RE.search(line)
             and not line.lower().startswith("opening")
             and not DAY_HEADER_RE.match(line)):
 
             next_line = lines[i + 1] if i + 1 < len(lines) else ""
-            if SUBURB_RE.match(next_line):
+            if SUBURB_RE.match(next_line) and is_suburb(next_line):
                 gallery = line.strip()
                 suburb = next_line.strip().title()
                 i += 2
@@ -108,7 +128,7 @@ def parse_ocr_text(text, post_url=""):
                 while i < len(lines):
                     cl = lines[i]
 
-                    if (i + 1 < len(lines) and SUBURB_RE.match(lines[i + 1])
+                    if (i + 1 < len(lines) and SUBURB_RE.match(lines[i + 1]) and is_suburb(lines[i + 1])
                         and not RANGE_DIFF_RE.search(cl)
                         and not RANGE_SAME_RE.search(cl)
                         and not cl.lower().startswith("opening")):
