@@ -3346,5 +3346,23 @@
     "accessibility": "",
     "source": "seed",
     "last_verified": "2026-08-18"
+  },
+  "the_garden_gallery_royal_botanic_garden_sydney": {
+    "name": "The Garden Gallery, Royal Botanic Garden Sydney",
+    "type": "commercial",
+    "address": "Mrs Macquaries Rd",
+    "suburb": "Sydney",
+    "postcode": "2000",
+    "latitude": -33.8601163,
+    "longitude": 151.2222492,
+    "website": "https://franceskeevil.com.au/",
+    "instagram": "@franceskeevil",
+    "email": "",
+    "phone": "",
+    "hours": "",
+    "entry": "free",
+    "accessibility": "",
+    "source": "seed",
+    "last_verified": "2026-08-19"
   }
 }

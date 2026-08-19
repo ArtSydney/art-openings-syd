@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T09:44:34.424831+00:00",
+  "generated": "2026-08-19T10:00:17.277115+00:00",
   "count": 187,
   "galleries": [
     {
@@ -2829,7 +2829,7 @@
       "name": "The Garden Gallery, Royal Botanic Garden Sydney",
       "type": "commercial",
       "address": "Mrs Macquaries Rd",
-      "suburb": "",
+      "suburb": "Sydney",
       "postcode": "2000",
       "latitude": -33.8601163,
       "longitude": 151.2222492,
@@ -2838,7 +2838,7 @@
       "email": "",
       "phone": "",
       "hours": "",
-      "entry": "unknown",
+      "entry": "free",
       "accessibility": ""
     },
     {
