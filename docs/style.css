@@ -882,3 +882,30 @@ body {
   background: var(--purple);
   color: white;
 }
+
+.cal-overflow {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  z-index: 999;
+  min-width: 200px;
+  max-width: 280px;
+  padding: 0.25rem 0;
+  font-family: var(--font-body);
+}
+
+.cal-overflow-item {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-overflow-item:hover {
+  background: var(--snow);
+  color: var(--coral);
+}

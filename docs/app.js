@@ -305,12 +305,40 @@
         inner += `<span class="cal-dot type-${type}" data-id="${esc(ex.id)}">${esc(ex.title)}</span>`;
       });
       if (events.length > 3) {
-        inner += `<span class="cal-dot cal-more">+${events.length - 3} more</span>`;
+        const hiddenIds = events.slice(3).map(e => e.ex.id).join(',');
+        inner += `<span class="cal-dot cal-more" data-hidden="${esc(hiddenIds)}">+${events.length - 3} more</span>`;
       }
 
       cell.innerHTML = inner;
       cell.querySelectorAll('.cal-dot[data-id]').forEach(dot => {
         dot.addEventListener('click', () => showPopup(dot.dataset.id));
+      });
+      cell.querySelectorAll('.cal-more').forEach(more => {
+        more.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // Remove any existing overflow list
+          document.querySelectorAll('.cal-overflow').forEach(el => el.remove());
+          const ids = more.dataset.hidden.split(',');
+          const list = document.createElement('div');
+          list.className = 'cal-overflow';
+          ids.forEach(id => {
+            const ex = DATA.find(e => e.id === id);
+            if (!ex) return;
+            const item = document.createElement('div');
+            item.className = 'cal-overflow-item';
+            item.textContent = ex.title;
+            item.addEventListener('click', () => { list.remove(); showPopup(id); });
+            list.appendChild(item);
+          });
+          // Position near the +more button
+          const rect = more.getBoundingClientRect();
+          list.style.position = 'fixed';
+          list.style.top = rect.bottom + 4 + 'px';
+          list.style.left = Math.min(rect.left, window.innerWidth - 220) + 'px';
+          document.body.appendChild(list);
+          // Close on outside click
+          setTimeout(() => document.addEventListener('click', () => list.remove(), { once: true }), 0);
+        });
       });
       grid.appendChild(cell);
     }
