@@ -627,6 +627,9 @@ def fuzzy_match_gallery(galleries, name, threshold=0.85):
         "day0o1":                                    "day01",
         "tom bass clara street gallery":             "clara_street",
         "the corner gallery":                        "the_corner",
+        "curatorial + co":                           "curatorial_and_co",
+        "curatorial + co.":                          "curatorial_and_co",
+        "curatorial+co":                             "curatorial_and_co",
         "tom bass gallery":                          "clara_street",
         "day01 gallery":                             "day01",
     }

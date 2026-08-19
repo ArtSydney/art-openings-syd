@@ -755,24 +755,6 @@
     "source": "exhibition:art_almanac",
     "last_verified": "2026-08-17"
   },
-  "the_garden_gallery_royal_botanic_garden_sydney": {
-    "name": "The Garden Gallery, Royal Botanic Garden Sydney",
-    "type": "commercial",
-    "address": "Mrs Macquaries Rd",
-    "suburb": "",
-    "postcode": "2000",
-    "latitude": -33.8601163,
-    "longitude": 151.2222492,
-    "website": "https://franceskeevil.com.au/",
-    "instagram": "@franceskeevil",
-    "email": "",
-    "phone": "",
-    "hours": "",
-    "entry": "unknown",
-    "accessibility": "",
-    "source": "exhibition:art_almanac",
-    "last_verified": "2026-08-16"
-  },
   "the_ken_done": {
     "name": "The Ken Done Gallery",
     "type": "commercial",

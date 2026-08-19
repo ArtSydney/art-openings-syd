@@ -271,7 +271,7 @@ def parse_result(raw):
     # Clean title: remove site suffixes
     title = re.sub(r"\s*[-|]\s*(TimeOut|Broadsheet|Art Almanac|Art Guide).*$", "", title, flags=re.IGNORECASE)
     title = re.sub(r"\s*[-|]\s*Sydney\s*$", "", title, flags=re.IGNORECASE)
-    title = title.strip()
+    title = title.strip().rstrip("|").strip()
 
     if not title:
         # Try to get title from snippet first line
