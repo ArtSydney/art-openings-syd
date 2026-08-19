@@ -44,17 +44,37 @@ def build():
 
     records.sort(key=sort_key)
 
-    output = {
+    today = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
+
+    # Split into current (active/upcoming) and full archive
+    current = [r for r in records if (
+        r["status"] != "closed" or
+        (r.get("end_date") and r["end_date"] >= today)
+    )]
+
+    output_full = {
         "generated": datetime.now(tz=timezone.utc).isoformat(),
         "count": len(records),
         "exhibitions": records,
     }
 
-    os.makedirs("docs", exist_ok=True)
-    with open("docs/data.json", "w") as f:
-        json.dump(output, f, indent=2, default=str)
+    output_current = {
+        "generated": datetime.now(tz=timezone.utc).isoformat(),
+        "count": len(current),
+        "exhibitions": current,
+    }
 
-    print(f"[build] Wrote {len(records)} exhibitions to docs/data.json")
+    os.makedirs("docs", exist_ok=True)
+
+    # Full archive (used when "Show closed" is ticked)
+    with open("docs/data.json", "w") as f:
+        json.dump(output_full, f, indent=2, default=str)
+
+    # Current only (default load -- much smaller)
+    with open("docs/data-current.json", "w") as f:
+        json.dump(output_current, f, indent=2, default=str)
+
+    print(f"[build] Wrote {len(records)} exhibitions to docs/data.json ({len(current)} current)")
 
 
 if __name__ == "__main__":

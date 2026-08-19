@@ -4,14 +4,17 @@
   'use strict';
 
   let DATA = [];
+  let DATA_CURRENT = [];
+  let DATA_FULL = null;
   let GALLERIES = [];
   let calYear, calMonth;
 
   async function init() {
     try {
-      const resp = await fetch('data.json?v=' + Date.now());
+      const resp = await fetch('data-current.json?v=' + Date.now());
       const json = await resp.json();
       DATA = json.exhibitions || [];
+      DATA_CURRENT = DATA.slice();
     } catch (e) {
       console.error('Failed to load data:', e);
       DATA = [];
@@ -614,7 +617,22 @@
     document.getElementById('search').addEventListener('input', rerender);
     document.getElementById('filter-on-now').addEventListener('change', rerender);
     document.getElementById('filter-opening-week').addEventListener('change', rerender);
-    document.getElementById('filter-closed').addEventListener('change', rerender);
+    document.getElementById('filter-closed').addEventListener('change', async function() {
+      const showClosed = this.checked;
+      if (showClosed && !DATA_FULL) {
+        try {
+          const resp = await fetch('data.json?v=' + Date.now());
+          const json = await resp.json();
+          DATA_FULL = json.exhibitions || [];
+        } catch(e) {
+          DATA_FULL = DATA_CURRENT.slice();
+        }
+      }
+      DATA = showClosed ? (DATA_FULL || DATA_CURRENT) : DATA_CURRENT;
+      populateSuburbs();
+      populateVenues();
+      rerender();
+    });
     document.getElementById('filter-suburb').addEventListener('change', rerender);
     document.getElementById('filter-venue').addEventListener('change', rerender);
 
