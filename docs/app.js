@@ -465,10 +465,18 @@
     'piermarq':                             'piermarq',
     'piermarq*':                            'piermarq',
     'station | sydney':                     'station sydney',
+    'curatorial + co':                       'curatorial+co.',
+    'curatorial + co.':                      'curatorial+co.',
+    'curatorial+co':                         'curatorial+co.',
+    'the garden gallery, royal botanic garden sydney': null,
+    'the royal botanic garden':              null,
+    'australian national maritime museum':   null,
+    'anzac memorial':                        null,
   };
 
   function findGallery(name) {
     const nl = name.toLowerCase().trim();
+    if (nl in GALLERY_ALIASES && GALLERY_ALIASES[nl] === null) return null;
     const canonical = GALLERY_ALIASES[nl] || nl;
     return GALLERIES.find(g => {
       const gl = g.name.toLowerCase().trim();
@@ -481,6 +489,7 @@
 
   window.showGallery = function (name) {
     const gallery = findGallery(name);
+    if (gallery === null) return;
 
     const popup = document.getElementById('event-popup');
     document.getElementById('popup-title').textContent = name;
