@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-19T09:59:10.633036+00:00",
-  "count": 872,
+  "generated": "2026-08-19T10:15:52.213824+00:00",
+  "count": 874,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -8330,7 +8330,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "6b15d3d96a95",
@@ -8840,7 +8840,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ed764d8c0665",
@@ -9435,7 +9435,7 @@
       "instagram": "",
       "description": "Thought forms from the queer utopia imaginarium Stanley Street Gallery Shopping, markets & fairs Thought forms from the queer utopia imaginarium Lucy Chetcuti Thought forms from the queer utopia imaginarium 20 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "28df95d57ac1",
@@ -9452,7 +9452,7 @@
       "instagram": "",
       "description": "Native narrative: Emily Valentine Stanley Street Gallery Shopping, markets & fairs Native narrative: Emily Valentine Emily Valentine: Native Narrative August 6-29, 2026 20 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "bcf32ec5c626",
@@ -9673,7 +9673,7 @@
       "instagram": "",
       "description": "Judy Trick | FULL CIRCLE | Exhibition Artsite Contemporary Shopping, markets & fairs Judy Trick | FULL CIRCLE | Exhibition An artist who\u2019s been everywhere and landed somewhere beautiful. 22 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "282a8e0b820e",
@@ -9792,7 +9792,7 @@
       "instagram": "",
       "description": "Curiosity Shop The Corner Gallery Shopping, markets & fairs Curiosity Shop An exhibition of new and archival works by Claire Engkaninan Low 26 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "4f1950b5d794",
@@ -11067,7 +11067,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "10ec8c0880ee",
@@ -14823,6 +14823,40 @@
       "website": "https://whatson.cityofsydney.nsw.gov.au/events/ur-wayii-incoming-tide",
       "instagram": "",
       "description": "Ur Wayii (Incoming Tide) Australian National Maritime Museum Exhibitions Ur Wayii (Incoming Tide) A multi-disciplinary exhibition spanning printmaking, sculpture, video and graphic design. Today 10am to 3pm",
+      "source": "city_of_sydney",
+      "status": "closed"
+    },
+    {
+      "id": "9d69d40b6c86",
+      "title": "Judy Trick | FULL CIRCLE | Exhibition",
+      "artist": "",
+      "venue": "Shopping,",
+      "address": "",
+      "suburb": "",
+      "start_date": null,
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/categories/shopping-markets-and-fairs",
+      "instagram": "",
+      "description": "Shopping, markets & fairs Judy Trick | FULL CIRCLE | Exhibition An artist who\u2019s been everywhere and landed somewhere beautiful.",
+      "source": "city_of_sydney",
+      "status": "closed"
+    },
+    {
+      "id": "8bc09604a691",
+      "title": "Curiosity Shop",
+      "artist": "Claire Engkaninan Low",
+      "venue": "Shopping,",
+      "address": "",
+      "suburb": "",
+      "start_date": null,
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/categories/shopping-markets-and-fairs",
+      "instagram": "",
+      "description": "Shopping, markets & fairs Curiosity Shop An exhibition of new and archival works by Claire Engkaninan Low",
       "source": "city_of_sydney",
       "status": "closed"
     }
