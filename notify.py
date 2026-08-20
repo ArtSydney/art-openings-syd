@@ -3,17 +3,15 @@
 import json
 import os
 import requests
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
 
-
 # Embed colors
 COLOR_NEW = 0x6C5B7B       # Purple - new exhibition
-COLOR_OPENING = 0xF67280   # Coral - opening soon/tonight
+COLOR_OPENING = 0xF67280   # Coral - opening tonight
 COLOR_CLOSING = 0xE74C5E   # Red - closing soon
 COLOR_DIGEST = 0x355C7D    # Navy - weekly digest
-
 
 _webhook_warned = False
 
@@ -50,7 +48,6 @@ def notify_new_exhibition(record):
     artist = record.get("artist", "")
     desc = record.get("description", "")[:200]
 
-    # Build fields
     fields = []
     if venue:
         loc = venue
@@ -79,15 +76,14 @@ def notify_new_exhibition(record):
         "timestamp": datetime.now(tz=timezone.utc).isoformat(),
         "footer": {"text": "Art Openings Sydney"},
     }
-    # Remove None values
     embed = {k: v for k, v in embed.items() if v is not None}
     send_embed(embed)
 
 
 def notify_opening_soon(record):
-    """Send notification for exhibition opening tonight or this week."""
+    """Send notification for exhibition opening tonight."""
     if record.get("opening_soon_sent"):
-        return  # already notified
+        return
 
     title = record.get("title", "Untitled")
     venue = record.get("venue", "")
@@ -101,11 +97,7 @@ def notify_opening_soon(record):
     except (ValueError, TypeError):
         return
 
-    if op_date == today:
-        label = "Opening TONIGHT"
-    elif op_date - today <= timedelta(days=3):
-        label = f"Opening in {(op_date - today).days} day(s)"
-    else:
+    if op_date != today:
         return
 
     desc = f"at {venue}" if venue else ""
@@ -113,7 +105,7 @@ def notify_opening_soon(record):
         desc += f" | {opening_time}"
 
     embed = {
-        "title": f"{label}: {title}",
+        "title": f"Opening TONIGHT: {title}",
         "description": desc,
         "color": COLOR_OPENING,
         "url": website if website else None,
@@ -145,10 +137,7 @@ def notify_closing_soon(record):
     if days_left < 0 or days_left > 3:
         return
 
-    if days_left == 0:
-        label = "LAST DAY"
-    else:
-        label = f"Closing in {days_left} day(s)"
+    label = "LAST DAY" if days_left == 0 else f"Closing in {days_left} day(s)"
 
     embed = {
         "title": f"{label}: {title}",
@@ -164,7 +153,7 @@ def notify_closing_soon(record):
 
 
 def check_alerts(state):
-    """Run opening-soon and closing-soon checks on all active records."""
+    """Run opening-tonight and closing-soon checks on all active records."""
     for key, rec in state.items():
         if key.startswith("__"):
             continue
