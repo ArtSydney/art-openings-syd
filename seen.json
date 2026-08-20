@@ -943,7 +943,7 @@
     "denny huseyin sami syrup tara": "d0711d42c94b"
   },
   "__meta__": {
-    "last_run": "2026-08-19T10:51:58.538122+00:00",
+    "last_run": "2026-08-20T11:04:11.051832+00:00",
     "instagram_latest": "2026-08-12T03:48:24+0000"
   },
   "747cbd06e895": {
@@ -3497,7 +3497,8 @@
     "source_url": "https://www.instagram.com/p/DbpH580CY-0/",
     "status": "active",
     "first_seen": "2026-08-14T09:19:56.637771+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "6493175a1d1e": {
     "title": "Robert Owen: Axiom",
@@ -3669,7 +3670,7 @@
     "description": "",
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DbXPxFgiQZV/",
-    "status": "active",
+    "status": "closed",
     "first_seen": "2026-08-14T09:19:56.637945+00:00",
     "opening_soon_sent": true,
     "closing_soon_sent": true
@@ -3709,7 +3710,8 @@
     "source_url": "https://www.instagram.com/p/DbXPxFgiQZV/",
     "status": "active",
     "first_seen": "2026-08-14T09:19:56.637977+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "de5f1582281c": {
     "title": "Group Exhibition: Midwinter 2026",
@@ -5060,7 +5062,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DZIAIc8kiYH/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.639431+00:00"
+    "first_seen": "2026-08-14T09:19:56.639431+00:00",
+    "closing_soon_sent": true
   },
   "cf2363bfb2d3": {
     "title": "Amanda Schunker: We Are All Shady Schists",
@@ -11703,7 +11706,8 @@
     "source_url": "https://www.instagram.com/p/DNAL7DHy6xO/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.526306+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "d229639e8bfe": {
     "title": "Group Show: Flow States",
@@ -11797,7 +11801,8 @@
     "source_url": "https://www.instagram.com/p/DMuK_H0yl8L/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.526605+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "e00a2869209f": {
     "title": "Justin Maurice Scivetti: Presence",
@@ -11870,7 +11875,8 @@
     "source_url": "https://www.instagram.com/p/DMuK_H0yl8L/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.526848+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "2b678067840e": {
     "title": "Firstdraft Fundraiser",
@@ -11999,7 +12005,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DMb6pG1Skht/",
     "status": "active",
-    "first_seen": "2026-08-16T06:38:39.527298+00:00"
+    "first_seen": "2026-08-16T06:38:39.527298+00:00",
+    "closing_soon_sent": true
   },
   "d2dd27971097": {
     "title": "Group Show: Winter Group Exhibition",
@@ -12017,7 +12024,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DMb6pG1Skht/",
     "status": "active",
-    "first_seen": "2026-08-16T06:38:39.527368+00:00"
+    "first_seen": "2026-08-16T06:38:39.527368+00:00",
+    "closing_soon_sent": true
   },
   "807c7d3d0260": {
     "title": "Short 'n' Sweet",
@@ -12054,7 +12062,8 @@
     "source_url": "https://www.instagram.com/p/DMb6pG1Skht/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.527497+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "584c1dc57c57": {
     "title": "Group Show: S.0o.l.0. 2.0",
@@ -12295,7 +12304,8 @@
     "source_url": "https://www.instagram.com/p/DMJ-JPZy9K2/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.528344+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "0752cd01e90e": {
     "title": "Ronan Pirozzi: Sunder",
@@ -12884,7 +12894,8 @@
     "source_url": "https://www.instagram.com/p/DLTsRCxy0Mv/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.530374+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "87a08ac27e92": {
     "title": "Andrew Ensor: Featherbrain",

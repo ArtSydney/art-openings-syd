@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-19T10:51:58.549485+00:00",
-  "count": 397,
+  "generated": "2026-08-20T11:04:11.064104+00:00",
+  "count": 396,
   "exhibitions": [
     {
       "id": "00c89e50d6ae",
@@ -2075,23 +2075,6 @@
       "description": "",
       "source": "instagram",
       "status": "closed"
-    },
-    {
-      "id": "6b15d3d96a95",
-      "title": "Group Exhibition: Eastern Abstraction",
-      "artist": "Group Exhibition",
-      "venue": "Redbase",
-      "address": "",
-      "suburb": "Chippendale",
-      "start_date": "2026-07-31",
-      "end_date": "2026-08-19",
-      "opening_date": "2026-07-31",
-      "opening_time": "5-7 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
     },
     {
       "id": "98f4c8ba6110",
