@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-20T11:34:01.006709+00:00",
-  "count": 944,
+  "generated": "2026-08-20T12:01:51.441137+00:00",
+  "count": 945,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -10403,6 +10403,23 @@
       "website": "https://www.facebook.com/SydneyContemporary/",
       "instagram": "@SydneyContemporary",
       "description": "Australasia's Biggest Art Fair 3 \u2013 6 September 2026, Carriageworks. Free to visit from 27 August to 14 September. of 14 ambitious contemporary art projects,",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "11ae53ace4e8",
+      "title": "Applications are now open for Sydney Contemporary 2026 ...",
+      "artist": "",
+      "venue": "Carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "Galleries are invited to apply to be part of our 10th edition at Carriageworks from 3\u20136 September 2026, premier contemporary art fair.",
       "source": "serper",
       "status": "active"
     },
