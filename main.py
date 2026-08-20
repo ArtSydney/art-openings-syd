@@ -43,6 +43,10 @@ def run():
     except Exception as e:
         print(f"[instagram] Skipped: {e}")
 
+    # Reload state after instagram fetch -- fetch_instagram saves the checkpoint
+    # internally and we must not overwrite it with the stale pre-fetch state
+    state = load_state()
+
     # 4. Filter and parse
     new_count = 0
     updated_count = 0
