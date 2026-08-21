@@ -944,7 +944,7 @@
     "applications are carriageworks now open": "11ae53ace4e8"
   },
   "__meta__": {
-    "last_run": "2026-08-20T12:01:51.424049+00:00",
+    "last_run": "2026-08-21T11:03:29.833913+00:00",
     "instagram_latest": "2026-08-19T04:37:37+0000"
   },
   "747cbd06e895": {
@@ -3479,7 +3479,8 @@
     "source_url": "https://www.instagram.com/p/DbpH580CY-0/",
     "status": "active",
     "first_seen": "2026-08-14T09:19:56.637754+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "05c9570adc86": {
     "title": "Group Exhibitions at Airspace Projects",
@@ -12586,7 +12587,8 @@
     "source_url": "https://www.instagram.com/p/DLl4OWWJD66/",
     "status": "active",
     "first_seen": "2026-08-16T06:38:39.529285+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "e3d44be62bb5": {
     "title": "Group Show: The Colour of Country",
