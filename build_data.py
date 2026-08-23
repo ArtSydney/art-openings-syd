@@ -5,25 +5,37 @@ import os
 from datetime import datetime, timezone
 
 from state import load_state
+from galleries import load_galleries, fuzzy_match_gallery
 
 
 def build():
     """Filter active + closed records and write docs/data.json."""
     state = load_state()
+    galleries = load_galleries()
+
     records = []
 
     for key, rec in state.items():
         if key.startswith("__"):
             continue
+
         status = rec.get("status", "active")
         if status not in ("active", "closed"):
             continue
+
+        venue = rec.get("venue", "")
+
+        # Resolve venue to canonical gallery name so frontend name-lookup always matches,
+        # regardless of whether the scraper wrote "Sullivan + Strumpf" or "Sullivan+Strumpf"
+        gallery_key = fuzzy_match_gallery(galleries, venue) if venue else None
+        canonical_venue = galleries[gallery_key]["name"] if gallery_key else venue
 
         records.append({
             "id": key,
             "title": rec.get("title", ""),
             "artist": rec.get("artist", ""),
-            "venue": rec.get("venue", ""),
+            "venue": canonical_venue,
+            "gallery_key": gallery_key or "",
             "address": rec.get("address", ""),
             "suburb": rec.get("suburb", ""),
             "start_date": rec.get("start_date", ""),
