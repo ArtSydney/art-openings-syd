@@ -67,6 +67,7 @@
   }
 
   // ---- Helpers ----
+  const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const TODAY = new Date();
   TODAY.setHours(0, 0, 0, 0);
   const TODAY_STR = `${TODAY.getFullYear()}-${String(TODAY.getMonth()+1).padStart(2,'0')}-${String(TODAY.getDate()).padStart(2,'0')}`;
@@ -205,9 +206,11 @@
       actions += `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">${esc(ex.instagram)}</a>`;
     }
     if (ex.opening_date || ex.start_date) {
-      actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
-      const gcUrl = buildGoogleCalUrl(ex);
-      actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Google Calendar">GCal</a>`;
+      actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">${IS_IOS ? 'Add to Cal' : 'ICS'}</button>`;
+      if (!IS_IOS) {
+        const gcUrl = buildGoogleCalUrl(ex);
+        actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Google Calendar">GCal</a>`;
+      }
     }
 
     card.innerHTML = `
@@ -606,8 +609,10 @@
 
     let actions = '';
     if (ex.opening_date || ex.start_date) {
-      actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
-      actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}" target="_blank" rel="noopener">Google Calendar</a>`;
+      actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">${IS_IOS ? 'Add to Calendar' : 'Download ICS'}</button>`;
+      if (!IS_IOS) {
+        actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}" target="_blank" rel="noopener">Google Calendar</a>`;
+      }
     }
     if (ex.website) {
       actions += `<a class="btn-web" href="${esc(ex.website)}" target="_blank" rel="noopener">Website</a>`;
