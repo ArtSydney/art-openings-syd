@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adding to Google Calendar...</title>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #FDF6F3;
+      color: #2D2438;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .msg {
+      padding: 2rem;
+    }
+    .msg p {
+      font-size: 0.9rem;
+      color: #7A6E85;
+      margin-top: 0.5rem;
+    }
+    .fallback {
+      display: none;
+      margin-top: 1rem;
+    }
+    .fallback a {
+      color: #C06C84;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="msg">
+    <div>Opening Google Calendar...</div>
+    <p>You should be redirected shortly.</p>
+    <div id="fallback" class="fallback">
+      <p>Redirect didn't work? <a id="fallback-link" href="#">Tap here to open manually</a></p>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var url = params.get('url');
+      if (!url) {
+        document.querySelector('.msg div').textContent = 'Missing calendar URL.';
+        return;
+      }
+      // Validate it's actually a Google Calendar URL
+      if (url.indexOf('calendar.google.com/') === -1 && url.indexOf('google.com/calendar/') === -1) {
+        document.querySelector('.msg div').textContent = 'Invalid calendar URL.';
+        return;
+      }
+      // Set up fallback link
+      var fallbackEl = document.getElementById('fallback');
+      var fallbackLink = document.getElementById('fallback-link');
+      fallbackLink.href = url;
+      // JS-initiated navigation bypasses iOS universal link interception
+      setTimeout(function() {
+        window.location.replace(url);
+      }, 100);
+      // Show fallback after 2 seconds in case redirect is blocked
+      setTimeout(function() {
+        fallbackEl.style.display = 'block';
+      }, 2000);
+    })();
+  </script>
+</body>
+</html>
