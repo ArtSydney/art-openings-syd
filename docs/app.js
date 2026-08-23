@@ -446,8 +446,8 @@
     let location = '';
     if (ex.address) location = ex.address;
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
-    return 'https://calendar.google.com/calendar/r/eventedit'
-      + '?text=' + encodeURIComponent(title)
+    return 'https://www.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(title)
       + '&dates=' + dates
       + '&ctz=Australia/Sydney'
       + '&details=' + encodeURIComponent(ex.description || '')
