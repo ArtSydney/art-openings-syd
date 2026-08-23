@@ -207,7 +207,7 @@
     if (ex.opening_date || ex.start_date) {
       actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
       const gcUrl = buildGoogleCalUrl(ex);
-      actions += `<a href="${gcUrl}" title="Google Calendar">GCal</a>`;
+      actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Google Calendar">GCal</a>`;
     }
 
     card.innerHTML = `
@@ -446,14 +446,12 @@
     let location = '';
     if (ex.address) location = ex.address;
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
-    const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    return 'https://calendar.google.com/calendar/event?action=TEMPLATE'
       + '&text=' + encodeURIComponent(title)
       + '&dates=' + dates
       + '&ctz=Australia/Sydney'
       + '&details=' + encodeURIComponent(ex.description || '')
       + (location ? '&location=' + encodeURIComponent(location) : '');
-    // Route through redirect page to bypass iOS universal link interception
-    return 'gcal.html?url=' + encodeURIComponent(gcalUrl);
   }
 
   function exportAllICS() {
@@ -609,7 +607,7 @@
     let actions = '';
     if (ex.opening_date || ex.start_date) {
       actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
-      actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}">Google Calendar</a>`;
+      actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}" target="_blank" rel="noopener">Google Calendar</a>`;
     }
     if (ex.website) {
       actions += `<a class="btn-web" href="${esc(ex.website)}" target="_blank" rel="noopener">Website</a>`;
