@@ -206,11 +206,11 @@
       actions += `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">${esc(ex.instagram)}</a>`;
     }
     if (ex.opening_date || ex.start_date) {
-      actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
-      const gcUrl = buildGoogleCalUrl(ex);
       if (IS_IOS) {
-        actions += `<button onclick="openGCalIOS('${esc(gcUrl.replace(/'/g, "\\'"))}')" title="Google Calendar">GCal</button>`;
+        actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">Add to Cal</button>`;
       } else {
+        actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
+        const gcUrl = buildGoogleCalUrl(ex);
         actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Google Calendar">GCal</a>`;
       }
     }
@@ -434,11 +434,18 @@
     const content = makeICSContent(ex);
     if (!content) return;
     const blob = new Blob([content], { type: 'text/calendar' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = (ex.title || 'event').replace(/[^a-zA-Z0-9]/g, '_').slice(0, 50) + '.ics';
-    a.click();
-    URL.revokeObjectURL(a.href);
+    const url = URL.createObjectURL(blob);
+    if (IS_IOS) {
+      // Navigate to the blob URL - iOS shows the native "Add to Calendar"
+      // sheet which lets users pick any calendar including Google Calendar
+      window.location.href = url;
+    } else {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (ex.title || 'event').replace(/[^a-zA-Z0-9]/g, '_').slice(0, 50) + '.ics';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
   };
 
   // Open GCal URL on iOS by opening a blank tab first, then navigating.
@@ -624,12 +631,11 @@
 
     let actions = '';
     if (ex.opening_date || ex.start_date) {
-      actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
-      const gcUrl = buildGoogleCalUrl(ex);
       if (IS_IOS) {
-        actions += `<button class="btn-gcal" onclick="openGCalIOS('${esc(gcUrl.replace(/'/g, "\\'"))}')">Google Calendar</button>`;
+        actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Add to Calendar</button>`;
       } else {
-        actions += `<a class="btn-gcal" href="${gcUrl}" target="_blank" rel="noopener">Google Calendar</a>`;
+        actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
+        actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}" target="_blank" rel="noopener">Google Calendar</a>`;
       }
     }
     if (ex.website) {
