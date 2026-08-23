@@ -206,11 +206,11 @@
       actions += `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="noopener">${esc(ex.instagram)}</a>`;
     }
     if (ex.opening_date || ex.start_date) {
+      actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
+      const gcUrl = buildGoogleCalUrl(ex);
       if (IS_IOS) {
-        actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">Add to Cal</button>`;
+        actions += `<a href="${gcUrl}" title="Google Calendar">GCal</a>`;
       } else {
-        actions += `<button onclick="downloadICS('${esc(ex.id)}')" title="Add to calendar">ICS</button>`;
-        const gcUrl = buildGoogleCalUrl(ex);
         actions += `<a href="${gcUrl}" target="_blank" rel="noopener" title="Google Calendar">GCal</a>`;
       }
     }
@@ -433,39 +433,12 @@
     if (!ex) return;
     const content = makeICSContent(ex);
     if (!content) return;
-    const filename = (ex.title || 'event').replace(/[^a-zA-Z0-9]/g, '_').slice(0, 50) + '.ics';
-
-    if (IS_IOS && navigator.share && navigator.canShare) {
-      const file = new File([content], filename, { type: 'text/calendar' });
-      if (navigator.canShare({ files: [file] })) {
-        navigator.share({
-          files: [file],
-          title: ex.title || 'Event',
-        }).catch(function () { /* user cancelled share sheet */ });
-        return;
-      }
-    }
-    // Desktop fallback
     const blob = new Blob([content], { type: 'text/calendar' });
-    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
+    a.href = URL.createObjectURL(blob);
+    a.download = (ex.title || 'event').replace(/[^a-zA-Z0-9]/g, '_').slice(0, 50) + '.ics';
     a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  // Open GCal URL on iOS by opening a blank tab first, then navigating.
-  // This bypasses universal link interception since the JS navigation
-  // happens inside an already-opened browser tab.
-  window.openGCalIOS = function (url) {
-    var w = window.open('about:blank', '_blank');
-    if (w) {
-      w.location.href = url;
-    } else {
-      // Popup blocked fallback
-      window.location.href = url;
-    }
+    URL.revokeObjectURL(a.href);
   };
 
   function buildGoogleCalUrl(ex) {
@@ -478,7 +451,10 @@
     let location = '';
     if (ex.address) location = ex.address;
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
-    return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    const base = IS_IOS
+      ? 'comgooglecalendar://calendar/render?action=TEMPLATE'
+      : 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+    return base
       + '&text=' + encodeURIComponent(title)
       + '&dates=' + dates
       + '&ctz=Australia/Sydney'
@@ -638,11 +614,12 @@
 
     let actions = '';
     if (ex.opening_date || ex.start_date) {
+      actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
+      const gcUrl = buildGoogleCalUrl(ex);
       if (IS_IOS) {
-        actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Add to Calendar</button>`;
+        actions += `<a class="btn-gcal" href="${gcUrl}">Google Calendar</a>`;
       } else {
-        actions += `<button class="btn-ics" onclick="downloadICS('${esc(ex.id)}')">Download ICS</button>`;
-        actions += `<a class="btn-gcal" href="${buildGoogleCalUrl(ex)}" target="_blank" rel="noopener">Google Calendar</a>`;
+        actions += `<a class="btn-gcal" href="${gcUrl}" target="_blank" rel="noopener">Google Calendar</a>`;
       }
     }
     if (ex.website) {
