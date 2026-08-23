@@ -105,18 +105,37 @@ body {
 .filters-bar {
   background: white;
   border-bottom: 1px solid var(--border);
-  padding: 0.75rem 1.5rem;
   position: sticky;
   top: 60px;
   z-index: 90;
 }
 
+.filters-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filters-panel {
+  border-top: 1px solid var(--border);
+}
+
 .filters-inner {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0.5rem 1.5rem 0.75rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-row {
+  display: flex;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -129,6 +148,7 @@ body {
   background: var(--snow);
   color: var(--text);
   min-width: 200px;
+  flex: 1;
   transition: border-color 0.15s;
 }
 
@@ -151,10 +171,12 @@ body {
 
 .filter-toggles {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.toggle-label {
+/* Chip-style toggle labels for better touch targets */
+.toggle-chip {
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -162,10 +184,43 @@ body {
   color: var(--text-muted);
   cursor: pointer;
   user-select: none;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--snow);
+  transition: all 0.15s;
 }
 
-.toggle-label input[type="checkbox"] {
+.toggle-chip:has(input:checked) {
+  border-color: var(--mauve);
+  background: var(--mauve-dim);
+  color: var(--mauve);
+}
+
+.toggle-chip input[type="checkbox"] {
   accent-color: var(--mauve);
+  width: 14px;
+  height: 14px;
+}
+
+/* Filter toggle button - hidden on desktop, visible on mobile */
+.btn-filter-toggle {
+  display: none;
+}
+
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--coral);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  padding: 0 5px;
+  margin-left: 2px;
 }
 
 .btn-calendar {
@@ -669,19 +724,92 @@ body {
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
+  .site-header {
+    padding: 0.85rem 1rem;
+  }
+
   .site-title { font-size: 1.2rem; }
+
+  /* Filters bar: use auto top based on header */
+  .filters-bar {
+    top: 0;
+    position: sticky;
+  }
+
+  .filters-top {
+    padding: 0.6rem 1rem;
+  }
+
+  /* Show the filter toggle button on mobile */
+  .btn-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--snow);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-filter-toggle[aria-expanded="true"] {
+    border-color: var(--mauve);
+    color: var(--mauve);
+    background: var(--mauve-dim);
+  }
+
+  /* Collapsible filter panel */
+  .filters-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease;
+    border-top: none;
+  }
+
+  .filters-panel > .filters-inner {
+    overflow: hidden;
+  }
+
+  .filters-panel.open {
+    grid-template-rows: 1fr;
+    border-top: 1px solid var(--border);
+  }
 
   .filters-inner {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem 0.85rem;
   }
 
-  .filter-input { min-width: 0; width: 100%; }
-  .filter-select { width: 100%; }
+  .filter-input { min-width: 0; width: 100%; font-size: 16px; }
+  .filter-select { width: 100%; font-size: 16px; padding: 0.55rem 0.75rem; }
+  .filter-row { flex-direction: column; gap: 0.5rem; width: 100%; }
+  .filter-row .filter-select { width: 100%; }
   .filter-group { width: 100%; }
 
+  .filter-toggles {
+    gap: 0.4rem;
+  }
+
+  .toggle-chip {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.7rem;
+  }
+
   .exhibition-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
@@ -707,7 +835,7 @@ body {
 
   .agenda-item {
     font-size: 0.8rem;
-    padding: 0.35rem 0.5rem;
+    padding: 0.45rem 0.6rem;
     border-left: 3px solid var(--mauve);
     margin-bottom: 0.25rem;
     background: white;
@@ -722,12 +850,20 @@ body {
     color: var(--text);
     text-decoration: none;
   }
+
+  /* Better popup sizing on mobile */
+  .popup-content {
+    width: 94%;
+    max-height: 85vh;
+    padding: 1.25rem;
+  }
 }
 
 @media (max-width: 480px) {
   .header-inner { padding: 0; }
-  .content { padding: 1rem; }
+  .content { padding: 0.75rem; }
   .ex-card { padding: 1rem; }
+  .site-tagline { display: none; }
 }
 
 /* ---- Reduced motion ---- */

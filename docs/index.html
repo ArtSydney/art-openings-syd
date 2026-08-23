@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Art Openings Sydney</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -31,38 +31,42 @@
   </header>
 
   <section class="filters-bar">
-    <div class="filters-inner">
-      <div class="filter-group">
-        <input type="text" id="search" class="filter-input" placeholder="Search exhibitions...">
+    <div class="filters-top">
+      <input type="text" id="search" class="filter-input" placeholder="Search exhibitions...">
+      <button id="btn-filter-toggle" class="btn-filter-toggle" aria-expanded="false" aria-controls="filters-panel">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 3h14M4 8h8M6 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Filters</span>
+        <span id="filter-badge" class="filter-badge" hidden></span>
+      </button>
+    </div>
+    <div id="filters-panel" class="filters-panel">
+      <div class="filters-inner">
+        <div class="filter-group filter-toggles">
+          <label class="toggle-chip">
+            <input type="checkbox" id="filter-on-now" checked>
+            <span>On now</span>
+          </label>
+          <label class="toggle-chip">
+            <input type="checkbox" id="filter-opening-week">
+            <span>Opening this week</span>
+          </label>
+          <label class="toggle-chip">
+            <input type="checkbox" id="filter-closed">
+            <span>Show closed</span>
+          </label>
+        </div>
+        <div class="filter-row">
+          <select id="filter-suburb" class="filter-select">
+            <option value="">All suburbs</option>
+          </select>
+          <select id="filter-venue" class="filter-select">
+            <option value="">All galleries</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <button id="btn-to-cal" class="btn-calendar" title="View calendar">Calendar</button>
+        </div>
       </div>
-      <div class="filter-group filter-toggles">
-        <label class="toggle-label">
-          <input type="checkbox" id="filter-on-now" checked>
-          <span>On now</span>
-        </label>
-        <label class="toggle-label">
-          <input type="checkbox" id="filter-opening-week">
-          <span>Opening this week</span>
-        </label>
-        <label class="toggle-label">
-          <input type="checkbox" id="filter-closed">
-          <span>Show closed</span>
-        </label>
-      </div>
-      <div class="filter-group">
-        <select id="filter-suburb" class="filter-select">
-          <option value="">All suburbs</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <select id="filter-venue" class="filter-select">
-          <option value="">All galleries</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <button id="btn-to-cal" class="btn-calendar" title="View calendar">Calendar</button>
-      </div>
-
     </div>
   </section>
 
@@ -100,7 +104,7 @@
     <p><a href="https://artsydney.github.io/art-grants-dashboard/" target="_blank">Open Calls</a></p>
   </footer>
 
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "93b21e6a7af8466ebde45013e7cb409a"}'></script>
 </body>
 </html>

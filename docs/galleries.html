@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery Directory · Art Openings Sydney</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=7">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -22,27 +22,32 @@
   </header>
 
   <section class="filters-bar">
-    <div class="filters-inner">
-      <div class="filter-group">
-        <input type="text" id="search" class="filter-input" placeholder="Search galleries...">
-      </div>
-      <div class="filter-group">
-        <select id="filter-type" class="filter-select">
-          <option value="">All types</option>
-          <option value="commercial">Commercial</option>
-          <option value="ari">Artist-run</option>
-          <option value="museum">Museum / Institution</option>
-          <option value="university">University</option>
-          <option value="project_space">Project space</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <select id="filter-suburb" class="filter-select">
-          <option value="">All suburbs</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span id="gallery-count" class="gallery-count"></span>
+    <div class="filters-top">
+      <input type="text" id="search" class="filter-input" placeholder="Search galleries...">
+      <button id="btn-filter-toggle" class="btn-filter-toggle" aria-expanded="false" aria-controls="filters-panel">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 3h14M4 8h8M6 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Filters</span>
+        <span id="filter-badge" class="filter-badge" hidden></span>
+      </button>
+    </div>
+    <div id="filters-panel" class="filters-panel">
+      <div class="filters-inner">
+        <div class="filter-row">
+          <select id="filter-type" class="filter-select">
+            <option value="">All types</option>
+            <option value="commercial">Commercial</option>
+            <option value="ari">Artist-run</option>
+            <option value="museum">Museum / Institution</option>
+            <option value="university">University</option>
+            <option value="project_space">Project space</option>
+          </select>
+          <select id="filter-suburb" class="filter-select">
+            <option value="">All suburbs</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span id="gallery-count" class="gallery-count"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -56,7 +61,7 @@
     <p><a href="index.html">Exhibitions</a> &middot; <a href="https://artsydney.github.io/art-grants-dashboard/" target="_blank">Open Calls</a></p>
   </footer>
 
-  <script src="galleries.js?v=2"></script>
+  <script src="galleries.js?v=3"></script>
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fd171a49b3674abab750954be78efce2"}'></script>
 </body>
 </html>

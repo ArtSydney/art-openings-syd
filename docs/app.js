@@ -639,9 +639,40 @@
     } catch { return dateStr; }
   }
 
+  // ---- Filter toggle (mobile) ----
+  function setupFilterToggle() {
+    const btn = document.getElementById('btn-filter-toggle');
+    const panel = document.getElementById('filters-panel');
+    if (!btn || !panel) return;
+    btn.addEventListener('click', () => {
+      const open = panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  }
+
+  function updateFilterBadge() {
+    const badge = document.getElementById('filter-badge');
+    if (!badge) return;
+    let count = 0;
+    const onNow = document.getElementById('filter-on-now');
+    const openWeek = document.getElementById('filter-opening-week');
+    const showClosed = document.getElementById('filter-closed');
+    const suburb = document.getElementById('filter-suburb');
+    const venue = document.getElementById('filter-venue');
+    // "On now" checked is the default, so don't count it; count when unchecked
+    if (onNow && !onNow.checked) count++;
+    if (openWeek && openWeek.checked) count++;
+    if (showClosed && showClosed.checked) count++;
+    if (suburb && suburb.value) count++;
+    if (venue && venue.value) count++;
+    badge.textContent = count;
+    badge.hidden = count === 0;
+  }
+
   // ---- Event listeners ----
   function setupListeners() {
-    const rerender = () => { render(); renderCalendar(); };
+    setupFilterToggle();
+    const rerender = () => { render(); renderCalendar(); updateFilterBadge(); };
     document.getElementById('search').addEventListener('input', rerender);
     document.getElementById('filter-on-now').addEventListener('change', rerender);
     document.getElementById('filter-opening-week').addEventListener('change', rerender);
@@ -690,5 +721,18 @@
     if (view === 'cal') renderCalendar();
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  // Set filters-bar sticky offset to match actual header height
+  function syncStickyOffset() {
+    const header = document.querySelector('.site-header');
+    const bar = document.querySelector('.filters-bar');
+    if (header && bar) {
+      bar.style.top = header.offsetHeight + 'px';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    init();
+    syncStickyOffset();
+    window.addEventListener('resize', syncStickyOffset);
+  });
 })();

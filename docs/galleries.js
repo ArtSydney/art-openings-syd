@@ -144,12 +144,47 @@
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  function setupFilterToggle() {
+    const btn = document.getElementById('btn-filter-toggle');
+    const panel = document.getElementById('filters-panel');
+    if (!btn || !panel) return;
+    btn.addEventListener('click', () => {
+      const open = panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  }
+
+  function updateFilterBadge() {
+    const badge = document.getElementById('filter-badge');
+    if (!badge) return;
+    let count = 0;
+    const type = document.getElementById('filter-type');
+    const suburb = document.getElementById('filter-suburb');
+    if (type && type.value) count++;
+    if (suburb && suburb.value) count++;
+    badge.textContent = count;
+    badge.hidden = count === 0;
+  }
+
   function setupListeners() {
-    const rerender = () => render();
+    setupFilterToggle();
+    const rerender = () => { render(); updateFilterBadge(); };
     document.getElementById('search').addEventListener('input', rerender);
     document.getElementById('filter-type').addEventListener('change', rerender);
     document.getElementById('filter-suburb').addEventListener('change', rerender);
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  function syncStickyOffset() {
+    const header = document.querySelector('.site-header');
+    const bar = document.querySelector('.filters-bar');
+    if (header && bar) {
+      bar.style.top = header.offsetHeight + 'px';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    init();
+    syncStickyOffset();
+    window.addEventListener('resize', syncStickyOffset);
+  });
 })();
