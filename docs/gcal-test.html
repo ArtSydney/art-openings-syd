@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCal URL Scheme Test</title>
+  <style>
+    body { font-family: system-ui; padding: 1.5rem; background: #f5f5f5; }
+    h1 { font-size: 1.2rem; }
+    .test { margin: 1rem 0; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #ddd; }
+    .test h3 { font-size: 0.85rem; margin: 0 0 0.3rem; }
+    .test code { font-size: 0.7rem; color: #666; word-break: break-all; display: block; margin-bottom: 0.5rem; }
+    button { padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #4285f4; background: #4285f4; color: white; font-size: 0.85rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>GCal iOS URL Scheme Tests</h1>
+  <p style="font-size:0.8rem;color:#666;">Tap each button and note what happens. Does GCal open? Does it create an event?</p>
+
+  <div class="test">
+    <h3>1. Just open the app</h3>
+    <code>comgooglecalendar://</code>
+    <button onclick="tryUrl('comgooglecalendar://')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>2. With /render path + TEMPLATE params</h3>
+    <code>comgooglecalendar://calendar/render?action=TEMPLATE&text=Test+Event&dates=20260823T180000/20260823T210000</code>
+    <button onclick="tryUrl('comgooglecalendar://calendar/render?action=TEMPLATE&text=Test+Event&dates=20260823T180000/20260823T210000&ctz=Australia/Sydney')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>3. With /event path + TEMPLATE params</h3>
+    <code>comgooglecalendar://calendar/event?action=TEMPLATE&text=Test+Event&dates=...</code>
+    <button onclick="tryUrl('comgooglecalendar://calendar/event?action=TEMPLATE&text=Test+Event&dates=20260823T180000/20260823T210000&ctz=Australia/Sydney')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>4. With /r/eventedit path</h3>
+    <code>comgooglecalendar://calendar/r/eventedit?text=Test+Event&dates=...</code>
+    <button onclick="tryUrl('comgooglecalendar://calendar/r/eventedit?text=Test+Event&dates=20260823T180000/20260823T210000&ctz=Australia/Sydney')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>5. With /eventedit path (no /r/)</h3>
+    <code>comgooglecalendar://eventedit?text=Test+Event&dates=...</code>
+    <button onclick="tryUrl('comgooglecalendar://eventedit?text=Test+Event&dates=20260823T180000/20260823T210000&ctz=Australia/Sydney&details=Test+description&location=Sydney+NSW')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>6. With /new path (like Outlook scheme)</h3>
+    <code>comgooglecalendar://new?title=Test+Event&start=2026-08-23T18:00:00&end=2026-08-23T21:00:00</code>
+    <button onclick="tryUrl('comgooglecalendar://new?title=Test+Event&start=2026-08-23T18:00:00&end=2026-08-23T21:00:00&location=Sydney+NSW')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>7. With /event/new path</h3>
+    <code>comgooglecalendar://event/new?title=Test+Event&start=...</code>
+    <button onclick="tryUrl('comgooglecalendar://event/new?title=Test+Event&start=2026-08-23T18:00:00&end=2026-08-23T21:00:00&location=Sydney+NSW')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>8. googlecalendar:// (alternate scheme)</h3>
+    <code>googlecalendar://</code>
+    <button onclick="tryUrl('googlecalendar://')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>9. Full web URL passed after scheme</h3>
+    <code>comgooglecalendar://calendar.google.com/calendar/render?action=TEMPLATE&text=...</code>
+    <button onclick="tryUrl('comgooglecalendar://calendar.google.com/calendar/render?action=TEMPLATE&text=Test+Event&dates=20260823T180000/20260823T210000&ctz=Australia/Sydney')">Test</button>
+  </div>
+
+  <div class="test">
+    <h3>10. With action=create</h3>
+    <code>comgooglecalendar://event?action=create&text=Test+Event&dates=...</code>
+    <button onclick="tryUrl('comgooglecalendar://event?action=create&text=Test+Event&dates=20260823T180000/20260823T210000&ctz=Australia/Sydney&details=Test+description&location=Sydney+NSW')">Test</button>
+  </div>
+
+  <div id="log" style="margin-top:1.5rem;font-size:0.75rem;color:#999;"></div>
+
+  <script>
+    function tryUrl(url) {
+      var log = document.getElementById('log');
+      log.innerHTML = 'Trying: ' + url.substring(0, 80) + '...<br>' + log.innerHTML;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
