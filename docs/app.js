@@ -433,19 +433,26 @@
     if (!ex) return;
     const content = makeICSContent(ex);
     if (!content) return;
+    const filename = (ex.title || 'event').replace(/[^a-zA-Z0-9]/g, '_').slice(0, 50) + '.ics';
+
+    if (IS_IOS && navigator.share && navigator.canShare) {
+      const file = new File([content], filename, { type: 'text/calendar' });
+      if (navigator.canShare({ files: [file] })) {
+        navigator.share({
+          files: [file],
+          title: ex.title || 'Event',
+        }).catch(function () { /* user cancelled share sheet */ });
+        return;
+      }
+    }
+    // Desktop fallback
     const blob = new Blob([content], { type: 'text/calendar' });
     const url = URL.createObjectURL(blob);
-    if (IS_IOS) {
-      // Navigate to the blob URL - iOS shows the native "Add to Calendar"
-      // sheet which lets users pick any calendar including Google Calendar
-      window.location.href = url;
-    } else {
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = (ex.title || 'event').replace(/[^a-zA-Z0-9]/g, '_').slice(0, 50) + '.ics';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   // Open GCal URL on iOS by opening a blank tab first, then navigating.
