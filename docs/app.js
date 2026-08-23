@@ -415,7 +415,8 @@
     if (ex.venue) summary += ' at ' + ex.venue;
 
     let location = '';
-    if (ex.address) location = ex.address;
+    if (ex.venue) location = ex.venue;
+    if (ex.address) location += (location ? ', ' : '') + ex.address;
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
 
     return [
@@ -449,7 +450,8 @@
     let title = ex.title;
     if (ex.venue) title += ' at ' + ex.venue;
     let location = '';
-    if (ex.address) location = ex.address;
+    if (ex.venue) location = ex.venue;
+    if (ex.address) location += (location ? ', ' : '') + ex.address;
     if (ex.suburb) location += (location ? ', ' : '') + ex.suburb;
     const base = IS_IOS
       ? 'comgooglecalendar://calendar/render?action=TEMPLATE'
