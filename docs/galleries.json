@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23T10:57:33.090354+00:00",
+  "generated": "2026-08-24T11:16:21.157691+00:00",
   "count": 187,
   "galleries": [
     {
@@ -259,7 +259,7 @@
     },
     {
       "id": "art_atrium",
-      "name": "Art Atrium",
+      "name": "Art Atrium 48",
       "type": "commercial",
       "address": "12 Daniel St",
       "suburb": "Botany",
@@ -565,7 +565,7 @@
     },
     {
       "id": "barometer",
-      "name": "Barometer Gallery",
+      "name": "BAROMETER Gallery",
       "type": "commercial",
       "address": "13 Gurner St",
       "suburb": "Paddington",
@@ -956,7 +956,7 @@
     },
     {
       "id": "coma",
-      "name": "Coma",
+      "name": "COMA",
       "type": "commercial",
       "address": "37 Chapel St",
       "suburb": "Marrickville",
@@ -1228,7 +1228,7 @@
     },
     {
       "id": "fine_arts_sydney",
-      "name": "Fine Arts Sydney",
+      "name": "Fine Arts, Sydney",
       "type": "commercial",
       "address": "23 Hampden St",
       "suburb": "Paddington",
@@ -1653,7 +1653,7 @@
     },
     {
       "id": "laila",
-      "name": "Laila Gallery",
+      "name": "LAILA",
       "type": "commercial",
       "address": "Level 1, 158 Edinburgh Rd",
       "suburb": "Marrickville",
@@ -2010,7 +2010,7 @@
     },
     {
       "id": "nanda/hobbs",
-      "name": "Nanda\\Hobbs",
+      "name": "Nanda/Hobbs",
       "type": "commercial",
       "address": "12-14 Meagher St",
       "suburb": "Chippendale",
@@ -2112,7 +2112,7 @@
     },
     {
       "id": "palas",
-      "name": "Palas",
+      "name": "PALAS",
       "type": "commercial",
       "address": "42 Hansard St",
       "suburb": "Zetland",
@@ -2146,7 +2146,7 @@
     },
     {
       "id": "passage",
-      "name": "Passage",
+      "name": "Passage Gallery",
       "type": "commercial",
       "address": "Level 1, 102/8 Quay St",
       "suburb": "Haymarket",
@@ -3030,7 +3030,7 @@
     },
     {
       "id": "velvet_lobster",
-      "name": "Velvet Lobster",
+      "name": "VELVET LOBSTER",
       "type": "commercial",
       "address": "Level 1/45 Hutchinson St",
       "suburb": "Surry Hills",

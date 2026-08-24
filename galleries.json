@@ -1188,7 +1188,7 @@
     "last_verified": "2026-08-17"
   },
   "laila": {
-    "name": "Laila Gallery",
+    "name": "LAILA",
     "type": "commercial",
     "address": "Level 1, 158 Edinburgh Rd",
     "suburb": "Marrickville",
@@ -1242,7 +1242,7 @@
     "last_verified": "2026-08-17"
   },
   "velvet_lobster": {
-    "name": "Velvet Lobster",
+    "name": "VELVET LOBSTER",
     "type": "commercial",
     "address": "Level 1/45 Hutchinson St",
     "suburb": "Surry Hills",
@@ -1260,7 +1260,7 @@
     "last_verified": "2026-08-16"
   },
   "passage": {
-    "name": "Passage",
+    "name": "Passage Gallery",
     "type": "commercial",
     "address": "Level 1, 102/8 Quay St",
     "suburb": "Haymarket",
@@ -1530,7 +1530,7 @@
     "last_verified": "2026-08-16"
   },
   "palas": {
-    "name": "Palas",
+    "name": "PALAS",
     "type": "commercial",
     "address": "42 Hansard St",
     "suburb": "Zetland",
@@ -1692,7 +1692,7 @@
     "last_verified": "2026-08-16"
   },
   "fine_arts_sydney": {
-    "name": "Fine Arts Sydney",
+    "name": "Fine Arts, Sydney",
     "type": "commercial",
     "address": "23 Hampden St",
     "suburb": "Paddington",
@@ -1764,7 +1764,7 @@
     "last_verified": "2026-08-16"
   },
   "barometer": {
-    "name": "Barometer Gallery",
+    "name": "BAROMETER Gallery",
     "type": "commercial",
     "address": "13 Gurner St",
     "suburb": "Paddington",
@@ -1908,7 +1908,7 @@
     "last_verified": "2026-08-16"
   },
   "coma": {
-    "name": "Coma",
+    "name": "COMA",
     "type": "commercial",
     "address": "37 Chapel St",
     "suburb": "Marrickville",
@@ -2430,7 +2430,7 @@
     "last_verified": "2026-08-17"
   },
   "art_atrium": {
-    "name": "Art Atrium",
+    "name": "Art Atrium 48",
     "type": "commercial",
     "address": "12 Daniel St",
     "suburb": "Botany",
