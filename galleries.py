@@ -5,22 +5,23 @@ and visiting info. Seeded from a curated list, enriched from exhibition data,
 and geocoded via Nominatim (free, no API key).
 
 Data model per gallery:
-    name            - Gallery name
-    type            - commercial | ari | museum | university | project_space
-    address         - Full street address
-    suburb          - Sydney suburb
-    postcode        - Postcode
-    latitude        - Decimal degrees (from geocoding)
-    longitude       - Decimal degrees (from geocoding)
-    website         - Gallery website URL
-    instagram       - Instagram handle (@handle)
-    email           - Contact email
-    phone           - Contact phone
-    hours           - Opening hours text (best effort)
-    entry           - free | paid | donation | unknown
-    accessibility   - Wheelchair access notes
-    source          - Where this gallery was first found
-    last_verified   - ISO date of last update
+
+name          - Gallery name
+type          - commercial | ari | museum | university | project_space
+address       - Full street address
+suburb        - Sydney suburb
+postcode      - Postcode
+latitude      - Decimal degrees (from geocoding)
+longitude     - Decimal degrees (from geocoding)
+website       - Gallery website URL
+instagram     - Instagram handle (@handle)
+email         - Contact email
+phone         - Contact phone
+hours         - Opening hours text (best effort)
+entry         - free | paid | donation | unknown
+accessibility - Wheelchair access notes
+source        - Where this gallery was first found
+last_verified - ISO date of last update
 """
 
 import json
@@ -40,10 +41,8 @@ _DOMAIN_TLD_RE = re.compile(
     re.IGNORECASE,
 )
 
-
 def _looks_like_domain(handle):
     return bool(_DOMAIN_TLD_RE.search(handle))
-
 
 # ---------------------------------------------------------------------------
 # Curated seed list of known Sydney galleries
@@ -126,7 +125,8 @@ SEED_GALLERIES = [
     {"name": "Dominik Mersch Gallery", "type": "commercial", "suburb": "Rushcutters Bay",
      "address": "1/75 McLachlan Ave", "website": "https://www.dominikmerschgallery.com",
      "instagram": "@dominikmerschgallery", "entry": "free"},
-    {"name": "Nanda\\Hobbs", "type": "commercial", "suburb": "Chippendale",
+    # Fixed: was "Nanda\\Hobbs" — backslash is stripped by browser, breaking frontend lookup
+    {"name": "Nanda/Hobbs", "type": "commercial", "suburb": "Chippendale",
      "address": "12-14 Meagher St", "website": "https://www.nandahobbs.com",
      "instagram": "@nandahobbs", "entry": "free"},
     {"name": "China Heights Gallery", "type": "commercial", "suburb": "Surry Hills",
@@ -438,7 +438,7 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
 
     # North Sydney / Northern Beaches
-    {"name": "Art Space Gallery – The Concourse", "type": "museum", "suburb": "Chatswood",
+    {"name": "Art Space Gallery \u2013 The Concourse", "type": "museum", "suburb": "Chatswood",
      "address": "409 Victoria Ave", "website": "https://www.willoughby.nsw.gov.au/Community/Arts-and-culture/Visual-arts/Art-Space-Gallery-%E2%80%93-The-Concourse",
      "instagram": "", "entry": "free"},
     {"name": "Manly Art Gallery & Museum", "type": "museum", "suburb": "Manly",
@@ -521,10 +521,10 @@ SEED_GALLERIES = [
     {"name": "Boom Gate Gallery", "type": "museum", "suburb": "Malabar",
      "address": "1300 Anzac Parade", "website": "https://www.nsw.gov.au/arts-and-culture/boom-gate-gallery",
      "instagram": "", "entry": "free"},
-
-        {"name": "Tramsheds Harold Park", "type": "project_space", "suburb": "Forest Lodge",
+    {"name": "Tramsheds Harold Park", "type": "project_space", "suburb": "Forest Lodge",
      "address": "1 Dalgal Way", "website": "https://tramshedsharoldpark.com.au/",
      "instagram": "@tramsheds", "entry": "free"},
+
     # Greater North Shore
     {"name": "Ku-ring-gai Art Centre", "type": "museum", "suburb": "Roseville",
      "address": "3 Recreation Ave", "website": "https://www.krg.nsw.gov.au/Things-to-do/Ku-ring-gai-Art-Centre/Exhibitions",
@@ -532,9 +532,7 @@ SEED_GALLERIES = [
     {"name": "Wallarobba Arts and Cultural Centre", "type": "museum", "suburb": "Hornsby",
      "address": "25 Edgeworth David Ave", "website": "https://www.hornsby.nsw.gov.au/Community/Arts-and-culture/Wallarobba-Arts-and-Cultural-Centre",
      "instagram": "@hornsbycouncil", "entry": "free"},
-
 ]
-
 
 # ---------------------------------------------------------------------------
 # Load / save
@@ -547,12 +545,10 @@ def load_galleries():
             return json.load(f)
     return {}
 
-
 def save_galleries(galleries):
     """Save galleries.json."""
     with open(GALLERIES_FILE, "w") as f:
         json.dump(galleries, f, indent=2, default=str)
-
 
 def normalize_name(name):
     """Normalize a gallery name to a stable key."""
@@ -565,7 +561,6 @@ def normalize_name(name):
     key = re.sub(r"\s+", "_", key.strip())
     key = key.strip("_")
     return key
-
 
 def normalize_venue(name):
     """Normalize a scraped venue name for matching against gallery keys.
@@ -589,7 +584,6 @@ def normalize_venue(name):
     key = key.strip("_")
     return key
 
-
 def fuzzy_match_gallery(galleries, name, threshold=0.85):
     """Find an existing gallery key that fuzzy-matches the given name."""
     from difflib import SequenceMatcher
@@ -597,45 +591,46 @@ def fuzzy_match_gallery(galleries, name, threshold=0.85):
     # Explicit aliases — known scraped variants that should map to canonical keys
     ALIASES = {
         # AGNSW variants
-        "art gallery of nsw":                       "art_gallery_of_new_south_wales",
-        "agnsw":                                    "art_gallery_of_new_south_wales",
+        "art gallery of nsw": "art_gallery_of_new_south_wales",
+        "agnsw": "art_gallery_of_new_south_wales",
         # MCA variants
-        "mca":                                      "museum_of_contemporary_art_australia",
-        "mca australia":                            "museum_of_contemporary_art_australia",
-        "museum of contemporary art":               "museum_of_contemporary_art_australia",
-        "museum of contemporary art australia":     "museum_of_contemporary_art_australia",
+        "mca": "museum_of_contemporary_art_australia",
+        "mca australia": "museum_of_contemporary_art_australia",
+        "museum of contemporary art": "museum_of_contemporary_art_australia",
+        "museum of contemporary art australia": "museum_of_contemporary_art_australia",
         # Other common truncations
-        "redfern art gallery in sydney":            "redfern_art_gallery",
-        "woollahra gallery":                        "woollahra_gallery_at_redleaf",
-        "gallery 144 (formerly outsider)":          "gallery_144",
-        "gallery 144 formerly outsider":            "gallery_144",
-        "outsider gallery":                         "gallery_144",
-        "michael reid":                             "michael_reid_sydney",
-        "sally dan cuthbert":                       "gallery_sally_dancuthbert",
-        "king street gallery":                      "king_street_gallery_on_william",
-        "nas gallery":                              "national_art_school_gallery",
-        "national art school":                      "national_art_school_gallery",
-        "artbank":                                  "artbank_sydney",
-        "annandale":                                "annandale_galleries",
-        "sca":                                      "sca_gallery",
-        "passage":                                  "passage_gallery",
-        "cato gallery":                             "eloise_cato",
-        "laila gallery":                            "laila",
-        "velvet lobster":                           "velvet_lobster",
-        "arthouse":                                 "arthouse_gallery",
-        "olsen annexe":                             "olsen_gallery",
-        "day0o1":                                    "day01",
-        "tom bass clara street gallery":             "clara_street",
-        "the corner gallery":                        "the_corner",
-        "curatorial + co":                           "curatorial_and_co",
-        "curatorial + co.":                          "curatorial_and_co",
-        "curatorial+co":                             "curatorial_and_co",
-        "tom bass gallery":                          "clara_street",
-        "day01 gallery":                             "day01",
+        "redfern art gallery in sydney": "redfern_art_gallery",
+        "woollahra gallery": "woollahra_gallery_at_redleaf",
+        "gallery 144 (formerly outsider)": "gallery_144",
+        "gallery 144 formerly outsider": "gallery_144",
+        "outsider gallery": "gallery_144",
+        "michael reid": "michael_reid_sydney",
+        "sally dan cuthbert": "gallery_sally_dancuthbert",
+        "king street gallery": "king_street_gallery_on_william",
+        "nas gallery": "national_art_school_gallery",
+        "national art school": "national_art_school_gallery",
+        "artbank": "artbank_sydney",
+        "annandale": "annandale_galleries",
+        "sca": "sca_gallery",
+        "passage": "passage_gallery",
+        "cato gallery": "eloise_cato",
+        "laila gallery": "laila",
+        "velvet lobster": "velvet_lobster",
+        "arthouse": "arthouse_gallery",
+        "olsen annexe": "olsen_gallery",
+        "day0o1": "day01",
+        "tom bass clara street gallery": "clara_street",
+        "the corner gallery": "the_corner",
+        "curatorial + co": "curatorial_and_co",
+        "curatorial + co.": "curatorial_and_co",
+        "curatorial+co": "curatorial_and_co",
+        "tom bass gallery": "clara_street",
+        "day01 gallery": "day01",
+        # Nanda/Hobbs variants — backslash form still arrives from old seen.json records
+        "nanda\\hobbs": "nanda/hobbs",
+        "nandahobbs": "nanda/hobbs",
     }
 
-    # Use normalize_venue (strips city/gallery suffixes) for matching
-    # but normalize_name for key lookup (stable, no stripping)
     norm = normalize_name(name)
     venue_norm = normalize_venue(name)
     alias_key = name.lower().strip()
@@ -666,7 +661,6 @@ def fuzzy_match_gallery(galleries, name, threshold=0.85):
             best_key = existing_key
 
     return best_key
-
 
 # ---------------------------------------------------------------------------
 # Geocoding via Nominatim
@@ -703,22 +697,15 @@ def geocode(address, suburb):
 
     return None, None, ""
 
-
 # ---------------------------------------------------------------------------
 # Instagram enrichment from gallery websites
 # ---------------------------------------------------------------------------
 
 def _fetch_instagram_from_website(url):
-    """Fetch a gallery's own website and extract its Instagram handle.
-
-    Looks for instagram.com href links in the HTML — the same pattern
-    galleries use in their nav/footer social icons.
-    Returns '@handle' or '' if not found.
-    """
+    """Fetch a gallery's own website and extract its Instagram handle."""
     if not url or not url.startswith("http"):
         return ""
 
-    # Skip known non-gallery domains
     SKIP_DOMAINS = ("instagram.com", "facebook.com", "linktr.ee", "google.com",
                     "nsw.gov.au", "sydney.edu.au", "uts.edu.au", "acu.edu.au",
                     "mq.edu.au", "powerhouse.com.au")
@@ -734,39 +721,27 @@ def _fetch_instagram_from_website(url):
         )
         if resp.status_code != 200:
             return ""
-
         html = resp.text
-
-        # Look for instagram.com/handle in href attributes
         m = re.search(
             r'href=["\']https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?["\']',
             html,
         )
         if m:
             handle = m.group(1)
-            # Reject nav/explore/account paths
             if handle.lower() not in ("", "p", "explore", "accounts", "reel", "reels",
-                                       "stories", "ar", "tv", "web", "legal"):
+                                      "stories", "ar", "tv", "web", "legal"):
                 return f"@{handle}"
-
     except Exception as e:
         print(f"[galleries] Website fetch error for {url}: {e}")
 
     return ""
 
-
 def enrich_gallery_instagram(galleries, max_fetches=10):
-    """For galleries with a website but no instagram handle, fetch their site
-    and extract the Instagram link from the HTML.
-
-    Runs daily but only fetches galleries missing a handle — won't re-fetch
-    ones already set. Capped at max_fetches per run to stay within cron time.
-    """
-    # Keys confirmed to have no instagram or whose websites don't expose it
+    """For galleries with a website but no instagram handle, fetch their site."""
     SKIP_KEYS = {
-        "chrissie_cotter",           # no instagram confirmed
-        "the_corner_gallery_stanmore", # facebook only
-        "boom_gate_gallery",         # prison program, no social
+        "chrissie_cotter",
+        "the_corner_gallery_stanmore",
+        "boom_gate_gallery",
     }
 
     fetched = 0
@@ -794,32 +769,38 @@ def enrich_gallery_instagram(galleries, max_fetches=10):
         else:
             print(f"[galleries] No Instagram found on website for {g['name']}")
 
-        time.sleep(1.0)  # be polite
+        time.sleep(1.0)
 
     if fetched:
         print(f"[galleries] Website IG enrichment: fetched {fetched}, updated {updated}")
-    return updated
 
+    return updated
 
 # ---------------------------------------------------------------------------
 # Seed + enrich
 # ---------------------------------------------------------------------------
 
 def seed_galleries(galleries):
-    """Add curated seed galleries that aren't already present."""
+    """Add curated seed galleries that aren't already present.
+
+    For existing entries, propagates name, address, website, entry, type,
+    and instagram from seed — so fixes to seed names (e.g. Nanda/Hobbs)
+    automatically flow through to galleries.json on the next pipeline run.
+    """
     added = 0
+
     for seed in SEED_GALLERIES:
         key = normalize_name(seed["name"])
         matched = fuzzy_match_gallery(galleries, seed["name"])
 
         if matched:
-            # Update address and website from seed if missing, but do NOT
-            # overwrite instagram — seed is authoritative for handles we've
-            # verified; enrich_gallery_instagram handles the rest
+            # Propagate name from seed so fixes (e.g. backslash -> slash) self-heal
+            if seed.get("name"):
+                galleries[matched]["name"] = seed["name"]
             for field in ("address", "website", "entry", "type"):
                 if seed.get(field) and not galleries[matched].get(field):
                     galleries[matched][field] = seed[field]
-            # Always apply seed instagram if seed has one (seed is verified)
+            # Always apply seed instagram (seed is verified)
             if seed.get("instagram"):
                 galleries[matched]["instagram"] = seed["instagram"]
             continue
@@ -848,41 +829,27 @@ def seed_galleries(galleries):
     print(f"[galleries] Seeded {added} new galleries")
     return added
 
-
 def enrich_from_exhibitions(galleries, state):
-    """Extract gallery address/suburb from exhibition records in state.
-
-    Deliberately does NOT write instagram handles — those come only from
-    seed data (verified) or enrich_gallery_instagram (scraped from the
-    gallery's own website). This prevents scraped exhibition text from
-    polluting instagram fields with email domains and wrong handles.
-    """
-    # Venue names that are scraped garbage and must never become gallery entries
+    """Extract gallery address/suburb from exhibition records in state."""
     VENUE_BLOCKLIST = {
-        # Redleaf junk
         "redleaf opening hours free admission wednesday",
         "redleaf's", "redleafs",
         "redleaf exhibition call out is open until",
-        # Short/ambiguous names that are aliases, not real entries
         "woollahra gallery", "mca", "agnsw", "gallery", "olsen annexe",
         "station", "outsider gallery", "outsider",
-        # Art fairs and events (not permanent galleries)
         "melbourne art fair 2026", "melbourne art fair", "art fair",
         "sydney contemporary", "biennale of sydney",
         "25th biennale of sydney",
-        # Public spaces and non-gallery venues from city_of_sydney
         "anzac memorial", "chippendale green", "sydney olympic park",
         "the royal botanic garden", "royal botanic garden",
         "australian national maritime museum",
         "the japan foundation", "japan foundation",
         "community &", "shopping,", "balmain", "kensington", "rushcutters bay",
-        # Generic scraped page text
         "opening hours", "free admission", "what's on", "whats on",
         "exhibition listing", "related posts", "acknowledgement of country",
         "terms and conditions", "privacy policy",
     }
 
-    # Also block any venue name containing these substrings
     VENUE_BLOCK_SUBSTRINGS = [
         "opening hours", "free admission", "call out is open",
         "acknowledgement", "terms and conditions", "privacy policy",
@@ -890,6 +857,7 @@ def enrich_from_exhibitions(galleries, state):
     ]
 
     added = 0
+
     for key, rec in state.items():
         if key.startswith("__"):
             continue
@@ -898,46 +866,38 @@ def enrich_from_exhibitions(galleries, state):
         if not venue or len(venue) < 3:
             continue
 
-        # Block junk venue names
         vl = venue.lower()
         if vl in VENUE_BLOCKLIST:
             continue
         if any(s in vl for s in VENUE_BLOCK_SUBSTRINGS):
             continue
-        # Block suspiciously long venue names (likely scraped paragraph text)
         if len(venue) > 80:
             continue
 
         matched_key = fuzzy_match_gallery(galleries, venue)
-
         if matched_key:
             g = galleries[matched_key]
             if not g.get("suburb") and rec.get("suburb"):
                 g["suburb"] = rec["suburb"]
             if not g.get("address") and rec.get("address"):
                 g["address"] = rec["address"]
-            # Only fill website if it's a real gallery site (not aggregator)
             if not g.get("website") and rec.get("website"):
                 web = rec["website"]
                 if not any(d in web for d in ["timeout", "broadsheet", "artalmanac",
                                                "cityofsydney", "instagram", "facebook",
                                                "google", "artguide"]):
                     g["website"] = web
-            # instagram intentionally not written here
             continue
 
-        # Do not auto-create gallery entries from exhibition scrape data.
-        # Unknown venues should be added manually via the seed or enrich_galleries.py.
-        # This prevents junk venue names from polluting the gallery directory.
         pass
 
     print(f"[galleries] Enriched {added} new galleries from exhibitions")
     return added
 
-
 def geocode_missing(galleries, max_geocodes=20):
     """Geocode galleries that have an address/suburb but no coordinates."""
     geocoded = 0
+
     for key, g in galleries.items():
         if geocoded >= max_geocodes:
             break
@@ -953,13 +913,12 @@ def geocode_missing(galleries, max_geocodes=20):
             if postcode and not g.get("postcode"):
                 g["postcode"] = postcode
             geocoded += 1
-
-        time.sleep(1.1)
+            time.sleep(1.1)
 
     if geocoded:
         print(f"[galleries] Geocoded {geocoded} galleries")
-    return geocoded
 
+    return geocoded
 
 # ---------------------------------------------------------------------------
 # Build galleries output for frontend
@@ -968,6 +927,7 @@ def geocode_missing(galleries, max_geocodes=20):
 def build_galleries_json(galleries):
     """Write docs/galleries.json for the frontend directory."""
     gallery_list = []
+
     for key, g in galleries.items():
         gallery_list.append({
             "id": key,
@@ -996,20 +956,23 @@ def build_galleries_json(galleries):
     }
 
     os.makedirs("docs", exist_ok=True)
+
     with open("docs/galleries.json", "w") as f:
         json.dump(output, f, indent=2, default=str)
 
     print(f"[galleries] Wrote {len(gallery_list)} galleries to docs/galleries.json")
 
+# ---------------------------------------------------------------------------
+# Main update entry point
+# ---------------------------------------------------------------------------
 
 def update_galleries(state):
-    """Main entry: seed, enrich from exhibitions, enrich IG from websites,
-    geocode, build output."""
+    """Update gallery database from exhibition state and rebuild frontend output."""
     galleries = load_galleries()
     seed_galleries(galleries)
     enrich_from_exhibitions(galleries, state)
-    enrich_gallery_instagram(galleries, max_fetches=10)
     geocode_missing(galleries)
+    enrich_gallery_instagram(galleries)
     save_galleries(galleries)
     build_galleries_json(galleries)
-    return galleries
+    print(f"[galleries] Updated {len(galleries)} galleries")
