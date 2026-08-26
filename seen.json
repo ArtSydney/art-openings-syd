@@ -964,7 +964,7 @@
     "body narratives scieppan self": "f737f99e58d2"
   },
   "__meta__": {
-    "last_run": "2026-08-25T11:05:28.710149+00:00",
+    "last_run": "2026-08-26T11:17:19.325452+00:00",
     "instagram_latest": "2026-08-25T01:05:00+0000"
   },
   "747cbd06e895": {
@@ -3292,7 +3292,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DbpH580CY-0/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.637537+00:00"
+    "first_seen": "2026-08-14T09:19:56.637537+00:00",
+    "closing_soon_sent": true
   },
   "eea468074ba3": {
     "title": "Group Exhibition: NEWCOMERS26",
@@ -3368,7 +3369,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DbpH580CY-0/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.637619+00:00"
+    "first_seen": "2026-08-14T09:19:56.637619+00:00",
+    "closing_soon_sent": true
   },
   "af945f7a918a": {
     "title": "Group Exhibitions at Tin Sheds Gallery",
@@ -3425,7 +3427,8 @@
     "source_url": "https://www.instagram.com/p/DbpH580CY-0/",
     "status": "active",
     "first_seen": "2026-08-14T09:19:56.637683+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "c5bb513acbd9": {
     "title": "Donna Marcus: GABO",
@@ -3480,7 +3483,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DbpH580CY-0/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.637732+00:00"
+    "first_seen": "2026-08-14T09:19:56.637732+00:00",
+    "closing_soon_sent": true
   },
   "9826b8bec1b6": {
     "title": "Aidan Hartshorn: On whose authority",
