@@ -44,7 +44,8 @@
     const active = GALLERIES.filter(g => {
       const name = (g.name || '').toLowerCase().trim();
       return venuesInData.has(name) ||
-             Array.from(venuesInData).some(v => v.includes(name) || name.includes(v));
+             (name.length > 4 && Array.from(venuesInData).some(v => v.includes(name))) ||
+             Array.from(venuesInData).some(v => v.length > 4 && name.includes(v));
     });
     active.sort((a, b) => a.name.localeCompare(b.name)).forEach(g => {
       const opt = document.createElement('option');
@@ -110,6 +111,9 @@
         if (ex.status !== 'closed') return false;
       } else {
         if (ex.status === 'closed') return false;
+        // Also hide entries whose end_date is in the past
+        // (they may not be marked closed yet in the data)
+        if (ex.end_date && ex.end_date < TODAY_STR) return false;
       }
 
       // Opening today filter
@@ -127,7 +131,9 @@
       if (venue) {
         const ev = (ex.venue || '').toLowerCase().trim();
         const vv = venue.toLowerCase().trim();
-        if (ev !== vv && !ev.includes(vv) && !vv.includes(ev)) return false;
+        if (ev !== vv
+            && !(vv.length > 4 && ev.includes(vv))
+            && !(ev.length > 4 && vv.includes(ev))) return false;
       }
 
       // Search
