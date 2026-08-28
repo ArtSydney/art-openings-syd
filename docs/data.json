@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-26T11:17:19.822822+00:00",
-  "count": 962,
+  "generated": "2026-08-28T01:23:57.462495+00:00",
+  "count": 965,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -11361,6 +11361,24 @@
       "status": "active"
     },
     {
+      "id": "b28c4579b7b1",
+      "title": "\u2018Breathing Life\u2019 group show",
+      "artist": "",
+      "venue": "Tiliqua Tiliqua",
+      "gallery_key": "tiliqua_tiliqua",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-10",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/breathing-life-group-show",
+      "instagram": "",
+      "description": "\u2018Breathing Life\u2019 group show Tiliqua Tiliqua Exhibitions \u2018Breathing Life\u2019 group show Exploring the rhythms of the natural world through painting, sculpture and works on paper 10 Sep 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
       "id": "f3676887c36c",
       "title": "Group Show: Gesture and Form",
       "artist": "Group Show",
@@ -12117,6 +12135,24 @@
       "status": "active"
     },
     {
+      "id": "a7639dde3b83",
+      "title": "Heaps Decent: Take Over Community Showcase",
+      "artist": "",
+      "venue": "Randwick Music Heaps Decent: Take Over",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "Randwick",
+      "start_date": "2026-10-03",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/heaps-decent-take-over-community-showcase",
+      "instagram": "",
+      "description": "Heaps Decent: Take Over Community Showcase Randwick Music Heaps Decent: Take Over Community Showcase Take Over: Community Showcase, the culminating celebration of Heaps Decent\u2019s week-long creative residency. 3 Oct 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
       "id": "95bcaacfa7d6",
       "title": "Group Show: Apothecary",
       "artist": "Group Show",
@@ -12293,6 +12329,24 @@
       "website": "https://whatson.cityofsydney.nsw.gov.au/events/and-this-is-where-we-land",
       "instagram": "",
       "description": "And This Is Where We Land Lane Cove Exhibitions And This Is Where We Land And This Is Where We Land 9 Oct 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
+      "id": "8300e9424d84",
+      "title": "And Still I Rise",
+      "artist": "",
+      "venue": "Art Gallery of New South Wales",
+      "gallery_key": "art_gallery_of_new_south_wales",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-10-09",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/and-still-i-rise",
+      "instagram": "",
+      "description": "And Still I Rise Art Gallery of NSW Exhibitions And Still I Rise An exhibition presenting 20 culturally diverse, internationally recognised women artists based in Australia 9 Oct 2026",
       "source": "city_of_sydney",
       "status": "active"
     },

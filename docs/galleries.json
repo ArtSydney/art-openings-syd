@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T11:17:54.581291+00:00",
+  "generated": "2026-08-28T01:24:34.415073+00:00",
   "count": 187,
   "galleries": [
     {
@@ -297,16 +297,16 @@
       "type": "museum",
       "address": "Art Gallery Rd, The Domain",
       "suburb": "Sydney",
-      "postcode": "",
+      "postcode": "2000",
       "latitude": null,
       "longitude": null,
       "website": "https://www.artgallery.nsw.gov.au",
       "instagram": "@artgalleryofnsw",
       "email": "",
       "phone": "",
-      "hours": "",
+      "hours": "Open daily 10am \u2013 5pm, Until 10pm Wednesdays, Closed Christmas Day and Good Friday",
       "entry": "free",
-      "accessibility": ""
+      "accessibility": "The lift to lower level 3 in the Naala Nura building is temporarily out of service."
     },
     {
       "id": "art_leven",
@@ -491,9 +491,9 @@
       "instagram": "@artspacesydney",
       "email": "",
       "phone": "",
-      "hours": "",
+      "hours": "Tuesday\u2013Sunday 11am\u20135pm",
       "entry": "free",
-      "accessibility": ""
+      "accessibility": "Artspace is universally accessible. The entrance to Artspace is easily accessible for wheelchairs, prams and buggies due to the ground-floor location. There is lift access from the ground floor to the first and second floors in The Gunnery building."
     },
     {
       "id": "audrey_fine",
@@ -846,8 +846,8 @@
       "longitude": 151.1894111,
       "website": "https://www.sydney.edu.au/museum",
       "instagram": "@chauchakwingmuseum",
-      "email": "",
-      "phone": "",
+      "email": "ccwm.info@sydney.edu.au",
+      "phone": "+61 2 93512812",
       "hours": "",
       "entry": "free",
       "accessibility": ""
@@ -1067,9 +1067,9 @@
       "longitude": 151.2070909,
       "website": "https://www.darrenknightgallery.com",
       "instagram": "@darrenknightgallery",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "info@darrenknightgallery.com",
+      "phone": "+61 2 9699 5353",
+      "hours": "Tuesday to Saturday 10am - 5pm",
       "entry": "free",
       "accessibility": ""
     },
@@ -1594,9 +1594,9 @@
       "longitude": 151.2196333,
       "website": "https://www.kingstreetgallery.com.au",
       "instagram": "@kingstreetgallery",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "art@kingstreetgallery.com",
+      "phone": "+61 2 9360 9727",
+      "hours": "Tues - Sat 10am - 6pm, Sun - Mon By Appointment",
       "entry": "free",
       "accessibility": ""
     },
@@ -1832,8 +1832,8 @@
       "longitude": 151.2337593,
       "website": "https://www.martinbrownecontemporary.com",
       "instagram": "@martinbrownecontemporary",
-      "email": "",
-      "phone": "",
+      "email": "gallery@martinbrownecontemporary.com",
+      "phone": "(+61) 02 9331 7997",
       "hours": "",
       "entry": "free",
       "accessibility": ""
@@ -1912,14 +1912,14 @@
       "type": "commercial",
       "address": "44 Roylston St",
       "suburb": "Chippendale",
-      "postcode": "",
+      "postcode": "2008",
       "latitude": null,
       "longitude": null,
       "website": "https://www.michaelreid.com.au",
       "instagram": "@michaelreidsydney",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "info@michaelreid.com.au",
+      "phone": "+61 2 8353 3500",
+      "hours": "Monday to Friday 9am\u20135pm, Saturday 11am\u20133pm",
       "entry": "free",
       "accessibility": ""
     },
@@ -2019,9 +2019,9 @@
       "longitude": 151.1995553,
       "website": "https://www.nandahobbs.com",
       "instagram": "@nandahobbs",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "info@nandahobbs.com",
+      "phone": "+61 (0) 2 8599 8000",
+      "hours": "Monday \u2013 Friday: 9am to 5pm, Saturday: 11am to 4pm",
       "entry": "free",
       "accessibility": ""
     },
@@ -2053,11 +2053,11 @@
       "longitude": 151.2180245,
       "website": "https://www.nas.edu.au",
       "instagram": "@nas_au",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "enquiries@nas.edu.au",
+      "phone": "+61 2 9339 8610",
+      "hours": "Monday \u2013 Saturday 11 am \u2013 5pm Sunday/Public Holiday Closed Studios are open for students enrolled in evening courses between 6 and 9pm.",
       "entry": "free",
-      "accessibility": ""
+      "accessibility": "Should you require accessible parking, please contact us at enquiries@nas.edu.au or on +61 2 9339 8744 for us to arrange prior to your visit."
     },
     {
       "id": "ngununggula",
@@ -2343,8 +2343,8 @@
       "website": "https://www.roslynoxley9.com.au",
       "instagram": "@roslynoxley9",
       "email": "",
-      "phone": "",
-      "hours": "",
+      "phone": "+612 9331 1919",
+      "hours": "open by appointment; Tuesday \u2013 Friday 10am \u2013 6pm; Saturday 11am \u2013 6pm",
       "entry": "free",
       "accessibility": ""
     },
@@ -2360,8 +2360,8 @@
       "website": "https://www.shervingallery.com.au",
       "instagram": "@shervingallery",
       "email": "",
-      "phone": "",
-      "hours": "",
+      "phone": "(02) 9258 0173",
+      "hours": "Tuesday - Sunday, 11am-5pm",
       "entry": "paid",
       "accessibility": ""
     },
@@ -2410,7 +2410,7 @@
       "longitude": null,
       "website": "https://www.sarahcottiergallery.com",
       "instagram": "@sarahcottiergallery",
-      "email": "",
+      "email": "mail@sarahcottiergallery.com",
       "phone": "",
       "hours": "",
       "entry": "free",
@@ -3141,9 +3141,9 @@
       "longitude": 151.2002609,
       "website": "https://www.whiterabbitcollection.org",
       "instagram": "@whiterabbitgallery",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "info@whiterabbitcollection.org",
+      "phone": "+61 2 8399 2867",
+      "hours": "Wednesday to Sunday 10AM\u20135PM",
       "entry": "free",
       "accessibility": ""
     },
