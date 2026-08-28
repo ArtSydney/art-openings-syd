@@ -183,7 +183,6 @@
     let meta = '';
     if (ex.venue) meta += `<a href="#" class="venue" onclick="showGallery('${esc(ex.venue).replace(/'/g, "\\'")}');return false;">${esc(ex.venue)}</a>`;
     if (ex.suburb) meta += (meta ? ', ' : '') + esc(ex.suburb);
-    if (ex.artist) meta += (meta ? ' &middot; ' : '') + esc(ex.artist);
 
     let dates = '';
     if (ex.start_date || ex.end_date) {
@@ -600,7 +599,6 @@
     let meta = '';
     if (ex.venue) meta += `<span class="venue">${esc(ex.venue)}</span>`;
     if (ex.suburb) meta += (meta ? ', ' : '') + esc(ex.suburb);
-    if (ex.artist) meta += (meta ? ' &middot; ' : '') + esc(ex.artist);
     document.getElementById('popup-meta').innerHTML = meta;
 
     let dates = '';
