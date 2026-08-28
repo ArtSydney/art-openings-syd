@@ -1,155 +1,310 @@
-# openings review -- 2026-08-28 00:27 UTC
+# openings review -- 2026-08-28 05:25 UTC
 
-`galleries.json` -- **34 proposed changes**
+`galleries.json` -- **251 proposed changes**
+
+## Errors
+
+- geocode: unexpected failure (AttributeError: 'Geocoder' object has no attribute 'delay')
 
 ## Summary
 
 | Change | Confidence | Count |
 |---|---|---|
-| set_field | high | 34 |
+| flag_record | high | 26 |
+| flag_record | medium | 17 |
+| merge | high | 2 |
+| set_field | high | 202 |
+| set_field | medium | 4 |
 
-## Field updates (34)
+## Field updates (206)
 
-### high confidence (34)
+### high confidence (202)
 
-- **art_gallery_of_new_south_wales.hours: (empty) -> 'Open daily 10am – 5pm, Until 10pm Wednesdays, Closed Christmas Day and Good Friday'**
+- **china_heights.hours: (empty) -> '12-5pm Wed-Sat'**
   - extracted from art gallery website
-  - source: https://www.artgallery.nsw.gov.au
-  - evidence: _Open daily 10am – 5pm Until 10pm Wednesdays Closed Christmas Day and Good Friday_
-- **art_gallery_of_new_south_wales.postcode: (empty) -> '2000'**
+  - source: https://chinaheights.com
+  - evidence: _Continues 12-5pm Wed-Sat until 13.09.2026_
+- **the_commercial.hours: (empty) -> 'Thursday–Saturday, 11–4. Outside these hours, we are available online, by phone and for visits by appointment.'**
   - extracted from art gallery website
-  - source: https://www.artgallery.nsw.gov.au
-  - evidence: _Sydney NSW 2000_
-- **art_gallery_of_new_south_wales.accessibility: (empty) -> 'The lift to lower level 3 in the Naala Nura building is temporarily out of service.'**
+  - source: https://thecommercialgallery.com
+  - evidence: _Thursday–Saturday, 11–4. Outside these hours, we are available online, by phone and for visits by appointment._
+- **the_commercial.phone: (empty) -> '+61 2 8096 3292'**
   - extracted from art gallery website
-  - source: https://www.artgallery.nsw.gov.au
-  - evidence: _Elevator upgrade works: The lift to lower level 3 in the Naala Nura building is temporarily out of service._
-- **white_rabbit.hours: (empty) -> 'Wednesday to Sunday 10AM–5PM'**
+  - source: https://thecommercialgallery.com
+  - evidence: _+61 2 8096 3292_
+- **the_commercial.postcode: (empty) -> '2024'**
   - extracted from art gallery website
-  - source: https://whiterabbitcollection.org/
-  - evidence: _Wednesday to Sunday 10AM–5PM_
-- **white_rabbit.phone: (empty) -> '+61 2 8399 2867'**
+  - source: https://thecommercialgallery.com
+  - evidence: _Marrickville, Sydney New South Wales, 2024_
+- **station_sydney.hours: (empty) -> 'Tuesday–Saturday 10.00am–5.00pm'**
   - extracted from art gallery website
-  - source: https://whiterabbitcollection.org/
-  - evidence: _+61 2 8399 2867_
-- **white_rabbit.email: (empty) -> 'info@whiterabbitcollection.org'**
+  - source: https://stationgallery.com
+  - evidence: _Tuesday–Saturday 10.00am–5.00pm_
+- **station_sydney.phone: (empty) -> '+61 2 9055 4688'**
   - extracted from art gallery website
-  - source: https://whiterabbitcollection.org/
-  - evidence: _info@whiterabbitcollection.org_
-- **artspace.hours: (empty) -> 'Tuesday–Sunday 11am–5pm'**
+  - source: https://stationgallery.com
+  - evidence: _+61 2 9055 4688_
+- **station_sydney.email: (empty) -> 'post@stationgallery.com'**
   - extracted from art gallery website
-  - source: https://www.artspace.org.au
-  - evidence: _Tuesday–Sunday 11am–5pm_
-- **artspace.accessibility: (empty) -> 'Artspace is universally accessible. The entrance to Artspace is easily accessible for wheelchairs, prams and buggies due to the ground-floor location. There is lift access from the ground floor to the first and second floors in The Gunnery building.'**
+  - source: https://stationgallery.com
+  - evidence: _post@stationgallery.com_
+- **station_sydney.postcode: (empty) -> '2010'**
   - extracted from art gallery website
-  - source: https://www.artspace.org.au
-  - evidence: _Artspace is universally accessible. The entrance to Artspace is easily accessible for wheelchairs, prams and buggies due to the ground-floor location. There is lift access from the ground floor to the_
-- **national_art_school.hours: (empty) -> 'Monday – Saturday 11 am – 5pm Sunday/Public Holiday Closed Studios are open for students enrolled in evening courses between 6 and 9pm.'**
+  - source: https://stationgallery.com
+  - evidence: _Surry Hills, New South Wales 2010_
+- **nsmith.hours: (empty) -> '10am – 5pm Tues – Fri, 10am – 4pm Sat, Or by appointment'**
   - extracted from art gallery website
-  - source: https://nas.edu.au/
-  - evidence: _Monday – Saturday 11 am – 5pm Sunday/Public Holiday Closed Studios are open for students enrolled in evening courses between 6 and 9pm._
-- **national_art_school.phone: (empty) -> '+61 2 9339 8610'**
+  - source: https://www.nsmithgallery.com
+  - evidence: _10am – 5pm Tues – Fri  10am – 4pm Sat  Or by appointment_
+- **nsmith.phone: (empty) -> '02 8356 9256'**
   - extracted from art gallery website
-  - source: https://nas.edu.au/
-  - evidence: _+61 2 9339 8610_
-- **national_art_school.email: (empty) -> 'enquiries@nas.edu.au'**
+  - source: https://www.nsmithgallery.com
+  - evidence: _p: 02 8356 9256_
+- **nsmith.email: (empty) -> 'art@nsmithgallery.com'**
   - extracted from art gallery website
-  - source: https://nas.edu.au/
-  - evidence: _enquiries@nas.edu.au_
-- **national_art_school.accessibility: (empty) -> 'Should you require accessible parking, please contact us at enquiries@nas.edu.au or on +61 2 9339 8744 for us to arrange prior to your visit.'**
+  - source: https://www.nsmithgallery.com
+  - evidence: _e:  art@nsmithgallery.com_
+- **4a_centre_for_contemporary_asian_art.hours: (empty) -> 'Wednesday to Sunday, 11am – 5pm'**
   - extracted from art gallery website
-  - source: https://nas.edu.au/
-  - evidence: _Should you require accessible parking, please contact us at enquiries@nas.edu.au or on +61 2 9339 8744 for us to arrange prior to your visit._
-- **chau_chak_wing_museum.phone: (empty) -> '+61 2 93512812'**
+  - source: https://4a.com.au/
+  - evidence: _Wednesday to Sunday, 11am – 5pm_
+- **4a_centre_for_contemporary_asian_art.email: (empty) -> 'hello@4a.com.au'**
   - extracted from art gallery website
-  - source: https://www.sydney.edu.au/museum/
-  - evidence: _Phone:  +61 2 93512812_
-- **chau_chak_wing_museum.email: (empty) -> 'ccwm.info@sydney.edu.au'**
+  - source: https://4a.com.au/
+  - evidence: _please contact email hello@4A.com.au_
+- **cement_fondu.phone: (empty) -> '02 9331 7775'**
   - extracted from art gallery website
-  - source: https://www.sydney.edu.au/museum/
-  - evidence: _Email:  ccwm.info@sydney.edu.au_
-- **sh_ervin.hours: (empty) -> 'Tuesday - Sunday, 11am-5pm'**
+  - source: https://cementfondu.org
+  - evidence: _P. 02 9331 7775_
+- **cement_fondu.email: (empty) -> 'hello@cementfondu.com'**
   - extracted from art gallery website
-  - source: https://www.shervingallery.com.au
-  - evidence: _Opening hours: Tuesday - Sunday, 11am-5pm_
-- **sh_ervin.phone: (empty) -> '(02) 9258 0173'**
+  - source: https://cementfondu.org
+  - evidence: _hello@cementfondu.com_
+- **cross_art_projects.hours: (empty) -> '11am to 5pm Thursday to Saturday (Saturday close at 4pm) Closed public holidays.'**
   - extracted from art gallery website
-  - source: https://www.shervingallery.com.au
-  - evidence: _(02) 9258 0173_
-- **roslyn_oxley9.hours: (empty) -> 'open by appointment; Tuesday – Friday 10am – 6pm; Saturday 11am – 6pm'**
+  - source: https://crossart.com.au/
+  - evidence: _11am to 5pm Thursday to Saturday (Saturday close at 4pm) Closed public holidays._
+- **cross_art_projects.phone: (empty) -> '0406 537 933'**
   - extracted from art gallery website
-  - source: https://www.roslynoxley9.com.au
-  - evidence: _open by appointment -->  Tuesday –  Friday  10am –  6pm  Saturday  11am –  6pm_
-- **roslyn_oxley9.phone: (empty) -> '+612 9331 1919'**
+  - source: https://crossart.com.au/
+  - evidence: _Contact Jo Holder, 0406 537 933_
+- **cross_art_projects.email: (empty) -> 'info@crossart.com.au'**
   - extracted from art gallery website
-  - source: https://www.roslynoxley9.com.au
-  - evidence: _+612 9331 1919_
-- **martin_browne_contemporary.phone: (empty) -> '(+61) 02 9331 7997'**
+  - source: https://crossart.com.au/
+  - evidence: _info@crossart.com.au_
+- **cross_art_projects.postcode: (empty) -> '2011'**
   - extracted from art gallery website
-  - source: https://martinbrownecontemporary.com/
-  - evidence: _(+61) 02 9331 7997_
-- **martin_browne_contemporary.email: (empty) -> 'gallery@martinbrownecontemporary.com'**
+  - source: https://crossart.com.au/
+  - evidence: _Kings Cross, Sydney 2011_
+- **gaffa.hours: (empty) -> 'Monday By Appointment Only, Tuesday-Friday 10am-6pm, Saturday 10am-5pm, Sunday and Public Holidays closed'**
   - extracted from art gallery website
-  - source: https://martinbrownecontemporary.com/
-  - evidence: _gallery@martinbrownecontemporary.com_
-- **sarah_cottier.email: (empty) -> 'mail@sarahcottiergallery.com'**
+  - source: https://www.gaffa.com.au/
+  - evidence: _Monday By Appointment Only Tuesday-Friday 10am-6pm Saturday 10am-5pm  Sunday and Public Holidays closed_
+- **gaffa.phone: (empty) -> '(+61) 02 9283 4273'**
   - extracted from art gallery website
-  - source: https://sarahcottiergallery.com/
-  - evidence: _mail@sarahcottiergallery.com_
-- **darren_knight.hours: (empty) -> 'Tuesday to Saturday 10am - 5pm'**
+  - source: https://www.gaffa.com.au/
+  - evidence: _(+61) 02 9283 4273_
+- **gaffa.email: (empty) -> 'gallery@gaffa.com.au'**
   - extracted from art gallery website
-  - source: https://darrenknightgallery.com/
-  - evidence: _Tuesday to Saturday 10am - 5pm_
-- **darren_knight.phone: (empty) -> '+61 2 9699 5353'**
+  - source: https://www.gaffa.com.au/
+  - evidence: _Alternatively, you can email gallery@gaffa.com.au_
+- **tap.hours: (empty) -> 'open daily from 12 – 6pm'**
   - extracted from art gallery website
-  - source: https://darrenknightgallery.com/
-  - evidence: _Telephone: +61 2 9699 5353_
-- **darren_knight.email: (empty) -> 'info@darrenknightgallery.com'**
+  - source: https://www.tapgallery.org.au/
+  - evidence: _TAP is open daily from 12 – 6pm._
+- **tap.phone: (empty) -> '0400610440'**
   - extracted from art gallery website
-  - source: https://darrenknightgallery.com/
-  - evidence: _Email:  info@darrenknightgallery.com_
-- **michael_reid_sydney.hours: (empty) -> 'Monday to Friday 9am–5pm, Saturday 11am–3pm'**
+  - source: https://www.tapgallery.org.au/
+  - evidence: _Tel: 0400610440_
+- **tap.email: (empty) -> 'info@tapgallery.org.au'**
   - extracted from art gallery website
-  - source: https://michaelreid.com.au/
-  - evidence: _Monday to Friday 9am–5pm  Saturday 11am–3pm_
-- **michael_reid_sydney.phone: (empty) -> '+61 2 8353 3500'**
+  - source: https://www.tapgallery.org.au/
+  - evidence: _Email: info@tapgallery.org.au_
+- **audrey_fine.hours: (empty) -> 'Monday to Friday, 9am to 6pm. Weekends by appointment.'**
   - extracted from art gallery website
-  - source: https://michaelreid.com.au/
-  - evidence: _+61 2 8353 3500_
-- **michael_reid_sydney.email: (empty) -> 'info@michaelreid.com.au'**
+  - source: https://audreyfineart.com.au/
+  - evidence: _Open Monday to Friday, 9am to 6pm. Weekends by appointment._
+- **the_ken_done.hours: (empty) -> '10am - 5:30pm, 7 days'**
   - extracted from art gallery website
-  - source: https://michaelreid.com.au/
-  - evidence: _info@michaelreid.com.au_
-- **michael_reid_sydney.postcode: (empty) -> '2008'**
+  - source: https://kendone.com.au/
+  - evidence: _Opening Hours  10am - 5:30pm, 7 days_
+- **the_ken_done.email: (empty) -> 'gallery@done.com.au'**
   - extracted from art gallery website
-  - source: https://michaelreid.com.au/
-  - evidence: _Chippendale NSW 2008 Australia_
-- **king_street_gallery_on_william.hours: (empty) -> 'Tues - Sat 10am - 6pm, Sun - Mon By Appointment'**
+  - source: https://kendone.com.au/
+  - evidence: _please email: gallery@done.com.au_
+- **arthouse.hours: (empty) -> 'Tuesday to Friday 9.30am - 6pm, Saturday 10am - 5pm'**
   - extracted from art gallery website
-  - source: https://kingstreetgallery.com.au/
-  - evidence: _Tues - Sat 10am - 6pm  Sun - Mon By Appointment_
-- **king_street_gallery_on_william.phone: (empty) -> '+61 2 9360 9727'**
+  - source: https://arthousegallery.com.au/
+  - evidence: _Opening Hours Tuesday to Friday 9.30am - 6pm  Saturday 10am - 5pm_
+- **arthouse.phone: (empty) -> '+61 2 9332 1019'**
   - extracted from art gallery website
-  - source: https://kingstreetgallery.com.au/
-  - evidence: _+61 2 9360 9727_
-- **king_street_gallery_on_william.email: (empty) -> 'art@kingstreetgallery.com'**
+  - source: https://arthousegallery.com.au/
+  - evidence: _+61 2 9332 1019_
+- **liverpool_street.hours: (empty) -> 'Tuesday - Saturday 10am - 6pm'**
   - extracted from art gallery website
-  - source: https://kingstreetgallery.com.au/
-  - evidence: _art@kingstreetgallery.com_
-- **nanda/hobbs.hours: (empty) -> 'Monday – Friday: 9am to 5pm, Saturday: 11am to 4pm'**
+  - source: https://www.liverpoolstgallery.com.au/
+  - evidence: _Tuesday - Saturday 10am - 6pm_
+- **liverpool_street.phone: (empty) -> '+61 2 8353 7799'**
   - extracted from art gallery website
-  - source: https://nandahobbs.com/
-  - evidence: _Monday – Friday: 9am to 5pm Saturday: 11am to 4pm_
-- **nanda/hobbs.phone: (empty) -> '+61 (0) 2 8599 8000'**
+  - source: https://www.liverpoolstgallery.com.au/
+  - evidence: _T +61 2 8353 7799_
+- **liverpool_street.email: (empty) -> 'info@liverpoolstgallery.com.au'**
   - extracted from art gallery website
-  - source: https://nandahobbs.com/
-  - evidence: _tel: +61 (0) 2 8599 8000_
-- **nanda/hobbs.email: (empty) -> 'info@nandahobbs.com'**
+  - source: https://www.liverpoolstgallery.com.au/
+  - evidence: _E info@liverpoolstgallery.com.au_
+- **stanley_street.hours: (empty) -> 'Thursday – Saturday 11am – 5pm during exhibition dates. Closed on public holidays. We welcome private viewings by appointment outside of gallery hours.'**
   - extracted from art gallery website
-  - source: https://nandahobbs.com/
-  - evidence: _info@nandahobbs.com_
+  - source: https://stanleystreetgallery.com.au/
+  - evidence: _Thursday – Saturday 11am – 5pm during exhibition dates  Closed on public holidays  We welcome private viewings by appointment outside of gallery hours._
+- **stanley_street.phone: (empty) -> '+61 (02) 9368 1142'**
+  - extracted from art gallery website
+  - source: https://stanleystreetgallery.com.au/
+  - evidence: _+61 (02) 9368 1142_
+- **brett_whiteley_studio.hours: (empty) -> 'Open Thursday to Sunday 10am – 4pm'**
+  - extracted from art gallery website
+  - source: https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/
+  - evidence: _Open Thursday to Sunday 10am – 4pm_
+- **brett_whiteley_studio.phone: (empty) -> '02 9225 1881'**
+  - extracted from art gallery website
+  - source: https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/
+  - evidence: _phone 02 9225 1881_
+- **brett_whiteley_studio.email: (empty) -> 'brettwhiteleystudio@ag.nsw.gov.au'**
+  - extracted from art gallery website
+  - source: https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/
+  - evidence: _email brettwhiteleystudio@ag.nsw.gov.au_
+- **brett_whiteley_studio.accessibility: (empty) -> 'There is a step 100mm at the entry door to the Brett Whiteley Studio. During the interim period, wheelchair users can access the studio via a portable ramp. Assistance animals are welcome to the Brett Whiteley Studio. An internal lift provides access between public levels of the Brett Whiteley Studio.'**
+  - extracted from art gallery website
+  - source: https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/
+  - evidence: _There is a step 100mm at the entry door to the Brett Whiteley Studio.  During the interim period, wheelchair users can access the studio via a portable ramp. If possible, please contact us via email b_
+- **utopia_art_sydney.hours: (empty) -> 'Tuesday - Saturday, 10:00 am - 5:00 pm'**
+  - extracted from art gallery website
+  - source: https://utopiaartsydney.com.au/
+  - evidence: _Hours : Tuesday - Saturday, 10:00 am - 5:00 pm_
+- _...and 162 more_
+
+### medium confidence (4)
+
+- **passage.postcode: (empty) -> '2000'**
+  - extracted from art gallery website
+  - source: https://www.passagegallery.com/
+  - evidence: _NSW 2000_
+- **eloise_cato.postcode: (empty) -> '2010'**
+  - extracted from art gallery website
+  - source: https://catogallery.com/
+  - evidence: _NSW, 2010_
+- **freeman.postcode: (empty) -> '2011'**
+  - extracted from art gallery website
+  - source: https://www.free-man.gallery/
+  - evidence: _NSW 2011_
+- **palangi.postcode: (empty) -> '2010'**
+  - extracted from art gallery website
+  - source: https://gallery.palangi.com.au/
+  - evidence: _NSW 2010_
+
+## Possible duplicates (2)
+
+### high confidence (2)
+
+- **merge tom_bass_clara_street into clara_street_gallery**
+  - identical normalised name: 'clara street gallery'
+- **merge tom_bass_clara_street into clara_street_gallery**
+  - Identical details with renamed venue
+
+## Flagged for review (43)
+
+### high confidence (26)
+
+- **flag audrey_fine: missing required field(s): suburb**
+- **flag macquarie_university: missing required field(s): suburb**
+- **flag grace_cossington_smith: missing required field(s): suburb**
+- **flag state_library_of_nsw: missing required field(s): suburb**
+- **flag ngununggula: coordinates (-34.4816626, 150.4177868) fall outside Greater Sydney**
+- **flag carriageworks: website is dead (HTTP 403): https://www.carriageworks.com.au**
+  - source: https://www.carriageworks.com.au
+- **flag uts: website is dead (HTTP 404): https://www.uts.edu.au/uts-art**
+  - source: https://www.uts.edu.au/uts-art
+- **flag sullivan_and_strumpf: website is dead (HTTP 429): https://sullivanstrumpf.com**
+  - source: https://sullivanstrumpf.com
+- **flag unsw: website is dead (HTTP 404): https://www.unsw.edu.au/unsw-galleries**
+  - source: https://www.unsw.edu.au/unsw-galleries
+- **flag dominik_mersch: website is dead (unreachable): https://www.dmgart.com.au**
+  - source: https://www.dmgart.com.au
+- **flag piermarq: website is dead (unreachable): https://www.piermarq.com**
+  - source: https://www.piermarq.com
+- **flag ames_yavuz: website is dead (unreachable): https://www.amesyavuz.com**
+  - source: https://www.amesyavuz.com
+- **flag hazelhurst_arts_centre: website is dead (HTTP 403): https://hazelhurst.sutherlandshire.nsw.gov.au/**
+  - source: https://hazelhurst.sutherlandshire.nsw.gov.au/
+- **flag macquarie_university: website is dead (HTTP 403): https://www.mq.edu.au/about/facilities/museums-collections/macquarie-university-art-gallery**
+  - source: https://www.mq.edu.au/about/facilities/museums-collections/macquarie-university-art-gallery
+- **flag verge: website is dead (HTTP 403): https://www.vergegallery.net**
+  - source: https://www.vergegallery.net
+- **flag china_cultural_centre_in_sydney: website is dead (unreachable): https://cccsydney.org/**
+  - source: https://cccsydney.org/
+- **flag la_perouse_museum: website is dead (HTTP 403): https://www.laperousemuseum.com.au/**
+  - source: https://www.laperousemuseum.com.au/
+- **flag 44: website is dead (HTTP 403): https://linktr.ee/44_rozelle**
+  - source: https://linktr.ee/44_rozelle
+- **flag mcglade_gallery_australian_catholic_university: website is dead (HTTP 403): https://www.acu.edu.au/about-acu/faculties-directorates-and-staff/faculty-of-education-and-arts/acu-galleries/acu-mcglade-gallery-at-strathfield**
+  - source: https://www.acu.edu.au/about-acu/faculties-directorates-and-staff/faculty-of-education-and-arts/acu-galleries/acu-mcglade-gallery-at-strathfield
+- **flag harvey_galleries_seaforth: website is dead (HTTP 403): https://harveygalleries.com.au/**
+  - source: https://harveygalleries.com.au/
+- **flag hawkesbury_regional: website is dead (HTTP 403): https://www.hawkesbury.nsw.gov.au/gallery**
+  - source: https://www.hawkesbury.nsw.gov.au/gallery
+- **flag liverpool_powerhouse: website is dead (HTTP 403): https://www.liverpoolpowerhouse.com.au/whats-on/galleries/current-exhibitions**
+  - source: https://www.liverpoolpowerhouse.com.au/whats-on/galleries/current-exhibitions
+- **flag depart: website is dead (HTTP 404): https://mayflower-reindeer-by2b.squarespace.com/**
+  - source: https://mayflower-reindeer-by2b.squarespace.com/
+- **flag tramsheds_harold_park: website is dead (unreachable): https://tramshedsharoldpark.com.au/**
+  - source: https://tramshedsharoldpark.com.au/
+- **flag artbank_sydney: website is dead (unreachable): https://www.artbank.gov.au/**
+  - source: https://www.artbank.gov.au/
+- **flag yavuz: website is dead (unreachable): https://www.yavuzgallery.com**
+  - source: https://www.yavuzgallery.com
+
+### medium confidence (17)
+
+- **flag white_rabbit: website redirects to https://whiterabbitcollection.org/**
+  - source: https://www.whiterabbitcollection.org
+- **flag national_art_school: website redirects to https://nas.edu.au/**
+  - source: https://www.nas.edu.au
+- **flag darren_knight: website redirects to https://darrenknightgallery.com/**
+  - source: https://www.darrenknightgallery.com
+- **flag sarah_cottier: website redirects to https://sarahcottiergallery.com/**
+  - source: https://www.sarahcottiergallery.com
+- **flag king_street_gallery_on_william: website redirects to https://kingstreetgallery.com.au/**
+  - source: https://www.kingstreetgallery.com.au
+- **flag curatorial_and_co: website redirects to https://curatorialandco.com/**
+  - source: https://www.curatorialandco.com
+- **flag nanda/hobbs: website redirects to https://nandahobbs.com/**
+  - source: https://www.nandahobbs.com
+- **flag 4a_centre_for_contemporary_asian_art: website redirects to https://4a.com.au/**
+  - source: https://www.4a.com.au
+- **flag cross_art_projects: website redirects to https://crossart.com.au/**
+  - source: https://www.crossart.com.au
+- **flag airspace_projects: website redirects to https://airspaceprojects.com/**
+  - source: https://www.airspaceprojects.com
+- **flag gaffa: website redirects to https://www.gaffa.com.au/**
+  - source: https://gaffa.com.au
+- **flag woollahra_gallery_at_redleaf: website redirects to https://www.woollahra.nsw.gov.au/Home**
+  - source: https://www.woollahra.nsw.gov.au
+- **flag martin_browne_contemporary: website redirects to https://martinbrownecontemporary.com/**
+  - source: https://www.martinbrownecontemporary.com
+- **flag tap: website redirects to https://www.tapgallery.org.au/**
+  - source: https://tapgallery.org.au
+- **flag gallery_144: website redirects to https://gallery144.com.au/**
+  - source: https://www.gallery144.com.au/
+- **flag michael_reid_sydney: website redirects to https://michaelreid.com.au/**
+  - source: https://www.michaelreid.com.au
+- **flag revolve_gallery_and_studios: website redirects to https://www.revolve.gallery**
+  - source: https://revolve.gallery/
 
 ## Notes
 
-- enrich: 20 records visited, 34 field values proposed, 5 sites unreachable
-- fetcher: fetched=50, cached=0, blocked=0, failed=1
+- link check: 156 checked, 21 dead (0 blocked by robots.txt)
+- review scanned 187 records
+- enrich: 155 records visited, 206 field values proposed, 26 sites unreachable
+- dedup: 5 pairs adjudicated, 1 duplicates proposed
+- research: 43 search results, 18 already in the dataset
+- research: 0 new art gallery records proposed
+- fetcher: fetched=391, cached=6, blocked=6, failed=3
