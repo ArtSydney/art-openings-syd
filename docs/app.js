@@ -193,6 +193,8 @@
       let range = formatDate(ex.start_date);
       if (ex.end_date) range += ' \u2013 ' + formatDate(ex.end_date);
       dates += `<span class="date-exhibition">${range}</span>`;
+    } else if (ex.opening_date) {
+      dates += `<span class="date-exhibition">${formatDate(ex.opening_date)}</span>`;
     }
 
     let actions = '';
