@@ -89,10 +89,16 @@
     return diff >= 0 && diff <= 7;
   }
 
+  function isOpeningToday(ex) {
+    const d = ex.opening_date || ex.start_date;
+    if (!d) return false;
+    return d === TODAY_STR;
+  }
+
   // ---- Filtering & Sorting ----
   function getFiltered() {
     const q = document.getElementById('search').value.toLowerCase().trim();
-    const onNow = document.getElementById('filter-on-now').checked;
+    const openingToday = document.getElementById('filter-opening-today').checked;
     const openingWeek = document.getElementById('filter-opening-week').checked;
     const showClosed = document.getElementById('filter-closed').checked;
     const suburb = document.getElementById('filter-suburb').value;
@@ -106,9 +112,9 @@
         if (ex.status === 'closed') return false;
       }
 
-      // On now filter
-      if (onNow && !showClosed) {
-        if (!isOnNow(ex) && !isOpeningThisWeek(ex)) return false;
+      // Opening today filter
+      if (openingToday && !showClosed) {
+        if (!isOpeningToday(ex)) return false;
       }
 
       // Opening this week filter (additive narrowing)
@@ -133,23 +139,15 @@
       return true;
     });
 
-    // Sort: on now first, then upcoming by start date, then past
+    // Sort: soonest-ending first so closing-soon shows at top,
+    // then by opening/start date ascending for upcoming shows
     results.sort((a, b) => {
-      const aNow = isOnNow(a) ? 0 : 1;
-      const bNow = isOnNow(b) ? 0 : 1;
-      if (aNow !== bNow) return aNow - bNow;
+      const aEnd = a.end_date || '9999';
+      const bEnd = b.end_date || '9999';
+      if (aEnd !== bEnd) return aEnd.localeCompare(bEnd);
 
-      // Within same group, sort by opening/start date ascending
       const aDate = a.opening_date || a.start_date || '9999';
       const bDate = b.opening_date || b.start_date || '9999';
-
-      // For "on now", show soonest-ending first
-      if (aNow === 0 && bNow === 0) {
-        const aEnd = a.end_date || '9999';
-        const bEnd = b.end_date || '9999';
-        return aEnd.localeCompare(bEnd);
-      }
-
       return aDate.localeCompare(bDate);
     });
 
@@ -670,13 +668,12 @@
     const badge = document.getElementById('filter-badge');
     if (!badge) return;
     let count = 0;
-    const onNow = document.getElementById('filter-on-now');
+    const openToday = document.getElementById('filter-opening-today');
     const openWeek = document.getElementById('filter-opening-week');
     const showClosed = document.getElementById('filter-closed');
     const suburb = document.getElementById('filter-suburb');
     const venue = document.getElementById('filter-venue');
-    // "On now" checked is the default, so don't count it; count when unchecked
-    if (onNow && !onNow.checked) count++;
+    if (openToday && openToday.checked) count++;
     if (openWeek && openWeek.checked) count++;
     if (showClosed && showClosed.checked) count++;
     if (suburb && suburb.value) count++;
@@ -690,7 +687,7 @@
     setupFilterToggle();
     const rerender = () => { render(); renderCalendar(); updateFilterBadge(); };
     document.getElementById('search').addEventListener('input', rerender);
-    document.getElementById('filter-on-now').addEventListener('change', rerender);
+    document.getElementById('filter-opening-today').addEventListener('change', rerender);
     document.getElementById('filter-opening-week').addEventListener('change', rerender);
     document.getElementById('filter-closed').addEventListener('change', async function() {
       const showClosed = this.checked;

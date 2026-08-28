@@ -58,6 +58,24 @@ def build():
 
     today = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
 
+    # Auto-close entries with no end_date that are older than 30 days.
+    # Without an end_date they'd stay "on now" forever.
+    for rec in records:
+        if rec["status"] == "closed":
+            continue
+        if rec.get("end_date"):
+            continue
+        start = rec.get("start_date") or rec.get("opening_date")
+        if not start:
+            continue
+        try:
+            age = (datetime.now(tz=timezone.utc).date()
+                   - datetime.fromisoformat(start).date()).days
+            if age > 30:
+                rec["status"] = "closed"
+        except (ValueError, TypeError):
+            pass
+
     # Split into current (active/upcoming) and full archive
     current = [r for r in records if (
         r["status"] != "closed" or
