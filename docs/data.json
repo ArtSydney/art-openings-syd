@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-28T01:23:57.462495+00:00",
-  "count": 965,
+  "generated": "2026-08-28T08:53:13.163815+00:00",
+  "count": 969,
   "exhibitions": [
     {
       "id": "51001e148848",
@@ -11001,6 +11001,24 @@
       "status": "active"
     },
     {
+      "id": "7cf5584e058e",
+      "title": "Remy Faint: A Site of Unfolding",
+      "artist": "",
+      "venue": "UNSW Galleries",
+      "gallery_key": "unsw",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-03",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/remy-faint-a-site-of-unfolding",
+      "instagram": "",
+      "description": "Remy Faint: A Site of Unfolding UNSW Galleries Exhibitions Remy Faint: A Site of Unfolding An ambitious new body of work developed through an ongoing dialogue with family histories and archival encounters. 3 Sep 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
       "id": "6c722853a4c5",
       "title": "Mohamed Khadra: Conference of the Birds y",
       "artist": "Mohamed Khadra",
@@ -11307,6 +11325,24 @@
       "status": "active"
     },
     {
+      "id": "3d7a7a4716d9",
+      "title": "Alana Hunt: To the Owner",
+      "artist": "",
+      "venue": "UTS Gallery",
+      "gallery_key": "uts",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-08",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/alana-hunt-to-the-owner",
+      "instagram": "",
+      "description": "Alana Hunt: To the Owner UTS Gallery Exhibitions Alana Hunt: To the Owner To the Owner is Alana Hunt's first institutional solo exhibition in Gadigal Nura/Sydney. 8 Sep 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
       "id": "8a09aca190db",
       "title": "Group Show: Everything Must Go",
       "artist": "Group Show",
@@ -11375,6 +11411,24 @@
       "website": "https://whatson.cityofsydney.nsw.gov.au/events/breathing-life-group-show",
       "instagram": "",
       "description": "\u2018Breathing Life\u2019 group show Tiliqua Tiliqua Exhibitions \u2018Breathing Life\u2019 group show Exploring the rhythms of the natural world through painting, sculpture and works on paper 10 Sep 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
+      "id": "64aa29ea964b",
+      "title": "Exhibition Opening: To the Owner",
+      "artist": "",
+      "venue": "UTS Gallery",
+      "gallery_key": "uts",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-10",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/exhibition-opening-to-the-owner",
+      "instagram": "",
+      "description": "Exhibition Opening: To the Owner UTS Gallery Exhibitions Exhibition Opening: To the Owner You are invited to celebrate the opening of To the Owner on Thursday 10 September, 6\u20137.30pm. 10 Sep 2026",
       "source": "city_of_sydney",
       "status": "active"
     },
@@ -12347,6 +12401,24 @@
       "website": "https://whatson.cityofsydney.nsw.gov.au/events/and-still-i-rise",
       "instagram": "",
       "description": "And Still I Rise Art Gallery of NSW Exhibitions And Still I Rise An exhibition presenting 20 culturally diverse, internationally recognised women artists based in Australia 9 Oct 2026",
+      "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
+      "id": "db6204cc82e6",
+      "title": "Conversations Through Jewellery",
+      "artist": "",
+      "venue": "UNSW Art & Design",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-10-09",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://whatson.cityofsydney.nsw.gov.au/events/conversations-through-jewellery",
+      "instagram": "",
+      "description": "Conversations Through Jewellery UNSW Art & Design Exhibitions Conversations Through Jewellery Conversations Through Jewellery: Works by the UNSW Art & Design Jewellery Community 9 Oct 2026",
       "source": "city_of_sydney",
       "status": "active"
     },
