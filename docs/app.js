@@ -194,11 +194,6 @@
       if (ex.end_date) range += ' \u2013 ' + formatDate(ex.end_date);
       dates += `<span class="date-exhibition">${range}</span>`;
     }
-    if (ex.opening_date) {
-      let opStr = formatDate(ex.opening_date);
-      if (ex.opening_time) opStr += ' ' + esc(ex.opening_time);
-      dates += `<span class="date-opening">Opening: ${opStr}</span>`;
-    }
 
     let actions = '';
     if (ex.website) {
