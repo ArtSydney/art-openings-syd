@@ -3028,7 +3028,7 @@
     "description": "Exhibition Opening: Yalmakany Marawili Roslyn Oxley9 Gallery Tours & experiences Exhibition Opening: Yalmakany Marawili An exhibition of new work by Yalmakany Marawili 21 Aug 2026",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/wal-akunhami-bringing-to-life",
-    "status": "active",
+    "status": "suppressed",
     "first_seen": "2026-08-14T09:19:56.634732+00:00"
   },
   "65f1b47987cd": {
@@ -18030,7 +18030,7 @@
     "description": "Judy Trick | FULL CIRCLE | Exhibition Artsite Contemporary Shopping, markets & fairs Judy Trick | FULL CIRCLE | Exhibition An artist who’s been everywhere and landed somewhere beautiful. 22 Aug 2026",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/judy-trick-or-full-circle-or-exhibition",
-    "status": "active",
+    "status": "suppressed",
     "first_seen": "2026-08-18T10:37:31.489314+00:00"
   },
   "19580cbcf0a7": {
@@ -18048,7 +18048,7 @@
     "description": "Curiosity Shop The Corner Gallery Shopping, markets & fairs Curiosity Shop An exhibition of new and archival works by Claire Engkaninan Low 26 Aug 2026",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/curiosity-shop",
-    "status": "active",
+    "status": "suppressed",
     "first_seen": "2026-08-18T10:37:31.490649+00:00"
   },
   "804376536426": {
@@ -18272,7 +18272,7 @@
     "description": "OK? Ok, ok… City of Sydney Creative Studios Exhibitions OK? Ok, ok… Part of the Transience series by Wong Ching Yee (Jenny) 黃靜儀. The assemblage has had many lives and continues to evolve. Today 12am to 10.59pm",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/ok-ok-ok",
-    "status": "needs_review",
+    "status": "suppressed",
     "first_seen": "2026-08-25T11:05:19.849585+00:00"
   },
   "4ab354dcf75c": {
@@ -18308,7 +18308,7 @@
     "description": "Children & family Madjawa Maangi: First Nations Exhibition and Events Program The Madjawa Maangi exhibition and events program features First Nations arts and cultural activities",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/children-and-family",
-    "status": "needs_review",
+    "status": "suppressed",
     "first_seen": "2026-08-25T11:05:20.594472+00:00"
   },
   "7a442249f6d1": {
@@ -18344,7 +18344,7 @@
     "description": "Ceramic Business District Market City of Sydney Creative Studios Exhibitions Ceramic Business District Market Bringing together a curated selection of local ceramic artists and makers 10 Oct 2026",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/ceramic-business-district-market",
-    "status": "active",
+    "status": "suppressed",
     "first_seen": "2026-08-25T11:05:20.987573+00:00"
   },
   "e931388baaa5": {
@@ -18619,7 +18619,7 @@
     "description": "Heaps Decent: Take Over Community Showcase Randwick Music Heaps Decent: Take Over Community Showcase Take Over: Community Showcase, the culminating celebration of Heaps Decent’s week-long creative residency. 3 Oct 2026",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/heaps-decent-take-over-community-showcase",
-    "status": "active",
+    "status": "suppressed",
     "first_seen": "2026-08-28T01:23:49.551475+00:00"
   },
   "76ffa65fa6f4": {
@@ -18637,7 +18637,7 @@
     "description": "Music Heaps Decent: Take Over Community Showcase Take Over: Community Showcase, the culminating celebration of Heaps Decent’s week-long creative residency.",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/music",
-    "status": "needs_review",
+    "status": "suppressed",
     "first_seen": "2026-08-28T01:23:49.842693+00:00"
   },
   "8300e9424d84": {
@@ -18673,7 +18673,7 @@
     "description": "Shopping, markets & fairs Made by Hand Discover jewellery, ceramics, and botanical installation in a leafy Darlinghurst laneway studio.",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/shopping-markets-and-fairs",
-    "status": "needs_review",
+    "status": "suppressed",
     "first_seen": "2026-08-28T01:23:50.455567+00:00"
   },
   "ba51583a9f21": {
@@ -18781,7 +18781,7 @@
     "description": "Exhibitions Conversations Through Jewellery Conversations Through Jewellery: Works by the UNSW Art & Design Jewellery Community",
     "source": "city_of_sydney",
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/exhibitions",
-    "status": "needs_review",
+    "status": "suppressed",
     "first_seen": "2026-08-28T08:53:12.352548+00:00"
   }
 }

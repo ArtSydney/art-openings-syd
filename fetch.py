@@ -183,6 +183,24 @@ def fetch_city_of_sydney():
     """Scrape City of Sydney What's On exhibitions."""
     url = "https://whatson.cityofsydney.nsw.gov.au/categories/exhibitions"
     results = []
+
+    # Categories that indicate non-exhibition content
+    REJECT_CATEGORIES = [
+        "shopping, markets",
+        "tours & experiences",
+        "music",
+        "children & family",
+        "sport",
+        "food & drink",
+        "talks & workshops",
+    ]
+
+    # Title keywords that indicate non-exhibition content
+    REJECT_TITLE_KEYWORDS = [
+        "market", "showcase", "workshop", "walking tour",
+        "talk", "lecture", "class", "course",
+    ]
+
     try:
         resp = requests.get(url, headers=HEADERS, timeout=15)
         resp.raise_for_status()
@@ -199,23 +217,31 @@ def fetch_city_of_sydney():
                 link = "https://whatson.cityofsydney.nsw.gov.au" + link
 
             text = card.get_text(" ", strip=True)
+            text_lower = text.lower()
+
+            # Reject cards with non-exhibition categories
+            if any(cat in text_lower for cat in REJECT_CATEGORIES):
+                continue
+
+            # Reject junk titles
+            title_lower = title.lower()
+            if any(kw in title_lower for kw in REJECT_TITLE_KEYWORDS):
+                continue
 
             # Extract venue: City of Sydney cards follow the pattern
             # "Title VenueName Category Title Description..."
             # The venue appears between the title and a category keyword
             venue_hint = ""
             CATEGORIES = ["exhibitions", "community", "arts", "events",
-                          "causes", "festivals", "markets", "sport", "shopping"]
+                          "causes", "festivals"]
             stripped = text
             if title and stripped.startswith(title):
                 stripped = stripped[len(title):].strip()
-            # What's left starts with the venue name, ends at a category word
             import re as _re
             cat_pattern = "|".join(CATEGORIES)
             m = _re.match(rf"^(.+?)\s+(?:{cat_pattern})\b", stripped, _re.IGNORECASE)
             if m:
                 candidate = m.group(1).strip()
-                # Reject if it's just a suburb or very short
                 SUBURB_ONLY = {
                     "sydney", "darlinghurst", "surry hills", "newtown",
                     "paddington", "waterloo", "redfern", "woollahra",
@@ -225,10 +251,6 @@ def fetch_city_of_sydney():
                     "parramatta", "liverpool", "bankstown", "leichhardt",
                     "marrickville", "newtown", "erskineville", "alexandria",
                 }
-                # Reject junk: too short, suburb-only, too long (>60 chars),
-                # or contains a chunk of the title (category word was inside
-                # repeated title text, not an actual tag)
-                title_lower = title.lower() if title else ""
                 candidate_lower = candidate.lower()
                 title_leaked = (
                     len(title_lower) > 10
@@ -244,7 +266,7 @@ def fetch_city_of_sydney():
                 "source": "city_of_sydney",
                 "url": link,
                 "title": title,
-                "snippet": text[:500],
+                "snippet": "",
                 "domain": "whatson.cityofsydney.nsw.gov.au",
                 "venue_hint": venue_hint,
             })
