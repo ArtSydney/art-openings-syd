@@ -522,10 +522,12 @@
     const canonical = GALLERY_ALIASES[nl] || nl;
     return GALLERIES.find(g => {
       const gl = g.name.toLowerCase().trim();
-      return gl === canonical ||
-             gl === nl ||
-             gl.includes(nl) ||
-             nl.includes(gl);
+      if (gl === canonical || gl === nl) return true;
+      // Only allow substring matching for names longer than 4 chars
+      // to avoid short names like "44" matching inside "gallery 144"
+      if (nl.length > 4 && gl.includes(nl)) return true;
+      if (gl.length > 4 && nl.includes(gl)) return true;
+      return false;
     });
   }
 

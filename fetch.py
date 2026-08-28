@@ -225,7 +225,19 @@ def fetch_city_of_sydney():
                     "parramatta", "liverpool", "bankstown", "leichhardt",
                     "marrickville", "newtown", "erskineville", "alexandria",
                 }
-                if len(candidate) > 5 and candidate.lower() not in SUBURB_ONLY:
+                # Reject junk: too short, suburb-only, too long (>60 chars),
+                # or contains a chunk of the title (category word was inside
+                # repeated title text, not an actual tag)
+                title_lower = title.lower() if title else ""
+                candidate_lower = candidate.lower()
+                title_leaked = (
+                    len(title_lower) > 10
+                    and title_lower[:20] in candidate_lower
+                )
+                if (len(candidate) > 5
+                    and len(candidate) <= 60
+                    and candidate_lower not in SUBURB_ONLY
+                    and not title_leaked):
                     venue_hint = candidate
 
             results.append({
