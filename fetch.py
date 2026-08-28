@@ -68,7 +68,19 @@ def fetch_serper():
                 domain = re.sub(r"^www\.", "", item.get("domain", ""))
                 if domain in EXCLUDED_DOMAINS:
                     continue
+                # Also check the URL itself for excluded domains
+                # (Serper's domain field can be unreliable)
+                if any(d in url for d in EXCLUDED_DOMAINS):
+                    continue
                 if url in seen_urls:
+                    continue
+                # Reject generic category/listing pages
+                result_title = item.get("title", "")
+                if any(junk in result_title for junk in [
+                    "Events in Sydney", "What's On", "Things to Do",
+                    "Art Guide Australia", "Art Almanac",
+                    "Artforum Artguide",
+                ]):
                     continue
                 seen_urls.add(url)
                 all_results.append({
