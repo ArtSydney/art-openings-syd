@@ -963,10 +963,12 @@
     "heirloom pari": "9ef93b4cb8b4",
     "body narratives scieppan self": "f737f99e58d2",
     "breathing life tiliqua tiliqua": "b28c4579b7b1",
-    "owner uts": "64aa29ea964b"
+    "owner uts": "64aa29ea964b",
+    "airspace draw events exhibitions sept space": "8e95a35c8c2b",
+    "faint gower heather jordan remy swann unsw": "0271b9a33094"
   },
   "__meta__": {
-    "last_run": "2026-08-29T10:09:09.156556+00:00",
+    "last_run": "2026-08-30T10:09:22.316470+00:00",
     "instagram_latest": "2026-08-25T01:05:00+0000"
   },
   "747cbd06e895": {
@@ -11394,7 +11396,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DN2Jeut5A_d/",
     "status": "active",
-    "first_seen": "2026-08-16T06:38:39.525145+00:00"
+    "first_seen": "2026-08-16T06:38:39.525145+00:00",
+    "opening_soon_sent": true
   },
   "46da3a3a430f": {
     "title": "Caesar Florence-Howard: All the time",
@@ -18554,7 +18557,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dccam_BEh6B/",
     "status": "active",
-    "first_seen": "2026-08-25T11:05:28.121994+00:00"
+    "first_seen": "2026-08-25T11:05:28.121994+00:00",
+    "opening_soon_sent": true
   },
   "f737f99e58d2": {
     "title": "Group Exhibition: Narratives of Body, Self and",
@@ -18609,5 +18613,41 @@
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/exhibition-opening-to-the-owner",
     "status": "needs_review",
     "first_seen": "2026-08-28T21:50:03.695158+00:00"
+  },
+  "8e95a35c8c2b": {
+    "title": "Exhibitions and Events - DRAW Space",
+    "artist": "Lana Ardere",
+    "venue": "AIRspace Sept",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-09-04",
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://drawspace.org/exhibitions-and-events",
+    "instagram": "",
+    "description": "DRAW Space at AIRspace Sept 4 to 20. Fri, 4 Sept 2026 6:00 pm Sun, Sydney's most exciting artist-run spaces. The exhibition features work by Lana Ardere, Megan ...",
+    "source": "serper",
+    "source_url": "https://drawspace.org/exhibitions-and-events",
+    "status": "active",
+    "first_seen": "2026-08-30T10:09:21.426769+00:00"
+  },
+  "0271b9a33094": {
+    "title": "Opening: Heather B. Swann, Jordan Gower & Remy Faint",
+    "artist": "",
+    "venue": "UNSW Galleries",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/opening-heather-b-swann-jordan-gower-and-remy-faint",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/opening-heather-b-swann-jordan-gower-and-remy-faint",
+    "status": "needs_review",
+    "first_seen": "2026-08-30T10:09:21.769382+00:00"
   }
 }

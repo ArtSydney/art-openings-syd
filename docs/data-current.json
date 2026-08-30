@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-29T10:09:09.861895+00:00",
-  "count": 150,
+  "generated": "2026-08-30T10:09:23.041228+00:00",
+  "count": 148,
   "exhibitions": [
     {
       "id": "8fb34fea14f1",
@@ -147,24 +147,6 @@
       "status": "active"
     },
     {
-      "id": "51c2ff34b74c",
-      "title": "Tina Havelock Stevens: Naytcha Nurture",
-      "artist": "Tina Havelock Stevens",
-      "venue": "Cassandra Bird",
-      "gallery_key": "cassandra_bird",
-      "address": "",
-      "suburb": "Potts Point",
-      "start_date": null,
-      "end_date": null,
-      "opening_date": "2026-07-30",
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "eea468074ba3",
       "title": "Group Exhibition: NEWCOMERS26",
       "artist": "Group Exhibition",
@@ -201,24 +183,6 @@
       "status": "active"
     },
     {
-      "id": "5c0bf589b9dd",
-      "title": "Emily Valentine | Lucy Chetcuti",
-      "artist": "",
-      "venue": "Stanley Street Gallery",
-      "gallery_key": "stanley_street",
-      "address": "",
-      "suburb": "Darlinghurst",
-      "start_date": "2026-08-06",
-      "end_date": "2026-08-29",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "af945f7a918a",
       "title": "Group Exhibitions at Tin Sheds Gallery",
       "artist": "",
@@ -230,24 +194,6 @@
       "end_date": "2026-09-18",
       "opening_date": null,
       "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "fcf96b9f1be8",
-      "title": "Elger Esser | Locust Jones",
-      "artist": "",
-      "venue": "Dominik Mersch Gallery",
-      "gallery_key": "dominik_mersch",
-      "address": "",
-      "suburb": "Rushcutters Bay",
-      "start_date": "2026-08-06",
-      "end_date": "2026-08-29",
-      "opening_date": "2026-08-06",
-      "opening_time": "5-7 PM",
       "website": "",
       "instagram": "",
       "description": "",
@@ -1098,6 +1044,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "8e95a35c8c2b",
+      "title": "Exhibitions and Events - DRAW Space",
+      "artist": "Lana Ardere",
+      "venue": "AIRspace Sept",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-04",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://drawspace.org/exhibitions-and-events",
+      "instagram": "",
+      "description": "DRAW Space at AIRspace Sept 4 to 20. Fri, 4 Sept 2026 6:00 pm Sun, Sydney's most exciting artist-run spaces. The exhibition features work by Lana Ardere, Megan ...",
+      "source": "serper",
       "status": "active"
     },
     {
