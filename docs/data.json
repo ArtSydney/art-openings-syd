@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-30T10:09:23.041218+00:00",
+  "generated": "2026-08-31T10:09:23.339661+00:00",
   "count": 952,
   "exhibitions": [
     {
@@ -10584,7 +10584,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d3e21e60f2b0",
@@ -11700,7 +11700,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d2ab0455c38a",
@@ -12168,7 +12168,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "f3c796199aeb",
