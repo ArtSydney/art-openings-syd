@@ -969,10 +969,12 @@
     "atrium atrium": "e3a1bf6f2955",
     "downer downer fine fine stella stella": "f14cede04d2c",
     "australian life square": "b4695a8c1ebe",
-    "community gas nxt1 presents syd": "0a41d51c9ee1"
+    "community gas nxt1 presents syd": "0a41d51c9ee1",
+    "botanic garden preservation royal": "ede83c916326",
+    "ev icc": "597a466adebb"
   },
   "__meta__": {
-    "last_run": "2026-08-31T10:09:22.739416+00:00",
+    "last_run": "2026-09-01T10:17:49.388619+00:00",
     "instagram_latest": "2026-08-25T01:05:00+0000"
   },
   "747cbd06e895": {
@@ -18725,5 +18727,41 @@
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/community-and-causes",
     "status": "needs_review",
     "first_seen": "2026-08-31T10:09:22.734457+00:00"
+  },
+  "ede83c916326": {
+    "title": "Preservation Exhibition",
+    "artist": "",
+    "venue": "The Royal Botanic Garden",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/a-touch-of-gold-exhibition",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/a-touch-of-gold-exhibition",
+    "status": "needs_review",
+    "first_seen": "2026-09-01T10:17:49.380651+00:00"
+  },
+  "597a466adebb": {
+    "title": "Sydney EV Show",
+    "artist": "",
+    "venue": "ICC Sydney",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/sydney-ev-show",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/sydney-ev-show",
+    "status": "needs_review",
+    "first_seen": "2026-09-01T10:17:49.382824+00:00"
   }
 }

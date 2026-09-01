@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-31T10:09:23.339670+00:00",
-  "count": 145,
+  "generated": "2026-09-01T10:17:50.083694+00:00",
+  "count": 143,
   "exhibitions": [
     {
       "id": "8fb34fea14f1",
@@ -399,24 +399,6 @@
       "status": "active"
     },
     {
-      "id": "86c8f22670f3",
-      "title": "Group Show: Even the Dust is Sentimental",
-      "artist": "Group Show",
-      "venue": "Tiles",
-      "gallery_key": "tiles",
-      "address": "",
-      "suburb": "Lewisham",
-      "start_date": "2026-08-15",
-      "end_date": "2026-08-31",
-      "opening_date": "2026-08-15",
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "9f22680e55a1",
       "title": "Bonnie Huang: Urban Oasis",
       "artist": "Bonnie Huang",
@@ -426,24 +408,6 @@
       "suburb": "Haymarket",
       "start_date": null,
       "end_date": null,
-      "opening_date": "2026-08-15",
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "f13131dc5f0e",
-      "title": "Flin Sharp: Blue",
-      "artist": "Flin Sharp",
-      "venue": "Nasha",
-      "gallery_key": "nasha",
-      "address": "",
-      "suburb": "Haymarket",
-      "start_date": "2026-08-15",
-      "end_date": "2026-08-31",
       "opening_date": "2026-08-15",
       "opening_time": null,
       "website": "",
