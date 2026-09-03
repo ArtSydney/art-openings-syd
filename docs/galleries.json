@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-03T10:19:15.594649+00:00",
-  "count": 187,
+  "generated": "2026-09-03T12:02:23.004483+00:00",
+  "count": 188,
   "galleries": [
     {
       "id": "m_contemporary",
@@ -544,6 +544,23 @@
       "phone": "+61 03 9417 4303",
       "hours": "7 days 10am to 6pm",
       "entry": "unknown",
+      "accessibility": ""
+    },
+    {
+      "id": "b_e_ll",
+      "name": "B E LL",
+      "type": "ari",
+      "address": "",
+      "suburb": "",
+      "postcode": "",
+      "latitude": null,
+      "longitude": null,
+      "website": "",
+      "instagram": "@bbbbbelllllllllllllll",
+      "email": "bbbbbelllllllllllllll@gmail.com",
+      "phone": "",
+      "hours": "",
+      "entry": "free",
       "accessibility": ""
     },
     {
