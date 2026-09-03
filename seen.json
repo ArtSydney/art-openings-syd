@@ -978,7 +978,7 @@
     "articulate expanded project space textiles": "b4ba7fbd6f65"
   },
   "__meta__": {
-    "last_run": "2026-09-02T10:18:46.748328+00:00",
+    "last_run": "2026-09-03T10:18:38.895718+00:00",
     "instagram_latest": "2026-09-02T00:10:25+0000"
   },
   "747cbd06e895": {
@@ -3216,7 +3216,8 @@
     "source_url": "https://www.instagram.com/p/Db7O-ilidjz/",
     "status": "active",
     "first_seen": "2026-08-14T09:19:56.637419+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "0b28009f966f": {
     "title": "Kyle Montgomery | Sly Morikawa: CAVOK",
@@ -18162,7 +18163,8 @@
     "source_url": "https://www.instagram.com/p/DcNWLAliaJQ/",
     "status": "active",
     "first_seen": "2026-08-19T09:11:58.645659+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "143d29da7933": {
     "title": "Adele Warner",
@@ -18786,7 +18788,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dcw6uNGEh6m/",
     "status": "active",
-    "first_seen": "2026-09-02T10:18:44.493213+00:00"
+    "first_seen": "2026-09-02T10:18:44.493213+00:00",
+    "closing_soon_sent": true
   },
   "d3ba7ab2703b": {
     "title": "Group Exhibition: DRAWING NOW",
