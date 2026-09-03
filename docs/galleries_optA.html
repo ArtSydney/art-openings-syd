@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gallery Directory · Art Openings Sydney</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══ Gallery Directory — mobile-first mockup ══════════════════════════════════
+   Shares the shell and tokens of the exhibitions mockup. The one addition is
+   distance: 151 of 187 galleries carry lat/long, which makes "nearest first"
+   the most useful sort on a phone you are holding in Paddington.
+   ═════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --peach:#F8B195; --coral:#F67280; --mauve:#C06C84; --purple:#6C5B7B; --navy:#355C7D;
+  --peach-dim:rgba(248,177,149,.18); --coral-dim:rgba(246,114,128,.15);
+  --mauve-dim:rgba(192,108,132,.12); --purple-dim:rgba(108,91,123,.12);
+  --snow:#FDF6F3; --snow-card:#FFFFFF;
+  --text:#2D2438; --text-muted:#7A6E85; --border:#E8DDE6;
+  --red:#E74C5E; --red-dim:rgba(231,76,94,.12);
+  --radius:8px; --radius-lg:12px;
+  --font-display:'Space Grotesk',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --shadow-md:0 4px 12px rgba(53,92,125,.1);
+  --tap:44px; --bar:56px;
+  --dock:calc(60px + env(safe-area-inset-bottom));
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body); background:var(--snow); color:var(--text);
+  line-height:1.5; -webkit-font-smoothing:antialiased;
+  padding-bottom:var(--dock); overscroll-behavior-y:none;
+}
+.wrap{max-width:1200px; margin-inline:auto; padding-inline:clamp(14px,4vw,32px)}
+:focus-visible{outline:2px solid var(--coral); outline-offset:2px; border-radius:6px}
+
+.mast{background:var(--navy); color:var(--snow); padding:14px 0 18px}
+.site-title{font-family:var(--font-display); font-size:1.3rem; font-weight:700; letter-spacing:-.02em}
+.site-title .accent{color:var(--peach); margin-left:.15em}
+.site-tagline{font-size:.78rem; color:rgba(255,255,255,.55); margin-top:8px}
+.meta{font-size:.7rem; color:rgba(255,255,255,.4); margin-top:3px}
+.icon-btn{
+  width:var(--tap); height:var(--tap); min-width:var(--tap); border-radius:50%;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+  color:var(--snow); cursor:pointer; font-size:15px; display:grid; place-items:center;
+}
+
+.filterbar{
+  position:sticky; top:0; z-index:30;
+  background:color-mix(in srgb, var(--snow) 94%, transparent);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.filterbar-inner{display:flex; gap:8px; align-items:center; height:var(--bar)}
+#search{
+  flex:1; min-width:0; height:40px; padding:0 14px;
+  font-size:16px; font-family:inherit; background:var(--snow-card); color:var(--text);
+  border:1px solid var(--border); border-radius:999px;
+}
+#search::placeholder{color:var(--text-muted)}
+.filter-btn{
+  height:40px; padding:0 14px; flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:var(--font-display); font-size:.8rem; font-weight:600;
+  background:var(--navy); color:var(--snow); border:none; border-radius:999px; cursor:pointer;
+}
+.badge-n{background:var(--coral); color:#fff; border-radius:999px; min-width:18px; height:18px;
+         display:grid; place-items:center; font-size:.62rem; padding:0 5px}
+
+.resultbar{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 0 2px}
+#result-count{font-size:.75rem; color:var(--text-muted)}
+#sort{
+  font-family:var(--font-display); font-size:.75rem; font-weight:600;
+  height:36px; padding:0 30px 0 12px;
+  border:1px solid var(--border); border-radius:999px;
+  background:var(--snow-card); color:var(--text); appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 15px) 15px, calc(100% - 11px) 15px;
+  background-size:4px 4px,4px 4px; background-repeat:no-repeat;
+}
+.geo-note{font-size:.72rem; color:var(--text-muted); padding:8px 0 0}
+
+.gallery-grid{display:grid; gap:12px; padding:12px 0 8px;
+              grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr))}
+.g-card{
+  background:var(--snow-card); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:14px 15px;
+  content-visibility:auto; contain-intrinsic-size:auto 200px;
+}
+.g-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:6px}
+.g-card h3{font-family:var(--font-display); font-size:1rem; font-weight:600; line-height:1.25; letter-spacing:-.01em}
+.g-dist{font-family:var(--font-display); font-size:.72rem; font-weight:700; color:var(--coral); white-space:nowrap}
+.pill{display:inline-block; font-family:var(--font-display); font-size:.6rem; font-weight:700;
+      letter-spacing:.04em; padding:3px 9px; border-radius:999px; margin-right:5px; margin-bottom:7px}
+.pill.commercial{background:var(--mauve-dim); color:var(--mauve)}
+.pill.ari{background:var(--coral-dim); color:var(--coral)}
+.pill.museum{background:var(--purple-dim); color:var(--purple)}
+.pill.university{background:var(--peach-dim); color:#9a6b3f}
+.pill.project_space{background:var(--red-dim); color:var(--red)}
+.pill.free{background:var(--peach-dim); color:#9a6b3f}
+.g-addr{font-size:.76rem; color:var(--text-muted); margin-bottom:5px}
+.g-hours{font-size:.74rem; color:var(--text-muted); margin-bottom:9px;
+         display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.g-actions{display:flex; flex-wrap:wrap; gap:6px; padding-top:9px; border-top:1px solid var(--border)}
+.act{
+  min-height:36px; padding:0 12px; display:inline-flex; align-items:center;
+  border:1px solid var(--border); border-radius:999px; background:var(--snow-card);
+  color:var(--text); cursor:pointer; text-decoration:none;
+  font-family:var(--font-display); font-size:.7rem; font-weight:600;
+}
+.act.primary{background:var(--coral); border-color:var(--coral); color:#fff}
+.act:hover{border-color:var(--mauve)}
+
+.no-results{text-align:center; padding:52px 0; color:var(--text-muted)}
+.no-results p{font-size:1rem; margin-bottom:4px}
+.no-results .sub{font-size:.82rem}
+.btn-ghost{
+  min-height:var(--tap); padding:0 20px; border-radius:999px; cursor:pointer; margin-top:14px;
+  font-family:var(--font-display); font-size:.78rem; font-weight:600;
+  background:var(--snow-card); color:var(--text); border:1px solid var(--border);
+}
+
+.sheet-backdrop{position:fixed; inset:0; background:rgba(45,36,56,.45); z-index:60}
+.sheet{
+  position:fixed; left:0; right:0; bottom:0; z-index:61;
+  background:var(--snow); border-top-left-radius:20px; border-top-right-radius:20px;
+  max-height:88dvh; display:flex; flex-direction:column;
+  box-shadow:0 -8px 40px rgba(45,36,56,.25);
+  animation:rise .22s cubic-bezier(.32,.72,0,1);
+}
+@keyframes rise{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sheet-grip{width:38px; height:4px; border-radius:999px; background:var(--border); margin:10px auto 2px}
+.sheet-head{display:flex; align-items:center; justify-content:space-between; padding:6px 18px 10px}
+.sheet-head h2{font-family:var(--font-display); font-size:1.05rem}
+.sheet-body{overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0 18px 14px; flex:1 1 auto}
+.sheet-foot{display:flex; gap:10px; padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+            border-top:1px solid var(--border); background:var(--snow)}
+.fgroup{padding:14px 0; border-bottom:1px solid var(--border)}
+.fgroup:last-child{border-bottom:none}
+.fgroup > h3{font-family:var(--font-display); font-size:.85rem; font-weight:600; margin-bottom:9px}
+.fsub{font-size:.74rem; color:var(--text-muted); margin-bottom:8px}
+.chips{display:flex; flex-wrap:wrap; gap:7px}
+.chip{
+  min-height:36px; padding:0 13px; display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--font-display); font-size:.75rem; font-weight:600;
+  border-radius:999px; cursor:pointer; white-space:nowrap;
+  background:var(--snow-card); color:var(--text-muted); border:1px solid var(--border);
+}
+.chip .n{font-size:.65rem; opacity:.7}
+.chip[aria-pressed="true"]{background:var(--navy); color:var(--snow); border-color:var(--navy)}
+.chip.part[aria-pressed="false"]{border-color:var(--mauve); color:var(--mauve)}
+.link-btn{
+  background:none; border:none; cursor:pointer; padding:8px 0; min-height:var(--tap);
+  font-family:var(--font-display); font-size:.75rem; font-weight:600; color:var(--navy);
+  text-decoration:underline; text-underline-offset:3px;
+}
+.rowtoggle{display:flex; align-items:center; justify-content:space-between; gap:12px;
+           min-height:var(--tap); cursor:pointer; font-size:.9rem}
+.rowtoggle input{width:22px; height:22px; accent-color:var(--coral)}
+.btn-primary{
+  flex:1; min-height:var(--tap); border:none; border-radius:999px; cursor:pointer;
+  font-family:var(--font-display); font-size:.82rem; font-weight:600;
+  background:var(--coral); color:#fff;
+}
+
+.tabbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:40;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  background:color-mix(in srgb, var(--snow) 96%, transparent);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--border); padding-bottom:env(safe-area-inset-bottom);
+}
+.tab{
+  min-height:60px; background:none; border:none; cursor:pointer; text-decoration:none;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+  font-family:var(--font-display); font-size:.62rem; font-weight:700; letter-spacing:.04em;
+  color:var(--text-muted);
+}
+.tab svg{width:18px; height:18px}
+.tab[aria-selected="true"]{color:var(--coral)}
+.to-top{
+  position:fixed; right:14px; bottom:calc(var(--dock) + 12px); z-index:35;
+  width:var(--tap); height:var(--tap); border-radius:50%; cursor:pointer;
+  background:var(--navy); color:var(--snow); border:none; font-size:16px; box-shadow:var(--shadow-md);
+}
+@media (min-width:760px){
+  .mast{padding:24px 0 26px}
+  .site-title{font-size:1.6rem}
+  .tabbar{position:sticky; top:0; grid-template-columns:repeat(3,max-content);
+          border-top:none; border-bottom:1px solid var(--border); z-index:41}
+  .tab{min-height:52px; flex-direction:row; gap:8px; padding:0 22px; font-size:.72rem}
+  body{padding-bottom:0}
+  .to-top{bottom:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important; transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<nav class="tabbar" role="tablist">
+  <a class="tab" href="index_optA.html">
+    <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="13" width="16" height="3" rx="1" fill="currentColor"/></svg>
+    Exhibitions</a>
+  <a class="tab" href="index_optA.html#calendar">
+    <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="7" x2="17" y2="7" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    Calendar</a>
+  <span class="tab" role="tab" aria-selected="true">
+    <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="4" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+    Galleries</span>
+</nav>
+
+<header class="mast">
+  <div class="wrap">
+    <h1 class="site-title">Gallery<span class="accent">Directory</span></h1>
+    <p class="site-tagline">Every art gallery in Sydney</p>
+    <p class="meta" id="meta">Loading…</p>
+  </div>
+</header>
+
+<div class="filterbar">
+  <div class="wrap filterbar-inner">
+    <input id="search" type="search" placeholder="Search galleries and suburbs" aria-label="Search galleries">
+    <button class="filter-btn" id="open-filters">Filters<span class="badge-n" id="filter-badge" hidden>0</span></button>
+  </div>
+</div>
+
+<div class="wrap resultbar">
+  <span id="result-count"></span>
+  <select id="sort" aria-label="Sort galleries">
+    <option value="name">A to Z</option>
+    <option value="near">Nearest to me</option>
+    <option value="suburb">By suburb</option>
+  </select>
+</div>
+<div class="wrap"><p class="geo-note" id="geo-note" hidden></p></div>
+
+<main class="wrap">
+  <div id="gallery-list" class="gallery-grid"></div>
+  <div id="sentinel" style="height:1px"></div>
+  <div id="no-results" class="no-results" hidden>
+    <p>No galleries match those filters.</p>
+    <p class="sub">Loosen a filter, or clear the search.</p>
+    <button class="btn-ghost" id="empty-clear">Clear all filters</button>
+  </div>
+</main>
+
+<button class="to-top" id="to-top" aria-label="Back to top" hidden>↑</button>
+
+<div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Filters" hidden>
+  <div class="sheet-grip"></div>
+  <div class="sheet-head">
+    <h2>Filters</h2>
+    <button class="icon-btn" id="sheet-close" style="background:var(--snow-card);border-color:var(--border);color:var(--text)" aria-label="Close filters">&times;</button>
+  </div>
+  <div class="sheet-body">
+    <div class="fgroup">
+      <h3>Kind of space</h3>
+      <div class="chips" id="type-chips"></div>
+    </div>
+    <div class="fgroup">
+      <h3>Where</h3>
+      <p class="fsub">Precincts select every suburb inside them.</p>
+      <div class="chips" id="precinct-chips"></div>
+      <button class="link-btn" id="toggle-suburbs">Pick individual suburbs</button>
+      <div class="chips" id="suburb-chips" hidden></div>
+    </div>
+    <div class="fgroup">
+      <label class="rowtoggle"><span>Free entry only</span><input type="checkbox" id="filter-free"></label>
+      <label class="rowtoggle"><span>Opening hours listed</span><input type="checkbox" id="filter-hours"></label>
+      <label class="rowtoggle"><span>Accessibility noted</span><input type="checkbox" id="filter-access"></label>
+    </div>
+    <div class="fgroup">
+      <p class="fsub" style="margin:0">Entry and hours are only as good as what each gallery publishes. Ring ahead for anything time-critical.</p>
+    </div>
+  </div>
+  <div class="sheet-foot">
+    <button class="btn-ghost" id="sheet-clear" style="margin-top:0">Clear all</button>
+    <button class="btn-primary" id="sheet-apply">Show results</button>
+  </div>
+</aside>
+
+<script>
+/* ══ Gallery Directory — mockup logic, self-contained ═════════════════════ */
+
+const BATCH = 24;
+
+const TYPE_LABELS = {
+  commercial:"Commercial", ari:"Artist-run", museum:"Museum",
+  university:"University", project_space:"Project space",
+};
+
+const PRECINCTS = [
+  {id:"east", name:"East", suburbs:["Darlinghurst","Paddington","Woollahra","Potts Point","Woolloomooloo","Rushcutters Bay","Surry Hills","Elizabeth Bay","Kings Cross","Edgecliff","Double Bay","Bondi","Bondi Junction","Waverley","Randwick","Kensington","Bronte","Clovelly","Coogee","Vaucluse","Rose Bay"]},
+  {id:"city", name:"City", suburbs:["Sydney","Haymarket","The Rocks","Millers Point","Barangaroo","Pyrmont","Ultimo","Walsh Bay","Circular Quay","Dawes Point"]},
+  {id:"south", name:"South", suburbs:["Chippendale","Redfern","Waterloo","Zetland","Alexandria","Darlington","Eveleigh","Rosebery","Green Square","Botany","Mascot","St Peters","Sydenham","Erskineville"]},
+  {id:"west", name:"Inner West", suburbs:["Newtown","Enmore","Marrickville","Camperdown","Lewisham","Leichhardt","Annandale","Ashfield","Balmain","Glebe","Rozelle","Petersham","Stanmore","Dulwich Hill","Summer Hill","Forest Lodge","Croydon","Burwood","Strathfield","Concord","Tempe","Haberfield","Lilyfield","Birchgrove"]},
+  {id:"north", name:"North", suburbs:["Mosman","North Sydney","Crows Nest","Chatswood","Manly","Neutral Bay","Cremorne","Lane Cove","Willoughby","Artarmon","St Leonards","Kirribilli","Milsons Point","Balgowlah","Dee Why","Brookvale","Hornsby","Gordon","Killara","Lindfield","Roseville","Waverton","Cammeray"]},
+  {id:"far",  name:"Greater Sydney", suburbs:["Parramatta","Campbelltown","Penrith","Blacktown","Liverpool","Bankstown","Auburn","Granville","Rydalmere","Homebush","Sydney Olympic Park","Fairfield","Casula","Katoomba","Springwood","Windsor","Richmond","Wollongong","Newcastle"]},
+];
+
+const SUBURB_ALIASES = {"darlingurst":"Darlinghurst", "cbd":"Sydney"};
+
+const state = {
+  items:[], filtered:[], rendered:0,
+  search:"", sort:"name",
+  types:new Set(), suburbs:new Set(),
+  freeOnly:false, hoursOnly:false, accessOnly:false,
+  here:null,
+};
+
+const $ = (s) => document.querySelector(s);
+
+init();
+
+async function init(){
+  wire();
+  try{
+    // ETag does the cache-busting; the old ?v=Date.now() forced a fresh 95KB
+    // download on every single visit.
+    const res = await fetch("galleries.json");
+    const json = await res.json();
+    state.items = (json.galleries || []).map(normalise);
+    $("#meta").textContent = state.items.length + " galleries listed";
+  }catch(e){
+    $("#meta").textContent = "Couldn't load the directory. Reload, or try again shortly.";
+  }
+  const q = new URLSearchParams(location.search).get("q");
+  if(q){ $("#search").value = q; state.search = q.toLowerCase().trim(); }
+  buildTypeChips();
+  buildPrecinctChips();
+  buildSuburbChips();
+  render();
+}
+
+function normalise(g){
+  const raw = (g.suburb || "").trim();
+  const alias = SUBURB_ALIASES[raw.toLowerCase()];
+  return Object.assign({}, g, {suburb: alias || raw});
+}
+
+/* ── distance ─────────────────────────────────────────────────────────── */
+function haversineKm(a, b){
+  const R = 6371, toRad = (d) => d * Math.PI / 180;
+  const dLat = toRad(b.lat - a.lat), dLon = toRad(b.lon - a.lon);
+  const s = Math.sin(dLat/2)**2 +
+            Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLon/2)**2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+function distanceOf(g){
+  if(!state.here || !g.latitude || !g.longitude) return null;
+  return haversineKm(state.here, {lat:g.latitude, lon:g.longitude});
+}
+function fmtDistance(km){
+  if(km === null) return "";
+  return km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(km < 10 ? 1 : 0) + " km";
+}
+
+function requestLocation(){
+  const note = $("#geo-note");
+  if(!navigator.geolocation){
+    note.hidden = false;
+    note.textContent = "This browser can't share your location, so nearest-first isn't available.";
+    $("#sort").value = "name"; state.sort = "name"; render();
+    return;
+  }
+  note.hidden = false;
+  note.textContent = "Finding your location…";
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      state.here = {lat:pos.coords.latitude, lon:pos.coords.longitude};
+      const missing = state.items.filter((g) => !g.latitude || !g.longitude).length;
+      note.textContent = missing
+        ? "Sorted by distance. " + missing + " galleries have no coordinates and sit at the end."
+        : "Sorted by distance from where you are.";
+      render();
+    },
+    () => {
+      note.textContent = "Location access was declined, so the list stays alphabetical.";
+      $("#sort").value = "name"; state.sort = "name"; render();
+    },
+    {timeout:8000, maximumAge:300000}
+  );
+}
+
+/* ── filtering ────────────────────────────────────────────────────────── */
+function presentSuburbs(){
+  const c = {};
+  state.items.forEach((g) => { if(g.suburb) c[g.suburb] = (c[g.suburb] || 0) + 1; });
+  return Object.keys(c).sort((a,b) => c[b] - c[a] || a.localeCompare(b)).map((s) => ({name:s, n:c[s]}));
+}
+
+function passes(g){
+  if(state.types.size && !state.types.has(g.type)) return false;
+  if(state.suburbs.size && !state.suburbs.has(g.suburb)) return false;
+  if(state.freeOnly && g.entry !== "free") return false;
+  if(state.hoursOnly && !g.hours) return false;
+  if(state.accessOnly && !g.accessibility) return false;
+  if(state.search){
+    const hay = [g.name, g.suburb, g.address, g.instagram].join(" ").toLowerCase();
+    if(!hay.includes(state.search)) return false;
+  }
+  return true;
+}
+
+function sortItems(list){
+  const s = state.sort;
+  return list.slice().sort((a,b) => {
+    if(s === "suburb"){
+      const c = String(a.suburb || "~").localeCompare(String(b.suburb || "~"));
+      return c || String(a.name).localeCompare(String(b.name));
+    }
+    if(s === "near"){
+      const da = distanceOf(a), db = distanceOf(b);
+      if(da === null && db === null) return String(a.name).localeCompare(String(b.name));
+      if(da === null) return 1;      // no coordinates, sits at the end
+      if(db === null) return -1;
+      return da - db;
+    }
+    return String(a.name).localeCompare(String(b.name));
+  });
+}
+
+/* ── rendering ────────────────────────────────────────────────────────── */
+function render(){
+  state.filtered = sortItems(state.items.filter(passes));
+  state.rendered = 0;
+  $("#gallery-list").innerHTML = "";
+  $("#no-results").hidden = state.filtered.length > 0;
+  const n = state.filtered.length;
+  $("#result-count").textContent = n + (n === 1 ? " gallery" : " galleries");
+  renderMore();
+  updateBadge();
+}
+function renderMore(){
+  const slice = state.filtered.slice(state.rendered, state.rendered + BATCH);
+  const frag = document.createDocumentFragment();
+  slice.forEach((g) => frag.appendChild(createCard(g)));
+  $("#gallery-list").appendChild(frag);
+  state.rendered += slice.length;
+}
+new IntersectionObserver((e) => {
+  if(e[0].isIntersecting && state.rendered < state.filtered.length) renderMore();
+}, {rootMargin:"600px"}).observe($("#sentinel"));
+
+function createCard(g){
+  const card = document.createElement("article");
+  card.className = "g-card";
+  const dist = state.sort === "near" ? distanceOf(g) : null;
+  const addr = [g.address, g.suburb, g.postcode].filter(Boolean).join(", ");
+  const mapQ = encodeURIComponent(g.name + (addr ? ", " + addr : "") + ", Sydney NSW");
+
+  card.innerHTML =
+    '<div class="g-top">' +
+      '<h3>' + esc(g.name) + '</h3>' +
+      (dist !== null ? '<span class="g-dist">' + fmtDistance(dist) + '</span>' : "") +
+    '</div>' +
+    '<div>' +
+      (g.type ? '<span class="pill ' + esc(g.type) + '">' + esc(TYPE_LABELS[g.type] || g.type) + '</span>' : "") +
+      (g.entry === "free" ? '<span class="pill free">Free entry</span>' : "") +
+    '</div>' +
+    (addr ? '<div class="g-addr">' + esc(addr) + '</div>' : "") +
+    (g.hours ? '<div class="g-hours">' + esc(g.hours) + '</div>' : "") +
+    '<div class="g-actions">' +
+      '<a class="act primary" href="https://maps.google.com/?q=' + mapQ + '" target="_blank" rel="noopener">Directions</a>' +
+      (g.website ? '<a class="act" href="' + safeLink(g.website) + '" target="_blank" rel="noopener">Website</a>' : "") +
+      (g.instagram ? '<a class="act" href="https://instagram.com/' + encodeURIComponent(String(g.instagram).replace("@","")) + '" target="_blank" rel="noopener">' + esc(g.instagram) + '</a>' : "") +
+      (g.phone ? '<a class="act" href="tel:' + esc(String(g.phone).replace(/\s+/g,"")) + '">Call</a>' : "") +
+      '<a class="act" href="index_optA.html?q=' + encodeURIComponent(g.name) + '">What\u2019s on</a>' +
+    '</div>';
+  return card;
+}
+
+function esc(s){
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function safeLink(url){
+  try{ const u = new URL(url); return (u.protocol === "https:" || u.protocol === "http:") ? url : "#"; }
+  catch(e){ return "#"; }
+}
+
+/* ── filter controls ──────────────────────────────────────────────────── */
+function buildTypeChips(){
+  const box = $("#type-chips");
+  box.innerHTML = "";
+  const counts = {};
+  state.items.forEach((g) => { counts[g.type] = (counts[g.type] || 0) + 1; });
+  Object.keys(TYPE_LABELS).forEach((t) => {
+    if(!counts[t]) return;
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.dataset.type = t;
+    b.innerHTML = esc(TYPE_LABELS[t]) + '<span class="n">' + counts[t] + '</span>';
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", () => {
+      state.types.has(t) ? state.types.delete(t) : state.types.add(t);
+      b.setAttribute("aria-pressed", state.types.has(t));
+      render();
+    });
+    box.appendChild(b);
+  });
+}
+
+// Any present suburb the precinct lists don't cover, gathered so the precinct
+// row always adds up to the full set rather than silently dropping venues.
+function precinctList(){
+  const present = presentSuburbs().map((s) => s.name);
+  const mapped = new Set();
+  PRECINCTS.forEach((p) => p.suburbs.forEach((s) => mapped.add(s)));
+  const orphans = present.filter((s) => !mapped.has(s));
+  return orphans.length
+    ? PRECINCTS.concat([{id:"else", name:"Elsewhere", suburbs:orphans}])
+    : PRECINCTS;
+}
+
+function buildPrecinctChips(){
+  const box = $("#precinct-chips");
+  box.innerHTML = "";
+  const present = presentSuburbs().map((s) => s.name);
+  precinctList().forEach((p) => {
+    const mine = p.suburbs.filter((s) => present.includes(s));
+    if(!mine.length) return;
+    const n = state.items.filter((g) => mine.includes(g.suburb)).length;
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.dataset.precinct = p.id;
+    b.innerHTML = esc(p.name) + '<span class="n">' + n + '</span>';
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", () => {
+      const all = mine.every((s) => state.suburbs.has(s));
+      mine.forEach((s) => all ? state.suburbs.delete(s) : state.suburbs.add(s));
+      syncAreaChips(); render();
+    });
+    box.appendChild(b);
+  });
+}
+
+function buildSuburbChips(){
+  const box = $("#suburb-chips");
+  box.innerHTML = "";
+  presentSuburbs().forEach((s) => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.dataset.suburb = s.name;
+    b.innerHTML = esc(s.name) + '<span class="n">' + s.n + '</span>';
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", () => {
+      state.suburbs.has(s.name) ? state.suburbs.delete(s.name) : state.suburbs.add(s.name);
+      syncAreaChips(); render();
+    });
+    box.appendChild(b);
+  });
+}
+
+// Precinct reads as on only when all of its present suburbs are on, partial
+// when some are, so the two controls can never contradict each other.
+function syncAreaChips(){
+  const present = presentSuburbs().map((s) => s.name);
+  document.querySelectorAll("[data-suburb]").forEach((b) => {
+    b.setAttribute("aria-pressed", state.suburbs.has(b.dataset.suburb));
+  });
+  document.querySelectorAll("[data-precinct]").forEach((b) => {
+    const p = precinctList().find((x) => x.id === b.dataset.precinct);
+    const mine = p.suburbs.filter((s) => present.includes(s));
+    const on = mine.length && mine.every((s) => state.suburbs.has(s));
+    const some = mine.some((s) => state.suburbs.has(s));
+    b.setAttribute("aria-pressed", !!on);
+    b.classList.toggle("part", !on && some);
+  });
+}
+
+function activeCount(){
+  let n = state.types.size + state.suburbs.size;
+  if(state.freeOnly) n++;
+  if(state.hoursOnly) n++;
+  if(state.accessOnly) n++;
+  return n;
+}
+function updateBadge(){
+  const n = activeCount();
+  const b = $("#filter-badge");
+  b.hidden = n === 0; b.textContent = n;
+  $("#sheet-apply").textContent = "Show " + state.filtered.length + " result" + (state.filtered.length === 1 ? "" : "s");
+}
+
+let searchTimer;
+function wire(){
+  $("#search").addEventListener("input", (e) => {
+    clearTimeout(searchTimer);
+    const v = e.target.value.toLowerCase().trim();
+    searchTimer = setTimeout(() => { state.search = v; render(); }, 140);
+  });
+  $("#sort").addEventListener("change", (e) => {
+    state.sort = e.target.value;
+    if(state.sort === "near" && !state.here){ requestLocation(); return; }
+    if(state.sort !== "near") $("#geo-note").hidden = true;
+    render();
+  });
+  $("#filter-free").addEventListener("change", (e) => { state.freeOnly = e.target.checked; render(); });
+  $("#filter-hours").addEventListener("change", (e) => { state.hoursOnly = e.target.checked; render(); });
+  $("#filter-access").addEventListener("change", (e) => { state.accessOnly = e.target.checked; render(); });
+  $("#toggle-suburbs").addEventListener("click", () => {
+    const box = $("#suburb-chips");
+    box.hidden = !box.hidden;
+    $("#toggle-suburbs").textContent = box.hidden ? "Pick individual suburbs" : "Hide suburb list";
+  });
+
+  $("#open-filters").addEventListener("click", openSheet);
+  $("#sheet-close").addEventListener("click", closeSheet);
+  $("#sheet-apply").addEventListener("click", closeSheet);
+  $("#sheet-backdrop").addEventListener("click", closeSheet);
+  $("#sheet-clear").addEventListener("click", clearAll);
+  $("#empty-clear").addEventListener("click", clearAll);
+  document.addEventListener("keydown", (e) => { if(e.key === "Escape" && !$("#sheet").hidden) closeSheet(); });
+
+  const toTop = $("#to-top");
+  toTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+  window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 700; }, {passive:true});
+}
+
+function clearAll(){
+  state.types.clear(); state.suburbs.clear();
+  state.freeOnly = false; state.hoursOnly = false; state.accessOnly = false;
+  state.search = "";
+  $("#search").value = "";
+  $("#filter-free").checked = false; $("#filter-hours").checked = false; $("#filter-access").checked = false;
+  document.querySelectorAll("#type-chips .chip").forEach((c) => c.setAttribute("aria-pressed","false"));
+  syncAreaChips();
+  render();
+}
+
+let scrollLock = 0;
+function openSheet(){
+  updateBadge();
+  scrollLock = window.scrollY;
+  $("#sheet-backdrop").hidden = false; $("#sheet").hidden = false;
+  document.body.style.position = "fixed";
+  document.body.style.top = -scrollLock + "px";
+  document.body.style.width = "100%";
+}
+function closeSheet(){
+  $("#sheet").hidden = true; $("#sheet-backdrop").hidden = true;
+  document.body.style.position = ""; document.body.style.top = ""; document.body.style.width = "";
+  window.scrollTo(0, scrollLock);
+}
+</script>
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fd171a49b3674abab750954be78efce2"}'></script>
+</body>
+</html>
