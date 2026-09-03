@@ -1,110 +1,1134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Openings Sydney</title>
-  <link rel="stylesheet" href="style.css?v=8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Art Openings Sydney</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══ Art Openings Sydney — mobile-first mockup ════════════════════════════════
+   Palette, type and badge language carried over unchanged. Structure follows
+   the Open Calls rebuild: masthead scrolls away, one sticky search row, all
+   filtering in a bottom sheet, persistent bottom nav, batched rendering.
+   Filters are shaped to the data: precinct chips over a 34-suburb dropdown,
+   a searchable venue list over 78 select options, and a closing-soon filter
+   that the old build had no way to express.
+   ═════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --peach:#F8B195; --coral:#F67280; --mauve:#C06C84; --purple:#6C5B7B; --navy:#355C7D;
+  --peach-dim:rgba(248,177,149,.18); --coral-dim:rgba(246,114,128,.15);
+  --mauve-dim:rgba(192,108,132,.12); --purple-dim:rgba(108,91,123,.12);
+  --snow:#FDF6F3; --snow-card:#FFFFFF;
+  --text:#2D2438; --text-muted:#7A6E85; --border:#E8DDE6;
+  --red:#E74C5E; --red-dim:rgba(231,76,94,.12);
+  --radius:8px; --radius-lg:12px;
+  --font-display:'Space Grotesk',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --shadow-sm:0 1px 3px rgba(53,92,125,.06);
+  --shadow-md:0 4px 12px rgba(53,92,125,.1);
+  --tap:44px; --bar:56px;
+  --dock:calc(60px + env(safe-area-inset-bottom));
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body); background:var(--snow); color:var(--text);
+  line-height:1.5; -webkit-font-smoothing:antialiased;
+  padding-bottom:var(--dock); overscroll-behavior-y:none;
+}
+.wrap{max-width:1200px; margin-inline:auto; padding-inline:clamp(14px,4vw,32px)}
+:focus-visible{outline:2px solid var(--coral); outline-offset:2px; border-radius:6px}
+
+/* ── masthead, scrolls away ────────────────────────────────────────────── */
+.mast{background:var(--navy); color:var(--snow); padding:14px 0 18px}
+.mast-top{display:flex; align-items:center; gap:10px}
+.site-title{font-family:var(--font-display); font-size:1.3rem; font-weight:700;
+            letter-spacing:-.02em; flex:1; line-height:1.15}
+.site-title .accent{color:var(--peach); margin-left:.15em}
+.site-tagline{font-size:.78rem; color:rgba(255,255,255,.55); margin-top:8px}
+.meta{font-size:.7rem; color:rgba(255,255,255,.4); margin-top:3px}
+.icon-btn{
+  width:var(--tap); height:var(--tap); min-width:var(--tap); border-radius:50%;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+  color:var(--snow); cursor:pointer; font-size:15px; display:grid; place-items:center;
+}
+
+/* ── sole sticky row ───────────────────────────────────────────────────── */
+.filterbar{
+  position:sticky; top:0; z-index:30;
+  background:color-mix(in srgb, var(--snow) 94%, transparent);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.filterbar-inner{display:flex; gap:8px; align-items:center; height:var(--bar)}
+#search{
+  flex:1; min-width:0; height:40px; padding:0 14px;
+  font-size:16px;                     /* 16px or iOS Safari zooms on focus */
+  font-family:inherit; background:var(--snow-card); color:var(--text);
+  border:1px solid var(--border); border-radius:999px;
+}
+#search::placeholder{color:var(--text-muted)}
+.filter-btn{
+  height:40px; padding:0 14px; flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:var(--font-display); font-size:.8rem; font-weight:600;
+  background:var(--navy); color:var(--snow); border:none; border-radius:999px; cursor:pointer;
+}
+.badge-n{background:var(--coral); color:#fff; border-radius:999px; min-width:18px; height:18px;
+         display:grid; place-items:center; font-size:.62rem; padding:0 5px}
+
+.resultbar{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 0 2px}
+#result-count{font-size:.75rem; color:var(--text-muted)}
+.sortwrap{display:flex; align-items:center; gap:7px; flex:0 0 auto}
+.sortlabel{font-family:var(--font-display); font-size:.7rem; font-weight:600;
+           color:var(--text-muted)}
+#sort{
+  font-family:var(--font-display); font-size:.75rem; font-weight:600;
+  height:36px; padding:0 30px 0 12px;
+  border:1px solid var(--border); border-radius:999px;
+  background:var(--snow-card); color:var(--text); appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 15px) 15px, calc(100% - 11px) 15px;
+  background-size:4px 4px,4px 4px; background-repeat:no-repeat;
+}
+
+/* ── cards ─────────────────────────────────────────────────────────────── */
+.exhibition-grid{display:grid; gap:12px; padding:12px 0 8px;
+                 grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr))}
+.ex-card{
+  background:var(--snow-card); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:14px 15px; position:relative;
+  content-visibility:auto; contain-intrinsic-size:auto 190px;
+}
+.ex-card.status-closed{opacity:.62}
+.badge{
+  display:inline-block; font-family:var(--font-display); font-size:.62rem; font-weight:700;
+  letter-spacing:.04em; padding:3px 9px; border-radius:999px; margin-bottom:8px;
+}
+.badge-opening{background:var(--coral-dim); color:var(--coral)}
+.badge-closing{background:var(--red-dim); color:var(--red)}
+.badge-on-now{background:var(--mauve-dim); color:var(--mauve)}
+.ex-card h3{font-family:var(--font-display); font-size:1rem; font-weight:600; line-height:1.25;
+            letter-spacing:-.01em; margin-bottom:5px}
+.ex-card h3 a{color:inherit; text-decoration:none}
+.ex-card h3 a:hover{color:var(--mauve)}
+.ex-artist{font-size:.78rem; color:var(--mauve); font-weight:500; margin-bottom:4px}
+.ex-meta{font-size:.76rem; color:var(--text-muted); margin-bottom:4px}
+.ex-meta .venue{color:var(--navy); text-decoration:none; font-weight:500; border-bottom:1px dotted var(--border)}
+.ex-dates{font-size:.74rem; color:var(--text-muted); margin-bottom:8px}
+.ex-desc{font-size:.8rem; color:var(--text-muted); margin-bottom:10px;
+         display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.ex-actions{display:flex; flex-wrap:wrap; gap:6px; padding-top:9px; border-top:1px solid var(--border)}
+.act{
+  min-height:36px; padding:0 12px; display:inline-flex; align-items:center;
+  border:1px solid var(--border); border-radius:999px; background:var(--snow-card);
+  color:var(--text); cursor:pointer; text-decoration:none;
+  font-family:var(--font-display); font-size:.7rem; font-weight:600;
+}
+.act.primary{background:var(--coral); border-color:var(--coral); color:#fff}
+.act:hover{border-color:var(--mauve)}
+
+.no-results{text-align:center; padding:52px 0; color:var(--text-muted)}
+.no-results p{font-size:1rem; margin-bottom:4px}
+.no-results .sub{font-size:.82rem}
+.btn-ghost{
+  min-height:var(--tap); padding:0 20px; border-radius:999px; cursor:pointer; margin-top:14px;
+  font-family:var(--font-display); font-size:.78rem; font-weight:600;
+  background:var(--snow-card); color:var(--text); border:1px solid var(--border);
+}
+
+/* ── bottom sheet ──────────────────────────────────────────────────────── */
+.sheet-backdrop{position:fixed; inset:0; background:rgba(45,36,56,.45); z-index:60}
+.sheet{
+  position:fixed; left:0; right:0; bottom:0; z-index:61;
+  background:var(--snow); border-top-left-radius:20px; border-top-right-radius:20px;
+  max-height:88dvh; display:flex; flex-direction:column;
+  box-shadow:0 -8px 40px rgba(45,36,56,.25);
+  animation:rise .22s cubic-bezier(.32,.72,0,1);
+}
+@keyframes rise{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sheet-grip{width:38px; height:4px; border-radius:999px; background:var(--border); margin:10px auto 2px}
+.sheet-head{display:flex; align-items:center; justify-content:space-between; padding:6px 18px 10px}
+.sheet-head h2{font-family:var(--font-display); font-size:1.05rem}
+.sheet-body{overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0 18px 14px; flex:1 1 auto}
+.sheet-foot{display:flex; gap:10px; padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+            border-top:1px solid var(--border); background:var(--snow)}
+.fgroup{padding:14px 0; border-bottom:1px solid var(--border)}
+.fgroup:last-child{border-bottom:none}
+.fgroup > h3{font-family:var(--font-display); font-size:.85rem; font-weight:600; margin-bottom:9px}
+.fsub{font-size:.74rem; color:var(--text-muted); margin-bottom:8px}
+.chips{display:flex; flex-wrap:wrap; gap:7px}
+.chip{
+  min-height:36px; padding:0 13px; display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--font-display); font-size:.75rem; font-weight:600;
+  border-radius:999px; cursor:pointer; white-space:nowrap;
+  background:var(--snow-card); color:var(--text-muted); border:1px solid var(--border);
+}
+.chip .n{font-size:.65rem; opacity:.7}
+.chip[aria-pressed="true"]{background:var(--navy); color:var(--snow); border-color:var(--navy)}
+.chip.part[aria-pressed="false"]{border-color:var(--mauve); color:var(--mauve)}
+.link-btn{
+  background:none; border:none; cursor:pointer; padding:8px 0; min-height:var(--tap);
+  font-family:var(--font-display); font-size:.75rem; font-weight:600; color:var(--navy);
+  text-decoration:underline; text-underline-offset:3px;
+}
+.venue-search{
+  width:100%; min-height:var(--tap); font-size:16px; font-family:inherit; padding:0 14px;
+  border:1px solid var(--border); border-radius:999px; background:var(--snow-card); color:var(--text);
+  margin-bottom:8px;
+}
+.venue-list{max-height:230px; overflow-y:auto; -webkit-overflow-scrolling:touch;
+            border:1px solid var(--border); border-radius:var(--radius-lg); background:var(--snow-card)}
+.venue-item{
+  display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%;
+  min-height:var(--tap); padding:0 14px; background:none; border:none; cursor:pointer;
+  border-bottom:1px solid var(--border); text-align:left; font:inherit; font-size:.82rem; color:var(--text);
+}
+.venue-item:last-child{border-bottom:none}
+.venue-item[aria-pressed="true"]{background:var(--peach-dim); font-weight:600}
+.venue-item .n{font-size:.7rem; color:var(--text-muted)}
+.btn-primary{
+  flex:1; min-height:var(--tap); border:none; border-radius:999px; cursor:pointer;
+  font-family:var(--font-display); font-size:.82rem; font-weight:600;
+  background:var(--coral); color:#fff;
+}
+
+/* ── bottom nav ────────────────────────────────────────────────────────── */
+.tabbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:40;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  background:color-mix(in srgb, var(--snow) 96%, transparent);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--border); padding-bottom:env(safe-area-inset-bottom);
+}
+.tab{
+  min-height:60px; background:none; border:none; cursor:pointer; text-decoration:none;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+  font-family:var(--font-display); font-size:.62rem; font-weight:700; letter-spacing:.04em;
+  color:var(--text-muted);
+}
+.tab svg{width:18px; height:18px}
+.tab[aria-selected="true"]{color:var(--coral)}
+
+.to-top{
+  position:fixed; right:14px; bottom:calc(var(--dock) + 12px); z-index:35;
+  width:var(--tap); height:var(--tap); border-radius:50%; cursor:pointer;
+  background:var(--navy); color:var(--snow); border:none; font-size:16px; box-shadow:var(--shadow-md);
+}
+
+/* ── calendar ──────────────────────────────────────────────────────────── */
+.cal-toolbar{display:flex; align-items:center; gap:10px; padding:16px 0 10px}
+.cal-title{font-family:var(--font-display); font-size:1.05rem; font-weight:700; flex:1; text-align:center}
+.cal-nav{min-width:var(--tap); min-height:var(--tap); background:var(--navy); color:var(--snow);
+         border:none; border-radius:var(--radius); cursor:pointer; font-size:1.05rem}
+.cal-export{
+  width:100%; min-height:var(--tap); margin-bottom:14px; border:none; border-radius:999px;
+  background:var(--navy); color:var(--snow); cursor:pointer;
+  font-family:var(--font-display); font-size:.78rem; font-weight:600;
+}
+.cal-rotate-hint{display:none}
+.cal-grid{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:1px;
+          background:var(--border); border:1px solid var(--border);
+          border-radius:var(--radius-lg); overflow:hidden; margin-bottom:24px}
+.cal-dow{background:var(--navy); color:var(--snow); font-family:var(--font-display);
+         font-size:.62rem; font-weight:700; padding:7px 3px; text-align:center}
+.cal-cell{background:var(--snow-card); min-height:84px; padding:5px; position:relative}
+.cal-cell.other-month{opacity:.42}
+.cal-cell.has-events{cursor:pointer}
+.cal-day-num{font-family:var(--font-display); font-size:.7rem; font-weight:700; color:var(--text-muted)}
+.cal-cell.today .cal-day-num{background:var(--coral); color:#fff; border-radius:50%;
+  width:20px; height:20px; display:inline-grid; place-items:center; font-size:.62rem}
+.cal-dot{display:block; border-radius:4px; font-size:.6rem; font-weight:600; padding:2px 4px;
+         margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.cal-dot.open{background:var(--coral-dim); color:var(--coral)}
+.cal-dot.close{background:var(--red-dim); color:var(--red)}
+.cal-more{font-size:.6rem; color:var(--text-muted); font-style:italic}
+
+.cal-agenda{padding:4px 0 24px}
+.agenda-head{display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+             padding:15px 0 7px; border-bottom:1.5px solid var(--text); margin-top:16px}
+.agenda-head:first-child{margin-top:0}
+.agenda-date{font-family:var(--font-display); font-weight:700; font-size:.85rem}
+.agenda-n{font-size:.7rem; color:var(--text-muted)}
+
+/* ── day popup ─────────────────────────────────────────────────────────── */
+.popup{position:fixed; inset:0; z-index:70; display:flex; align-items:flex-end; justify-content:center}
+.popup-backdrop{position:absolute; inset:0; background:rgba(45,36,56,.45)}
+.popup-content{
+  position:relative; background:var(--snow); width:100%; max-width:560px;
+  border-top-left-radius:20px; border-top-right-radius:20px;
+  max-height:82dvh; overflow-y:auto; padding:20px 18px calc(20px + env(safe-area-inset-bottom));
+}
+.popup-content h3{font-family:var(--font-display); font-size:1rem; margin-bottom:14px; padding-right:44px}
+.popup-close{position:absolute; right:12px; top:12px; width:var(--tap); height:var(--tap);
+             border-radius:50%; border:none; background:var(--snow-card); color:var(--text);
+             cursor:pointer; font-size:1.1rem}
+
+@media (min-width:660px){
+  .cal-export{width:auto; padding:0 22px; margin:0}
+  .cal-title{flex:0 1 auto; min-width:180px}
+}
+@media (min-width:760px){
+  .mast{padding:24px 0 26px}
+  .site-title{font-size:1.6rem}
+  .tabbar{position:sticky; top:0; grid-template-columns:repeat(3,max-content);
+          border-top:none; border-bottom:1px solid var(--border); z-index:41}
+  .tab{min-height:52px; flex-direction:row; gap:8px; padding:0 22px; font-size:.72rem}
+  body{padding-bottom:0}
+  .to-top{bottom:22px}
+}
+/* the hint only where it is true: portrait below the grid breakpoint */
+@media (max-width:659.98px) and (orientation:portrait){
+  .cal-rotate-hint{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    margin:14px 0 0; padding:11px 14px;
+    background:var(--snow-card); border:1px solid var(--border); border-radius:var(--radius-lg);
+    font-family:var(--font-display); font-size:.72rem; font-weight:500; color:var(--text-muted);
+  }
+  .cal-rotate-hint::before{content:"⟳"; font-size:15px; color:var(--coral)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important; transition-duration:.01ms !important}
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="header-brand">
-        <h1 class="site-title">Art Openings<span class="accent">SYD</span></h1>
-        <p class="site-tagline">Exhibitions &amp; openings across Sydney</p>
-      </div>
-      <div class="header-actions">
-        <button id="btn-view-list" class="view-btn active" title="List view">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="13" width="16" height="3" rx="1" fill="currentColor"/></svg>
-        </button>
-        <button id="btn-view-cal" class="view-btn" title="Calendar view">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="1" y1="7" x2="17" y2="7" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
-        <a href="galleries.html" class="view-btn" title="Gallery directory">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="4" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
-      </div>
-    </div>
-  </header>
 
-  <section class="filters-bar">
-    <div class="filters-top">
-      <input type="text" id="search" class="filter-input" placeholder="Search exhibitions...">
-      <button id="btn-filter-toggle" class="btn-filter-toggle" aria-expanded="false" aria-controls="filters-panel">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 3h14M4 8h8M6 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span>Filters</span>
-        <span id="filter-badge" class="filter-badge" hidden></span>
-      </button>
-    </div>
-    <div id="filters-panel" class="filters-panel">
-      <div class="filters-inner">
-        <div class="filter-group filter-toggles">
-          <label class="toggle-chip">
-            <input type="checkbox" id="filter-opening-today">
-            <span>Opening today</span>
-          </label>
-          <label class="toggle-chip">
-            <input type="checkbox" id="filter-opening-week">
-            <span>Opening this week</span>
-          </label>
-          <label class="toggle-chip">
-            <input type="checkbox" id="filter-closed">
-            <span>Show closed</span>
-          </label>
-        </div>
-        <div class="filter-row">
-          <select id="filter-suburb" class="filter-select">
-            <option value="">All suburbs</option>
-          </select>
-          <select id="filter-venue" class="filter-select">
-            <option value="">All galleries</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <button id="btn-to-cal" class="btn-calendar" title="View calendar">Calendar</button>
-        </div>
-      </div>
-    </div>
-  </section>
+<nav class="tabbar" role="tablist">
+  <button class="tab" data-tab="list" role="tab" aria-selected="true">
+    <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="13" width="16" height="3" rx="1" fill="currentColor"/></svg>
+    Exhibitions</button>
+  <button class="tab" data-tab="cal" role="tab" aria-selected="false">
+    <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="7" x2="17" y2="7" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    Calendar</button>
+  <a class="tab" href="galleries_optA.html">
+    <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="16" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="4" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+    Galleries</a>
+</nav>
 
-  <main class="content">
-    <div id="view-list" class="view active">
-      <div id="exhibition-list" class="exhibition-grid"></div>
-      <p id="no-results" class="no-results" hidden>No exhibitions match your filters.</p>
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-top">
+      <h1 class="site-title">Art Openings<span class="accent">SYD</span></h1>
     </div>
-    <div id="view-cal" class="view">
-      <div class="cal-header">
-        <button id="cal-prev" class="cal-nav">&larr;</button>
-        <h2 id="cal-title" class="cal-title"></h2>
-        <button id="cal-next" class="cal-nav">&rarr;</button>
-        <button id="btn-export-ics" class="btn-export-cal" title="Download all as ICS">Export ICS</button>
-      </div>
-      <div id="cal-grid" class="cal-grid"></div>
-      <p class="cal-rotate-hint">Rotate your phone for the full calendar view</p>
-      <div id="cal-agenda" class="cal-agenda"></div>
-    </div>
-  </main>
+    <p class="site-tagline">Exhibitions and openings across Sydney</p>
+    <p class="meta" id="meta">Loading the latest run…</p>
+  </div>
+</header>
 
-  <div id="event-popup" class="event-popup" hidden>
-    <div class="popup-backdrop"></div>
-    <div class="popup-content">
-      <button class="popup-close">&times;</button>
-      <h3 id="popup-title"></h3>
-      <div id="popup-meta" class="popup-meta"></div>
-      <div id="popup-dates" class="popup-dates"></div>
-      <p id="popup-desc" class="popup-desc"></p>
-      <div id="popup-actions" class="popup-actions"></div>
+<!-- ══ LIST ══ -->
+<div id="view-list">
+  <div class="filterbar">
+    <div class="wrap filterbar-inner">
+      <input id="search" type="search" placeholder="Search exhibitions, artists, galleries" aria-label="Search exhibitions">
+      <button class="filter-btn" id="open-filters">More filters<span class="badge-n" id="filter-badge" hidden>0</span></button>
     </div>
   </div>
+  <div class="wrap resultbar">
+    <span id="result-count"></span>
+    <label class="sortwrap">
+      <span class="sortlabel">Sort</span>
+      <select id="sort" aria-label="Sort exhibitions">
+        <option value="default">Default</option>
+        <option value="title">A to Z</option>
+        <option value="venue">By gallery</option>
+      </select>
+    </label>
+  </div>
+  <main class="wrap">
+    <div id="exhibition-list" class="exhibition-grid"></div>
+    <div id="sentinel" style="height:1px"></div>
+    <div id="no-results" class="no-results" hidden>
+      <p>No exhibitions match those filters.</p>
+      <p class="sub">Loosen a filter, or check back after the next run.</p>
+      <button class="btn-ghost" id="empty-clear">Clear all filters</button>
+    </div>
+  </main>
+</div>
 
-  <footer class="site-footer">
-    <p><a href="https://artsydney.github.io/art-grants-dashboard/" target="_blank">Open Calls</a></p>
-  </footer>
+<!-- ══ CALENDAR ══ -->
+<div id="view-cal" class="wrap" hidden>
+  <p class="cal-rotate-hint">Rotate your phone for the month grid</p>
+  <div class="cal-toolbar" id="cal-toolbar">
+    <button class="cal-nav" id="cal-prev" aria-label="Previous month">&larr;</button>
+    <h2 class="cal-title" id="cal-title"></h2>
+    <button class="cal-nav" id="cal-next" aria-label="Next month">&rarr;</button>
+  </div>
+  <button class="cal-export" id="btn-export-ics">Add these openings to your calendar</button>
+  <div id="cal-body"></div>
+</div>
 
-  <script src="app.js?v=21"></script>
-  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "93b21e6a7af8466ebde45013e7cb409a"}'></script>
+<button class="to-top" id="to-top" aria-label="Back to top" hidden>↑</button>
+
+<!-- ══ FILTER SHEET ══ -->
+<div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Filters" hidden>
+  <div class="sheet-grip"></div>
+  <div class="sheet-head">
+    <h2>Filters</h2>
+    <button class="icon-btn" id="sheet-close" style="background:var(--snow-card);border-color:var(--border);color:var(--text)" aria-label="Close filters">&times;</button>
+  </div>
+  <div class="sheet-body">
+    <div class="fgroup">
+      <h3>When</h3>
+      <p class="fsub">Pick any. Shows matching one of these appear.</p>
+      <div class="chips" id="when-chips"></div>
+    </div>
+    <div class="fgroup">
+      <h3>Where</h3>
+      <p class="fsub">Precincts select every suburb inside them.</p>
+      <div class="chips" id="precinct-chips"></div>
+      <button class="link-btn" id="toggle-suburbs">Pick individual suburbs</button>
+      <div class="chips" id="suburb-chips" hidden></div>
+    </div>
+    <div class="fgroup">
+      <h3>Gallery</h3>
+      <input class="venue-search" id="venue-search" type="search" placeholder="Type a gallery name" aria-label="Search galleries">
+      <div class="venue-list" id="venue-list"></div>
+    </div>
+    <div class="fgroup">
+      <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:var(--tap);cursor:pointer;font-size:.9rem">
+        <span>Show past exhibitions instead</span>
+        <input type="checkbox" id="filter-closed" style="width:22px;height:22px;accent-color:var(--coral)">
+      </label>
+    </div>
+    <div class="fgroup">
+      <p class="fsub" style="margin:0">Scraped from gallery sites, Instagram, Art Almanac and City of Sydney. Confirm dates with the gallery before you travel.</p>
+    </div>
+  </div>
+  <div class="sheet-foot">
+    <button class="btn-ghost" id="sheet-clear" style="margin-top:0">Clear all</button>
+    <button class="btn-primary" id="sheet-apply">Show results</button>
+  </div>
+</aside>
+
+<!-- ══ DAY POPUP ══ -->
+<div class="popup" id="event-popup" hidden>
+  <div class="popup-backdrop" id="popup-backdrop"></div>
+  <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <button class="popup-close" id="popup-close" aria-label="Close">&times;</button>
+    <h3 id="popup-title"></h3>
+    <div id="popup-body"></div>
+  </div>
+</div>
+
+<script>
+/* ══ Art Openings Sydney — mockup logic, self-contained ═══════════════════ */
+
+const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+const TODAY_STR = ymd(TODAY);
+const BATCH = 24;
+const CAL_GRID_QUERY = "(min-width:660px)";
+
+// Sydney's gallery scene clusters into precincts people actually plan a day
+// around, which is what makes 34 suburbs navigable on a phone.
+const PRECINCTS = [
+  {id:"east", name:"East", suburbs:["Darlinghurst","Paddington","Woollahra","Potts Point","Woolloomooloo","Rushcutters Bay","Surry Hills","Elizabeth Bay","Kings Cross","Edgecliff","Double Bay","Bondi","Bondi Junction","Waverley","Randwick","Kensington","Bronte","Clovelly","Coogee","Vaucluse","Rose Bay"]},
+  {id:"city", name:"City", suburbs:["Sydney","Haymarket","The Rocks","Millers Point","Barangaroo","Pyrmont","Ultimo","Walsh Bay","Circular Quay","Dawes Point"]},
+  {id:"south", name:"South", suburbs:["Chippendale","Redfern","Waterloo","Zetland","Alexandria","Darlington","Eveleigh","Rosebery","Green Square","Botany","Mascot","St Peters","Sydenham","Erskineville"]},
+  {id:"west", name:"Inner West", suburbs:["Newtown","Enmore","Marrickville","Camperdown","Lewisham","Leichhardt","Annandale","Ashfield","Balmain","Glebe","Rozelle","Petersham","Stanmore","Dulwich Hill","Summer Hill","Forest Lodge","Croydon","Burwood","Strathfield","Concord","Tempe","Haberfield","Lilyfield","Birchgrove"]},
+  {id:"north", name:"North", suburbs:["Mosman","North Sydney","Crows Nest","Chatswood","Manly","Neutral Bay","Cremorne","Lane Cove","Willoughby","Artarmon","St Leonards","Kirribilli","Milsons Point","Balgowlah","Dee Why","Brookvale","Hornsby","Gordon","Killara","Lindfield","Roseville","Waverton","Cammeray"]},
+  {id:"far",  name:"Greater Sydney", suburbs:["Parramatta","Campbelltown","Penrith","Blacktown","Liverpool","Bankstown","Auburn","Granville","Rydalmere","Homebush","Sydney Olympic Park","Fairfield","Casula","Katoomba","Springwood","Windsor","Richmond","Wollongong","Newcastle"]},
+];
+
+// The suburb field carries typos and a couple of venue names. Folding them here
+// keeps the chip counts honest; the real fix belongs in the pipeline.
+const SUBURB_ALIASES = {
+  "darlingurst":"Darlinghurst", "cbd":"Sydney",
+  "carriageworks":"Eveleigh", "university of sydney":"Camperdown",
+};
+
+// "Opening tonight" was dropped from the UI as a subset of "Opening this week".
+// The Discord "Opening TONIGHT" alert is unaffected: that fires from notify.py
+// in the pipeline, not from here.
+const WHEN_FILTERS = [
+  {id:"now",     name:"On now", test:isOnNow},
+  {id:"week",    name:"Opening this week", test:(ex) => withinDays(openDate(ex), 0, 7)},
+  {id:"closing", name:"Closing soon", test:(ex) => withinDays(ex.end_date, 0, 7)},
+];
+
+// data-current.json is 74KB and covers the 146 live shows. The 512KB archive
+// is only fetched if someone actually asks for past exhibitions.
+let ITEMS_CURRENT = [];
+let ITEMS_FULL = null;
+
+const state = {
+  items:[], filtered:[], rendered:0,
+  search:"", sort:"default", showClosed:false,
+  when:new Set(), suburbs:new Set(), venue:"",
+  venueQuery:"",
+};
+
+const $ = (s) => document.querySelector(s);
+
+init();
+
+async function init(){
+  wire();
+  try{
+    // No Date.now() buster: GitHub Pages sends an ETag, so a repeat visit is a
+    // 304 rather than another 74KB. The pipeline commit changes the ETag.
+    const res = await fetch("data-current.json");
+    const json = await res.json();
+    ITEMS_CURRENT = (json.exhibitions || []).map(normalise);
+    state.items = ITEMS_CURRENT;
+    $("#meta").textContent = metaLine(json);
+  }catch(e){
+    $("#meta").textContent = "Couldn't load the latest run. Reload, or try again shortly.";
+  }
+  buildWhenChips();
+  buildPrecinctChips();
+  buildSuburbChips();
+  buildVenueList();
+
+  // The directory links here two ways: ?q=<gallery> to see its shows, and
+  // #calendar from the shared bottom nav.
+  const q = new URLSearchParams(location.search).get("q");
+  if(q){ $("#search").value = q; state.search = q.toLowerCase().trim(); }
+
+  render();
+  const now = new Date();
+  calState.year = now.getFullYear(); calState.month = now.getMonth();
+  if(location.hash === "#calendar") switchView("cal");
+}
+
+function normalise(ex){
+  const raw = (ex.suburb || "").trim();
+  const alias = SUBURB_ALIASES[raw.toLowerCase()];
+  return Object.assign({}, ex, {suburb: alias || raw});
+}
+
+function metaLine(json){
+  const when = json.generated ? new Date(json.generated) : null;
+  const stamp = when ? when.toLocaleString("en-AU",{timeZone:"Australia/Sydney",dateStyle:"medium",timeStyle:"short"}) : "unknown";
+  return "Last updated " + stamp + " AEST";
+}
+
+/* ── date helpers ─────────────────────────────────────────────────────── */
+function ymd(d){
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+}
+function openDate(ex){ return ex.opening_date || ex.start_date || null; }
+function daysFrom(dateStr){
+  if(!dateStr) return null;
+  const d = new Date(dateStr + "T00:00:00");
+  if(isNaN(d)) return null;
+  return Math.round((d - TODAY) / 86400000);
+}
+function withinDays(dateStr, lo, hi){
+  const n = daysFrom(dateStr);
+  return n !== null && n >= lo && n <= hi;
+}
+function isOnNow(ex){
+  const start = ex.start_date || ex.opening_date;
+  const end = ex.end_date;
+  if(!start) return false;
+  if(start > TODAY_STR && !end) return false;
+  return start <= TODAY_STR && (!end || end >= TODAY_STR);
+}
+function formatDate(s){
+  if(!s) return "";
+  const d = new Date(s + "T00:00:00");
+  if(isNaN(d)) return s;
+  return d.toLocaleDateString("en-AU",{day:"numeric",month:"short"});
+}
+
+/* ── filtering ────────────────────────────────────────────────────────── */
+function precinctOf(suburb){
+  if(!suburb) return null;
+  const p = PRECINCTS.find((x) => x.suburbs.includes(suburb));
+  return p ? p.id : null;
+}
+function presentSuburbs(){
+  const c = {};
+  state.items.forEach((ex) => { if(ex.suburb) c[ex.suburb] = (c[ex.suburb] || 0) + 1; });
+  return Object.keys(c).sort((a,b) => c[b] - c[a] || a.localeCompare(b)).map((s) => ({name:s, n:c[s]}));
+}
+function presentVenues(){
+  const c = {};
+  state.items.forEach((ex) => { if(ex.venue) c[ex.venue] = (c[ex.venue] || 0) + 1; });
+  return Object.keys(c).sort((a,b) => a.localeCompare(b)).map((v) => ({name:v, n:c[v]}));
+}
+
+function passes(ex){
+  if(state.showClosed){
+    if(ex.status !== "closed" && !(ex.end_date && ex.end_date < TODAY_STR)) return false;
+  }else{
+    if(ex.status === "closed") return false;
+    if(ex.end_date && ex.end_date < TODAY_STR) return false;
+  }
+  // "When" chips are a union, so ticking two widens rather than narrows.
+  if(state.when.size && !state.showClosed){
+    const hit = WHEN_FILTERS.some((f) => state.when.has(f.id) && f.test(ex));
+    if(!hit) return false;
+  }
+  if(state.suburbs.size && !state.suburbs.has(ex.suburb)) return false;
+  if(state.venue && (ex.venue || "") !== state.venue) return false;
+  if(state.search){
+    const hay = [ex.title, ex.artist, ex.venue, ex.suburb, ex.description].join(" ").toLowerCase();
+    if(!hay.includes(state.search)) return false;
+  }
+  return true;
+}
+
+function sortItems(list){
+  const s = state.sort;
+  return list.slice().sort((a,b) => {
+    if(s === "title")  return String(a.title || "").localeCompare(String(b.title || ""));
+    if(s === "venue")  return String(a.venue || "~").localeCompare(String(b.venue || "~"));
+    // Default: soonest to finish first, so last-chance shows surface without the
+    // reader having to pick a sort for it.
+    const ae = a.end_date || "9999", be = b.end_date || "9999";
+    if(ae !== be) return ae.localeCompare(be);
+    return String(openDate(a) || "9999").localeCompare(String(openDate(b) || "9999"));
+  });
+}
+
+/* ── rendering ────────────────────────────────────────────────────────── */
+function render(){
+  state.filtered = sortItems(state.items.filter(passes));
+  state.rendered = 0;
+  const list = $("#exhibition-list");
+  list.innerHTML = "";
+  $("#no-results").hidden = state.filtered.length > 0;
+  const n = state.filtered.length;
+  $("#result-count").textContent = n + (n === 1 ? " exhibition" : " exhibitions");
+  renderMore();
+  updateBadge();
+}
+function renderMore(){
+  const slice = state.filtered.slice(state.rendered, state.rendered + BATCH);
+  const frag = document.createDocumentFragment();
+  slice.forEach((ex) => frag.appendChild(createCard(ex)));
+  $("#exhibition-list").appendChild(frag);
+  state.rendered += slice.length;
+}
+new IntersectionObserver((e) => {
+  if(e[0].isIntersecting && state.rendered < state.filtered.length) renderMore();
+}, {rootMargin:"600px"}).observe($("#sentinel"));
+
+function getBadge(ex){
+  if(ex.status === "closed") return "";
+  const op = daysFrom(openDate(ex));
+  if(op === 0) return '<span class="badge badge-opening">Opening tonight</span>';
+  if(op !== null && op > 0 && op <= 3) return '<span class="badge badge-opening">Opens in ' + op + 'd</span>';
+  const en = daysFrom(ex.end_date);
+  if(en === 0) return '<span class="badge badge-closing">Last day</span>';
+  if(en !== null && en > 0 && en <= 3) return '<span class="badge badge-closing">Closes in ' + en + 'd</span>';
+  if(isOnNow(ex)) return '<span class="badge badge-on-now">On now</span>';
+  return "";
+}
+
+function createCard(ex){
+  const card = document.createElement("article");
+  card.className = "ex-card" + (ex.status === "closed" ? " status-closed" : "");
+
+  let dates = "";
+  if(ex.start_date || ex.end_date){
+    dates = formatDate(ex.start_date) + (ex.end_date ? " – " + formatDate(ex.end_date) : "");
+  }else if(ex.opening_date){
+    dates = formatDate(ex.opening_date);
+  }
+
+  const title = ex.website
+    ? '<a href="' + safeLink(ex.website) + '" target="_blank" rel="noopener">' + esc(ex.title) + '</a>'
+    : esc(ex.title);
+
+  let meta = "";
+  // Real anchor, no inline onclick: apostrophes in gallery names used to break
+  // the interpolated handler, and this keeps a CSP possible later.
+  if(ex.venue) meta += '<a class="venue" href="galleries_optA.html?q=' + encodeURIComponent(ex.venue) + '">' + esc(ex.venue) + '</a>';
+  if(ex.suburb) meta += (meta ? ", " : "") + esc(ex.suburb);
+
+  card.innerHTML =
+    getBadge(ex) +
+    '<h3>' + title + '</h3>' +
+    (ex.artist ? '<div class="ex-artist">' + esc(ex.artist) + '</div>' : "") +
+    (meta ? '<div class="ex-meta">' + meta + '</div>' : "") +
+    (dates ? '<div class="ex-dates">' + dates + '</div>' : "") +
+    (ex.description ? '<p class="ex-desc">' + esc(ex.description) + '</p>' : "") +
+    '<div class="ex-actions">' +
+      (ex.website ? '<a class="act primary" href="' + safeLink(ex.website) + '" target="_blank" rel="noopener">Website</a>' : "") +
+      (ex.instagram ? '<a class="act" href="https://instagram.com/' + encodeURIComponent(String(ex.instagram).replace("@","")) + '" target="_blank" rel="noopener">' + esc(ex.instagram) + '</a>' : "") +
+      (openDate(ex) ? '<a class="act" href="' + buildGoogleCalUrl(ex) + '"' + (IS_IOS ? "" : ' target="_blank" rel="noopener"') + '>Google Calendar</a>' : "") +
+      (openDate(ex) ? '<button class="act" data-ics>Save .ics</button>' : "") +
+    '</div>';
+
+  const ics = card.querySelector("[data-ics]");
+  if(ics) ics.addEventListener("click", () => downloadICS(ex));
+  return card;
+}
+
+function esc(s){
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function safeLink(url){
+  try{ const u = new URL(url); return (u.protocol === "https:" || u.protocol === "http:") ? url : "#"; }
+  catch(e){ return "#"; }
+}
+
+/* ── filter controls ──────────────────────────────────────────────────── */
+function buildWhenChips(){
+  const box = $("#when-chips");
+  box.innerHTML = "";
+  WHEN_FILTERS.forEach((f) => {
+    const n = state.items.filter((ex) => ex.status !== "closed" && f.test(ex)).length;
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button";
+    b.innerHTML = esc(f.name) + '<span class="n">' + n + '</span>';
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", () => {
+      state.when.has(f.id) ? state.when.delete(f.id) : state.when.add(f.id);
+      b.setAttribute("aria-pressed", state.when.has(f.id));
+      render();
+    });
+    box.appendChild(b);
+  });
+}
+
+// Any present suburb the precinct lists don't cover, gathered so the precinct
+// row always adds up to the full set rather than silently dropping venues.
+function precinctList(){
+  const present = presentSuburbs().map((s) => s.name);
+  const mapped = new Set();
+  PRECINCTS.forEach((p) => p.suburbs.forEach((s) => mapped.add(s)));
+  const orphans = present.filter((s) => !mapped.has(s));
+  return orphans.length
+    ? PRECINCTS.concat([{id:"else", name:"Elsewhere", suburbs:orphans}])
+    : PRECINCTS;
+}
+
+function buildPrecinctChips(){
+  const box = $("#precinct-chips");
+  box.innerHTML = "";
+  const present = presentSuburbs().map((s) => s.name);
+  precinctList().forEach((p) => {
+    const mine = p.suburbs.filter((s) => present.includes(s));
+    if(!mine.length) return;
+    const n = state.items.filter((ex) => mine.includes(ex.suburb)).length;
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.dataset.precinct = p.id;
+    b.innerHTML = esc(p.name) + '<span class="n">' + n + '</span>';
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", () => {
+      const all = mine.every((s) => state.suburbs.has(s));
+      mine.forEach((s) => all ? state.suburbs.delete(s) : state.suburbs.add(s));
+      syncAreaChips();
+      render();
+    });
+    box.appendChild(b);
+  });
+}
+
+function buildSuburbChips(){
+  const box = $("#suburb-chips");
+  box.innerHTML = "";
+  presentSuburbs().forEach((s) => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.dataset.suburb = s.name;
+    b.innerHTML = esc(s.name) + '<span class="n">' + s.n + '</span>';
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", () => {
+      state.suburbs.has(s.name) ? state.suburbs.delete(s.name) : state.suburbs.add(s.name);
+      syncAreaChips();
+      render();
+    });
+    box.appendChild(b);
+  });
+}
+
+// A precinct chip reads as on when every one of its suburbs is on, and as
+// partial when only some are, so the two controls never contradict each other.
+function syncAreaChips(){
+  const present = presentSuburbs().map((s) => s.name);
+  document.querySelectorAll("[data-suburb]").forEach((b) => {
+    b.setAttribute("aria-pressed", state.suburbs.has(b.dataset.suburb));
+  });
+  document.querySelectorAll("[data-precinct]").forEach((b) => {
+    const p = precinctList().find((x) => x.id === b.dataset.precinct);
+    const mine = p.suburbs.filter((s) => present.includes(s));
+    const on = mine.length && mine.every((s) => state.suburbs.has(s));
+    const some = mine.some((s) => state.suburbs.has(s));
+    b.setAttribute("aria-pressed", !!on);
+    b.classList.toggle("part", !on && some);
+  });
+}
+
+function buildVenueList(){
+  const box = $("#venue-list");
+  const q = state.venueQuery;
+  const venues = presentVenues().filter((v) => !q || v.name.toLowerCase().includes(q));
+  box.innerHTML = "";
+
+  const all = document.createElement("button");
+  all.className = "venue-item"; all.type = "button";
+  all.innerHTML = "<span>All galleries</span>";
+  all.setAttribute("aria-pressed", state.venue === "");
+  all.addEventListener("click", () => { state.venue = ""; buildVenueList(); render(); });
+  box.appendChild(all);
+
+  venues.forEach((v) => {
+    const b = document.createElement("button");
+    b.className = "venue-item"; b.type = "button";
+    b.innerHTML = "<span>" + esc(v.name) + '</span><span class="n">' + v.n + "</span>";
+    b.setAttribute("aria-pressed", state.venue === v.name);
+    b.addEventListener("click", () => {
+      state.venue = state.venue === v.name ? "" : v.name;
+      buildVenueList(); render();
+    });
+    box.appendChild(b);
+  });
+
+  if(!venues.length){
+    const p = document.createElement("div");
+    p.className = "venue-item"; p.style.color = "var(--text-muted)";
+    p.textContent = "No gallery matches that name.";
+    box.appendChild(p);
+  }
+}
+
+function activeCount(){
+  let n = state.when.size + state.suburbs.size;
+  if(state.venue) n++;
+  if(state.showClosed) n++;
+  return n;
+}
+function updateBadge(){
+  const n = activeCount();
+  const b = $("#filter-badge");
+  b.hidden = n === 0; b.textContent = n;
+  $("#sheet-apply").textContent = "Show " + state.filtered.length + " result" + (state.filtered.length === 1 ? "" : "s");
+}
+
+let searchTimer;
+function wire(){
+  $("#search").addEventListener("input", (e) => {
+    clearTimeout(searchTimer);
+    const v = e.target.value.toLowerCase().trim();
+    searchTimer = setTimeout(() => { state.search = v; render(); }, 140);
+  });
+  $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+  $("#filter-closed").addEventListener("change", async (e) => {
+    const on = e.target.checked;
+    const label = e.target.closest("label").querySelector("span");
+    if(on && !ITEMS_FULL){
+      label.textContent = "Loading the archive…";
+      try{
+        const res = await fetch("data.json");
+        const json = await res.json();
+        ITEMS_FULL = (json.exhibitions || []).map(normalise);
+      }catch(err){
+        ITEMS_FULL = ITEMS_CURRENT.slice();
+        label.textContent = "Archive unavailable, showing current only";
+        e.target.checked = false;
+        return;
+      }
+      label.textContent = "Show past exhibitions instead";
+    }
+    state.showClosed = on;
+    state.items = on ? (ITEMS_FULL || ITEMS_CURRENT) : ITEMS_CURRENT;
+    // the archive carries far more suburbs and venues, so the controls rebuild
+    buildWhenChips(); buildPrecinctChips(); buildSuburbChips(); buildVenueList();
+    syncAreaChips();
+    render();
+  });
+  $("#venue-search").addEventListener("input", (e) => {
+    state.venueQuery = e.target.value.toLowerCase().trim();
+    buildVenueList();
+  });
+  $("#toggle-suburbs").addEventListener("click", () => {
+    const box = $("#suburb-chips");
+    box.hidden = !box.hidden;
+    $("#toggle-suburbs").textContent = box.hidden ? "Pick individual suburbs" : "Hide suburb list";
+  });
+
+  $("#open-filters").addEventListener("click", openSheet);
+  $("#sheet-close").addEventListener("click", closeSheet);
+  $("#sheet-apply").addEventListener("click", closeSheet);
+  $("#sheet-backdrop").addEventListener("click", closeSheet);
+  $("#sheet-clear").addEventListener("click", clearAll);
+  $("#empty-clear").addEventListener("click", clearAll);
+  $("#popup-close").addEventListener("click", closePopup);
+  $("#popup-backdrop").addEventListener("click", closePopup);
+  document.addEventListener("keydown", (e) => {
+    if(e.key !== "Escape") return;
+    if(!$("#sheet").hidden) closeSheet();
+    if(!$("#event-popup").hidden) closePopup();
+  });
+
+  document.querySelectorAll(".tab[data-tab]").forEach((b) => {
+    b.addEventListener("click", () => switchView(b.dataset.tab));
+  });
+  $("#cal-prev").addEventListener("click", () => stepMonth(-1));
+  $("#cal-next").addEventListener("click", () => stepMonth(1));
+  $("#btn-export-ics").addEventListener("click", exportAllICS);
+
+  const toTop = $("#to-top");
+  toTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+  window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 700; }, {passive:true});
+  matchMedia(CAL_GRID_QUERY).addEventListener("change", () => {
+    if(!$("#view-cal").hidden) renderCalendar();
+  });
+}
+
+function clearAll(){
+  state.when.clear(); state.suburbs.clear();
+  state.venue = ""; state.showClosed = false; state.search = ""; state.venueQuery = "";
+  state.items = ITEMS_CURRENT;
+  $("#search").value = ""; $("#venue-search").value = "";
+  $("#filter-closed").checked = false;
+  document.querySelectorAll("#when-chips .chip").forEach((c) => c.setAttribute("aria-pressed","false"));
+  syncAreaChips();
+  buildVenueList();
+  render();
+}
+
+let scrollLock = 0;
+function lockScroll(){
+  scrollLock = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = -scrollLock + "px";
+  document.body.style.width = "100%";
+}
+function unlockScroll(){
+  document.body.style.position = ""; document.body.style.top = ""; document.body.style.width = "";
+  window.scrollTo(0, scrollLock);
+}
+function openSheet(){ updateBadge(); $("#sheet-backdrop").hidden = false; $("#sheet").hidden = false; lockScroll(); }
+function closeSheet(){ $("#sheet").hidden = true; $("#sheet-backdrop").hidden = true; unlockScroll(); }
+function closePopup(){ $("#event-popup").hidden = true; unlockScroll(); }
+
+function switchView(tab){
+  const isCal = tab === "cal";
+  $("#view-list").hidden = isCal;
+  $("#view-cal").hidden = !isCal;
+  document.querySelectorAll(".tab[data-tab]").forEach((b) => {
+    b.setAttribute("aria-selected", b.dataset.tab === tab);
+  });
+  window.scrollTo(0,0);
+  if(isCal) renderCalendar();
+}
+
+/* ── calendar ─────────────────────────────────────────────────────────── */
+const calState = {year:new Date().getFullYear(), month:new Date().getMonth()};
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const DOW = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+
+function stepMonth(d){
+  calState.month += d;
+  if(calState.month < 0){ calState.month = 11; calState.year--; }
+  if(calState.month > 11){ calState.month = 0; calState.year++; }
+  renderCalendar();
+}
+
+// Built from the filtered set, so the calendar agrees with the list.
+function dateIndex(){
+  const idx = {};
+  state.filtered.forEach((ex) => {
+    const o = openDate(ex);
+    if(o){ (idx[o] = idx[o] || []).push({ex, type:"open"}); }
+    if(ex.end_date && ex.end_date !== o){ (idx[ex.end_date] = idx[ex.end_date] || []).push({ex, type:"close"}); }
+  });
+  return idx;
+}
+
+function renderCalendar(){
+  const wide = matchMedia(CAL_GRID_QUERY).matches;
+  $("#cal-toolbar").querySelectorAll(".cal-nav, .cal-title").forEach((el) => { el.hidden = !wide; });
+  wide ? renderCalGrid() : renderAgenda();
+}
+
+function renderCalGrid(){
+  const idx = dateIndex();
+  const first = new Date(calState.year, calState.month, 1);
+  $("#cal-title").textContent = MONTHS[calState.month] + " " + calState.year;
+  const startDow = (first.getDay() + 6) % 7;
+  const days = new Date(calState.year, calState.month+1, 0).getDate();
+
+  let html = '<div class="cal-grid">';
+  DOW.forEach((d) => { html += '<div class="cal-dow">' + d + '</div>'; });
+  const cells = Math.ceil((startDow + days) / 7) * 7;
+  for(let i = 0; i < cells; i++){
+    const num = i - startDow + 1;
+    const inMonth = num >= 1 && num <= days;
+    const d = new Date(calState.year, calState.month, num);
+    const key = ymd(d);
+    const evs = idx[key] || [];
+    html += '<div class="cal-cell' + (inMonth ? "" : " other-month") +
+            (key === TODAY_STR ? " today" : "") + (evs.length ? " has-events" : "") +
+            '" data-date="' + key + '"><div class="cal-day-num">' + d.getDate() + '</div>';
+    evs.slice(0,3).forEach((e) => {
+      html += '<span class="cal-dot ' + e.type + '">' + esc(e.ex.title) + '</span>';
+    });
+    if(evs.length > 3) html += '<span class="cal-more">+' + (evs.length - 3) + ' more</span>';
+    html += '</div>';
+  }
+  html += '</div>';
+  $("#cal-body").innerHTML = html;
+  $("#cal-body").querySelectorAll(".cal-cell.has-events").forEach((c) => {
+    c.addEventListener("click", () => openPopup(c.dataset.date, idx[c.dataset.date]));
+  });
+}
+
+function renderAgenda(){
+  const idx = dateIndex();
+  const dates = Object.keys(idx).filter((d) => d >= TODAY_STR).sort();
+  if(!dates.length){
+    $("#cal-body").innerHTML = '<div class="no-results"><p>Nothing dated matches your filters.</p>' +
+                               '<p class="sub">Clear a filter to see everything.</p></div>';
+    return;
+  }
+  let html = '<div class="cal-agenda">';
+  dates.forEach((key) => {
+    const d = new Date(key + "T00:00:00");
+    const evs = idx[key];
+    html += '<div class="agenda-head"><span class="agenda-date">' +
+      d.toLocaleDateString("en-AU",{weekday:"short",day:"numeric",month:"short"}) +
+      '</span><span class="agenda-n">' + evs.length + '</span></div>';
+    evs.forEach((e, i) => {
+      const ex = e.ex;
+      html += '<div class="ex-card" data-date="' + key + '" data-i="' + i + '">' +
+        '<span class="badge ' + (e.type === "open" ? "badge-opening" : "badge-closing") + '">' +
+          (e.type === "open" ? "Opens" : "Closes") + '</span>' +
+        '<h3>' + esc(ex.title) + '</h3>' +
+        (ex.venue || ex.suburb ? '<div class="ex-meta">' + esc([ex.venue, ex.suburb].filter(Boolean).join(", ")) + '</div>' : "") +
+        '<div class="ex-actions">' +
+          (ex.website ? '<a class="act primary" href="' + safeLink(ex.website) + '" target="_blank" rel="noopener">Website</a>' : "") +
+          (openDate(ex) ? '<a class="act" href="' + buildGoogleCalUrl(ex) + '"' + (IS_IOS ? "" : ' target="_blank" rel="noopener"') + '>Google Calendar</a>' : "") +
+          (openDate(ex) ? '<button class="act" data-ics>Save .ics</button>' : "") +
+        '</div></div>';
+    });
+  });
+  html += '</div>';
+  $("#cal-body").innerHTML = html;
+  $("#cal-body").querySelectorAll("[data-ics]").forEach((btn) => {
+    const row = btn.closest("[data-date]");
+    const ex = idx[row.dataset.date][Number(row.dataset.i)].ex;
+    btn.addEventListener("click", () => downloadICS(ex));
+  });
+}
+
+function openPopup(key, evs){
+  const d = new Date(key + "T00:00:00");
+  $("#popup-title").textContent = d.toLocaleDateString("en-AU",{weekday:"long",day:"numeric",month:"long"});
+  const body = $("#popup-body");
+  body.innerHTML = "";
+  evs.forEach((e) => {
+    const ex = e.ex;
+    const div = document.createElement("div");
+    div.className = "fgroup";
+    div.innerHTML =
+      '<span class="badge ' + (e.type === "open" ? "badge-opening" : "badge-closing") + '">' +
+        (e.type === "open" ? "Opens" : "Closes") + '</span>' +
+      '<h3>' + esc(ex.title) + '</h3>' +
+      (ex.venue || ex.suburb ? '<p class="fsub">' + esc([ex.venue, ex.suburb].filter(Boolean).join(", ")) + '</p>' : "") +
+      (ex.description ? '<p class="fsub">' + esc(ex.description) + '</p>' : "") +
+      '<div class="ex-actions" style="border-top:none;padding-top:4px">' +
+        (ex.website ? '<a class="act primary" href="' + safeLink(ex.website) + '" target="_blank" rel="noopener">Website</a>' : "") +
+        (openDate(ex) ? '<a class="act" href="' + buildGoogleCalUrl(ex) + '"' + (IS_IOS ? "" : ' target="_blank" rel="noopener"') + '>Google Calendar</a>' : "") +
+        (openDate(ex) ? '<button class="act" data-ics>Save .ics</button>' : "") +
+      '</div>';
+    const b = div.querySelector("[data-ics]");
+    if(b) b.addEventListener("click", () => downloadICS(ex));
+    body.appendChild(div);
+  });
+  $("#event-popup").hidden = false;
+  lockScroll();
+}
+
+/* ── calendar export ──────────────────────────────────────────────────── */
+function icsEscape(s){
+  return String(s || "").replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");
+}
+function makeICS(ex){
+  const date = openDate(ex);
+  if(!date) return null;
+  const dt = date.replace(/-/g,"");
+  let summary = ex.title + (ex.venue ? " at " + ex.venue : "");
+  const location = [ex.venue, ex.address, ex.suburb].filter(Boolean).join(", ");
+  return [
+    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Art Openings Sydney//EN","BEGIN:VEVENT",
+    "UID:" + ex.id + "@art-openings-syd",
+    "DTSTART:" + dt + "T180000", "DTEND:" + dt + "T210000",
+    "SUMMARY:" + icsEscape(summary),
+    "DESCRIPTION:" + icsEscape(ex.description || ""),
+    location ? "LOCATION:" + icsEscape(location) : "",
+    ex.website ? "URL:" + ex.website : "",
+    "END:VEVENT","END:VCALENDAR",
+  ].filter(Boolean).join("\r\n");
+}
+// iOS ignores the download attribute, so navigate to the blob and let the
+// system calendar sheet take it.
+function downloadICS(ex){
+  const content = makeICS(ex);
+  if(!content) return;
+  const url = URL.createObjectURL(new Blob([content], {type:"text/calendar;charset=utf-8"}));
+  if(IS_IOS){ window.location.href = url; }
+  else{
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = String(ex.title || "event").replace(/[^a-zA-Z0-9]/g,"_").slice(0,50) + ".ics";
+    a.click();
+  }
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+}
+function buildGoogleCalUrl(ex){
+  const date = openDate(ex);
+  if(!date) return "#";
+  const dt = date.replace(/-/g,"");
+  const location = [ex.venue, ex.address, ex.suburb].filter(Boolean).join(", ");
+  const base = IS_IOS ? "comgooglecalendar://calendar/render?action=TEMPLATE"
+                      : "https://calendar.google.com/calendar/render?action=TEMPLATE";
+  // Built by hand: percent-encoding the slash in dates= hangs Google Calendar.
+  return base +
+    "&text=" + encodeURIComponent(ex.title + (ex.venue ? " at " + ex.venue : "")) +
+    "&dates=" + dt + "T180000/" + dt + "T210000" +
+    "&ctz=Australia/Sydney" +
+    "&details=" + encodeURIComponent(ex.description || "") +
+    (location ? "&location=" + encodeURIComponent(location) : "");
+}
+
+// JSZip is ~95KB and only matters on export, so it is fetched then, not in head.
+function loadJSZip(){
+  if(window.JSZip) return Promise.resolve();
+  return new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+    s.onload = res; s.onerror = rej;
+    document.head.appendChild(s);
+  });
+}
+async function exportAllICS(){
+  const btn = $("#btn-export-ics");
+  const list = state.filtered.filter((ex) => openDate(ex));
+  if(!list.length){ btn.textContent = "Nothing dated to export"; setTimeout(resetExport, 2200); return; }
+  btn.disabled = true; btn.textContent = "Building " + list.length + " events…";
+  try{
+    await loadJSZip();
+    const zip = new JSZip();
+    list.forEach((ex) => {
+      const c = makeICS(ex);
+      if(c) zip.file(String(ex.title || "event").replace(/[^a-zA-Z0-9]/g,"_").slice(0,50) + ".ics", c);
+    });
+    const url = URL.createObjectURL(await zip.generateAsync({type:"blob"}));
+    const a = document.createElement("a");
+    a.href = url; a.download = "art-openings-sydney.zip"; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+  }catch(e){
+    btn.textContent = "Export failed. Check your connection and try again.";
+    setTimeout(resetExport, 3000); btn.disabled = false; return;
+  }
+  btn.disabled = false; resetExport();
+}
+function resetExport(){ $("#btn-export-ics").textContent = "Add these openings to your calendar"; }
+</script>
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "93b21e6a7af8466ebde45013e7cb409a"}'></script>
 </body>
 </html>
