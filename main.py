@@ -21,6 +21,66 @@ def make_id(title, venue, url):
     return hashlib.md5(raw.encode()).hexdigest()[:12]
 
 
+MANUAL_FILE = "manual.json"
+
+# Fields refreshed from manual.json on every run. "status" is deliberately not
+# here: sweep_closed and build_data's 30-day auto-close own it once a record
+# exists, and rewriting it each run would resurrect finished shows.
+MANUAL_FIELDS = (
+    "title", "artist", "venue", "address", "suburb",
+    "start_date", "end_date", "opening_date", "opening_time",
+    "website", "instagram", "description",
+)
+
+
+def merge_manual(state):
+    """Merge hand-entered exhibitions from manual.json into state.
+
+    For shows no scraper can reach: appointment-only spaces, unlisted
+    addresses, Instagram-only galleries without a business account.
+    Returns the number of newly inserted records.
+    """
+    if not os.path.exists(MANUAL_FILE):
+        return 0
+
+    try:
+        with open(MANUAL_FILE) as f:
+            entries = json.load(f).get("exhibitions", [])
+    except (ValueError, OSError) as e:
+        print(f"[manual] Could not read {MANUAL_FILE}: {e}")
+        return 0
+
+    added = 0
+    for entry in entries:
+        title = (entry.get("title") or "").strip()
+        venue = (entry.get("venue") or "").strip()
+        if not title:
+            print("[manual] Skipped an entry with no title")
+            continue
+
+        record_id = make_id(title, venue, entry.get("website", ""))
+        existing = state.get(record_id)
+
+        if existing:
+            for field in MANUAL_FIELDS:
+                if field in entry:
+                    existing[field] = entry[field]
+            continue
+
+        record = {field: entry.get(field, "") for field in MANUAL_FIELDS}
+        record["source"] = entry.get("source", "manual")
+        record["status"] = entry.get("status", "active")
+        set_record(state, record_id, record)
+        added += 1
+
+        if record["status"] == "active":
+            notify_new_exhibition(record)
+
+    if added:
+        print(f"[manual] Added {added} hand-entered exhibitions")
+    return added
+
+
 def run():
     print(f"\n{'='*60}")
     print(f"Art Openings Sydney - {datetime.now(tz=timezone.utc).isoformat()}")
@@ -116,16 +176,19 @@ def run():
 
     print(f"\n[pipeline] {new_count} new exhibitions added")
 
-    # 5. Check opening-soon / closing-soon alerts
+    # 5. Merge hand-entered exhibitions
+    merge_manual(state)
+
+    # 6. Check opening-soon / closing-soon alerts
     check_alerts(state)
 
-    # 6. Save state
+    # 7. Save state
     save_state(state)
 
-    # 7. Build frontend data
+    # 8. Build frontend data
     build()
 
-    # 8. Update gallery database
+    # 9. Update gallery database
     from galleries import update_galleries
     update_galleries(state)
 

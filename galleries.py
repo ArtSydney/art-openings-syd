@@ -343,6 +343,14 @@ SEED_GALLERIES = [
      "instagram": "", "entry": "free"},
 
     # Artist-run initiatives & project spaces
+    # B E LL publishes no street address ("please message for address") and
+    # shows are by appointment. Address and suburb stay empty on purpose; do
+    # not backfill them from the artists' posts or a maps lookup.
+    # The ".3" seen on posts is the show number, not part of the name.
+    {"name": "B E LL", "type": "ari", "suburb": "",
+     "address": "", "website": "",
+     "instagram": "@bbbbbelllllllllllllll",
+     "email": "bbbbbelllllllllllllll@gmail.com", "entry": "free"},
     {"name": "Firstdraft", "type": "ari", "suburb": "Woolloomooloo",
      "address": "13-17 Riley St", "website": "https://firstdraft.org.au",
      "instagram": "@firstdraft_", "entry": "free"},
@@ -797,7 +805,7 @@ def seed_galleries(galleries):
             # Propagate name from seed so fixes (e.g. backslash -> slash) self-heal
             if seed.get("name"):
                 galleries[matched]["name"] = seed["name"]
-            for field in ("address", "website", "entry", "type"):
+            for field in ("address", "website", "entry", "type", "email", "hours"):
                 if seed.get(field) and not galleries[matched].get(field):
                     galleries[matched][field] = seed[field]
             # Always apply seed instagram (seed is verified)
@@ -815,7 +823,7 @@ def seed_galleries(galleries):
             "longitude": None,
             "website": seed.get("website", ""),
             "instagram": seed.get("instagram", ""),
-            "email": "",
+            "email": seed.get("email", ""),
             "phone": "",
             "hours": "",
             "entry": seed.get("entry", "unknown"),

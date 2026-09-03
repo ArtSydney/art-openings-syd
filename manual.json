@@ -1,0 +1,50 @@
+{
+  "_comment": [
+    "Exhibitions entered by hand, for shows no scraper can reach: appointment-only",
+    "spaces, unlisted addresses, Instagram-only galleries with no business account.",
+    "",
+    "main.py merges these into seen.json on every run. New entries are inserted and",
+    "notified once; existing entries have their content refreshed but their status is",
+    "left alone, so sweep_closed and the 30-day auto-close in build_data still apply.",
+    "",
+    "Dates must be full ISO (YYYY-MM-DD). Never write a bare month and day and let",
+    "something else guess the year. Leave end_date empty only when the show genuinely",
+    "has no announced end; build_data closes an entry 30 days after start in that case.",
+    "",
+    "Leave address and suburb empty for spaces that deliberately do not publish one."
+  ],
+  "exhibitions": [
+    {
+      "title": "Palp",
+      "artist": "Liss Finney",
+      "venue": "B E LL",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-10",
+      "end_date": "2026-10-01",
+      "opening_date": "2026-09-10",
+      "opening_time": "6pm",
+      "website": "",
+      "instagram": "@lissfinney",
+      "description": "Opening Wednesday 10 September from 6pm, running about three weeks. Viewings by appointment; message the gallery for the address.",
+      "source": "manual",
+      "status": "active"
+    },
+    {
+      "title": "like scales from my eyes",
+      "artist": "Samuel Chan",
+      "venue": "B E LL",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-10",
+      "end_date": "2026-10-01",
+      "opening_date": "2026-09-10",
+      "opening_time": "6pm",
+      "website": "",
+      "instagram": "@__szwc",
+      "description": "Opening Wednesday 10 September from 6pm, running about three weeks. Viewings by appointment; message the gallery for the address.",
+      "source": "manual",
+      "status": "active"
+    }
+  ]
+}
