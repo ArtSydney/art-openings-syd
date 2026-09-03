@@ -83,6 +83,9 @@ body{
 
 .resultbar{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 0 2px}
 #result-count{font-size:.75rem; color:var(--text-muted)}
+.sortwrap{display:flex; align-items:center; gap:7px; flex:0 0 auto}
+.sortlabel{font-family:var(--font-display); font-size:.7rem; font-weight:600;
+           color:var(--text-muted)}
 #sort{
   font-family:var(--font-display); font-size:.75rem; font-weight:600;
   height:36px; padding:0 30px 0 12px;
@@ -322,17 +325,19 @@ body{
   <div class="filterbar">
     <div class="wrap filterbar-inner">
       <input id="search" type="search" placeholder="Search exhibitions, artists, galleries" aria-label="Search exhibitions">
-      <button class="filter-btn" id="open-filters">Filters<span class="badge-n" id="filter-badge" hidden>0</span></button>
+      <button class="filter-btn" id="open-filters">More filters<span class="badge-n" id="filter-badge" hidden>0</span></button>
     </div>
   </div>
   <div class="wrap resultbar">
     <span id="result-count"></span>
-    <select id="sort" aria-label="Sort exhibitions">
-      <option value="closing">Closing soonest</option>
-      <option value="opening">Opening soonest</option>
-      <option value="title">A to Z</option>
-      <option value="venue">By gallery</option>
-    </select>
+    <label class="sortwrap">
+      <span class="sortlabel">Sort</span>
+      <select id="sort" aria-label="Sort exhibitions">
+        <option value="default">Default</option>
+        <option value="title">A to Z</option>
+        <option value="venue">By gallery</option>
+      </select>
+    </label>
   </div>
   <main class="wrap">
     <div id="exhibition-list" class="exhibition-grid"></div>
@@ -439,11 +444,13 @@ const SUBURB_ALIASES = {
   "carriageworks":"Eveleigh", "university of sydney":"Camperdown",
 };
 
+// "Opening tonight" was dropped from the UI as a subset of "Opening this week".
+// The Discord "Opening TONIGHT" alert is unaffected: that fires from notify.py
+// in the pipeline, not from here.
 const WHEN_FILTERS = [
-  {id:"tonight", name:"Opening tonight", test:(ex) => openDate(ex) === TODAY_STR},
-  {id:"week",    name:"Opening this week", test:(ex) => withinDays(openDate(ex), 0, 7)},
-  {id:"closing", name:"Closing this week", test:(ex) => withinDays(ex.end_date, 0, 7)},
   {id:"now",     name:"On now", test:isOnNow},
+  {id:"week",    name:"Opening this week", test:(ex) => withinDays(openDate(ex), 0, 7)},
+  {id:"closing", name:"Closing soon", test:(ex) => withinDays(ex.end_date, 0, 7)},
 ];
 
 // data-current.json is 74KB and covers the 146 live shows. The 512KB archive
@@ -453,7 +460,7 @@ let ITEMS_FULL = null;
 
 const state = {
   items:[], filtered:[], rendered:0,
-  search:"", sort:"closing", showClosed:false,
+  search:"", sort:"default", showClosed:false,
   when:new Set(), suburbs:new Set(), venue:"",
   venueQuery:"",
 };
@@ -575,7 +582,8 @@ function sortItems(list){
   return list.slice().sort((a,b) => {
     if(s === "title")  return String(a.title || "").localeCompare(String(b.title || ""));
     if(s === "venue")  return String(a.venue || "~").localeCompare(String(b.venue || "~"));
-    if(s === "opening") return String(openDate(a) || "9999").localeCompare(String(openDate(b) || "9999"));
+    // Default: soonest to finish first, so last-chance shows surface without the
+    // reader having to pick a sort for it.
     const ae = a.end_date || "9999", be = b.end_date || "9999";
     if(ae !== be) return ae.localeCompare(be);
     return String(openDate(a) || "9999").localeCompare(String(openDate(b) || "9999"));
