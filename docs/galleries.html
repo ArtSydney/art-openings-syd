@@ -205,10 +205,10 @@ body{
 <body>
 
 <nav class="tabbar" role="tablist">
-  <a class="tab" href="index_optA.html">
+  <a class="tab" href="index.html">
     <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="1" y="13" width="16" height="3" rx="1" fill="currentColor"/></svg>
     Exhibitions</a>
-  <a class="tab" href="index_optA.html#calendar">
+  <a class="tab" href="index.html#calendar">
     <svg viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="1" y1="7" x2="17" y2="7" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     Calendar</a>
   <span class="tab" role="tab" aria-selected="true">
@@ -473,7 +473,7 @@ function createCard(g){
       (g.website ? '<a class="act" href="' + safeLink(g.website) + '" target="_blank" rel="noopener">Website</a>' : "") +
       (g.instagram ? '<a class="act" href="https://instagram.com/' + encodeURIComponent(String(g.instagram).replace("@","")) + '" target="_blank" rel="noopener">' + esc(g.instagram) + '</a>' : "") +
       (g.phone ? '<a class="act" href="tel:' + esc(String(g.phone).replace(/\s+/g,"")) + '">Call</a>' : "") +
-      '<a class="act" href="index_optA.html?q=' + encodeURIComponent(g.name) + '">What\u2019s on</a>' +
+      '<a class="act" href="index.html?q=' + encodeURIComponent(g.name) + '">What\u2019s on</a>' +
     '</div>';
   return card;
 }
