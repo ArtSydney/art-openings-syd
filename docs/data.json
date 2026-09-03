@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T12:01:29.007160+00:00",
+  "generated": "2026-09-03T22:14:32.330601+00:00",
   "count": 958,
   "exhibitions": [
     {
@@ -8946,7 +8946,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "3707c12e52dd",
@@ -11574,7 +11574,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ed6f5082bc48",
@@ -11808,7 +11808,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "f13131dc5f0e",
@@ -12420,7 +12420,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e931388baaa5",
@@ -12600,7 +12600,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "3ead7b89b4d4",
@@ -12708,7 +12708,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "06f07854bd56",
@@ -12780,7 +12780,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "91b4b21a256b",
@@ -12834,7 +12834,7 @@
       "instagram": "",
       "description": "Australasia's premier art fair returns to Carriageworks from 3\u20136 September 2026. Discover 100 galleries, contemporary art, installations, talks and more.",
       "source": "serper",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "53264df5ef22",
@@ -12852,7 +12852,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "95e2efc4535b",
@@ -12870,7 +12870,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e9674c22125a",
@@ -12888,7 +12888,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "3eb5023ad9d0",
@@ -12906,7 +12906,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "9ae4dd104465",
@@ -12924,14 +12924,14 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "cae270b43276",
       "title": "Palp",
       "artist": "Liss Finney",
       "venue": "B E LL",
-      "gallery_key": "",
+      "gallery_key": "b_e_ll",
       "address": "",
       "suburb": "",
       "start_date": "2026-09-10",
@@ -12949,7 +12949,7 @@
       "title": "like scales from my eyes",
       "artist": "Samuel Chan",
       "venue": "B E LL",
-      "gallery_key": "",
+      "gallery_key": "b_e_ll",
       "address": "",
       "suburb": "",
       "start_date": "2026-09-10",
@@ -12978,7 +12978,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "867f3b252791",
@@ -13032,7 +13032,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "29ea61c4ef6c",
@@ -13050,7 +13050,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "69f159acf3a7",
@@ -13068,7 +13068,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "864c97835b00",
@@ -13086,7 +13086,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "df9468ae66b7",
@@ -13104,7 +13104,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "6b756206dd3a",
@@ -13122,7 +13122,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "65c98ed9db89",
@@ -13140,7 +13140,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "64918352301a",
@@ -13176,7 +13176,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ec859b4ab094",
@@ -13212,7 +13212,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "2aa9b81e7d81",
@@ -13230,7 +13230,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "558be28e7572",
@@ -13248,7 +13248,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "5ba5c82d172c",
@@ -13266,7 +13266,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "4b51b69f2adc",
@@ -13284,7 +13284,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "53afc3477b8a",
@@ -13302,7 +13302,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8c910e2b8828",
@@ -13338,7 +13338,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8bf18b7315c5",
@@ -13356,7 +13356,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e59691f75356",
@@ -13374,7 +13374,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d106dc39d17a",
@@ -13410,7 +13410,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "64a395b42e12",
@@ -13428,7 +13428,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "178de45639a7",
@@ -13446,7 +13446,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "a8727584fe34",
@@ -13464,7 +13464,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "7a442249f6d1",
@@ -13500,7 +13500,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "27f38f4851a1",
@@ -13518,7 +13518,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "a5efb6a2285b",
@@ -13536,7 +13536,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "60c48747efe5",
@@ -13572,7 +13572,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "879e94000572",
@@ -13590,7 +13590,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "0413ff6f6416",
@@ -13626,7 +13626,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "cedf0868f2d4",
@@ -13644,7 +13644,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e9d324d5df90",
@@ -13662,7 +13662,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "47391991d893",
@@ -13680,7 +13680,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e4cbeee73c4e",
@@ -13698,7 +13698,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "5e127d67284b",
@@ -13716,7 +13716,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ba4d38d63947",
@@ -13734,7 +13734,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "7c851ac030bf",
@@ -13752,7 +13752,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "f00dc0bbb145",
@@ -13788,7 +13788,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "9c47bbafbc97",
@@ -13842,7 +13842,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "58b39f119fe7",
@@ -13878,7 +13878,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "381d4f26b2e1",
@@ -13914,7 +13914,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8dfca6516c42",
@@ -13932,7 +13932,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "19233cd10d73",
@@ -13968,7 +13968,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "3f429087d58f",
@@ -14004,7 +14004,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "b2e8008fdbfb",
@@ -14022,7 +14022,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "cfe6b5ca3da4",
@@ -14040,7 +14040,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "72e143a57616",
@@ -14058,7 +14058,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ece3827329d6",
@@ -14112,7 +14112,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "1f6dc511926f",
@@ -14166,7 +14166,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "b94b1023d23b",
@@ -14202,7 +14202,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8090cf57b075",
@@ -14220,7 +14220,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "be63c2abec80",
@@ -14238,7 +14238,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "2c9132d8cee3",
@@ -14256,7 +14256,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "1ee4a82cd3cd",
@@ -14274,7 +14274,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "0001014198fa",
@@ -14292,7 +14292,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "9473873fc2a0",
@@ -14310,7 +14310,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8ea92de19c61",
@@ -14328,7 +14328,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "85af7214ed91",
@@ -14382,7 +14382,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "aa6699ca8cfc",
@@ -14400,7 +14400,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "0b8ce5a6e29c",
@@ -14418,7 +14418,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "c3cbdff94c2c",
@@ -14436,7 +14436,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "3ddd418b1b6c",
@@ -14454,7 +14454,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "c883aa83ac28",
@@ -14472,7 +14472,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "747cbd06e895",
