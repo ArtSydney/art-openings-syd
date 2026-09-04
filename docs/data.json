@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-03T22:14:32.330601+00:00",
-  "count": 958,
+  "generated": "2026-09-04T00:46:13.045572+00:00",
+  "count": 957,
   "exhibitions": [
     {
       "id": "5c44db475e38",
@@ -5706,7 +5706,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "bca533ade5d8",
@@ -8388,7 +8388,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "c571110d1684",
@@ -11340,7 +11340,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ec539e45212f",
@@ -11358,7 +11358,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "be32736c3e97",
@@ -11412,7 +11412,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "adb393297c72",
@@ -11459,14 +11459,14 @@
       "address": "",
       "suburb": "Surry Hills",
       "start_date": null,
-      "end_date": null,
+      "end_date": "2026-09-07",
       "opening_date": "2026-08-06",
       "opening_time": "6-8:30 PM",
       "website": "",
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "79e8e0509ffd",
@@ -11513,14 +11513,14 @@
       "address": "",
       "suburb": "Potts Point",
       "start_date": null,
-      "end_date": null,
+      "end_date": "2026-09-12",
       "opening_date": "2026-08-07",
       "opening_time": "6-8 PM",
       "website": "",
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e6ee9548d5a9",
@@ -11538,7 +11538,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "0f3c8a45f135",
@@ -11664,7 +11664,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "371f818e53ac",
@@ -11682,7 +11682,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "15764d54f002",
@@ -11718,7 +11718,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "55de2ddec983",
@@ -11736,7 +11736,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8f84427da7c6",
@@ -12024,7 +12024,7 @@
       "instagram": "",
       "description": "Chroma Vector \u2013 Geometric Abstraction Group show CBD Gallery Exhibitions Chroma Vector \u2013 Geometric Abstraction Group show Painting and sculpture by Pollyxenia Joannou and Nuha Saad 20 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "ac6b6f16602e",
@@ -12114,7 +12114,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "7903fcd37928",
@@ -12222,7 +12222,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "5dc3ac179d17",
@@ -12366,7 +12366,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "c308e8e99297",
@@ -12510,7 +12510,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "f1b118efbac9",
@@ -12636,7 +12636,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "9ef93b4cb8b4",
@@ -12726,7 +12726,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8e95a35c8c2b",
@@ -13014,7 +13014,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "26d7341ff067",
@@ -13158,7 +13158,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "80843b9c676a",
@@ -13194,7 +13194,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "33b6ce418fc3",
@@ -13392,7 +13392,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "1913002facd9",
@@ -13554,7 +13554,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "639bf22d6df9",
@@ -13608,7 +13608,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d518e1fe0775",
@@ -13770,7 +13770,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "b602cc25f1af",
@@ -13806,7 +13806,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "38a1f04168f9",
@@ -13824,7 +13824,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "00f85c417c78",
@@ -13860,7 +13860,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d7a936753ab1",
@@ -13896,7 +13896,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "00354bd70a07",
@@ -13935,24 +13935,6 @@
       "status": "closed"
     },
     {
-      "id": "19233cd10d73",
-      "title": "Adrick Lui adrickisdoingart",
-      "artist": "",
-      "venue": "",
-      "gallery_key": "",
-      "address": "",
-      "suburb": "",
-      "start_date": "2026-10-29",
-      "end_date": "2026-11-08",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "f35c06e6fd9c",
       "title": "James Little: Drink Bleach",
       "artist": "James Little",
@@ -13986,7 +13968,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "22ad5b6cdd9f",
@@ -14094,7 +14076,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "285967ddab67",
@@ -14130,7 +14112,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "8463be41c73e",
@@ -14148,7 +14130,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "67c6eeffccc6",
@@ -14184,7 +14166,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "5fef344f07e2",
@@ -14346,7 +14328,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d0419cdb8864",
@@ -14364,7 +14346,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "dedeb0e5c210",
