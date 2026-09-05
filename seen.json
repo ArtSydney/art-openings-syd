@@ -981,7 +981,7 @@
     "bird journey stanmore week": "5eddb008602e"
   },
   "__meta__": {
-    "last_run": "2026-09-04T10:17:58.817193+00:00",
+    "last_run": "2026-09-05T10:15:55.721859+00:00",
     "instagram_latest": "2026-09-02T00:10:25+0000"
   },
   "747cbd06e895": {
@@ -18811,7 +18811,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dcw6uNGEh6m/",
     "status": "active",
-    "first_seen": "2026-09-02T10:18:45.731890+00:00"
+    "first_seen": "2026-09-02T10:18:45.731890+00:00",
+    "opening_soon_sent": true
   },
   "b4ba7fbd6f65": {
     "title": "Group Exhibition: Expanded Textiles",
