@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-05T10:15:56.468738+00:00",
-  "count": 36,
+  "generated": "2026-09-06T10:16:45.830618+00:00",
+  "count": 34,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -75,24 +75,6 @@
       "status": "active"
     },
     {
-      "id": "03db9dfd9ec2",
-      "title": "Jacquie Meng",
-      "artist": "",
-      "venue": "Schmick Contemporary",
-      "gallery_key": "schmick_contemporary",
-      "address": "",
-      "suburb": "Haymarket",
-      "start_date": "2026-08-13",
-      "end_date": "2026-09-05",
-      "opening_date": "2026-08-13",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "f73e7cef57b1",
       "title": "Oscar Nimmo: No Place",
       "artist": "Oscar Nimmo",
@@ -140,24 +122,6 @@
       "end_date": "2026-09-12",
       "opening_date": null,
       "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "804376536426",
-      "title": "Simon Cardwell | Liliana Pasalic: VoxEvos",
-      "artist": "",
-      "venue": "Curatorial+Co.",
-      "gallery_key": "curatorial_and_co",
-      "address": "",
-      "suburb": "Woolloomooloo",
-      "start_date": "2026-08-19",
-      "end_date": "2026-09-05",
-      "opening_date": "2026-08-19",
-      "opening_time": "5:30-8 PM",
       "website": "",
       "instagram": "",
       "description": "",
