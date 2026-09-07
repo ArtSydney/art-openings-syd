@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-06T10:16:45.830607+00:00",
-  "count": 957,
+  "generated": "2026-09-07T10:17:36.108230+00:00",
+  "count": 958,
   "exhibitions": [
     {
       "id": "5c44db475e38",
@@ -11646,7 +11646,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "0b28009f966f",
@@ -12132,7 +12132,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "2b6ff684afa7",
@@ -12690,7 +12690,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "f6d3b1a663de",
@@ -12889,6 +12889,24 @@
       "description": "",
       "source": "instagram",
       "status": "closed"
+    },
+    {
+      "id": "4d7f534f21e5",
+      "title": "Art Night",
+      "artist": "",
+      "venue": "Art Night",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://sydneycontemporary.com.au/art-night/",
+      "instagram": "",
+      "description": "3 \u2013 6 September 2026 \u2026 among the first to experience Sydney Contemporary's 10th edition at Art Night, an evening of art, music, performance and opening-night ...",
+      "source": "serper",
+      "status": "active"
     },
     {
       "id": "3eb5023ad9d0",

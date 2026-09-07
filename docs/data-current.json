@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-06T10:16:45.830618+00:00",
-  "count": 34,
+  "generated": "2026-09-07T10:17:36.108242+00:00",
+  "count": 32,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -75,24 +75,6 @@
       "status": "active"
     },
     {
-      "id": "f73e7cef57b1",
-      "title": "Oscar Nimmo: No Place",
-      "artist": "Oscar Nimmo",
-      "venue": "Nasha",
-      "gallery_key": "nasha",
-      "address": "",
-      "suburb": "Haymarket",
-      "start_date": "2026-08-14",
-      "end_date": "2026-09-06",
-      "opening_date": "2026-08-14",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "8f84427da7c6",
       "title": "Group Exhibition: The Edge of Things",
       "artist": "Group Exhibition",
@@ -156,24 +138,6 @@
       "suburb": "Darlinghurst",
       "start_date": "2026-08-20",
       "end_date": "2026-09-13",
-      "opening_date": "2026-08-20",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "7903fcd37928",
-      "title": "Digby Wigney: By This Ditch",
-      "artist": "Digby Wigney",
-      "venue": "Tiles",
-      "gallery_key": "tiles",
-      "address": "",
-      "suburb": "Lewisham",
-      "start_date": "2026-08-20",
-      "end_date": "2026-09-06",
       "opening_date": "2026-08-20",
       "opening_time": "6-8 PM",
       "website": "",
@@ -453,24 +417,6 @@
       "status": "active"
     },
     {
-      "id": "8e3ddbf754c3",
-      "title": "Group Exhibition: Artbank Prize 2026",
-      "artist": "Group Exhibition",
-      "venue": "Artbank Sydney",
-      "gallery_key": "artbank_sydney",
-      "address": "",
-      "suburb": "Waterloo",
-      "start_date": "2026-09-03",
-      "end_date": "2026-09-06",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "8e95a35c8c2b",
       "title": "Exhibitions and Events - DRAW Space",
       "artist": "Lana Ardere",
@@ -540,6 +486,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "4d7f534f21e5",
+      "title": "Art Night",
+      "artist": "",
+      "venue": "Art Night",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://sydneycontemporary.com.au/art-night/",
+      "instagram": "",
+      "description": "3 \u2013 6 September 2026 \u2026 among the first to experience Sydney Contemporary's 10th edition at Art Night, an evening of art, music, performance and opening-night ...",
+      "source": "serper",
       "status": "active"
     },
     {
