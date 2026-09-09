@@ -979,11 +979,19 @@
     "ll palp": "cae270b43276",
     "eyes like ll my scales": "c5140fbdb91e",
     "bird journey stanmore week": "5eddb008602e",
-    "night night": "4d7f534f21e5"
+    "night night": "4d7f534f21e5",
+    "carroll genevieve inventory king landscape street william": "a647a0a68d33",
+    "annandale annandale galleries": "7249b801f85e",
+    "flowers goodspace heres your": "1c469dfbaba6",
+    "alana hunt owner uts": "e407a334ee5a",
+    "park peace schmick": "643197af7bed",
+    "cheesman co curatorial glass mitchell sip stained": "10aba7fe39ed",
+    "alex bray carroll genevieve king street": "9d14922e74a0",
+    "annie jane noel shop treacy": "169e35ce2eea"
   },
   "__meta__": {
-    "last_run": "2026-09-08T10:18:38.978816+00:00",
-    "instagram_latest": "2026-09-02T00:10:25+0000"
+    "last_run": "2026-09-09T10:18:10.953640+00:00",
+    "instagram_latest": "2026-09-09T01:54:05+0000"
   },
   "747cbd06e895": {
     "title": "Art openings Events and Things to do in Sydney, Australia",
@@ -3294,7 +3302,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Db7O-ilidjz/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.637515+00:00"
+    "first_seen": "2026-08-14T09:19:56.637515+00:00",
+    "closing_soon_sent": true
   },
   "0266626ac1a8": {
     "title": "Douglas Schofield | Tom Carment",
@@ -18073,7 +18082,8 @@
     "source_url": "https://www.instagram.com/p/DcNWLAliaJQ/",
     "status": "active",
     "first_seen": "2026-08-19T09:11:58.645362+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "5b02d89a87a8": {
     "title": "Mechelle Bounpraseuth: Yang dee yuu (Still good)",
@@ -18188,7 +18198,8 @@
     "source_url": "https://www.instagram.com/p/DcNWLAliaJQ/",
     "status": "active",
     "first_seen": "2026-08-19T09:43:35.734219+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "11ae53ace4e8": {
     "title": "Applications are now open for Sydney Contemporary 2026 ...",
@@ -18539,7 +18550,8 @@
     "source_url": "https://www.instagram.com/p/Dccam_BEh6B/",
     "status": "active",
     "first_seen": "2026-08-25T11:05:27.772049+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "9ef93b4cb8b4": {
     "title": "Group Exhibition: Heirloom",
@@ -18900,5 +18912,151 @@
     "source_url": "https://sydneycontemporary.com.au/art-night/",
     "status": "active",
     "first_seen": "2026-09-07T10:17:34.739784+00:00"
+  },
+  "a647a0a68d33": {
+    "title": "Genevieve Carroll: Inventory of a Landscape",
+    "artist": "Genevieve Carroll",
+    "venue": "King Street Gallery on William",
+    "address": "",
+    "suburb": "Darlinghurst",
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-26",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:07.560303+00:00"
+  },
+  "7249b801f85e": {
+    "title": "Group Exhibition at Annandale Galleries",
+    "artist": "",
+    "venue": "Annandale Galleries",
+    "address": "",
+    "suburb": "Annandale",
+    "start_date": "2026-09-09",
+    "end_date": "2026-10-10",
+    "opening_date": "2026-09-09",
+    "opening_time": "6:30 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:08.497452+00:00",
+    "opening_soon_sent": true
+  },
+  "1c469dfbaba6": {
+    "title": "Group Exhibition: Here\u2019s Your Flowers",
+    "artist": "Group Exhibition",
+    "venue": "Goodspace",
+    "address": "",
+    "suburb": "Chippendale",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": "2026-09-09",
+    "opening_time": "5-9 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:08.703042+00:00",
+    "opening_soon_sent": true
+  },
+  "e407a334ee5a": {
+    "title": "Alana Hunt: To the Owner",
+    "artist": "Alana Hunt",
+    "venue": "UTS Gallery",
+    "address": "",
+    "suburb": "Ultimo",
+    "start_date": "2026-09-10",
+    "end_date": "2026-12-18",
+    "opening_date": "2026-09-10",
+    "opening_time": "6-7:30 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:08.923756+00:00"
+  },
+  "643197af7bed": {
+    "title": "Group Exhibition: Peace of a Park",
+    "artist": "Group Exhibition",
+    "venue": "Schmick Contemporary",
+    "address": "",
+    "suburb": "Haymarket",
+    "start_date": "2026-09-10",
+    "end_date": "2026-10-03",
+    "opening_date": "2026-09-10",
+    "opening_time": "6-8 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:09.171301+00:00"
+  },
+  "10aba7fe39ed": {
+    "title": "Mitchell Cheesman: A Sip From Stained Glass",
+    "artist": "Mitchell Cheesman",
+    "venue": "Curatorial + Co",
+    "address": "",
+    "suburb": "Woolloomooloo",
+    "start_date": "2026-09-11",
+    "end_date": "2026-09-26",
+    "opening_date": "2026-09-11",
+    "opening_time": "5:30-8 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:09.446134+00:00"
+  },
+  "9d14922e74a0": {
+    "title": "Genevieve Carroll | Alex Bray",
+    "artist": "",
+    "venue": "King Street Gallery",
+    "address": "",
+    "suburb": "Darlinghurst",
+    "start_date": "2026-09-12",
+    "end_date": "2026-09-26",
+    "opening_date": "2026-09-12",
+    "opening_time": "2-4 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:09.681704+00:00"
+  },
+  "169e35ce2eea": {
+    "title": "Annie Treacy | Jane Noel",
+    "artist": "",
+    "venue": "The Shop Gallery",
+    "address": "",
+    "suburb": "Glebe",
+    "start_date": "2026-09-12",
+    "end_date": "2026-09-16",
+    "opening_date": "2026-09-12",
+    "opening_time": "1 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
+    "status": "active",
+    "first_seen": "2026-09-09T10:18:09.851552+00:00"
   }
 }
