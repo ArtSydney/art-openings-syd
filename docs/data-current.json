@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-09T10:18:11.677988+00:00",
-  "count": 40,
+  "generated": "2026-09-10T10:18:17.221175+00:00",
+  "count": 41,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -521,6 +521,24 @@
       "website": "https://sydneycontemporary.com.au/art-night/",
       "instagram": "",
       "description": "3 \u2013 6 September 2026 \u2026 among the first to experience Sydney Contemporary's 10th edition at Art Night, an evening of art, music, performance and opening-night ...",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "8008a741e769",
+      "title": "Sydney Contemporary 2026 Unveils 100+ Gallery Lineup| green ...",
+      "artist": "",
+      "venue": "Carriageworks",
+      "gallery_key": "carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://greenmagazine.com.au/sydney-contemporary-2026-gallery-highlights/",
+      "instagram": "",
+      "description": "Sydney Contemporary returns to Carriageworks from 3\u20136 September 2026, featuring more than 100 galleries, 500 artists from 33 countries, major First Nations presentations and international contemporary art highlights.",
       "source": "serper",
       "status": "active"
     },
