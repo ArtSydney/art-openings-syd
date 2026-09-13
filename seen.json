@@ -991,7 +991,7 @@
     "100 carriageworks green lineup unveils": "8008a741e769"
   },
   "__meta__": {
-    "last_run": "2026-09-12T10:16:14.682676+00:00",
+    "last_run": "2026-09-13T10:21:17.787837+00:00",
     "instagram_latest": "2026-09-09T01:54:05+0000"
   },
   "747cbd06e895": {
@@ -19067,7 +19067,8 @@
     "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
     "status": "active",
     "first_seen": "2026-09-09T10:18:09.851552+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "8008a741e769": {
     "title": "Sydney Contemporary 2026 Unveils 100+ Gallery Lineup| green ...",

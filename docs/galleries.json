@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-12T10:16:52.320608+00:00",
+  "generated": "2026-09-13T10:21:52.791665+00:00",
   "count": 188,
   "galleries": [
     {
@@ -506,8 +506,8 @@
       "longitude": 151.2115076,
       "website": "https://audreyfineart.com.au/",
       "instagram": "@audreyfineart",
-      "email": "",
-      "phone": "",
+      "email": "info@audreyfineart.com.au",
+      "phone": "(02) 9552 3018",
       "hours": "Monday to Friday, 9am to 6pm. Weekends by appointment.",
       "entry": "unknown",
       "accessibility": ""
@@ -2223,11 +2223,11 @@
       "longitude": 150.9766794,
       "website": "https://powerhouse.com.au/visit/castle-hill",
       "instagram": "@powerhousemuseum",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "info@powerhouse.com.au",
+      "phone": "+61 (02) 9217 0222",
+      "hours": "Open Weekends, 10am\u20134pm",
       "entry": "free",
-      "accessibility": ""
+      "accessibility": "Access within the precinct is fully accessible, via ramps and elevators. Accessible toilets are available onsite. Accessible parking is available onsite. A limited number of wheelchairs are available for visitor use. Assistance animals are welcome."
     },
     {
       "id": "prop",
@@ -2699,9 +2699,9 @@
       "longitude": 151.2056262,
       "website": "https://powerhouse.com.au/visit/sydney-observatory",
       "instagram": "@powerhousemuseum",
-      "email": "",
-      "phone": "",
-      "hours": "",
+      "email": "info@powerhouse.com.au",
+      "phone": "+61 (02) 9217 0222",
+      "hours": "Open Thursday\u2013Sunday",
       "entry": "paid",
       "accessibility": ""
     },
