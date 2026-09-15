@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T10:18:42.173093+00:00",
+  "generated": "2026-09-15T21:11:27.540788+00:00",
   "count": 967,
   "exhibitions": [
     {
@@ -12204,7 +12204,7 @@
       "instagram": "",
       "description": "Join us for a walking tour of select art galleries in the inner west suburb of Marrickville. Marrickville Saturday 22 August 2026 1.30pm Duration 2 hours Off- ...",
       "source": "serper",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "e6ec763b5399",
@@ -12258,7 +12258,7 @@
       "instagram": "",
       "description": "Melody Owen / Pearl Hyacinth Balmain Exhibitions Melody Owen / Pearl Hyacinth View the virtual worlds of Melody Owen and avatar Pearl Hyacinth 22 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "d0711d42c94b",
@@ -12348,7 +12348,7 @@
       "instagram": "",
       "description": "Migrating Modernism, Migrating Ideas Chau Chak Wing Museum Exhibitions Migrating Modernism, Migrating Ideas A symposium on transnational exchanges in architecture and art 26 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "29cb2bce7cfb",
@@ -12384,7 +12384,7 @@
       "instagram": "",
       "description": "'Layers' \u2013 Printmaker Show Tiliqua Tiliqua Exhibitions 'Layers' \u2013 Printmaker Show piling it on for Tiliqua Tiliqua's annual celebration of all thinks inky! 27 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "72ba135a1955",
@@ -12672,7 +12672,7 @@
       "instagram": "",
       "description": "Madjawa Maangi: First Nations Exhibition and Events Program University of New South Wales Children & family Madjawa Maangi: First Nations Exhibition and Events Program The Madjawa Maangi exhibition and events program features First Nations arts and cultural activities 31 Aug 2026",
       "source": "city_of_sydney",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "a647a0a68d33",
@@ -12748,19 +12748,19 @@
     },
     {
       "id": "8e95a35c8c2b",
-      "title": "Exhibitions and Events - DRAW Space",
-      "artist": "Lana Ardere",
-      "venue": "AIRspace Sept",
-      "gallery_key": "",
+      "title": "DRAWING NOW",
+      "artist": "",
+      "venue": "Airspace Projects",
+      "gallery_key": "airspace_projects",
       "address": "",
-      "suburb": "",
+      "suburb": "Marrickville",
       "start_date": "2026-09-04",
-      "end_date": null,
-      "opening_date": null,
-      "opening_time": null,
+      "end_date": "2026-09-20",
+      "opening_date": "2026-09-04",
+      "opening_time": "6-8 PM",
       "website": "https://drawspace.org/exhibitions-and-events",
       "instagram": "",
-      "description": "DRAW Space at AIRspace Sept 4 to 20. Fri, 4 Sept 2026 6:00 pm Sun, Sydney's most exciting artist-run spaces. The exhibition features work by Lana Ardere, Megan ...",
+      "description": "DRAW Space presents DRAWING NOW at Airspace Projects. Featuring work by Lana Ardere, Megan Kennedy, William Potanin, Emma Regner and Kevin Wong.",
       "source": "serper",
       "status": "active"
     },
