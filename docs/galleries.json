@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-14T10:18:19.653678+00:00",
-  "count": 188,
+  "generated": "2026-09-15T10:19:25.941276+00:00",
+  "count": 189,
   "galleries": [
     {
       "id": "m_contemporary",
@@ -1035,7 +1035,7 @@
       "instagram": "@curatorialandco",
       "email": "",
       "phone": "",
-      "hours": "",
+      "hours": "Monday\u2013Friday: 9:30am to 5:30pm, Saturday: 10am to 5pm",
       "entry": "free",
       "accessibility": ""
     },
@@ -2499,6 +2499,23 @@
       "phone": "",
       "hours": "",
       "entry": "unknown",
+      "accessibility": ""
+    },
+    {
+      "id": "season",
+      "name": "Season",
+      "type": "Artist-run initiative",
+      "address": "Joynton Avenue Creative Centre (JACC)",
+      "suburb": "",
+      "postcode": "",
+      "latitude": null,
+      "longitude": null,
+      "website": "https://season-season.org/",
+      "instagram": "@season___season",
+      "email": "",
+      "phone": "",
+      "hours": "",
+      "entry": "",
       "accessibility": ""
     },
     {
