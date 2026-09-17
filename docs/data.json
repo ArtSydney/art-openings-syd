@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-16T10:18:57.874056+00:00",
-  "count": 981,
+  "generated": "2026-09-17T10:17:54.501797+00:00",
+  "count": 982,
   "exhibitions": [
     {
       "id": "5c44db475e38",
@@ -13212,7 +13212,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "29ea61c4ef6c",
@@ -14887,6 +14887,24 @@
       "description": "",
       "source": "instagram",
       "status": "closed"
+    },
+    {
+      "id": "273445cbcb0a",
+      "title": "Visit | Sydney Contemporary",
+      "artist": "",
+      "venue": "Carriageworks",
+      "gallery_key": "carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2027-09-12",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://sydneycontemporary.com.au/visit/",
+      "instagram": "",
+      "description": "Sydney Contemporary, Australasia\u2019s premier art fair, returns to Carriageworks from 9\u201312 September 2027 (VIP Preview 8 September). With over 100 galleries and more than 500 artists, the Fair is the largest and most diverse gathering of contemporary art in the region.",
+      "source": "serper",
+      "status": "active"
     },
     {
       "id": "747cbd06e895",
