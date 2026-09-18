@@ -1010,7 +1010,7 @@
     "blue randwick shagrin simone sky whispers": "df1ac1e8f9b3"
   },
   "__meta__": {
-    "last_run": "2026-09-17T10:17:53.830891+00:00",
+    "last_run": "2026-09-18T10:17:39.300215+00:00",
     "instagram_latest": "2026-09-16T03:25:44+0000"
   },
   "747cbd06e895": {
@@ -19241,7 +19241,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
-    "first_seen": "2026-09-16T10:18:54.446171+00:00"
+    "first_seen": "2026-09-16T10:18:54.446171+00:00",
+    "opening_soon_sent": true
   },
   "c70f7111de44": {
     "title": "Group Exhibition: Portia Geach Memorial Award",
