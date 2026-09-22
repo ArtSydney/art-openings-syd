@@ -1007,10 +1007,11 @@
     "carriageworks visit": "273445cbcb0a",
     "200th anniversary exhibitions library state": "9aa1065b105a",
     "200th 200th anniversary anniversary exhibitions exhibitions": "b67c5cff98a0",
-    "blue randwick shagrin simone sky whispers": "df1ac1e8f9b3"
+    "blue randwick shagrin simone sky whispers": "df1ac1e8f9b3",
+    "23rd annual community national paddo prize": "ffd9e9402fa0"
   },
   "__meta__": {
-    "last_run": "2026-09-21T16:23:22.513833+00:00",
+    "last_run": "2026-09-22T14:38:38.790366+00:00",
     "instagram_latest": "2026-09-16T03:25:44+0000"
   },
   "747cbd06e895": {
@@ -19466,5 +19467,23 @@
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/sky-blue-whispers-simone-shagrin-solo-exhibition",
     "status": "needs_review",
     "first_seen": "2026-09-17T10:17:49.408126+00:00"
+  },
+  "ffd9e9402fa0": {
+    "title": "23rd Annual National Paddo Painting Prize Exhibition",
+    "artist": "",
+    "venue": "Community &",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/categories/community-and-causes",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/community-and-causes",
+    "status": "needs_review",
+    "first_seen": "2026-09-22T14:38:38.783617+00:00"
   }
 }
