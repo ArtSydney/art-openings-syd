@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23T14:51:59.743310+00:00",
+  "generated": "2026-09-24T14:52:12.122950+00:00",
   "count": 45,
   "exhibitions": [
     {
@@ -212,24 +212,6 @@
       "end_date": "2026-10-10",
       "opening_date": "2026-09-09",
       "opening_time": "6:30 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "1c469dfbaba6",
-      "title": "Group Exhibition: Here\u2019s Your Flowers",
-      "artist": "Group Exhibition",
-      "venue": "Goodspace",
-      "gallery_key": "goodspace",
-      "address": "",
-      "suburb": "Chippendale",
-      "start_date": null,
-      "end_date": null,
-      "opening_date": "2026-09-09",
-      "opening_time": "5-9 PM",
       "website": "",
       "instagram": "",
       "description": "",
@@ -792,6 +774,24 @@
       "instagram": "",
       "description": "And This Is Where We Land Lane Cove Exhibitions And This Is Where We Land And This Is Where We Land 9 Oct 2026",
       "source": "city_of_sydney",
+      "status": "active"
+    },
+    {
+      "id": "aa11ba17e65b",
+      "title": "Submissions for the Woollahra Small Sculpture Prize 2026 are ...",
+      "artist": "",
+      "venue": "Woollahra Gallery at Redleaf",
+      "gallery_key": "woollahra_gallery_at_redleaf",
+      "address": "",
+      "suburb": "Woollahra",
+      "start_date": "2026-10-13",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "Entries open Monday 21 September and close Tuesday 13 October 2026. Finalists will be exhibited online and at Woollahra Gallery from 4\u201329 ...",
+      "source": "serper",
       "status": "active"
     },
     {

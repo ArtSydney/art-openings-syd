@@ -1018,10 +1018,18 @@
     "anna barometric cato johnson": "17dac5b957f8",
     "144 davidson jacob transmission": "1a042d03ba62",
     "ben luke parker reid syrup": "c4199ffe75fe",
-    "agneta ekholm greenwood malcolm": "b419414981b2"
+    "agneta ekholm greenwood malcolm": "b419414981b2",
+    "fish fish hours market market": "171c0e2fdb3a",
+    "are prize small submissions woollahra woollahra": "aa11ba17e65b",
+    "ewart prize willoughby": "5bcaa954ac2b",
+    "annie centre ervin national sculptors sh society trust wyatt": "267f1cc7b792",
+    "botanic garden insideoutside royal": "ae0d949e17e2",
+    "community insideoutside": "b28aa4ca6362",
+    "bird birdlife corner journey week": "8d5801667973",
+    "awards miniature national willoughby": "65cfb58548d6"
   },
   "__meta__": {
-    "last_run": "2026-09-23T14:51:59.341018+00:00",
+    "last_run": "2026-09-24T14:52:11.331357+00:00",
     "instagram_latest": "2026-09-23T06:42:56+0000"
   },
   "747cbd06e895": {
@@ -18884,7 +18892,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dcw6uNGEh6m/",
     "status": "active",
-    "first_seen": "2026-09-02T10:18:45.953885+00:00"
+    "first_seen": "2026-09-02T10:18:45.953885+00:00",
+    "closing_soon_sent": true
   },
   "cae270b43276": {
     "title": "Palp",
@@ -19182,7 +19191,8 @@
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
     "first_seen": "2026-09-16T10:18:53.354381+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "af0dbe739e7f": {
     "title": "Kat Shapiro Wood: Flux",
@@ -19219,7 +19229,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
-    "first_seen": "2026-09-16T10:18:53.845026+00:00"
+    "first_seen": "2026-09-16T10:18:53.845026+00:00",
+    "closing_soon_sent": true
   },
   "872964b078c1": {
     "title": "Samantha Everton: Thirteen",
@@ -19552,7 +19563,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:56.044529+00:00"
+    "first_seen": "2026-09-23T14:51:56.044529+00:00",
+    "opening_soon_sent": true
   },
   "55884a554caf": {
     "title": "Zi Xin: Words of Wisdom",
@@ -19570,7 +19582,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:56.348092+00:00"
+    "first_seen": "2026-09-23T14:51:56.348092+00:00",
+    "opening_soon_sent": true
   },
   "78587f83d6e1": {
     "title": "David Collins | Kyle Murrell",
@@ -19588,7 +19601,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:56.710177+00:00"
+    "first_seen": "2026-09-23T14:51:56.710177+00:00",
+    "opening_soon_sent": true
   },
   "9c455aa1ee14": {
     "title": "Leslie Rice | Christopher Horder | Liam Ross",
@@ -19606,7 +19620,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:56.965876+00:00"
+    "first_seen": "2026-09-23T14:51:56.965876+00:00",
+    "opening_soon_sent": true
   },
   "17dac5b957f8": {
     "title": "Anna Johnson: Barometric",
@@ -19624,7 +19639,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:57.185243+00:00"
+    "first_seen": "2026-09-23T14:51:57.185243+00:00",
+    "opening_soon_sent": true
   },
   "1a042d03ba62": {
     "title": "Jacob Davidson: Transmission",
@@ -19679,5 +19695,149 @@
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
     "first_seen": "2026-09-23T14:51:57.967553+00:00"
+  },
+  "171c0e2fdb3a": {
+    "title": "Sydney Contemporary art installation at Sydney Fish Market",
+    "artist": "",
+    "venue": "Sydney Fish Market Opening Hours",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-08-27",
+    "end_date": "2026-09-13",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.sydneyfishmarket.com.au/event/sydney-contemporary-art-installation-at-sydney-fish-market/",
+    "instagram": "",
+    "description": "Opening Hours. 24 hours ; Where. Civic Plaza steps, Sydney Fish Market ; When. 27 August - 13 September 2026 ; Categories. SFM.",
+    "source": "serper",
+    "source_url": "https://www.sydneyfishmarket.com.au/event/sydney-contemporary-art-installation-at-sydney-fish-market/",
+    "status": "closed",
+    "first_seen": "2026-09-24T14:52:07.097434+00:00"
+  },
+  "aa11ba17e65b": {
+    "title": "Submissions for the Woollahra Small Sculpture Prize 2026 are ...",
+    "artist": "",
+    "venue": "Woollahra Gallery",
+    "address": "",
+    "suburb": "Woollahra",
+    "start_date": "2026-10-13",
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "",
+    "instagram": "",
+    "description": "Entries open Monday 21 September and close Tuesday 13 October 2026. Finalists will be exhibited online and at Woollahra Gallery from 4\u201329 ...",
+    "source": "serper",
+    "source_url": "https://www.instagram.com/reel/DaUq1-GvjW1/",
+    "status": "active",
+    "first_seen": "2026-09-24T14:52:07.100224+00:00"
+  },
+  "5bcaa954ac2b": {
+    "title": "Exhibition: 2026 Ewart Art Prize",
+    "artist": "",
+    "venue": "Willoughby",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/exhibition-landscape-at-goonoo-goonoo",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/exhibition-landscape-at-goonoo-goonoo",
+    "status": "needs_review",
+    "first_seen": "2026-09-24T14:52:08.622261+00:00"
+  },
+  "267f1cc7b792": {
+    "title": "The Sculptors Society: Annie Wyatt exhibition",
+    "artist": "",
+    "venue": "S.H. Ervin Gallery (National Trust Centre)",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/the-sculptors-society-annie-wyatt-exhibition",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/the-sculptors-society-annie-wyatt-exhibition",
+    "status": "needs_review",
+    "first_seen": "2026-09-24T14:52:08.624521+00:00"
+  },
+  "ae0d949e17e2": {
+    "title": "InsideOutside art exhibition",
+    "artist": "",
+    "venue": "The Royal Botanic Garden",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/insideoutside-art-exhibition",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/insideoutside-art-exhibition",
+    "status": "needs_review",
+    "first_seen": "2026-09-24T14:52:08.626036+00:00"
+  },
+  "b28aa4ca6362": {
+    "title": "InsideOutside art exhibition",
+    "artist": "",
+    "venue": "Community &",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/categories/community-and-causes",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/community-and-causes",
+    "status": "needs_review",
+    "first_seen": "2026-09-24T14:52:08.626105+00:00"
+  },
+  "8d5801667973": {
+    "title": "Journey: BirdLife Australia Bird Week Exhibition",
+    "artist": "",
+    "venue": "The Corner Gallery",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/feathered-friends",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/feathered-friends",
+    "status": "needs_review",
+    "first_seen": "2026-09-24T14:52:08.627056+00:00"
+  },
+  "65cfb58548d6": {
+    "title": "National Awards Exhibition 2026 \u2013 miniature art",
+    "artist": "",
+    "venue": "Willoughby",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/national-awards-exhibition-miniature-art",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/national-awards-exhibition-miniature-art",
+    "status": "needs_review",
+    "first_seen": "2026-09-24T14:52:08.628184+00:00"
   }
 }
