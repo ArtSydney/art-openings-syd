@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-25T15:07:33.546011+00:00",
-  "count": 994,
+  "generated": "2026-09-26T14:19:19.484475+00:00",
+  "count": 995,
   "exhibitions": [
     {
       "id": "5c44db475e38",
@@ -12977,6 +12977,24 @@
       "website": "https://greenmagazine.com.au/sydney-contemporary-2026-gallery-highlights/",
       "instagram": "",
       "description": "Sydney Contemporary returns to Carriageworks from 3\u20136 September 2026, featuring more than 100 galleries, 500 artists from 33 countries, major First Nations presentations and international contemporary art highlights.",
+      "source": "serper",
+      "status": "closed"
+    },
+    {
+      "id": "6d606ddfd0ec",
+      "title": "Sydney Contemporary Art Fair",
+      "artist": "",
+      "venue": "Carriageworks",
+      "gallery_key": "carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://sydneycontemporary.com.au/",
+      "instagram": "",
+      "description": "Australasia's premier art fair returns to Carriageworks from 3\u20136 September 2026. Discover 100 galleries, contemporary art, installations, talks and more.",
       "source": "serper",
       "status": "closed"
     },
