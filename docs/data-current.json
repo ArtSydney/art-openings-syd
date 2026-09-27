@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-26T14:19:19.484484+00:00",
-  "count": 45,
+  "generated": "2026-09-27T15:04:54.269639+00:00",
+  "count": 41,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -111,24 +111,6 @@
       "status": "active"
     },
     {
-      "id": "f1b118efbac9",
-      "title": "Noel McKenna: Memory",
-      "artist": "Noel McKenna",
-      "venue": "Darren Knight Gallery",
-      "gallery_key": "darren_knight",
-      "address": "",
-      "suburb": "Waterloo",
-      "start_date": "2026-08-29",
-      "end_date": "2026-09-26",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "9ef93b4cb8b4",
       "title": "Group Exhibition: Heirloom",
       "artist": "Group Exhibition",
@@ -140,24 +122,6 @@
       "end_date": "2026-10-25",
       "opening_date": "2026-08-30",
       "opening_time": "2-4 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "a647a0a68d33",
-      "title": "Genevieve Carroll: Inventory of a Landscape",
-      "artist": "Genevieve Carroll",
-      "venue": "King Street Gallery on William",
-      "gallery_key": "king_street_gallery_on_william",
-      "address": "",
-      "suburb": "Darlinghurst",
-      "start_date": "2026-09-01",
-      "end_date": "2026-09-26",
-      "opening_date": null,
-      "opening_time": null,
       "website": "",
       "instagram": "",
       "description": "",
@@ -291,24 +255,6 @@
       "status": "active"
     },
     {
-      "id": "10aba7fe39ed",
-      "title": "Mitchell Cheesman: A Sip From Stained Glass",
-      "artist": "Mitchell Cheesman",
-      "venue": "Curatorial+Co.",
-      "gallery_key": "curatorial_and_co",
-      "address": "",
-      "suburb": "Woolloomooloo",
-      "start_date": "2026-09-11",
-      "end_date": "2026-09-26",
-      "opening_date": "2026-09-11",
-      "opening_time": "5:30-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "867f3b252791",
       "title": "Exhibitions | Art Gallery of NSW",
       "artist": "",
@@ -324,24 +270,6 @@
       "instagram": "",
       "description": "Near at Hand: Dobell Australian Drawing Biennial 2026. Opens 12 September 2026. Free ; Nolan Origins. Opens 3 October 2026. Charges apply ; Paula do Prado. Opens ...",
       "source": "serper",
-      "status": "active"
-    },
-    {
-      "id": "9d14922e74a0",
-      "title": "Genevieve Carroll | Alex Bray",
-      "artist": "",
-      "venue": "King Street Gallery on William",
-      "gallery_key": "king_street_gallery_on_william",
-      "address": "",
-      "suburb": "Darlinghurst",
-      "start_date": "2026-09-12",
-      "end_date": "2026-09-26",
-      "opening_date": "2026-09-12",
-      "opening_time": "2-4 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
       "status": "active"
     },
     {
