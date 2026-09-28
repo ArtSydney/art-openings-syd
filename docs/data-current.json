@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-27T15:04:54.269639+00:00",
-  "count": 41,
+  "generated": "2026-09-28T18:04:07.164667+00:00",
+  "count": 38,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -147,24 +147,6 @@
       "status": "active"
     },
     {
-      "id": "b4ba7fbd6f65",
-      "title": "Group Exhibition: Expanded Textiles",
-      "artist": "Group Exhibition",
-      "venue": "Articulate Project Space",
-      "gallery_key": "articulate_project_space",
-      "address": "",
-      "suburb": "Leichhardt",
-      "start_date": "2026-09-05",
-      "end_date": "2026-09-27",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "7249b801f85e",
       "title": "Group Exhibition at Annandale Galleries",
       "artist": "",
@@ -273,24 +255,6 @@
       "status": "active"
     },
     {
-      "id": "1e51807af022",
-      "title": "Justin Scivetti: Everyday",
-      "artist": "Justin Scivetti",
-      "venue": "Saint Cloche",
-      "gallery_key": "saint_cloche",
-      "address": "",
-      "suburb": "Paddington",
-      "start_date": "2026-09-16",
-      "end_date": "2026-09-27",
-      "opening_date": "2026-09-16",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "af0dbe739e7f",
       "title": "Kat Shapiro Wood: Flux",
       "artist": "Kat Shapiro Wood",
@@ -302,24 +266,6 @@
       "end_date": "2026-10-10",
       "opening_date": "2026-09-17",
       "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "c006f733bc8e",
-      "title": "Susa Haus: Kite Karoro Papua New Guinea",
-      "artist": "Susa Haus",
-      "venue": "Scratch Art Space",
-      "gallery_key": "scratch_art_space",
-      "address": "",
-      "suburb": "Marrickville",
-      "start_date": "2026-09-17",
-      "end_date": "2026-09-27",
-      "opening_date": null,
-      "opening_time": null,
       "website": "",
       "instagram": "",
       "description": "",

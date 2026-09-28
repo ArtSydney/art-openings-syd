@@ -1028,10 +1028,11 @@
     "bird birdlife corner journey week": "8d5801667973",
     "awards miniature national willoughby": "65cfb58548d6",
     "connections natural tiliqua tiliqua": "44236b9c84dd",
-    "carriageworks fair": "6d606ddfd0ec"
+    "carriageworks fair": "6d606ddfd0ec",
+    "carriageworks michael reid": "fce18d9dfce5"
   },
   "__meta__": {
-    "last_run": "2026-09-27T15:04:53.500535+00:00",
+    "last_run": "2026-09-28T18:04:06.429802+00:00",
     "instagram_latest": "2026-09-23T06:42:56+0000"
   },
   "747cbd06e895": {
@@ -18912,7 +18913,8 @@
     "description": "Opening Wednesday 10 September from 6pm, running about three weeks. Viewings by appointment; message the gallery for the address.",
     "source": "manual",
     "status": "active",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "c5140fbdb91e": {
     "title": "like scales from my eyes",
@@ -18929,7 +18931,8 @@
     "description": "Opening Wednesday 10 September from 6pm, running about three weeks. Viewings by appointment; message the gallery for the address.",
     "source": "manual",
     "status": "active",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "5eddb008602e": {
     "title": "Journey \u2013 A Bird Week Exhibition",
@@ -19879,5 +19882,23 @@
     "source_url": "https://sydneycontemporary.com.au/",
     "status": "active",
     "first_seen": "2026-09-26T14:19:17.883273+00:00"
+  },
+  "fce18d9dfce5": {
+    "title": "Sydney Contemporary 2026 - Michael Reid",
+    "artist": "",
+    "venue": "Carriageworks",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-09-06",
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://michaelreid.com.au/exhibition/sydney-contemporary-2026/",
+    "instagram": "",
+    "description": "Dates 3\u20146 Sep 2026 Gallery. Berlin returns to Carriageworks this September for the 10th anniversary edition of Sydney Contemporary, presenting exceptional new ...",
+    "source": "serper",
+    "source_url": "https://michaelreid.com.au/exhibition/sydney-contemporary-2026/",
+    "status": "active",
+    "first_seen": "2026-09-28T18:04:05.519960+00:00"
   }
 }

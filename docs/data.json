@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-27T15:04:54.269629+00:00",
-  "count": 995,
+  "generated": "2026-09-28T18:04:07.164655+00:00",
+  "count": 996,
   "exhibitions": [
     {
       "id": "5c44db475e38",
@@ -12870,7 +12870,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "7617d2645f0d",
@@ -12995,6 +12995,24 @@
       "website": "https://sydneycontemporary.com.au/",
       "instagram": "",
       "description": "Australasia's premier art fair returns to Carriageworks from 3\u20136 September 2026. Discover 100 galleries, contemporary art, installations, talks and more.",
+      "source": "serper",
+      "status": "closed"
+    },
+    {
+      "id": "fce18d9dfce5",
+      "title": "Sydney Contemporary 2026 - Michael Reid",
+      "artist": "",
+      "venue": "Carriageworks",
+      "gallery_key": "carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://michaelreid.com.au/exhibition/sydney-contemporary-2026/",
+      "instagram": "",
+      "description": "Dates 3\u20146 Sep 2026 Gallery. Berlin returns to Carriageworks this September for the 10th anniversary edition of Sydney Contemporary, presenting exceptional new ...",
       "source": "serper",
       "status": "closed"
     },
@@ -13302,7 +13320,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "af0dbe739e7f",
@@ -13338,7 +13356,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "872964b078c1",
