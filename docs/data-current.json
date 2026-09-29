@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-28T18:04:07.164667+00:00",
-  "count": 38,
+  "generated": "2026-09-29T16:27:45.553232+00:00",
+  "count": 40,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -12,6 +12,24 @@
       "suburb": "Sydney",
       "start_date": "2026-06-20",
       "end_date": "2026-10-05",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "",
+      "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "13dbcebcc893",
+      "title": "Billy Bain: By the River",
+      "artist": "Billy Bain",
+      "venue": "Art Gallery of New South Wales",
+      "gallery_key": "art_gallery_of_new_south_wales",
+      "address": "",
+      "suburb": "Sydney",
+      "start_date": "2026-07-04",
+      "end_date": "2026-11-08",
       "opening_date": null,
       "opening_time": null,
       "website": "",
@@ -39,6 +57,24 @@
       "status": "active"
     },
     {
+      "id": "06374b9a8745",
+      "title": "Group Exhibition: Connections: MCA x Tate",
+      "artist": "Group Exhibition",
+      "venue": "Museum of Contemporary Art Australia",
+      "gallery_key": "museum_of_contemporary_art_australia",
+      "address": "",
+      "suburb": "The Rocks",
+      "start_date": "2026-08-15",
+      "end_date": "2027-03-01",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "",
+      "source": "instagram",
+      "status": "active"
+    },
+    {
       "id": "8f84427da7c6",
       "title": "Group Exhibition: The Edge of Things",
       "artist": "Group Exhibition",
@@ -54,24 +90,6 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "b00270f1071d",
-      "title": "Biennale of Sydney",
-      "artist": "",
-      "venue": "Oslo Kunstforening",
-      "gallery_key": "",
-      "address": "",
-      "suburb": "",
-      "start_date": "2026-08-27",
-      "end_date": "2026-10-11",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "https://www.biennaleofsydney.art/",
-      "instagram": "",
-      "description": "The 25th Biennale of Sydney is now closed. might not be tomorrow is on view at Oslo Kunstforening from 27 August to 11 October 2026.",
-      "source": "serper",
       "status": "active"
     },
     {
@@ -630,6 +648,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "a6fe33fbc1e1",
+      "title": "Art Gallery Of Nsw Exhibition",
+      "artist": "",
+      "venue": "Art Gallery of New South Wales",
+      "gallery_key": "art_gallery_of_new_south_wales",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-10-03",
+      "end_date": "2027-02-07",
+      "opening_date": "2026-10-03",
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "Upcoming exhibitions include Nolan: Origins from 3 October 2026 to 7 February 2027 and Takashi Murakami, opening 5 December 2026 through 18 July ...",
+      "source": "serper",
       "status": "active"
     },
     {
