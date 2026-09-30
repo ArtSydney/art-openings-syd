@@ -1030,11 +1030,20 @@
     "connections natural tiliqua tiliqua": "44236b9c84dd",
     "carriageworks fair": "6d606ddfd0ec",
     "carriageworks michael reid": "fce18d9dfce5",
-    "centres data digital icc infrastructure": "9f979fed8b2c"
+    "centres data digital icc infrastructure": "9f979fed8b2c",
+    "exhibitions redfern": "04e511fc9fb4",
+    "prize redleaf small woollahra woollahra": "d06600f7d719",
+    "king life peter reminisce street wegner": "71193506c30d",
+    "banazi co curatorial get kate me you": "fe7c15ba17e8",
+    "cloche dusavitskiy gleb harker saint zaide": "971eacf07ff3",
+    "browne edwards martin mchugh michael tiarnie": "da472a5710ac",
+    "aaron aryadharma liverpool matheson street": "746d43e1a9a7",
+    "articulate edge project space": "9de8fef2281c",
+    "ghostly howe international melissa sydenham those traces": "1f0de846aef3"
   },
   "__meta__": {
-    "last_run": "2026-09-29T16:27:44.809441+00:00",
-    "instagram_latest": "2026-09-23T06:42:56+0000"
+    "last_run": "2026-09-30T16:22:36.777972+00:00",
+    "instagram_latest": "2026-09-30T02:42:00+0000"
   },
   "747cbd06e895": {
     "title": "Art openings Events and Things to do in Sydney, Australia",
@@ -1160,7 +1169,8 @@
     "source": "serper",
     "source_url": "https://www.artgallery.nsw.gov.au/whats-on/exhibitions/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.612195+00:00"
+    "first_seen": "2026-08-14T09:19:56.612195+00:00",
+    "closing_soon_sent": true
   },
   "7617d2645f0d": {
     "title": "Sydney Contemporary",
@@ -18448,7 +18458,8 @@
     "source_url": "https://www.instagram.com/p/Dccam_BEh6B/",
     "status": "active",
     "first_seen": "2026-08-25T11:05:22.092740+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "825b853dd0e6": {
     "title": "Justin Williams: Pentimento",
@@ -18467,7 +18478,8 @@
     "source_url": "https://www.instagram.com/p/Dccam_BEh6B/",
     "status": "active",
     "first_seen": "2026-08-25T11:05:22.462335+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "52ec01f1b408": {
     "title": "Daniel McMahon: EPURE - STUDIES IN GRAPHITE",
@@ -18862,7 +18874,8 @@
     "source_url": "https://www.instagram.com/p/Dcw6uNGEh6m/",
     "status": "active",
     "first_seen": "2026-09-02T10:18:45.731890+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "b4ba7fbd6f65": {
     "title": "Group Exhibition: Expanded Textiles",
@@ -19048,7 +19061,8 @@
     "source_url": "https://www.instagram.com/p/DdDIJpgiVCK/",
     "status": "active",
     "first_seen": "2026-09-09T10:18:09.171301+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "10aba7fe39ed": {
     "title": "Mitchell Cheesman: A Sip From Stained Glass",
@@ -19333,7 +19347,8 @@
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
     "first_seen": "2026-09-16T10:18:55.698576+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "942cf44bae65": {
     "title": "Angus Nivison: Orbit",
@@ -19923,5 +19938,170 @@
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/data-centres-and-digital-infrastructure-show",
     "status": "needs_review",
     "first_seen": "2026-09-29T16:27:44.804232+00:00"
+  },
+  "04e511fc9fb4": {
+    "title": "Exhibitions",
+    "artist": "",
+    "venue": "The Redfern",
+    "address": "",
+    "suburb": "Redfern",
+    "start_date": "2026-07-15",
+    "end_date": "2026-09-05",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.redfern-gallery.com/exhibitions/",
+    "instagram": "",
+    "description": "Exhibitions ; British Art Fair 2026. 24 - 27 September 2026 ; St Ives at The Redfern. A summer celebration of St Ives, past and present 15 July - 5 September 2026.",
+    "source": "serper",
+    "source_url": "https://www.redfern-gallery.com/exhibitions/",
+    "status": "closed",
+    "first_seen": "2026-09-30T16:22:31.666681+00:00"
+  },
+  "d06600f7d719": {
+    "title": "Woollahra Small Sculpture Prize 2026",
+    "artist": "",
+    "venue": "Woollahra Gallery at Redleaf",
+    "address": "",
+    "suburb": "Double Bay",
+    "start_date": "2026-10-02",
+    "end_date": "2026-11-29",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:31.681109+00:00"
+  },
+  "71193506c30d": {
+    "title": "Peter Wegner: Reminisce: Paintings from life",
+    "artist": "Peter Wegner",
+    "venue": "King Street Gallery",
+    "address": "",
+    "suburb": "Darlinghurst",
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-24",
+    "opening_date": "2026-09-30",
+    "opening_time": "6-8 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:32.329939+00:00",
+    "opening_soon_sent": true
+  },
+  "fe7c15ba17e8": {
+    "title": "Kate Banazi: You Get Me",
+    "artist": "Kate Banazi",
+    "venue": "Curatorial + Co",
+    "address": "",
+    "suburb": "Woolloomooloo",
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-17",
+    "opening_date": "2026-09-30",
+    "opening_time": "5:30-8 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:32.621448+00:00",
+    "opening_soon_sent": true
+  },
+  "971eacf07ff3": {
+    "title": "Zaide Harker | Gleb Dusavitskiy",
+    "artist": "",
+    "venue": "Saint Cloche",
+    "address": "",
+    "suburb": "Paddington",
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-11",
+    "opening_date": "2026-09-30",
+    "opening_time": "6-8 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:32.869145+00:00",
+    "opening_soon_sent": true
+  },
+  "da472a5710ac": {
+    "title": "Michael McHugh | Tiarnie Edwards",
+    "artist": "",
+    "venue": "Martin Browne Contemporary",
+    "address": "",
+    "suburb": "Paddington",
+    "start_date": "2026-10-01",
+    "end_date": "2026-10-24",
+    "opening_date": "2026-10-01",
+    "opening_time": "6-8 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:33.215339+00:00"
+  },
+  "746d43e1a9a7": {
+    "title": "Aaron Aryadharma Matheson",
+    "artist": "",
+    "venue": "Liverpool Street Gallery",
+    "address": "",
+    "suburb": "Darlinghurst",
+    "start_date": "2026-10-01",
+    "end_date": "2026-10-31",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:33.545268+00:00"
+  },
+  "9de8fef2281c": {
+    "title": "Group Exhibition: EDGE",
+    "artist": "Group Exhibition",
+    "venue": "Articulate Project Space",
+    "address": "",
+    "suburb": "Leichhardt",
+    "start_date": "2026-10-03",
+    "end_date": "2026-10-25",
+    "opening_date": "2026-10-03",
+    "opening_time": "3-5 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:33.791672+00:00"
+  },
+  "1f0de846aef3": {
+    "title": "Melissa Howe: those ghostly traces",
+    "artist": "Melissa Howe",
+    "venue": "Sydenham International",
+    "address": "",
+    "suburb": "Marrickville",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": "2026-10-03",
+    "opening_time": "3-5 PM",
+    "website": "",
+    "instagram": "",
+    "description": "",
+    "source": "instagram",
+    "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
+    "status": "active",
+    "first_seen": "2026-09-30T16:22:34.063408+00:00"
   }
 }
