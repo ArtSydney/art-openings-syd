@@ -1043,10 +1043,13 @@
     "exhibitions stand": "e6e81c28f77f",
     "glebe glebe": "03acd1254c47",
     "cove cove creative creative lane lane studios studios": "0095c4aba3b9",
-    "bondi bondi sea sea": "44f2284f7eba"
+    "bondi bondi sea sea": "44f2284f7eba",
+    "anzac australian memorial point shoot veteran": "45327e51a30f",
+    "ceramics hand object studio unsw": "2eb8c960885a",
+    "ai cloud enterprise icc tech": "6ee8e2ec18d1"
   },
   "__meta__": {
-    "last_run": "2026-10-01T16:59:31.724125+00:00",
+    "last_run": "2026-10-02T16:12:21.079879+00:00",
     "instagram_latest": "2026-09-30T02:42:00+0000"
   },
   "747cbd06e895": {
@@ -4922,7 +4925,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DZptM46CSL9/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.639172+00:00"
+    "first_seen": "2026-08-14T09:19:56.639172+00:00",
+    "closing_soon_sent": true
   },
   "7eb791d5f550": {
     "title": "Maria Kontis",
@@ -20181,5 +20185,59 @@
     "source_url": "http://sculpturebythesea.com",
     "status": "needs_review",
     "first_seen": "2026-10-01T16:59:31.307577+00:00"
+  },
+  "45327e51a30f": {
+    "title": "Point & Shoot Australian Veteran Photography Exhibition",
+    "artist": "",
+    "venue": "Anzac Memorial",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/point-and-shoot-australian-veteran-photography-exhibition",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/point-and-shoot-australian-veteran-photography-exhibition",
+    "status": "needs_review",
+    "first_seen": "2026-10-02T16:12:20.437584+00:00"
+  },
+  "2eb8c960885a": {
+    "title": "Studio Ceramics: From Hand to Object",
+    "artist": "",
+    "venue": "UNSW Galleries",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/studio-ceramics-from-hand-to-object",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/studio-ceramics-from-hand-to-object",
+    "status": "needs_review",
+    "first_seen": "2026-10-02T16:12:20.440621+00:00"
+  },
+  "6ee8e2ec18d1": {
+    "title": "The Enterprise Tech, Cloud & AI Show",
+    "artist": "",
+    "venue": "ICC Sydney",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/the-enterprise-tech-cloud-and-ai-show",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/the-enterprise-tech-cloud-and-ai-show",
+    "status": "needs_review",
+    "first_seen": "2026-10-02T16:12:20.443735+00:00"
   }
 }

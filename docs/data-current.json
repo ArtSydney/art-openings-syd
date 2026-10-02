@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-01T16:59:32.482438+00:00",
-  "count": 49,
+  "generated": "2026-10-02T16:12:21.872346+00:00",
+  "count": 47,
   "exhibitions": [
     {
       "id": "dd83c4be1923",
@@ -180,42 +180,6 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "cae270b43276",
-      "title": "Palp",
-      "artist": "Liss Finney",
-      "venue": "B E LL",
-      "gallery_key": "b_e_ll",
-      "address": "",
-      "suburb": "",
-      "start_date": "2026-09-10",
-      "end_date": "2026-10-01",
-      "opening_date": "2026-09-10",
-      "opening_time": "6pm",
-      "website": "",
-      "instagram": "@lissfinney",
-      "description": "Opening Wednesday 10 September from 6pm, running about three weeks. Viewings by appointment; message the gallery for the address.",
-      "source": "manual",
-      "status": "active"
-    },
-    {
-      "id": "c5140fbdb91e",
-      "title": "like scales from my eyes",
-      "artist": "Samuel Chan",
-      "venue": "B E LL",
-      "gallery_key": "b_e_ll",
-      "address": "",
-      "suburb": "",
-      "start_date": "2026-09-10",
-      "end_date": "2026-10-01",
-      "opening_date": "2026-09-10",
-      "opening_time": "6pm",
-      "website": "",
-      "instagram": "@__szwc",
-      "description": "Opening Wednesday 10 September from 6pm, running about three weeks. Viewings by appointment; message the gallery for the address.",
-      "source": "manual",
       "status": "active"
     },
     {
