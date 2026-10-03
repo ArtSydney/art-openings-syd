@@ -1049,7 +1049,7 @@
     "ai cloud enterprise icc tech": "6ee8e2ec18d1"
   },
   "__meta__": {
-    "last_run": "2026-10-02T16:12:21.079879+00:00",
+    "last_run": "2026-10-03T14:39:14.269799+00:00",
     "instagram_latest": "2026-09-30T02:42:00+0000"
   },
   "747cbd06e895": {
@@ -19928,7 +19928,8 @@
     "source": "serper",
     "source_url": "https://www.instagram.com/popular/art-gallery-of-nsw-exhibition/",
     "status": "active",
-    "first_seen": "2026-09-29T16:27:44.205717+00:00"
+    "first_seen": "2026-09-29T16:27:44.205717+00:00",
+    "opening_soon_sent": true
   },
   "9f979fed8b2c": {
     "title": "Data Centres & Digital Infrastructure Show",
@@ -20094,7 +20095,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
     "status": "active",
-    "first_seen": "2026-09-30T16:22:33.791672+00:00"
+    "first_seen": "2026-09-30T16:22:33.791672+00:00",
+    "opening_soon_sent": true
   },
   "1f0de846aef3": {
     "title": "Melissa Howe: those ghostly traces",
@@ -20112,7 +20114,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
     "status": "active",
-    "first_seen": "2026-09-30T16:22:34.063408+00:00"
+    "first_seen": "2026-09-30T16:22:34.063408+00:00",
+    "opening_soon_sent": true
   },
   "e6e81c28f77f": {
     "title": "Exhibitions",
