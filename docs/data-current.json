@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-04T14:44:48.665902+00:00",
+  "generated": "2026-10-05T18:17:12.491849+00:00",
   "count": 41,
   "exhibitions": [
     {
@@ -363,24 +363,6 @@
       "status": "active"
     },
     {
-      "id": "096463c920fd",
-      "title": "Aileen Ng: FITM: Faith in the Machine",
-      "artist": "Aileen Ng",
-      "venue": "4A Centre for Contemporary Asian Art",
-      "gallery_key": "4a_centre_for_contemporary_asian_art",
-      "address": "",
-      "suburb": "Haymarket",
-      "start_date": "2026-09-24",
-      "end_date": "2026-10-04",
-      "opening_date": "2026-09-24",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "55884a554caf",
       "title": "Zi Xin: Words of Wisdom",
       "artist": "Zi Xin",
@@ -486,6 +468,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "afe6897fb765",
+      "title": "Art Exhibitions in Sydney during 2026 / 2027",
+      "artist": "",
+      "venue": "Roslyn Oxley9 Gallery",
+      "gallery_key": "roslyn_oxley9",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-25",
+      "end_date": "2026-10-17",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://ocula.com/cities/australia/sydney-art-galleries/exhibitions/",
+      "instagram": "",
+      "description": "Contemporary art exhibition Bill Henson Bill Henson at Roslyn Oxley9 Gallery Sydney Australia \u00b7 Bill Henson Roslyn Oxley9 Gallery 25 September\u201317 October 2026",
+      "source": "serper",
       "status": "active"
     },
     {
