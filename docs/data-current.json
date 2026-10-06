@@ -1,25 +1,7 @@
 {
-  "generated": "2026-10-05T18:17:12.491849+00:00",
-  "count": 41,
+  "generated": "2026-10-06T15:49:58.966152+00:00",
+  "count": 40,
   "exhibitions": [
-    {
-      "id": "dd83c4be1923",
-      "title": "Avatar: Forms of Vishnu",
-      "artist": "Avatar",
-      "venue": "Art Gallery of New South Wales",
-      "gallery_key": "art_gallery_of_new_south_wales",
-      "address": "",
-      "suburb": "Sydney",
-      "start_date": "2026-06-20",
-      "end_date": "2026-10-05",
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
     {
       "id": "13dbcebcc893",
       "title": "Billy Bain: By the River",
