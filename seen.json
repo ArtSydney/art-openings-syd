@@ -1058,10 +1058,11 @@
     "jemima lucas passage": "cdc5c273fbde",
     "1301sw jelena kaput telecki": "7321dafe6a44",
     "cross empty is land not papua projects west": "10d3ea1b7103",
-    "julien playoust scieppan": "3dbff1f0fc27"
+    "julien playoust scieppan": "3dbff1f0fc27",
+    "amy clarke m2": "1020fbc6ce89"
   },
   "__meta__": {
-    "last_run": "2026-10-07T16:18:39.209499+00:00",
+    "last_run": "2026-10-08T16:21:05.784366+00:00",
     "instagram_latest": "2026-10-07T00:42:18+0000"
   },
   "747cbd06e895": {
@@ -19295,7 +19296,8 @@
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
     "first_seen": "2026-09-16T10:18:54.446171+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "c70f7111de44": {
     "title": "Group Exhibition: Portia Geach Memorial Award",
@@ -20056,7 +20058,8 @@
     "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
     "status": "active",
     "first_seen": "2026-09-30T16:22:32.869145+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "da472a5710ac": {
     "title": "Michael McHugh | Tiarnie Edwards",
@@ -20367,7 +20370,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
-    "first_seen": "2026-10-07T16:18:36.305594+00:00"
+    "first_seen": "2026-10-07T16:18:36.305594+00:00",
+    "opening_soon_sent": true
   },
   "c920dca74cf4": {
     "title": "Andy Ewing | Kirthana Selvaraj",
@@ -20476,5 +20480,23 @@
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
     "first_seen": "2026-10-07T16:18:37.788663+00:00"
+  },
+  "1020fbc6ce89": {
+    "title": "Amy Clarke Solo Exhibition",
+    "artist": "",
+    "venue": "m2 Gallery",
+    "address": "",
+    "suburb": "",
+    "start_date": null,
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://whatson.cityofsydney.nsw.gov.au/events/amy-clarke-solo-exhibition",
+    "instagram": "",
+    "description": "",
+    "source": "city_of_sydney",
+    "source_url": "https://whatson.cityofsydney.nsw.gov.au/events/amy-clarke-solo-exhibition",
+    "status": "needs_review",
+    "first_seen": "2026-10-08T16:21:04.653362+00:00"
   }
 }
