@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-08T16:21:06.594443+00:00",
-  "count": 1017,
+  "generated": "2026-10-09T16:04:45.221820+00:00",
+  "count": 1019,
   "exhibitions": [
     {
       "id": "9515e19be2ea",
@@ -9417,6 +9417,24 @@
       "status": "closed"
     },
     {
+      "id": "1b47b48c4f80",
+      "title": "Black Myth 25 Jun \u2013 8 Nov 2026 White Rabbit Gallery ...",
+      "artist": "",
+      "venue": "White Rabbit Gallery",
+      "gallery_key": "white_rabbit",
+      "address": "",
+      "suburb": "Chippendale",
+      "start_date": "2026-06-25",
+      "end_date": "2026-11-08",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "@whiterabbitgallery",
+      "description": "Exhibitions in Sydney this week! \u2728\ufe0f Featured: Black Myth 25 Jun \u2013 8 Nov 2026. White Rabbit Gallery, Chippendale @whiterabbitgallery",
+      "source": "serper",
+      "status": "active"
+    },
+    {
       "id": "245d2a77d62a",
       "title": "Angus Hamra: Jidu",
       "artist": "Angus Hamra",
@@ -14184,6 +14202,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "aa8a7638e60d",
+      "title": "Time flies when you're having fun. Tonight is the 25th ...",
+      "artist": "",
+      "venue": "Redleaf",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "Woollahra",
+      "start_date": "2026-10-02",
+      "end_date": "2026-11-29",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "What: 2026 Woollahra Small Sculpture Prize Exhibition When: 2 October to 29 November 2026 Where: Woollahra Gallery at Redleaf, 548 New ...",
+      "source": "serper",
       "status": "active"
     },
     {
