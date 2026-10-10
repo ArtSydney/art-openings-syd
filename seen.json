@@ -1066,7 +1066,7 @@
     "community cross heart": "56bfdb47028d"
   },
   "__meta__": {
-    "last_run": "2026-10-09T16:04:44.465698+00:00",
+    "last_run": "2026-10-10T15:13:18.260552+00:00",
     "instagram_latest": "2026-10-07T00:42:18+0000"
   },
   "747cbd06e895": {
@@ -20450,7 +20450,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
-    "first_seen": "2026-10-07T16:18:37.285053+00:00"
+    "first_seen": "2026-10-07T16:18:37.285053+00:00",
+    "opening_soon_sent": true
   },
   "10d3ea1b7103": {
     "title": "West Papua is not an empty land",
@@ -20468,7 +20469,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
-    "first_seen": "2026-10-07T16:18:37.593638+00:00"
+    "first_seen": "2026-10-07T16:18:37.593638+00:00",
+    "opening_soon_sent": true
   },
   "3dbff1f0fc27": {
     "title": "Julien Playoust",
@@ -20486,7 +20488,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
-    "first_seen": "2026-10-07T16:18:37.788663+00:00"
+    "first_seen": "2026-10-07T16:18:37.788663+00:00",
+    "opening_soon_sent": true
   },
   "1020fbc6ce89": {
     "title": "Amy Clarke Solo Exhibition",
