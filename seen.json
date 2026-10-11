@@ -1063,10 +1063,12 @@
     "25 black jun myth nov rabbit rabbit white white": "1b47b48c4f80",
     "25th flies fun having is redleaf time tonight when youre": "aa8a7638e60d",
     "cross hall heart paddington town": "5708a8e84f52",
-    "community cross heart": "56bfdb47028d"
+    "community cross heart": "56bfdb47028d",
+    "brett studio whiteley": "e89f229c6b0b",
+    "closed harbour is redleaf temporarily visions": "9777b320fd7c"
   },
   "__meta__": {
-    "last_run": "2026-10-10T15:13:18.260552+00:00",
+    "last_run": "2026-10-11T15:32:40.263031+00:00",
     "instagram_latest": "2026-10-07T00:42:18+0000"
   },
   "747cbd06e895": {
@@ -20580,5 +20582,41 @@
     "source_url": "https://whatson.cityofsydney.nsw.gov.au/categories/community-and-causes",
     "status": "needs_review",
     "first_seen": "2026-10-09T16:04:43.530712+00:00"
+  },
+  "e89f229c6b0b": {
+    "title": "Brett Whiteley Studio | Art Gallery of NSW",
+    "artist": "",
+    "venue": "Art Gallery of NSW",
+    "address": "",
+    "suburb": "Surry Hills",
+    "start_date": "2026-10-15",
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/",
+    "instagram": "",
+    "description": "Open Thursday to Sunday 10am \u2013 4pm. Surry Hills NSW. Opens 15 October 2026 Free Related events the Coming Home exhibition at the Brett Whiteley Studio, Surry ...",
+    "source": "serper",
+    "source_url": "https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/",
+    "status": "active",
+    "first_seen": "2026-10-11T15:32:39.430768+00:00"
+  },
+  "9777b320fd7c": {
+    "title": "Visions of the Harbour",
+    "artist": "",
+    "venue": "Redleaf is temporarily closed for installation",
+    "address": "",
+    "suburb": "Woollahra",
+    "start_date": "2026-10-01",
+    "end_date": null,
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.woollahragallery.com.au/Whats-On/Past-Exhibitions/2026/Visions-of-the-Harbour",
+    "instagram": "",
+    "description": "Woollahra Gallery at Redleaf is temporarily closed for installation 23 September to Thursday 1 October 2026. The Gallery will reopen at 10am on ...",
+    "source": "serper",
+    "source_url": "https://www.woollahragallery.com.au/Whats-On/Past-Exhibitions/2026/Visions-of-the-Harbour",
+    "status": "active",
+    "first_seen": "2026-10-11T15:32:39.917533+00:00"
   }
 }

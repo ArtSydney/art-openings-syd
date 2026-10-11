@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-10T15:13:18.855716+00:00",
-  "count": 1019,
+  "generated": "2026-10-11T15:32:41.015421+00:00",
+  "count": 1021,
   "exhibitions": [
     {
       "id": "9515e19be2ea",
@@ -13050,7 +13050,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "1c469dfbaba6",
@@ -13374,7 +13374,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "c006f733bc8e",
@@ -13410,7 +13410,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "69f159acf3a7",
@@ -13788,7 +13788,7 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "17dac5b957f8",
@@ -14094,6 +14094,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "active"
+    },
+    {
+      "id": "9777b320fd7c",
+      "title": "Visions of the Harbour",
+      "artist": "",
+      "venue": "Redleaf is temporarily closed for installation",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "Woollahra",
+      "start_date": "2026-10-01",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://www.woollahragallery.com.au/Whats-On/Past-Exhibitions/2026/Visions-of-the-Harbour",
+      "instagram": "",
+      "description": "Woollahra Gallery at Redleaf is temporarily closed for installation 23 September to Thursday 1 October 2026. The Gallery will reopen at 10am on ...",
+      "source": "serper",
       "status": "active"
     },
     {
@@ -14723,6 +14741,24 @@
       "website": "",
       "instagram": "",
       "description": "Entries open Monday 21 September and close Tuesday 13 October 2026. Finalists will be exhibited online and at Woollahra Gallery from 4\u201329 ...",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "e89f229c6b0b",
+      "title": "Brett Whiteley Studio | Art Gallery of NSW",
+      "artist": "",
+      "venue": "Art Gallery of New South Wales",
+      "gallery_key": "art_gallery_of_new_south_wales",
+      "address": "",
+      "suburb": "Surry Hills",
+      "start_date": "2026-10-15",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://www.artgallery.nsw.gov.au/visit/brett-whiteley-studio/",
+      "instagram": "",
+      "description": "Open Thursday to Sunday 10am \u2013 4pm. Surry Hills NSW. Opens 15 October 2026 Free Related events the Coming Home exhibition at the Brett Whiteley Studio, Surry ...",
       "source": "serper",
       "status": "active"
     },
