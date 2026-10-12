@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-11T15:32:41.015432+00:00",
-  "count": 50,
+  "generated": "2026-10-12T18:52:59.552263+00:00",
+  "count": 48,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -144,24 +144,6 @@
       "instagram": "",
       "description": "16 September - 24 October 2026. The Redfern Gallery returns to the British Art Fair. Visit us at Stand 9. Exhibition 15 April - 12 June 2026",
       "source": "serper",
-      "status": "active"
-    },
-    {
-      "id": "c30c8991ea66",
-      "title": "Group Exhibition: Tactile Illusions",
-      "artist": "Group Exhibition",
-      "venue": "China Heights Gallery",
-      "gallery_key": "china_heights",
-      "address": "",
-      "suburb": "Surry Hills",
-      "start_date": "2026-09-18",
-      "end_date": "2026-10-11",
-      "opening_date": "2026-09-18",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
       "status": "active"
     },
     {
@@ -482,24 +464,6 @@
       "end_date": "2026-10-17",
       "opening_date": "2026-09-30",
       "opening_time": "5:30-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "971eacf07ff3",
-      "title": "Zaide Harker | Gleb Dusavitskiy",
-      "artist": "",
-      "venue": "Saint Cloche",
-      "gallery_key": "saint_cloche",
-      "address": "",
-      "suburb": "Paddington",
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-11",
-      "opening_date": "2026-09-30",
-      "opening_time": "6-8 PM",
       "website": "",
       "instagram": "",
       "description": "",
