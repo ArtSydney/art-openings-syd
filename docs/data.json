@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-14T14:27:54.803029+00:00",
-  "count": 1030,
+  "generated": "2026-10-15T14:05:42.506080+00:00",
+  "count": 1031,
   "exhibitions": [
     {
       "id": "9515e19be2ea",
@@ -15767,6 +15767,24 @@
       "website": "https://sydneycontemporary.com.au/visit/",
       "instagram": "",
       "description": "Sydney Contemporary, Australasia\u2019s premier art fair, returns to Carriageworks from 9\u201312 September 2027 (VIP Preview 8 September). With over 100 galleries and more than 500 artists, the Fair is the largest and most diverse gathering of contemporary art in the region.",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "dc1db4ecd427",
+      "title": "Sydney Contemporary (@sydneycontemporary)",
+      "artist": "",
+      "venue": "Artspace",
+      "gallery_key": "artspace",
+      "address": "",
+      "suburb": "",
+      "start_date": "2027-09-12",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "@sydneycontemporary",
+      "description": "Australasia's Premier Art Fair 9-12 September 2027, Carriageworks. Exhibition on until 25 October Sydney \u2026 2026 Opening soon \u2013 Artspace launches Artspace ...",
       "source": "serper",
       "status": "active"
     },
