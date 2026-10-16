@@ -1078,7 +1078,7 @@
     "artspace sydneycontemporary": "dc1db4ecd427"
   },
   "__meta__": {
-    "last_run": "2026-10-15T14:05:41.884765+00:00",
+    "last_run": "2026-10-16T13:53:36.413284+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -20748,7 +20748,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DedP5vBkkUB/",
     "status": "active",
-    "first_seen": "2026-10-14T14:27:51.419428+00:00"
+    "first_seen": "2026-10-14T14:27:51.419428+00:00",
+    "opening_soon_sent": true
   },
   "b309147fff63": {
     "title": "Group Exhibition: The Shape We Take at Night",
@@ -20766,7 +20767,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DedP5vBkkUB/",
     "status": "active",
-    "first_seen": "2026-10-14T14:27:51.600759+00:00"
+    "first_seen": "2026-10-14T14:27:51.600759+00:00",
+    "opening_soon_sent": true
   },
   "b991d88240cb": {
     "title": "Allie Jonscher: Touching Grass",
