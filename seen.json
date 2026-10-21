@@ -1080,7 +1080,7 @@
     "community tears wall": "b1d4196bb3d3"
   },
   "__meta__": {
-    "last_run": "2026-10-20T14:14:50.730294+00:00",
+    "last_run": "2026-10-21T14:26:37.098016+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -3758,7 +3758,8 @@
     "source_url": "https://www.instagram.com/p/DbXPxFgiQZV/",
     "status": "active",
     "first_seen": "2026-08-14T09:19:56.637878+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "1fb893c030b8": {
     "title": "Peta Minnichi: Dissonance at the Edge of Light",
@@ -19413,7 +19414,8 @@
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
     "first_seen": "2026-09-16T10:18:55.872071+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "92b1e4a597db": {
     "title": "Tony Albert: Reverb",
@@ -19452,7 +19454,8 @@
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
     "first_seen": "2026-09-16T10:18:56.218621+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "62c31ac2d72b": {
     "title": "Group Exhibition: Spring Introductions 2026",
@@ -19598,7 +19601,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:55.815445+00:00"
+    "first_seen": "2026-09-23T14:51:55.815445+00:00",
+    "closing_soon_sent": true
   },
   "096463c920fd": {
     "title": "Aileen Ng: FITM: Faith in the Machine",
@@ -19717,7 +19721,8 @@
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
     "first_seen": "2026-09-23T14:51:57.524270+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "c4199ffe75fe": {
     "title": "Ben Reid | Luke Parker",
@@ -19755,7 +19760,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdnsVitCbeX/",
     "status": "active",
-    "first_seen": "2026-09-23T14:51:57.967553+00:00"
+    "first_seen": "2026-09-23T14:51:57.967553+00:00",
+    "closing_soon_sent": true
   },
   "171c0e2fdb3a": {
     "title": "Sydney Contemporary art installation at Sydney Fish Market",
@@ -20046,7 +20052,8 @@
     "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
     "status": "active",
     "first_seen": "2026-09-30T16:22:32.329939+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "fe7c15ba17e8": {
     "title": "Kate Banazi: You Get Me",
@@ -20105,7 +20112,8 @@
     "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
     "status": "active",
     "first_seen": "2026-09-30T16:22:33.215339+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "746d43e1a9a7": {
     "title": "Aaron Aryadharma Matheson",
@@ -20179,7 +20187,8 @@
     "source": "serper",
     "source_url": "https://www.redfern-gallery.com/exhibitions/",
     "status": "active",
-    "first_seen": "2026-10-01T16:59:30.885685+00:00"
+    "first_seen": "2026-10-01T16:59:30.885685+00:00",
+    "closing_soon_sent": true
   },
   "03acd1254c47": {
     "title": "Glebe Art Show",
