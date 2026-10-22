@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-21T14:26:37.948385+00:00",
-  "count": 1031,
+  "generated": "2026-10-22T14:29:23.507150+00:00",
+  "count": 1032,
   "exhibitions": [
     {
       "id": "9515e19be2ea",
@@ -15139,6 +15139,24 @@
       "description": "",
       "source": "instagram",
       "status": "closed"
+    },
+    {
+      "id": "3f8fe16097e5",
+      "title": "Artspace (@artspacesydney) \u2022 Instagram photos and videos",
+      "artist": "The Medich",
+      "venue": "Artspace",
+      "gallery_key": "artspace",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-10-22",
+      "end_date": null,
+      "opening_date": "2026-10-22",
+      "opening_time": "9pm",
+      "website": "",
+      "instagram": "@artspacesydney",
+      "description": "Join us for the opening night: Thursday 22 October 2026, 6\u20139pm at Artspace. Free registration via link in bio. \u2014 This exhibition is supported by The Medich ...",
+      "source": "serper",
+      "status": "active"
     },
     {
       "id": "58b39f119fe7",
