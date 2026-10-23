@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-22T14:29:23.507159+00:00",
-  "count": 47,
+  "generated": "2026-10-23T14:10:57.263541+00:00",
+  "count": 46,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -212,24 +212,6 @@
       "end_date": "2026-11-29",
       "opening_date": "2026-09-20",
       "opening_time": "3 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "55884a554caf",
-      "title": "Zi Xin: Words of Wisdom",
-      "artist": "Zi Xin",
-      "venue": "CBD Gallery",
-      "gallery_key": "cbd",
-      "address": "",
-      "suburb": "Sydney",
-      "start_date": "2026-09-24",
-      "end_date": "2026-10-22",
-      "opening_date": "2026-09-24",
-      "opening_time": "6-8 PM",
       "website": "",
       "instagram": "",
       "description": "",
