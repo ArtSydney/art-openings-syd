@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-23T14:10:57.263541+00:00",
-  "count": 46,
+  "generated": "2026-10-24T13:14:02.185260+00:00",
+  "count": 45,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -432,24 +432,6 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "7a442249f6d1",
-      "title": "And This Is Where We Land",
-      "artist": "",
-      "venue": "Lane Cove",
-      "gallery_key": "",
-      "address": "",
-      "suburb": "",
-      "start_date": "2026-10-09",
-      "end_date": null,
-      "opening_date": null,
-      "opening_time": null,
-      "website": "https://whatson.cityofsydney.nsw.gov.au/events/and-this-is-where-we-land",
-      "instagram": "",
-      "description": "And This Is Where We Land Lane Cove Exhibitions And This Is Where We Land And This Is Where We Land 9 Oct 2026",
-      "source": "city_of_sydney",
       "status": "active"
     },
     {
