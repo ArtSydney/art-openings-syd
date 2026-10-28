@@ -1082,7 +1082,7 @@
     "back buff willoughby": "ad4a816b76fe"
   },
   "__meta__": {
-    "last_run": "2026-10-27T15:16:58.453674+00:00",
+    "last_run": "2026-10-28T15:54:15.101025+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -20134,7 +20134,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/Dd5SVBEEmJ8/",
     "status": "active",
-    "first_seen": "2026-09-30T16:22:33.545268+00:00"
+    "first_seen": "2026-09-30T16:22:33.545268+00:00",
+    "closing_soon_sent": true
   },
   "9de8fef2281c": {
     "title": "Group Exhibition: EDGE",
@@ -20671,7 +20672,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DedP5vBkkUB/",
     "status": "active",
-    "first_seen": "2026-10-14T14:27:49.820814+00:00"
+    "first_seen": "2026-10-14T14:27:49.820814+00:00",
+    "closing_soon_sent": true
   },
   "9dd999604db3": {
     "title": "Group Exhibition: GRIT",
@@ -20747,7 +20749,8 @@
     "source_url": "https://www.instagram.com/p/DedP5vBkkUB/",
     "status": "active",
     "first_seen": "2026-10-14T14:27:51.120288+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "e38fc60c9d98": {
     "title": "Kevin White | Sergei Shatrov",

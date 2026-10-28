@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-27T15:16:59.089323+00:00",
-  "count": 33,
+  "generated": "2026-10-28T15:54:15.926104+00:00",
+  "count": 32,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -360,24 +360,6 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "aa11ba17e65b",
-      "title": "Submissions for the Woollahra Small Sculpture Prize 2026 are ...",
-      "artist": "",
-      "venue": "Woollahra Gallery at Redleaf",
-      "gallery_key": "woollahra_gallery_at_redleaf",
-      "address": "",
-      "suburb": "Woollahra",
-      "start_date": "2026-10-13",
-      "end_date": null,
-      "opening_date": null,
-      "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "Entries open Monday 21 September and close Tuesday 13 October 2026. Finalists will be exhibited online and at Woollahra Gallery from 4\u201329 ...",
-      "source": "serper",
       "status": "active"
     },
     {
