@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-28T15:54:15.926104+00:00",
-  "count": 32,
+  "generated": "2026-10-29T15:59:45.483476+00:00",
+  "count": 31,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -356,24 +356,6 @@
       "end_date": "2026-11-10",
       "opening_date": "2026-10-10",
       "opening_time": "3-5 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "9dd999604db3",
-      "title": "Group Exhibition: GRIT",
-      "artist": "Group Exhibition",
-      "venue": "Goodspace",
-      "gallery_key": "goodspace",
-      "address": "",
-      "suburb": "Chippendale",
-      "start_date": null,
-      "end_date": null,
-      "opening_date": "2026-10-14",
-      "opening_time": "5-9 PM",
       "website": "",
       "instagram": "",
       "description": "",

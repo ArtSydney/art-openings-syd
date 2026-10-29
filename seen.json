@@ -1082,7 +1082,7 @@
     "back buff willoughby": "ad4a816b76fe"
   },
   "__meta__": {
-    "last_run": "2026-10-28T15:54:15.101025+00:00",
+    "last_run": "2026-10-29T15:59:44.892222+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -19338,7 +19338,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DdVUM90ibsj/",
     "status": "active",
-    "first_seen": "2026-09-16T10:18:54.639432+00:00"
+    "first_seen": "2026-09-16T10:18:54.639432+00:00",
+    "closing_soon_sent": true
   },
   "b324daad77f2": {
     "title": "Oliver Abbott: Guide",
