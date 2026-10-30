@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-29T15:59:45.483465+00:00",
-  "count": 1032,
+  "generated": "2026-10-30T15:47:06.717412+00:00",
+  "count": 1033,
   "exhibitions": [
     {
       "id": "9515e19be2ea",
@@ -13035,6 +13035,24 @@
       "status": "closed"
     },
     {
+      "id": "af86531c84ee",
+      "title": "Gallery applications open now  Sydney Contemporary marks ...",
+      "artist": "",
+      "venue": "Carriageworks",
+      "gallery_key": "carriageworks",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-09-06",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "",
+      "instagram": "",
+      "description": "Sydney Contemporary marks its 10th edition in 2026, at Carriageworks from 3-6 September 2026 to showcase your artists, Australasia's premier ...",
+      "source": "serper",
+      "status": "closed"
+    },
+    {
       "id": "7249b801f85e",
       "title": "Group Exhibition at Annandale Galleries",
       "artist": "",
@@ -14796,7 +14814,7 @@
       "instagram": "",
       "description": "Open Thursday to Sunday 10am \u2013 4pm. Surry Hills NSW. Opens 15 October 2026 Free Related events the Coming Home exhibition at the Brett Whiteley Studio, Surry ...",
       "source": "serper",
-      "status": "active"
+      "status": "closed"
     },
     {
       "id": "0db7339de177",
