@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-30T15:47:06.717412+00:00",
-  "count": 1033,
+  "generated": "2026-10-31T15:14:52.975232+00:00",
+  "count": 1034,
   "exhibitions": [
     {
       "id": "9515e19be2ea",
@@ -6768,6 +6768,24 @@
       "instagram": "",
       "description": "",
       "source": "instagram",
+      "status": "closed"
+    },
+    {
+      "id": "dfaeacee77ae",
+      "title": "Mitch Cairns: Artist's Mouth | Opening Night",
+      "artist": "",
+      "venue": "National Art School Gallery",
+      "gallery_key": "national_art_school",
+      "address": "156 Forbes Street",
+      "suburb": "Darlinghurst",
+      "start_date": "2026-04-30",
+      "end_date": null,
+      "opening_date": "2026-04-30",
+      "opening_time": "6:00 PM",
+      "website": "",
+      "instagram": "",
+      "description": "Opening Night Free Thursday 30 April 2026 6:00 PM - 9:00 PM National Art School 156 Forbes Street Darlinghurst, NSW 2010 Australia , a major ...",
+      "source": "serper",
       "status": "closed"
     },
     {
