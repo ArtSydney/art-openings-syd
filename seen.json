@@ -1086,7 +1086,7 @@
     "mosman mosman": "0e59b3d46f80"
   },
   "__meta__": {
-    "last_run": "2026-11-03T16:57:34.917147+00:00",
+    "last_run": "2026-11-04T17:02:03.955725+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -20380,7 +20380,8 @@
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
     "first_seen": "2026-10-07T16:18:35.813372+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "d258f3936671": {
     "title": "Group Exhibition: Intertwined",
@@ -20514,7 +20515,8 @@
     "source_url": "https://www.instagram.com/p/DeLGMVmktWH/",
     "status": "active",
     "first_seen": "2026-10-07T16:18:37.593638+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "3dbff1f0fc27": {
     "title": "Julien Playoust",
@@ -20793,7 +20795,8 @@
     "source_url": "https://www.instagram.com/p/DedP5vBkkUB/",
     "status": "active",
     "first_seen": "2026-10-14T14:27:51.600759+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "b991d88240cb": {
     "title": "Allie Jonscher: Touching Grass",
