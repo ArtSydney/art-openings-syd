@@ -1083,10 +1083,11 @@
     "applications carriageworks marks now open": "af86531c84ee",
     "driftline glass rozelle": "43bc4e8e2554",
     "cairns mitch mouth national night school": "dfaeacee77ae",
-    "mosman mosman": "0e59b3d46f80"
+    "mosman mosman": "0e59b3d46f80",
+    "murakami takashi": "06be224bab2b"
   },
   "__meta__": {
-    "last_run": "2026-11-04T17:02:03.955725+00:00",
+    "last_run": "2026-11-05T17:17:10.308424+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -4558,7 +4559,8 @@
     "source": "instagram",
     "source_url": "https://www.instagram.com/p/DaP-A_ElOQm/",
     "status": "active",
-    "first_seen": "2026-08-14T09:19:56.638720+00:00"
+    "first_seen": "2026-08-14T09:19:56.638720+00:00",
+    "closing_soon_sent": true
   },
   "b20d60799507": {
     "title": "Tony Slater | Ivor Fabok",
@@ -20571,7 +20573,8 @@
     "source": "serper",
     "source_url": "https://www.instagram.com/p/DZ6mhdYiSEt/",
     "status": "active",
-    "first_seen": "2026-10-09T16:04:42.894009+00:00"
+    "first_seen": "2026-10-09T16:04:42.894009+00:00",
+    "closing_soon_sent": true
   },
   "aa8a7638e60d": {
     "title": "Time flies when you're having fun. Tonight is the 25th ...",
@@ -20998,5 +21001,23 @@
     "source_url": "https://mosmanartgallery.org.au/",
     "status": "needs_review",
     "first_seen": "2026-11-02T19:24:30.151324+00:00"
+  },
+  "06be224bab2b": {
+    "title": "Takashi Murakami - Art Gallery of NSW",
+    "artist": "",
+    "venue": "Art Gallery of NSW",
+    "address": "",
+    "suburb": "",
+    "start_date": "2026-12-05",
+    "end_date": "2027-07-18",
+    "opening_date": null,
+    "opening_time": null,
+    "website": "https://www.artgallery.nsw.gov.au/whats-on/exhibitions/takashi-murakami/",
+    "instagram": "",
+    "description": "Takashi Murakami When the Mountain Is High, the Moon Rises Higher. 5 December 2026 \u2013 18 July 2027. Art Gallery of New South Wales Sydney, Australia. Open daily, ...",
+    "source": "serper",
+    "source_url": "https://www.artgallery.nsw.gov.au/whats-on/exhibitions/takashi-murakami/",
+    "status": "active",
+    "first_seen": "2026-11-05T17:17:09.256410+00:00"
   }
 }

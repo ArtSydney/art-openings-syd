@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-04T17:02:04.774324+00:00",
-  "count": 26,
+  "generated": "2026-11-05T17:17:11.055228+00:00",
+  "count": 27,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -431,6 +431,24 @@
       "website": "",
       "instagram": "@artspacesydney",
       "description": "Join us for the opening night: Thursday 22 October 2026, 6\u20139pm at Artspace. Free registration via link in bio. \u2014 This exhibition is supported by The Medich ...",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "06be224bab2b",
+      "title": "Takashi Murakami - Art Gallery of NSW",
+      "artist": "",
+      "venue": "Art Gallery of New South Wales",
+      "gallery_key": "art_gallery_of_new_south_wales",
+      "address": "",
+      "suburb": "",
+      "start_date": "2026-12-05",
+      "end_date": "2027-07-18",
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://www.artgallery.nsw.gov.au/whats-on/exhibitions/takashi-murakami/",
+      "instagram": "",
+      "description": "Takashi Murakami When the Mountain Is High, the Moon Rises Higher. 5 December 2026 \u2013 18 July 2027. Art Gallery of New South Wales Sydney, Australia. Open daily, ...",
       "source": "serper",
       "status": "active"
     },
