@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-07T15:36:14.495875+00:00",
-  "count": 26,
+  "generated": "2026-11-08T15:54:11.707793+00:00",
+  "count": 23,
   "exhibitions": [
     {
       "id": "1b47b48c4f80",
@@ -165,24 +165,6 @@
       "status": "active"
     },
     {
-      "id": "86429b32598b",
-      "title": "Fauvette Loureiro Memorial Scholarships 2026",
-      "artist": "",
-      "venue": "SCA Gallery",
-      "gallery_key": "sca",
-      "address": "",
-      "suburb": "Camperdown",
-      "start_date": "2026-10-07",
-      "end_date": "2026-11-07",
-      "opening_date": "2026-10-07",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "e8dea595fa43",
       "title": "Chun Yin Rainbow Chan",
       "artist": "",
@@ -291,24 +273,6 @@
       "status": "active"
     },
     {
-      "id": "10d3ea1b7103",
-      "title": "West Papua is not an empty land",
-      "artist": "",
-      "venue": "Cross Art Projects",
-      "gallery_key": "cross_art_projects",
-      "address": "",
-      "suburb": "Potts Point",
-      "start_date": "2026-10-10",
-      "end_date": "2026-11-07",
-      "opening_date": "2026-10-10",
-      "opening_time": "2 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "3dbff1f0fc27",
       "title": "Julien Playoust",
       "artist": "",
@@ -354,24 +318,6 @@
       "suburb": "Newtown",
       "start_date": "2026-10-16",
       "end_date": "2026-11-14",
-      "opening_date": "2026-10-16",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "b309147fff63",
-      "title": "Group Exhibition: The Shape We Take at Night",
-      "artist": "Group Exhibition",
-      "venue": "China Heights Gallery",
-      "gallery_key": "china_heights",
-      "address": "",
-      "suburb": "Surry Hills",
-      "start_date": "2026-10-16",
-      "end_date": "2026-11-07",
       "opening_date": "2026-10-16",
       "opening_time": "6-8 PM",
       "website": "",
