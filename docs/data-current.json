@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10T16:57:06.231826+00:00",
+  "generated": "2026-11-11T17:02:51.048799+00:00",
   "count": 21,
   "exhibitions": [
     {
@@ -237,24 +237,6 @@
       "status": "active"
     },
     {
-      "id": "3dbff1f0fc27",
-      "title": "Julien Playoust",
-      "artist": "",
-      "venue": "Scieppan Gallery",
-      "gallery_key": "scieppan",
-      "address": "",
-      "suburb": "Darlinghurst",
-      "start_date": "2026-10-10",
-      "end_date": "2026-11-10",
-      "opening_date": "2026-10-10",
-      "opening_time": "3-5 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
       "id": "373861d96409",
       "title": "Brett Whiteley Travelling Art Scholarship 2026",
       "artist": "",
@@ -341,6 +323,24 @@
       "website": "https://www.artgallery.nsw.gov.au/whats-on/exhibitions/takashi-murakami/",
       "instagram": "",
       "description": "Takashi Murakami When the Mountain Is High, the Moon Rises Higher. 5 December 2026 \u2013 18 July 2027. Art Gallery of New South Wales Sydney, Australia. Open daily, ...",
+      "source": "serper",
+      "status": "active"
+    },
+    {
+      "id": "4e55d83b1f32",
+      "title": "Sydney Royal Easter Show",
+      "artist": "",
+      "venue": "Sydney Olympic Park",
+      "gallery_key": "",
+      "address": "",
+      "suburb": "",
+      "start_date": "2027-03-30",
+      "end_date": null,
+      "opening_date": null,
+      "opening_time": null,
+      "website": "https://www.eastershow.com.au/",
+      "instagram": "",
+      "description": "Experience the Sydney Royal Easter Show at Sydney Olympic Park from 19\u201330 March 2027. Explore animals, agriculture, food, entertainment and more.",
       "source": "serper",
       "status": "active"
     },
