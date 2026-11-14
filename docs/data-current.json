@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-13T17:06:06.141085+00:00",
-  "count": 21,
+  "generated": "2026-11-14T15:43:03.761345+00:00",
+  "count": 20,
   "exhibitions": [
     {
       "id": "06374b9a8745",
@@ -126,24 +126,6 @@
       "instagram": "",
       "description": "Upcoming exhibitions include Nolan: Origins from 3 October 2026 to 7 February 2027 and Takashi Murakami, opening 5 December 2026 through 18 July ...",
       "source": "serper",
-      "status": "active"
-    },
-    {
-      "id": "e8dea595fa43",
-      "title": "Chun Yin Rainbow Chan",
-      "artist": "",
-      "venue": "Verge Gallery",
-      "gallery_key": "verge",
-      "address": "",
-      "suburb": "Camperdown",
-      "start_date": "2026-10-08",
-      "end_date": "2026-11-13",
-      "opening_date": "2026-10-08",
-      "opening_time": "6-8 PM",
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
       "status": "active"
     },
     {
