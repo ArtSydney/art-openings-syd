@@ -1088,7 +1088,7 @@
     "easter olympic park royal": "4e55d83b1f32"
   },
   "__meta__": {
-    "last_run": "2026-11-17T18:23:22.881767+00:00",
+    "last_run": "2026-11-18T17:58:39.929114+00:00",
     "instagram_latest": "2026-10-14T01:53:28+0000"
   },
   "747cbd06e895": {
@@ -20845,7 +20845,8 @@
     "source_url": "https://www.instagram.com/p/DedP5vBkkUB/",
     "status": "active",
     "first_seen": "2026-10-14T14:27:52.017919+00:00",
-    "opening_soon_sent": true
+    "opening_soon_sent": true,
+    "closing_soon_sent": true
   },
   "dc1db4ecd427": {
     "title": "Sydney Contemporary (@sydneycontemporary)",
