@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-21T16:43:01.965093+00:00",
-  "count": 15,
+  "generated": "2026-11-22T17:01:47.635435+00:00",
+  "count": 14,
   "exhibitions": [
     {
       "id": "06374b9a8745",
@@ -176,24 +176,6 @@
       "end_date": "2026-11-22",
       "opening_date": null,
       "opening_time": null,
-      "website": "",
-      "instagram": "",
-      "description": "",
-      "source": "instagram",
-      "status": "active"
-    },
-    {
-      "id": "ee7464e3dbd8",
-      "title": "John Davis: 1970s & 1980s",
-      "artist": "John Davis",
-      "venue": "SydneySydney",
-      "gallery_key": "sydneysydney",
-      "address": "",
-      "suburb": "Potts Point",
-      "start_date": "2026-10-17",
-      "end_date": "2026-11-21",
-      "opening_date": "2026-10-17",
-      "opening_time": "4-6 PM",
       "website": "",
       "instagram": "",
       "description": "",
